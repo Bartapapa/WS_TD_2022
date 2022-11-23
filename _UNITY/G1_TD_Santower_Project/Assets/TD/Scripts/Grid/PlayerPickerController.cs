@@ -55,6 +55,22 @@ namespace GSGD1
 			return false;
 		}
 
+		public bool TrySetGhostAsPlateChild()
+		{
+			if (_gridPicker.TryGetPlate(out Plate plate) == true)
+			{
+				if (plate.HasChild == false || plate.HasChild == true)
+				{
+					if (plate.SetChild(_ghost as IPlateChild) == true)
+					{
+						_ghost = null;
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+
 		private void Update()
 		{
 			if (_isActive == true)

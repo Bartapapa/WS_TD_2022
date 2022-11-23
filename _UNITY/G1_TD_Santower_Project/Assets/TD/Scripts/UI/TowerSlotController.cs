@@ -63,7 +63,7 @@
 			{
 				if (Input.GetMouseButtonDown(0) == true)
 				{
-					if (PlayerPickerController.TrySetGhostAsCellChild() == true)
+					if (PlayerPickerController.TrySetGhostAsCellChild() == true || PlayerPickerController.TrySetGhostAsPlateChild() == true)
 					{
 						ChangeState(State.Available);
 					}

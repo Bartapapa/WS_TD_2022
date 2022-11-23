@@ -5,6 +5,9 @@
 
 	public class DamageableDetector : MonoBehaviour
 	{
+		[SerializeField]
+		private bool _targetFlyingEnemies = false;
+
 		[System.NonSerialized]
 		private List<Damageable> _damageablesInRange = new List<Damageable>();
 
@@ -47,7 +50,7 @@
 		{
 			Damageable damageable = other.GetComponentInParent<Damageable>();
 
-			if (damageable != null && _damageablesInRange.Contains(damageable) == false)
+			if (damageable != null && _damageablesInRange.Contains(damageable) == false && damageable.GetIsFlying == _targetFlyingEnemies)
 			{
 				damageable.DamageTaken -= Damageable_OnDamageTaken;
 				damageable.DamageTaken += Damageable_OnDamageTaken;
@@ -59,7 +62,7 @@
 		{
 			Damageable damageable = other.GetComponentInParent<Damageable>();
 
-			if (damageable != null && _damageablesInRange.Contains(damageable) == true)
+			if (damageable != null && _damageablesInRange.Contains(damageable) == true && damageable.GetIsFlying == _targetFlyingEnemies)
 			{
 				damageable.DamageTaken -= Damageable_OnDamageTaken;
 				_damageablesInRange.Remove(damageable);

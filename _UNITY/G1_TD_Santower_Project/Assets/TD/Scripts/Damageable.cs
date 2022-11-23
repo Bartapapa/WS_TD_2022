@@ -5,6 +5,9 @@
 	public class Damageable : MonoBehaviour
 	{
 		[SerializeField]
+		private bool _isFlying = false;
+
+		[SerializeField]
 		private int _health = 1;
 
 		[SerializeField]
@@ -52,8 +55,12 @@
 			}
 		}
 
+		public bool GetIsFlying { get { return _isFlying; } }
+		public int GetHealth { get { return _health; } }
+
 		private void DoDestroy()
 		{
+			// A remplacer par les scripts / animation de mort
 			var particle = Instantiate(_deathParticle);
 			particle.transform.position = transform.position;
 			Destroy(gameObject);

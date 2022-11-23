@@ -8,7 +8,7 @@
 	/// <summary>
 	/// Facade for Tower subsystems
 	/// </summary>
-	public class Tower : MonoBehaviour, IPickerGhost, ICellChild
+	public class Tower : MonoBehaviour, IPickerGhost, ICellChild, IPlateChild
 	{
 		[SerializeField]
 		private WeaponController _weaponController = null;
