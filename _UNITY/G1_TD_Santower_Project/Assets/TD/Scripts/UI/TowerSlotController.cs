@@ -70,12 +70,14 @@
 					{
                         ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, -_currentTowerDescription.CookieCost);
 						ChangeState(State.Available);
-					}
+						PlayerPickerController.ChangeState(PlayerPickerState.InGame);
+                    }
 				}
 				if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape) == true)
 				{
 					ChangeState(State.Available);
-				}
+                    PlayerPickerController.ChangeState(PlayerPickerState.InGame);
+                }
 			}
 		}
 

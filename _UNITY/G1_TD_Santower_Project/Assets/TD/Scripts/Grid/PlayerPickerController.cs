@@ -4,13 +4,29 @@ namespace GSGD1
 	using System.Collections.Generic;
 	using UnityEngine;
 
+	public enum PlayerPickerState
+	{
+		InGame,
+		PlacingObject,
+		InUI,
+		Targeting,
+		None,
+	}
+
 	public class PlayerPickerController : MonoBehaviour
 	{
-		[SerializeField]
+        public delegate void PlayerPickerStateEvent(PlayerPickerState currentState, PlayerPickerState newState);
+        public event PlayerPickerStateEvent StateChanged = null;
+
+        [SerializeField]
 		private GridBehaviour _grid = null;
 
 		[SerializeField]
 		private GridPicker _gridPicker = null;
+
+		[Header("State")]
+		[SerializeField]
+		private PlayerPickerState _state = PlayerPickerState.InGame;
 
         [Header("Selectables")]
         [SerializeField]
@@ -32,6 +48,16 @@ namespace GSGD1
 		{
 			_isActive = isActive;
 			_gridPicker.Activate(isActive, true);
+
+			if (isActive == true)
+			{
+                ChangeState(PlayerPickerState.PlacingObject);
+            }
+			else
+			{
+                ChangeState(PlayerPickerState.InGame);
+            }
+			
 		}
 
 		public void ActivateWithGhost(IPickerGhost ghost)
@@ -74,16 +100,26 @@ namespace GSGD1
 					if (plate.SetChild(_ghost as IPlateChild) == true)
 					{
 						_ghost = null;
-						return true;
+                        return true;
 					}
 				}
 			}
 			return false;
 		}
 
+		public void ChangeState(PlayerPickerState newState)
+		{
+			if (newState == _state) return;
+			else
+			{
+				StateChanged?.Invoke(_state, newState);
+				_state = newState;
+			}
+		}
+
 		private void Update()
 		{
-			if (_isActive == true)
+			if (_state == PlayerPickerState.PlacingObject)
 			{
 				if (_gridPicker.TryGetCell(out Cell cell) == true)
 				{
@@ -94,7 +130,7 @@ namespace GSGD1
 					_ghost.GetTransform().position = _gridPicker.HitPosition;
 				}
 			}
-			else
+			else if (_state == PlayerPickerState.InGame)
 			{
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
@@ -161,6 +197,14 @@ namespace GSGD1
                     }
                 }
             }
+			else if (_state == PlayerPickerState.InUI)
+			{
+				//How the picker behaves in UI, such as when clicking on a tower or on Santa.
+			}
+			else if (_state == PlayerPickerState.Targeting)
+			{
+				//How the picker behaves while Targeting, such as when using an ability.
+			}
 
         }
 
