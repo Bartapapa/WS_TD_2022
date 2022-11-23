@@ -14,8 +14,12 @@ GameObject:
   - component: {fileID: 2942146037294568419}
   - component: {fileID: 6205259296852688672}
   - component: {fileID: 354379931399998883}
+<<<<<<< HEAD
+  m_Layer: 8
+=======
   - component: {fileID: 7800428955731210367}
   m_Layer: 0
+>>>>>>> 8ae9c19c9b64ac8f70138a07e86ae0e6eced04d8
   m_Name: Entity.Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,8 +68,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
-  _moveSpeed: 3
-  _rotateSpeed: 5
+  _moveSpeed: 1
+  _rotateSpeed: 1
+  _maxRandoMultiplier: 1.1
+  _minRandoMultiplier: 0.9
   _distanceThreshold: 0.5
 --- !u!114 &2942146037294568419
 MonoBehaviour:
@@ -140,7 +146,7 @@ GameObject:
   - component: {fileID: 2942146037963372802}
   - component: {fileID: 2942146037963372801}
   - component: {fileID: 2942146037963372800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2942146038031326620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +276,7 @@ GameObject:
   - component: {fileID: 2942146038736970682}
   - component: {fileID: 2942146038736970681}
   - component: {fileID: 2942146038736970680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

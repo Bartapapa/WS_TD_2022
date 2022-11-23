@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5412690654039449867}
   - component: {fileID: 2942146037294568418}
   - component: {fileID: 2942146037294568419}
-  - component: {fileID: 1009619974983960978}
-  - component: {fileID: 1307804053467939346}
+  - component: {fileID: 1773812474288713663}
+  - component: {fileID: 8954739381906307174}
   m_Layer: 8
-  m_Name: Entity.Speedy
+  m_Name: Entity.Carrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,6 +65,8 @@ MonoBehaviour:
   _path: {fileID: 0}
   _moveSpeed: 3
   _rotateSpeed: 5
+  _maxRandoMultiplier: 1.1
+  _minRandoMultiplier: 0.9
   _distanceThreshold: 0.5
 --- !u!114 &2942146037294568419
 MonoBehaviour:
@@ -78,13 +80,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f346eb553e164c875a02622739750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isFlying: 0
-  _health: 1
-  _destroyIfKilled: 1
+  _isFlying: 1
+  _health: 3
+  _destroyIfKilled: 0
   _aimPosition: {fileID: 2942146038031326620}
   _deathParticle: {fileID: 6159851731732633496, guid: fad479241fc5cca47b823fc8ac0cd376,
     type: 3}
---- !u!114 &1009619974983960978
+--- !u!114 &1773812474288713663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destroyIfGiveDamage: 1
   _damage: 1
---- !u!136 &1307804053467939346
+--- !u!136 &8954739381906307174
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9baab7d388247cc42aa3ef28fdf9fc0b, type: 2}
+  - {fileID: 2100000, guid: ea9f123a7c3093a4ea79cee6618cf45c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -304,7 +306,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9baab7d388247cc42aa3ef28fdf9fc0b, type: 2}
+  - {fileID: 2100000, guid: ea9f123a7c3093a4ea79cee6618cf45c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

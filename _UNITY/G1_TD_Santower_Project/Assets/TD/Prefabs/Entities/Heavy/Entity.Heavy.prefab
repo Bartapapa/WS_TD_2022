@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2942146037294568419}
   - component: {fileID: 1773812474288713663}
   - component: {fileID: 8954739381906307174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Entity.Heavy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 2942146037963372802}
   - component: {fileID: 2942146037963372801}
   - component: {fileID: 2942146037963372800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2942146038031326620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 2942146038736970682}
   - component: {fileID: 2942146038736970681}
   - component: {fileID: 2942146038736970680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

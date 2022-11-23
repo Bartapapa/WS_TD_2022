@@ -17,10 +17,26 @@
 		private float _rotateSpeed = 1f;
 
 		[SerializeField]
+		private float _maxRandoMultiplier = 1.1f;
+
+		[SerializeField]
+		private float _minRandoMultiplier = 0.9f;
+
+		[SerializeField]
 		private float _distanceThreshold = 0.5f;
 
 		[System.NonSerialized]
 		private int _currentPathIndex = 0;
+
+		private void Start()
+		{
+			_moveSpeed = _moveSpeed * Random.Range(_minRandoMultiplier, _maxRandoMultiplier);
+		}
+
+		public void SetWaypoint(int indexPath)
+		{
+			_currentPathIndex = indexPath;
+		}
 
 		public void SetCanMove(bool canMove)
 		{
