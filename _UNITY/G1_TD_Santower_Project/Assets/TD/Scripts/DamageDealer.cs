@@ -21,7 +21,7 @@ public class DamageDealer : MonoBehaviour
 
 			if (_destroyIfGiveDamage == true)
 			{
-				// A remplacer par les scripts / animation de mort
+				//A remplacer par Die() du Damageable!
 				Destroy(gameObject);
 			}
 		}

@@ -21,6 +21,7 @@
 
 		public delegate void DamageableEvent(Damageable caller, int currentHealth, int damageTaken);
 		private event DamageableEvent _damageTaken = null;
+		private event DamageableEvent _callerDied = null;
 
 		public event DamageableEvent DamageTaken
 		{
@@ -35,7 +36,20 @@
 			}
 		}
 
-		public Vector3 GetAimPosition()
+        public event DamageableEvent CallerDied
+        {
+            add
+            {
+                _callerDied -= value;
+                _callerDied += value;
+            }
+            remove
+            {
+                _callerDied -= value;
+            }
+        }
+
+        public Vector3 GetAimPosition()
 		{
 			return _aimPosition.position;
 		}
@@ -44,13 +58,13 @@
 		{
 			_health -= damage;
 
-			if (_health <= 0)
-			{
-				_damageTaken?.Invoke(this, _health, damage);
+            _damageTaken?.Invoke(this, _health, damage);
 
+            if (_health <= 0)
+			{
 				if (_destroyIfKilled == true)
 				{
-					DoDestroy();
+					Die();
 				}
 			}
 		}
@@ -60,10 +74,17 @@
 
 		private void DoDestroy()
 		{
-			// A remplacer par les scripts / animation de mort
-			var particle = Instantiate(_deathParticle);
-			particle.transform.position = transform.position;
 			Destroy(gameObject);
 		}
+
+		private void Die()
+		{
+			_callerDied?.Invoke(this, _health, 0);
+
+            // A remplacer par les scripts / animation de mort
+            var particle = Instantiate(_deathParticle);
+            particle.transform.position = transform.position;
+			DoDestroy();
+        }
 	}
 }

@@ -10,11 +10,14 @@
 	/// </summary>
 	public class Tower : MonoBehaviour, IPickerGhost, ICellChild, IPlateChild
 	{
-		[SerializeField]
+        [SerializeField]
 		private WeaponController _weaponController = null;
 
 		[SerializeField]
 		private DamageableDetector _damageableDetector = null;
+
+		[SerializeField]
+		private SelectableObject _selectableObject = null;
 
         [SerializeField]
         //Readonly
@@ -30,6 +33,7 @@
         private void Awake()
 		{
 			enabled = false;
+			_selectableObject.SetCanBeSelected(false);
 		}
 
 		public void Enable(bool isEnabled)
@@ -67,6 +71,7 @@
 		public void OnSetChild()
 		{
 			Enable(true);
+			_selectableObject.SetCanBeSelected(true);
 		}
 
         public Transform GetParent()
