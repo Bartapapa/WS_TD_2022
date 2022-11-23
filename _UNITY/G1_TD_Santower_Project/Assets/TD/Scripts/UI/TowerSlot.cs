@@ -2,6 +2,7 @@ namespace GSGD1
 {
 	using System.Collections;
 	using System.Collections.Generic;
+	using TMPro;
 	using UnityEngine;
 	using UnityEngine.UI;
 
@@ -16,7 +17,10 @@ namespace GSGD1
 		[SerializeField]
 		private Image _icon = null;
 
-		public TowerDescription TowerDescription => _towerDescription;
+        [SerializeField]
+        protected TextMeshProUGUI _cookieCostNumber;
+
+        public TowerDescription TowerDescription => _towerDescription;
 
 		public delegate void TowerSlotEvent(TowerSlot sender);
 		public event TowerSlotEvent OnTowerSlotClicked = null;
@@ -37,6 +41,12 @@ namespace GSGD1
 
 			_icon.sprite = _towerDescription.Icon;
 			_icon.color = _towerDescription.IconColor;
+			_cookieCostNumber.text = _towerDescription.CookieCost.ToString();
+		}
+
+		public void InitializeSlot(TowerDescription towerDescription)
+		{
+			_towerDescription = towerDescription;
 		}
 
 		private void OnEnable()

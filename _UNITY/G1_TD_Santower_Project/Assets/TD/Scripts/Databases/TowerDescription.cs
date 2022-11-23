@@ -16,13 +16,21 @@ namespace GSGD1
 		[SerializeField]
 		private Color _iconColor = Color.white;
 
-		public Tower Prefab => _prefab;
+        [SerializeField]
+        private int _cookieCost = 0;
+
+        [SerializeField]
+        private List<TowerDescription> _upgradeList = new List<TowerDescription>();
+
+        public Tower Prefab => _prefab;
 		public Sprite Icon => _icon;
 		public Color IconColor => _iconColor;
+        public int CookieCost => _cookieCost;
+        public List<TowerDescription> UpgradeList => _upgradeList;
 
-		public Tower Instantiate()
+        public Tower Instantiate(Tower instantiatedTower)
 		{
-			return GameObject.Instantiate(_prefab);
+			return GameObject.Instantiate(instantiatedTower);
 		}
 	}
 }

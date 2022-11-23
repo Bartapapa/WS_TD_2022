@@ -6,7 +6,9 @@
 	{
 		Transform GetTransform();
 		void OnSetChild();
-	}
+        Transform GetParent();
+        Cell GetCell();
+    }
 
 	public class Cell : MonoBehaviour
 	{
