@@ -12,7 +12,17 @@ namespace GSGD1
 		[SerializeField]
 		private GridPicker _gridPicker = null;
 
-		[System.NonSerialized]
+        [Header("Selectables")]
+        [SerializeField]
+        private LayerMask _selectableLayer;
+        [SerializeField]
+        private LayerMask _UILayer;
+        [SerializeField]
+        private SelectableObject _currentSelectable;
+        [SerializeField]
+        private SelectableObject _hoveringOver;
+
+        [System.NonSerialized]
 		private IPickerGhost _ghost = null;
 
 		[System.NonSerialized]
@@ -68,9 +78,75 @@ namespace GSGD1
 					_ghost.GetTransform().position = _gridPicker.HitPosition;
 				}
 			}
+			else
+			{
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
-		}
+                if (Physics.Raycast(ray, out hit, float.MaxValue, _UILayer))
+                {
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        if (_currentSelectable != null)
+                        {
+                            _currentSelectable.StopSelecting();
+                            _currentSelectable = null;
+                        }
+                    }
+                    return;
+                }
 
+                if (Physics.Raycast(ray, out hit, float.MaxValue, _selectableLayer))
+                {
+                    SelectableObject selectable = hit.collider.gameObject.GetComponent<SelectableObject>();
+                    if (selectable != null)
+                    {
+                        selectable.HoverOver();
+                        _hoveringOver = selectable;
+                    }
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (_hoveringOver != null)
+                        {
+                            if (_currentSelectable != null)
+                            {
+                                _currentSelectable.StopSelecting();
+                            }
+
+                            _hoveringOver.Select();
+                            _currentSelectable = _hoveringOver;
+                        }
+                    }
+                }
+                else
+                {
+                    if (_hoveringOver != null)
+                    {
+                        _hoveringOver.StopHovering();
+                    }
+                    _hoveringOver = null;
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (_currentSelectable != null)
+                        {
+                            _currentSelectable.StopSelecting();
+                            _currentSelectable = null;
+                        }
+                    }
+                }
+                if (Input.GetMouseButtonDown(1))
+                {
+                    if (_currentSelectable != null)
+                    {
+                        _currentSelectable.StopSelecting();
+                        _currentSelectable = null;
+                    }
+                }
+            }
+
+        }
 
 		[ContextMenu("Activate")]
 		private void DoActivate() => Activate(true);

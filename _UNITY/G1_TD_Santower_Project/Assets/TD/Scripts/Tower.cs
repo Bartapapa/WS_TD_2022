@@ -16,7 +16,18 @@
 		[SerializeField]
 		private DamageableDetector _damageableDetector = null;
 
-		private void Awake()
+        [SerializeField]
+        //Readonly
+        private TowerDescription _towerDescription = null;
+
+        [SerializeField]
+        //Readonly
+        private int _totalCookieCost = 0;
+
+        public TowerDescription TowerDescription => _towerDescription;
+        public int GetTotalCookieCost => _totalCookieCost;
+
+        private void Awake()
 		{
 			enabled = false;
 		}
@@ -38,8 +49,17 @@
 			}
 		}
 
-		// Interfaces
-		public Transform GetTransform()
+        public void SetTotalCookieCost(int value)
+        {
+            _totalCookieCost = value;
+            if (_totalCookieCost <= 0)
+            {
+                _totalCookieCost = 0;
+            }
+        }
+
+        // Interfaces
+        public Transform GetTransform()
 		{
 			return transform;
 		}
@@ -48,5 +68,15 @@
 		{
 			Enable(true);
 		}
-	}
+
+        public Transform GetParent()
+        {
+            return transform.parent;
+        }
+
+        public Cell GetCell()
+        {
+            return transform.parent.gameObject.GetComponent<Cell>();
+        }
+    }
 }

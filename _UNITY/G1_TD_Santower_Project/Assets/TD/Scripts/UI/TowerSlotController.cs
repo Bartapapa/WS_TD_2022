@@ -52,9 +52,12 @@
 		{
 			if (_state == State.Available)
 			{
-				_currentTowerDescription = sender.TowerDescription;
-				ChangeState(State.GhostVisible);
-			}
+                if (ResourceManager.Instance.CanBuy(ResourceManager.ResourceType.Cookie, sender.TowerDescription.CookieCost))
+                {
+                    _currentTowerDescription = sender.TowerDescription;
+                    ChangeState(State.GhostVisible);
+                }
+            }
 		}
 
 		private void Update()
@@ -63,11 +66,12 @@
 			{
 				if (Input.GetMouseButtonDown(0) == true)
 				{
-					if (PlayerPickerController.TrySetGhostAsCellChild() == true)
-					{
-						ChangeState(State.Available);
-					}
-				}
+                    if (PlayerPickerController.TrySetGhostAsCellChild() == true)
+                    {
+                        ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, -_currentTowerDescription.CookieCost);
+                        ChangeState(State.Available);
+                    }
+                }
 				if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape) == true)
 				{
 					ChangeState(State.Available);
@@ -88,8 +92,10 @@
 				break;
 				case State.GhostVisible:
 				{
-					PlayerPickerController.ActivateWithGhost(_currentTowerDescription.Instantiate());
-				}
+                    Tower newTower = _currentTowerDescription.Instantiate(_currentTowerDescription.Prefab);
+                    PlayerPickerController.ActivateWithGhost(newTower);
+                    newTower.SetTotalCookieCost(_currentTowerDescription.CookieCost);
+                }
 					break;
 				default:
 					break;
