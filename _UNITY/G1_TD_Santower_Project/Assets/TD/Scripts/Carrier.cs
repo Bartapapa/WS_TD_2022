@@ -27,7 +27,7 @@ public class Carrier : MonoBehaviour
 								transform.position.y,
 								Random.Range(-_randomSpawnAmplitude, _randomSpawnAmplitude) + transform.position.z);
 
-			PathFollower aaaa = _pathFollowers[i].GetComponents<PathFollower>;
+			//PathFollower aaaa = _pathFollowers[i].GetComponents<PathFollower>;
 			if ( _randomSpawnAmplitude == 1)
 			{
 				Instantiate(_pathFollowers[i], spawnPos, Quaternion.identity);
