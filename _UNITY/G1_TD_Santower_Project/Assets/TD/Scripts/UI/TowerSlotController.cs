@@ -66,20 +66,12 @@
 			{
 				if (Input.GetMouseButtonDown(0) == true)
 				{
-<<<<<<< HEAD
 					if (PlayerPickerController.TrySetGhostAsCellChild() == true || PlayerPickerController.TrySetGhostAsPlateChild() == true)
 					{
+                        ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, -_currentTowerDescription.CookieCost);
 						ChangeState(State.Available);
 					}
 				}
-=======
-                    if (PlayerPickerController.TrySetGhostAsCellChild() == true)
-                    {
-                        ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, -_currentTowerDescription.CookieCost);
-                        ChangeState(State.Available);
-                    }
-                }
->>>>>>> 7272220413f02ac8a56f8f7958377eaf5dd87754
 				if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape) == true)
 				{
 					ChangeState(State.Available);
