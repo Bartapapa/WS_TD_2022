@@ -12,7 +12,7 @@
 
 	public class Cell : MonoBehaviour
 	{
-		private ICellChild _towerChild = null;
+        private ICellChild _towerChild = null;
 
 		public bool HasChild
 		{

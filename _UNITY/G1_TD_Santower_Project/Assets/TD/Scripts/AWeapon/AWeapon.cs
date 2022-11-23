@@ -5,7 +5,7 @@
 	public abstract class AWeapon : MonoBehaviour
 	{
 		[SerializeField]
-		private Timer _timer = null;
+		protected Timer _timer = null;
 
 		public virtual bool CanFire()
 		{
@@ -16,7 +16,7 @@
 		{
 			_timer.Update();
 		}
-		public void Fire()
+		public virtual void Fire()
 		{
 			if (CanFire() == true)
 			{

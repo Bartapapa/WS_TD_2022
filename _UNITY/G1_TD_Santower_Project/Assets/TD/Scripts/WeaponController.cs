@@ -16,7 +16,7 @@
 		[System.NonSerialized]
 		private Quaternion _lastLookRotation = Quaternion.identity;
 
-		public void LookAt(Vector3 position)
+		public virtual void LookAt(Vector3 position)
 		{
 			Vector3 direction = (position - transform.position).normalized;
 			_lastLookRotation = Quaternion.LookRotation(direction, Vector3.up);

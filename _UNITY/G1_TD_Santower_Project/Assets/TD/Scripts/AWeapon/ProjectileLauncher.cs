@@ -7,10 +7,10 @@
 	public class ProjectileLauncher : AWeapon
 	{
 		[SerializeField]
-		private AProjectile _projectile = null;
+		protected AProjectile _projectile = null;
 
 		[SerializeField]
-		private Transform _projectileAnchor = null;
+		protected Transform _projectileAnchor = null;
 
 		protected override void DoFire()
 		{

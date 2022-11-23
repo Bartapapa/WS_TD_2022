@@ -1,3 +1,4 @@
+using GSGD1;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,11 @@ public class SelectableObject : MonoBehaviour
     [SerializeField]
     private bool _isSelected = false;
 
+    [SerializeField]
+    private bool _canBeSelected = false;
+
     public bool IsSelected => _isSelected;
+    public bool CanBeSelected => _canBeSelected;
 
 
     private void Awake()
@@ -29,6 +34,8 @@ public class SelectableObject : MonoBehaviour
     {
         //_selectionCircle.SetActive(true);
         //_selectionCircleHover.SetActive(false);
+        if (!_canBeSelected) return;
+
         _isSelected = true;
 
         if (ObjectSelected != null)
@@ -60,5 +67,26 @@ public class SelectableObject : MonoBehaviour
     {
         if (_isSelected) return;
         //_selectionCircleHover.SetActive(false);
+    }
+
+    public void SetCanBeSelected(bool value)
+    {
+        StartCoroutine(SelectionGracePeriod(.1f, value));
+    }
+
+    private IEnumerator SelectionGracePeriod(float duration, bool value)
+    {
+        float timer = 0f;
+        float currentTime = duration;
+
+        while (timer < currentTime)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        _canBeSelected = value;
+
+        yield return null;
     }
 }
