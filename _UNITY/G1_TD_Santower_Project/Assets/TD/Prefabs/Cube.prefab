@@ -123,4 +123,4 @@ MonoBehaviour:
   - {fileID: 5412690654039449867, guid: 0bf05c3b4dcbce74f99337061d768f04, type: 3}
   _randomSpawnAmplitude: 2
   _path: {fileID: 0}
-  _waypointIndex: 2
+  _waypointIndex: {fileID: 0}

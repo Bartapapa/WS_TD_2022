@@ -51,7 +51,12 @@
 
         public Vector3 GetAimPosition()
 		{
-			return _aimPosition.position;
+			if (_aimPosition != null)
+			{
+				return _aimPosition.position;
+			}
+			else
+				return transform.position;
 		}
 
 		public void TakeDamage(int damage)

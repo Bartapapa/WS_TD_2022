@@ -10,7 +10,7 @@
 		[SerializeField]
 		private int _damage = 1;
 
-		protected virtual void OnTriggerEnter(Collider other)
+		public virtual void OnTriggerEnter(Collider other)
 		{
 			var damageable = other.GetComponentInParent<Damageable>();
 

@@ -16,10 +16,8 @@ public class Carrier : MonoBehaviour
 	[SerializeField]
 	private float _randomSpawnAmplitude = 1.0f;
 
-	[SerializeField]
 	private Path _path;
 
-	[SerializeField]
 	private GameObject _waypointIndex;
 
 	private List<GameObject> waypoint = new List<GameObject>();
