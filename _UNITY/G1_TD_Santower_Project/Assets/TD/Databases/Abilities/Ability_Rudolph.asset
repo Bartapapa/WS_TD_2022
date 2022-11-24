@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b53785b4be9be4699a43e538be5346, type: 3}
+  m_Name: Ability_Rudolph
+  m_EditorClassIdentifier: 
+  _name: Rudolph
+  _targetingReticle: {fileID: 11400000, guid: 34af3137731e6614e981eedcfd79aadc, type: 2}
+  _icon: {fileID: 21300000, guid: f655b657cf8a9254ead2a04cc89ab530, type: 3}
+  _coolDown: 60

@@ -199,10 +199,20 @@ namespace GSGD1
             else if (_state == PlayerPickerState.InUI)
             {
                 //How the picker behaves in UI, such as when clicking on a tower or on Santa.
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    ChangeState(PlayerPickerState.InGame);
+                }           
             }
             else if (_state == PlayerPickerState.Targeting)
             {
                 //How the picker behaves while Targeting, such as when using an ability.
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    ChangeState(PlayerPickerState.InGame);
+                }      
             }
 
         }
