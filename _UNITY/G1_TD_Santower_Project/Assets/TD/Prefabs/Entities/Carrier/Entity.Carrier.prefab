@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlying: 1
-  _health: 3
+  _health: 4
   _destroyIfKilled: 0
   _aimPosition: {fileID: 2942146038031326620}
   _deathParticle: {fileID: 6159851731732633496, guid: fad479241fc5cca47b823fc8ac0cd376,
