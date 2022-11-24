@@ -29,8 +29,8 @@ public class PlayerPerkManager : Singleton<PlayerPerkManager>
                 _currentPerk = perkIndex;
                 ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Milk, -_perkOrder[perkIndex].MilkCost);
 
-                PerkAcquired?.Invoke(_currentPerk, _perkOrder[_currentPerk].name);
-                Debug.Log(_perkOrder[_currentPerk].name + " acquired.");
+                PerkAcquired?.Invoke(_currentPerk, _perkOrder[_currentPerk].Name);
+                Debug.Log(_perkOrder[_currentPerk].Name + " acquired.");
             }
             else
             {
@@ -41,9 +41,9 @@ public class PlayerPerkManager : Singleton<PlayerPerkManager>
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    AcquirePerk(_currentPerk + 1);
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AcquirePerk(_currentPerk + 1);
+        }
     }
 }
