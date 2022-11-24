@@ -15,3 +15,7 @@ MonoBehaviour:
   _prefab: {fileID: 302692793403659937, guid: b9a4d930745f8e641948251aadf67351, type: 3}
   _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
   _iconColor: {r: 1, g: 0.9411765, b: 0.2784314, a: 1}
+  _cookieCost: 0
+  _upgradeList:
+  - {fileID: 11400000, guid: 3c17f69342ee17548aad51beb5e36ac3, type: 2}
+  - {fileID: 11400000, guid: 8099e2ddbf1de974cab0b7e59174c907, type: 2}

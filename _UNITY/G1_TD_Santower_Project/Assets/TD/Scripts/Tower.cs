@@ -39,7 +39,8 @@
 		public void Enable(bool isEnabled)
 		{
 			enabled = isEnabled;
-		}
+            _selectableObject.SetCanBeSelected(true);
+        }
 
 		private void Update()
 		{

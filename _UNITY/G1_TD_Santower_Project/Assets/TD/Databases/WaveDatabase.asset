@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaveDatabase
   m_EditorClassIdentifier: 
   _waveEntityDatas:
-  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 6d9b29c4d27ec9245a717563b49c2d9e,
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811,
       type: 3}
     _entityType: 1
   - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 0bf05c3b4dcbce74f99337061d768f04,

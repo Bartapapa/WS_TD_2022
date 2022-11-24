@@ -12,14 +12,9 @@ GameObject:
   - component: {fileID: 5412690654039449867}
   - component: {fileID: 2942146037294568418}
   - component: {fileID: 2942146037294568419}
-  - component: {fileID: 6205259296852688672}
-  - component: {fileID: 354379931399998883}
-<<<<<<< HEAD
+  - component: {fileID: 1773812474288713663}
+  - component: {fileID: 8954739381906307174}
   m_Layer: 8
-=======
-  - component: {fileID: 7800428955731210367}
-  m_Layer: 0
->>>>>>> 8ae9c19c9b64ac8f70138a07e86ae0e6eced04d8
   m_Name: Entity.Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,8 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
-  _moveSpeed: 1
-  _rotateSpeed: 1
+  _moveSpeed: 3
+  _rotateSpeed: 5
   _maxRandoMultiplier: 1.1
   _minRandoMultiplier: 0.9
   _distanceThreshold: 0.5
@@ -86,12 +81,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlying: 0
-  _health: 2
+  _health: 1
   _destroyIfKilled: 1
   _aimPosition: {fileID: 2942146038031326620}
   _deathParticle: {fileID: 6159851731732633496, guid: fad479241fc5cca47b823fc8ac0cd376,
     type: 3}
---- !u!114 &6205259296852688672
+--- !u!114 &1773812474288713663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destroyIfGiveDamage: 1
   _damage: 1
---- !u!136 &354379931399998883
+--- !u!136 &8954739381906307174
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,21 +114,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7800428955731210367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2942146037294568416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0b9f6c6470262b4fa1ecfc91357f086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageable: {fileID: 0}
-  _cookiesDropped: 1
-  _milkDropped: 0
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0

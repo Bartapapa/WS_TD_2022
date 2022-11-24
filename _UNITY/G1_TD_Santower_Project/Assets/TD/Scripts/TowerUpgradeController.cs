@@ -66,6 +66,7 @@ public class TowerUpgradeController : MonoBehaviour
             Tower upgradedTower = sender.TowerDescription.Instantiate(sender.TowerDescription.Prefab);
             upgradedTower.GetTransform().position = _tower.GetParent().position;
             upgradedTower.transform.parent = _tower.GetParent();
+            upgradedTower.Enable(true);
 
             ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, -sender.TowerDescription.CookieCost);
 
