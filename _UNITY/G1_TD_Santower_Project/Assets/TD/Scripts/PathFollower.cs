@@ -25,8 +25,12 @@
 		[SerializeField]
 		private float _distanceThreshold = 0.5f;
 
-		[System.NonSerialized]
+		[SerializeField]
 		private int _currentPathIndex = 0;
+
+		private bool _grosBool = false;
+		[SerializeField]
+		private int _waypointIndex = 0;
 
 		private void Start()
 		{
@@ -35,6 +39,7 @@
 
 		public void SetWaypoint(int indexPath)
 		{
+			_waypointIndex = indexPath;
 			_currentPathIndex = indexPath;
 		}
 
@@ -62,7 +67,11 @@
 			{
 				return;
 			}
-
+			if (_grosBool == false)
+			{
+				SetWaypoint(_waypointIndex);
+				_grosBool = true;
+			}
 			Vector3 nextDestination = _path.Waypoints[_currentPathIndex].position;
 
 			if (Vector3.Distance(transform.position, nextDestination) < _distanceThreshold)
