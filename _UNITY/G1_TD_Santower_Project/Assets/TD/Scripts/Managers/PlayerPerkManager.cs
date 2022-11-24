@@ -41,9 +41,9 @@ public class PlayerPerkManager : Singleton<PlayerPerkManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AcquirePerk(_currentPerk + 1);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    AcquirePerk(_currentPerk + 1);
+        //}
     }
 }

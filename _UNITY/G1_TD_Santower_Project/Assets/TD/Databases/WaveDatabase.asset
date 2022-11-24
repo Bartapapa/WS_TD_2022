@@ -22,6 +22,33 @@ MonoBehaviour:
   - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 5e3c08dd4a6bacf42b6cfcade9706784,
       type: 3}
     _entityType: 3
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 4
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 5
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 6
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: c5cb474a3b6f2b44e9ee66f01aca8df2,
+      type: 3}
+    _entityType: 7
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 8
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 9
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 10
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 11
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 12
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 13
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 14
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 15
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 16
   _waves:
   - {fileID: 11400000, guid: a459061dc5860024590f76ddef462ecd, type: 2}
   - {fileID: 11400000, guid: a530391b5ce8c734eac723b1d05fa896, type: 2}

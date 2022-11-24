@@ -11,9 +11,22 @@
 	public enum EntityType
 	{
 		None,
-		Light,
-		Heavy,
-		Speedy
+		ElfLight,
+		ElfFat,
+		ElfSpeedy,
+		Snowman,
+		AirElfLight,
+		AirFat,
+		AirCarrier,
+		MegaElfFat,
+		MegaElfSpeedy,
+		MegaSnowman,
+		MegaAirFat,
+		MegaAirCarrier,
+		Boss1,
+		Boss2,
+		Boss3,
+		Boss4,
 	}
 
 	[CreateAssetMenu(menuName = "GameSup/WaveDatabase")]
