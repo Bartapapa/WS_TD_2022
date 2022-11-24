@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78294bca23e774408c13df8115afb72, type: 3}
   m_Name: TowerDescription.Alt01
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 302692793403659937, guid: 28efab7630ebbd3488efbf4c9b317e19, type: 3}
+  _prefab: {fileID: 302692793403659937, guid: 22c54a52c8e921a439302ef1644b2ebd, type: 3}
   _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 0.5647059, g: 1, b: 0.13725491, a: 1}
+  _iconColor: {r: 0.6045301, g: 0.86804396, b: 0.8962264, a: 1}
   _cookieCost: 1
   _upgradeList:
   - {fileID: 11400000, guid: 8099e2ddbf1de974cab0b7e59174c907, type: 2}

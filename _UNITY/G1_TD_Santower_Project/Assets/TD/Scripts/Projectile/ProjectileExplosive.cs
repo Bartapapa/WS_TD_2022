@@ -2,7 +2,6 @@
 {
 	using System.Collections;
 	using System.Collections.Generic;
-	using TMPro;
 	using UnityEngine;
 
 	public class ProjectileExplosive : AProjectile
@@ -11,26 +10,32 @@
 		private float _moveSpeed = 1f;
 
 		[SerializeField]
-		private GameObject _explosionRadius;
+		private SphereCollider _explosionCollider;
 
-		private void Start()
-		{
-			_explosionRadius.SetActive(false);
-		}
+		[SerializeField]
+		private float _explosionRadius = 3;
+
+		[SerializeField]
+		private float _explosionSpeed = 1f;
 
 		private void Update()
 		{
 			MoveForward();
+
+			if (GetHit == true)
+			{
+				_moveSpeed = 0;
+				_explosionCollider.radius = _explosionCollider.radius + _explosionSpeed * Time.deltaTime;
+				if (_explosionCollider.radius >= _explosionRadius)
+				{
+					Destroy(gameObject);
+				}
+			}
 		}
 
 		private void MoveForward()
 		{
 			transform.position = transform.position + _moveSpeed * Time.deltaTime * transform.forward;
-		}
-
-		public override void OnTriggerEnter(Collider other)
-		{
-			
 		}
 	}
 }

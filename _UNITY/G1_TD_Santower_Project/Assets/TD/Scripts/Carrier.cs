@@ -1,12 +1,7 @@
-using Cinemachine.Utility;
 using GSGD1;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 
 public class Carrier : MonoBehaviour
 {
