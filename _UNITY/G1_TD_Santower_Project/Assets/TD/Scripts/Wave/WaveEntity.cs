@@ -14,5 +14,10 @@
 		{
 			_pathFollower.SetPath(path, teleportToFirstWaypoint);
 		}
+
+		public void SetWaypoint(int waypointIndex)
+		{
+			_pathFollower.SetWaypoint(waypointIndex);
+		}
 	}
 }
