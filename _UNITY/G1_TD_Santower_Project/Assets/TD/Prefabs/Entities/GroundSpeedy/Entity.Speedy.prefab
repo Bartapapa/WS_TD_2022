@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2942146037294568419}
   - component: {fileID: 1009619974983960978}
   - component: {fileID: 1307804053467939346}
+  - component: {fileID: -726486302575318509}
   m_Layer: 8
   m_Name: Entity.Speedy
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pathFollower: {fileID: 2942146037294568418}
+  _damageable: {fileID: 0}
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba0414f59d02b14c9fede10a7b20bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyIfGiveDamage: 1
+  _dieIfGiveDamage: 1
   _damage: 1
 --- !u!136 &1307804053467939346
 CapsuleCollider:
@@ -114,6 +116,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-726486302575318509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b9f6c6470262b4fa1ecfc91357f086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageable: {fileID: 0}
+  _cookiesDropped: 1
+  _milkDropped: 0
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0

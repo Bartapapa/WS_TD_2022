@@ -54,6 +54,9 @@
 			{
 				damageable.DamageTaken -= Damageable_OnDamageTaken;
 				damageable.DamageTaken += Damageable_OnDamageTaken;
+
+				damageable.CallerDied -= Damageable_OnCallerDied;
+				damageable.CallerDied += Damageable_OnCallerDied;
 				_damageablesInRange.Add(damageable);
 			}
 		}
@@ -65,16 +68,22 @@
 			if (damageable != null && _damageablesInRange.Contains(damageable) == true && damageable.GetIsFlying == _targetFlyingEnemies)
 			{
 				damageable.DamageTaken -= Damageable_OnDamageTaken;
-				_damageablesInRange.Remove(damageable);
+                damageable.CallerDied -= Damageable_OnCallerDied;
+                _damageablesInRange.Remove(damageable);
 			}
 		}
 
 		private void Damageable_OnDamageTaken(Damageable caller, int currentHealth, int damageTaken)
 		{
-			if (currentHealth <= 0)
-			{
-				_damageablesInRange.Remove(caller);
-			}
+			//if (currentHealth <= 0)
+			//{
+			//	_damageablesInRange.Remove(caller);
+			//}
+		}
+
+		private void Damageable_OnCallerDied(Damageable caller, int currentHealth, int damageTaken)
+		{
+			_damageablesInRange.Remove(caller);
 		}
 
 	}

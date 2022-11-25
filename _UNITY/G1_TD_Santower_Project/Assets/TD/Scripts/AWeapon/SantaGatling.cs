@@ -34,6 +34,11 @@ namespace GSGD1
             _isFiring = true;
         }
 
+        public void GatlingUpgrade()
+        {
+            _timer.Set(0.15f);
+        }
+
     }
 }
 

@@ -41,5 +41,10 @@
 		{
 			_lastLookRotation = transform.rotation;
 		}
+
+		public void UpgradeRotationSpeed(float value)
+		{
+			_rotationSpeed = value;
+		}
 	}
 }
