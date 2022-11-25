@@ -6,14 +6,21 @@
 
 	public class Projectile : AProjectile
 	{
-		private void Update()
+        private void Update()
 		{
 			MoveForward();
 		}
 
 		private void MoveForward()
 		{
-			transform.position = transform.position + _projectileSpeed * Time.deltaTime * transform.forward;
-		}
+            if (_useArtilleryMovement)
+            {
+
+            }
+            else
+            {
+                transform.position = transform.position + _projectileSpeed * Time.deltaTime * transform.forward;
+            }
+        }
 	}
 }

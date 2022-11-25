@@ -17,29 +17,36 @@
 		private float _rotateSpeed = 1f;
 
 		[SerializeField]
-		private float _maxRandoMultiplier = 1.1f;
+		private float _maxSpeedRandoMultiplier = 1.1f;
 
 		[SerializeField]
-		private float _minRandoMultiplier = 0.9f;
+		private float _minSpeedRandoMultiplier = 0.9f;
 
 		[SerializeField]
 		private float _distanceThreshold = 0.5f;
+
+		[SerializeField]
+		private float _destinationPositionRandomness = 2.5f;
 
 		private int _currentPathIndex = 0;
 		private int _waypointIndex = 0;
 	
 		private bool _grosBool = false;
 
+		private Vector3 _nextDestination;
+
 		private void Start()
 		{
-			_moveSpeed = _moveSpeed * Random.Range(_minRandoMultiplier, _maxRandoMultiplier);
+			_moveSpeed = _moveSpeed * Random.Range(_minSpeedRandoMultiplier, _maxSpeedRandoMultiplier);
 		}
 
 		public void SetWaypoint(int indexPath)
 		{
 			_waypointIndex = indexPath;
 			_currentPathIndex = indexPath;
-		}
+
+            SetNewDestination(Vector3.zero);
+        }
 
 		public void SetCanMove(bool canMove)
 		{
@@ -70,16 +77,16 @@
 				SetWaypoint(_waypointIndex);
 				_grosBool = true;
 			}
-			Vector3 nextDestination = _path.Waypoints[_currentPathIndex].position;
 
-			if (Vector3.Distance(transform.position, nextDestination) < _distanceThreshold)
+			if (Vector3.Distance(transform.position, _nextDestination) < _distanceThreshold)
 			{
 				_currentPathIndex = _currentPathIndex + 1;
+				SetNewDestination(Vector3.zero);
 				return;
 			}
 
-			MoveTo(nextDestination);
-			LookAt(nextDestination);
+			MoveTo(_nextDestination);
+			LookAt(_nextDestination);
 		}
 
 		private void MoveTo(Vector3 position)
@@ -96,6 +103,28 @@
 			direction.y = 0;
 			Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
 			transform.rotation =  Quaternion.Slerp(transform.rotation, rotation, _rotateSpeed * Time.deltaTime);
+		}
+
+		private void SetNewDestination(Vector3 position)
+		{
+			if (position == Vector3.zero)
+			{
+                Vector3 randomizedPosition = Vector3.zero;
+                if (_currentPathIndex != 0 && _currentPathIndex != _path.Waypoints.Count - 1)
+                {
+                    randomizedPosition = new Vector3(Random.Range(-_destinationPositionRandomness, _destinationPositionRandomness),
+                                             0,
+                                             Random.Range(-_destinationPositionRandomness, _destinationPositionRandomness));
+                }
+
+                _nextDestination = _path.Waypoints[_currentPathIndex].position + randomizedPosition;
+            }
+			else
+			{
+				_nextDestination = position;
+			}
+
+
 		}
 	}
 }

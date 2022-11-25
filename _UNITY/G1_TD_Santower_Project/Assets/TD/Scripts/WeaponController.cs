@@ -13,14 +13,29 @@
 		[SerializeField]
 		private float _minAngleToFire = 10f;
 
+
+		[Header("Artillery")]
+		[SerializeField]
+		private bool _useArtilleryAiming = false;
+		[SerializeField]
+		private float _artilleryAimHeight = 10f;
+
 		[System.NonSerialized]
 		private Quaternion _lastLookRotation = Quaternion.identity;
 
 		public virtual void LookAt(Vector3 position)
 		{
-			Vector3 direction = (position - transform.position).normalized;
+            Vector3 direction = (position - transform.position).normalized;
+
+            if (_useArtilleryAiming)
+			{
+				direction = ((position + new Vector3(0, _artilleryAimHeight, 0)) - transform.position).normalized;
+			}
+
 			_lastLookRotation = Quaternion.LookRotation(direction, Vector3.up);
 			transform.rotation = Quaternion.Slerp(transform.rotation, _lastLookRotation, _rotationSpeed * Time.deltaTime);
+
+			_weapon.AnchorLookAt(position);
 		}
 
 		public void Fire()

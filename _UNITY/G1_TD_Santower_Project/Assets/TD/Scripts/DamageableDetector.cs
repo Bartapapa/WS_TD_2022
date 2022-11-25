@@ -8,11 +8,12 @@
 		[SerializeField]
 		private bool _targetFlyingEnemies = false;
 
-		[System.NonSerialized]
+		[SerializeField]
 		private List<Damageable> _damageablesInRange = new List<Damageable>();
 
 		public bool HasAnyDamageableInRange()
 		{
+			RemoveNullItemsFromList();
 			return _damageablesInRange.Count > 0;
 		}
 
@@ -45,6 +46,17 @@
 			return _damageablesInRange[shortestDistanceIndex];
 		}
 
+		public void RemoveNullItemsFromList()
+		{
+            for (var i = _damageablesInRange.Count - 1; i > -1; i--)
+            {
+                if (_damageablesInRange[i] == null)
+				{
+                    _damageablesInRange.RemoveAt(i);
+                }   
+            }
+        }
+
 
 		private void OnTriggerEnter(Collider other)
 		{
@@ -75,6 +87,8 @@
 
 		private void Damageable_OnDamageTaken(Damageable caller, int currentHealth, int damageTaken)
 		{
+			//if (!_damageablesInRange.Contains(caller)) return;
+
 			//if (currentHealth <= 0)
 			//{
 			//	_damageablesInRange.Remove(caller);
@@ -83,7 +97,9 @@
 
 		private void Damageable_OnCallerDied(Damageable caller, int currentHealth, int damageTaken)
 		{
-			_damageablesInRange.Remove(caller);
+            if (!_damageablesInRange.Contains(caller)) return;
+
+            _damageablesInRange.Remove(caller);
 		}
 
 	}

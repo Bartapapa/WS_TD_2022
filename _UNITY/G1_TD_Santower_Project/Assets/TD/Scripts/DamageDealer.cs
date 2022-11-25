@@ -11,6 +11,14 @@ public class DamageDealer : MonoBehaviour
 	[SerializeField]
 	private int _damage = 1;
 
+	[SerializeField]
+	private Damageable _damageable;
+
+	private void Awake()
+	{
+		_damageable = GetComponent<Damageable>();
+	}
+
 	protected virtual void OnTriggerEnter(Collider other)
 	{
 		var damageable = other.GetComponentInParent<Damageable>();
@@ -22,7 +30,11 @@ public class DamageDealer : MonoBehaviour
 			if (_dieIfGiveDamage == true)
 			{
 				//A remplacer par Die() du Damageable!
-				damageable.Die();
+				if (_damageable != null)
+				{
+                    _damageable.Die();
+                }
+				
 			}
 		}
 	}

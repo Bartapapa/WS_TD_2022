@@ -16,7 +16,16 @@
         [SerializeField]
         protected float _projectileSpeed = 1f;
 
-        private bool _hitThing = false;
+		[Header("Artillery")]
+        [SerializeField]
+        protected bool _useArtilleryMovement = false;
+        [SerializeField]
+        protected float _maximumProjectileHeight = 10f;
+        [SerializeField]
+        protected LayerMask _enemyLayer;
+        protected bool _isMoving = false;
+
+        protected bool _hitThing = false;
 
 		public bool GetHit{ get { return _hitThing; } }
 

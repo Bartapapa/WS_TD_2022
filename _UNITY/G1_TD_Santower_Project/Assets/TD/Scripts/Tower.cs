@@ -46,11 +46,15 @@
 		{
 			if (_damageableDetector.HasAnyDamageableInRange() == true)
 			{
-				Damageable damageableTarget = _damageableDetector.GetNearestDamageable();
+				Damageable damageableTarget = _damageableDetector.GetFirstDamageable();
 				//_weaponController.LookAt(damageableTarget.GetAimPosition());
 				//_weaponController.Fire();
 
 				_weaponController.LookAtAndFire(damageableTarget.GetAimPosition());
+				if (damageableTarget == null)
+				{
+                    _damageableDetector.RemoveNullItemsFromList();
+                }
 			}
 		}
 

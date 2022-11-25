@@ -66,6 +66,9 @@
 		#endregion Events
 
 		#region Properties
+
+		public float Duration => _duration;
+
 		public State CurrentState
 		{
 			get { return _state; }

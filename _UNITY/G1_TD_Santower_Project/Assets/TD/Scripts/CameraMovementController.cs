@@ -10,7 +10,7 @@ public class CameraMovementController : MonoBehaviour
     [SerializeField]
     private float _cameraSpeed = 5f;
 
-    void Update()
+    void LateUpdate()
     { 
 		transform.position = new Vector3
             (Mathf.Clamp(transform.position.x + _cameraSpeed * Input.GetAxis("Horizontal") * Time.deltaTime,

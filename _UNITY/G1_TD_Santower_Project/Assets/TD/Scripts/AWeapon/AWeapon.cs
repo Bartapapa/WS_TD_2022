@@ -27,6 +27,11 @@
 
 		protected abstract void DoFire();
 
+		public virtual void AnchorLookAt(Vector3 position)
+		{
+
+		}
+
 	}
 
 }
