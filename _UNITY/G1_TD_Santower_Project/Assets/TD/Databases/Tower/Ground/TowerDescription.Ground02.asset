@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78294bca23e774408c13df8115afb72, type: 3}
   m_Name: TowerDescription.Ground02
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 302692793403659937, guid: b9a4d930745f8e641948251aadf67351, type: 3}
+  _prefab: {fileID: 302692793403659937, guid: 22c54a52c8e921a439302ef1644b2ebd, type: 3}
   _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 1, g: 0.9411765, b: 0.2784314, a: 1}
+  _iconColor: {r: 0.12941176, g: 0.6784314, b: 0.36145535, a: 1}
   _cookieCost: 0
   _upgradeList:
   - {fileID: 11400000, guid: eff3f80e19eb0214c8954ea25752f5c2, type: 2}

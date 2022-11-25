@@ -956,6 +956,7 @@ MonoBehaviour:
   _projectile: {fileID: -7937955209939105875, guid: f9a2a08ea60278a41a1b78ab995e558a,
     type: 3}
   _projectileAnchor: {fileID: 302692792940769431}
+  _projectileSpeed: 1
 --- !u!1 &302692792940769428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1043,7 @@ MonoBehaviour:
   _weaponController: {fileID: 302692792590252287}
   _damageableDetector: {fileID: 302692793403659942}
   _selectableObject: {fileID: 1964456534}
-  _towerDescription: {fileID: 11400000, guid: 3c17f69342ee17548aad51beb5e36ac3, type: 2}
+  _towerDescription: {fileID: 11400000, guid: 01be0ded38a120447a6a17298d4352b0, type: 2}
   _totalCookieCost: 0
 --- !u!114 &302692793403659942
 MonoBehaviour:

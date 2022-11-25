@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 199287197}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ProjectileAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 243516339}
   - component: {fileID: 243516338}
   - component: {fileID: 243516337}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh.Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 495719489}
   - component: {fileID: 495719488}
   - component: {fileID: 495719487}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: UpgradePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 547543063}
   - component: {fileID: 547543065}
   - component: {fileID: 547543064}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponController.01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,6 +654,7 @@ MonoBehaviour:
   _projectile: {fileID: 1697648429471405643, guid: a1a1140bdc5abfd4b923056be28d793a,
     type: 3}
   _projectileAnchor: {fileID: 199287197}
+  _projectileSpeed: 1
   _continueFiringDuration: 10
   _isFiring: 0
 --- !u!1 &1244566870
@@ -668,7 +669,7 @@ GameObject:
   - component: {fileID: 1244566874}
   - component: {fileID: 1244566873}
   - component: {fileID: 1244566872}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425160893}
   - component: {fileID: 1425160894}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TowerUpgradeController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,7 +880,7 @@ GameObject:
   - component: {fileID: 302692792171481250}
   - component: {fileID: 302692792171481251}
   - component: {fileID: 302692792171481248}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh.Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1420,7 @@ GameObject:
   - component: {fileID: 302692792590252285}
   - component: {fileID: 302692792590252287}
   - component: {fileID: 302692792590252284}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,6 +1477,7 @@ MonoBehaviour:
   _projectile: {fileID: 1697648429471405643, guid: a1a1140bdc5abfd4b923056be28d793a,
     type: 3}
   _projectileAnchor: {fileID: 302692792940769431}
+  _projectileSpeed: 1
 --- !u!1 &302692792940769428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,7 +1487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 302692792940769431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ProjectileAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1520,7 +1522,7 @@ GameObject:
   - component: {fileID: 302692793403659942}
   - component: {fileID: 302692793403659943}
   - component: {fileID: 302692793403659936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower.GroundBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1563,7 +1565,7 @@ MonoBehaviour:
   _weaponController: {fileID: 547543065}
   _damageableDetector: {fileID: 302692793403659942}
   _selectableObject: {fileID: 1964456534}
-  _towerDescription: {fileID: 11400000, guid: 3c17f69342ee17548aad51beb5e36ac3, type: 2}
+  _towerDescription: {fileID: 11400000, guid: 8099e2ddbf1de974cab0b7e59174c907, type: 2}
   _totalCookieCost: 0
 --- !u!114 &302692793403659942
 MonoBehaviour:
@@ -1619,7 +1621,7 @@ GameObject:
   - component: {fileID: 302692793443834750}
   - component: {fileID: 302692793443834751}
   - component: {fileID: 302692793443834748}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh.Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

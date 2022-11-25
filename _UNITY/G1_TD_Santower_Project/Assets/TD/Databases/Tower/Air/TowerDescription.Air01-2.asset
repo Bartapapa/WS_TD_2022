@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78294bca23e774408c13df8115afb72, type: 3}
   m_Name: TowerDescription.Air01-2
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 302692793403659937, guid: b9a4d930745f8e641948251aadf67351, type: 3}
+  _prefab: {fileID: 302692793403659937, guid: 2e46cd3fd25b93d4a8bd3506cf83d918, type: 3}
   _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 1, g: 0.9411765, b: 0.2784314, a: 1}
+  _iconColor: {r: 1, g: 0.27843142, b: 0.51936245, a: 1}
   _cookieCost: 0
   _upgradeList: []
