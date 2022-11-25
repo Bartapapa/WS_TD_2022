@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1773812474288713663}
   - component: {fileID: 8954739381906307174}
   - component: {fileID: -8901015444460767669}
+  - component: {fileID: -3734891734057249366}
   m_Layer: 8
   m_Name: Entity.MegaHeavy
   m_TagString: Untagged
@@ -51,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pathFollower: {fileID: 2942146037294568418}
+  _damageable: {fileID: 0}
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlying: 0
-  _health: 30
+  _health: 350
   _destroyIfKilled: 1
   _aimPosition: {fileID: 2942146038031326620}
   _deathParticle: {fileID: 6159851731732633496, guid: fad479241fc5cca47b823fc8ac0cd376,
@@ -99,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba0414f59d02b14c9fede10a7b20bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyIfGiveDamage: 1
+  _dieIfGiveDamage: 1
   _damage: 3
 --- !u!136 &8954739381906307174
 CapsuleCollider:
@@ -132,6 +134,21 @@ MonoBehaviour:
     type: 3}
   _explosionRadius: 3
   _explosionSpeed: 100
+--- !u!114 &-3734891734057249366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b9f6c6470262b4fa1ecfc91357f086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageable: {fileID: 0}
+  _cookiesDropped: 0
+  _milkDropped: 1
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0

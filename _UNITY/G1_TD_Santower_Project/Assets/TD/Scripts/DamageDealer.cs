@@ -6,7 +6,7 @@ using UnityEngine;
 public class DamageDealer : MonoBehaviour
 {
 	[SerializeField]
-	private bool _destroyIfGiveDamage = true;
+	private bool _dieIfGiveDamage = true;
 
 	[SerializeField]
 	private int _damage = 1;
@@ -19,10 +19,10 @@ public class DamageDealer : MonoBehaviour
 		{
 			damageable.TakeDamage(_damage);
 
-			if (_destroyIfGiveDamage == true)
+			if (_dieIfGiveDamage == true)
 			{
 				//A remplacer par Die() du Damageable!
-				Destroy(gameObject);
+				damageable.Die();
 			}
 		}
 	}

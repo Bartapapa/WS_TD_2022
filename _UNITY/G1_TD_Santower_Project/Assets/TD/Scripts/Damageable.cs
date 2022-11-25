@@ -84,13 +84,18 @@
 			Destroy(gameObject);
 		}
 
-		private void Die()
+		public void Die()
 		{
 			_callerDied?.Invoke(this, _health, 0);
 
             // A remplacer par les scripts / animation de mort
             var particle = Instantiate(_deathParticle);
             particle.transform.position = transform.position;
+
+			if (_destroyIfKilled)
+			{
+				DoDestroy();
+			}
         }
 	}
 }
