@@ -30,7 +30,7 @@
         public TowerDescription TowerDescription => _towerDescription;
         public int GetTotalCookieCost => _totalCookieCost;
 
-        private void Awake()
+        protected virtual void Awake()
 		{
 			enabled = false;
 			_selectableObject.SetCanBeSelected(false);
@@ -39,7 +39,7 @@
 		public void Enable(bool isEnabled)
 		{
 			enabled = isEnabled;
-            _selectableObject.SetCanBeSelected(true);
+            _selectableObject.SetCanBeSelected(isEnabled);
         }
 
 		private void Update()

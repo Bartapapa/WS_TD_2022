@@ -51,6 +51,7 @@ MonoBehaviour:
   _destroyIfGiveDamage: 0
   _needDamageableToCollide: 0
   _damage: 10
+  _projectileSpeed: 1
   _moveSpeed: 5
   _explosionCollider: {fileID: 1469653270}
   _explosionRadius: 3
@@ -160,7 +161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2c4f40e3409d1d41ad2e1b69db0c2dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

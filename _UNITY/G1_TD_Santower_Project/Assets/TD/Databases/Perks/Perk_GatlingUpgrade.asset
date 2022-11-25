@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Perk_GatlingUpgrade
   m_EditorClassIdentifier: 
   _name: Gatling Upgrade
-  _icon: {fileID: 0}
-  _milkCost: 1
+  _icon: {fileID: 21300000, guid: e6dbeae8714eb9b4a98ea67871b905cd, type: 3}
+  _milkCost: 2

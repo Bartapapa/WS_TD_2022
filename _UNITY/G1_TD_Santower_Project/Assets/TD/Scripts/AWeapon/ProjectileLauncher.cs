@@ -12,9 +12,13 @@
 		[SerializeField]
 		protected Transform _projectileAnchor = null;
 
+		[SerializeField]
+		protected float _projectileSpeed = 1f;
+
 		protected override void DoFire()
 		{
-			var instance = Instantiate(_projectile, _projectileAnchor.position, _projectileAnchor.rotation);
+			AProjectile newProjectile = Instantiate(_projectile, _projectileAnchor.position, _projectileAnchor.rotation);
+			newProjectile.SetProjectileSPeed(_projectileSpeed);
 		}
 	}
 }

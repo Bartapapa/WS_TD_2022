@@ -14,6 +14,8 @@ public class PlayerPerkManager : Singleton<PlayerPerkManager>
 
     public int CurrentPerk => _currentPerk;
 
+    public List<PerkDescription> PerkList => _perkOrder;
+
     public void AcquirePerk(int perkIndex)
     {
         if (ResourceManager.Instance.CanBuy(ResourceManager.ResourceType.Milk, _perkOrder[perkIndex].MilkCost))

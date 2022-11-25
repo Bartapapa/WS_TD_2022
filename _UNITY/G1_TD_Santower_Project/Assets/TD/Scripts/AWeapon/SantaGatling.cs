@@ -10,11 +10,6 @@ namespace GSGD1
         [SerializeField] private bool _isFiring = false;
         private float _continueFiringTimer = 0f;
 
-        protected override void DoFire()
-        {
-            var instance = Instantiate(_projectile, _projectileAnchor.position, _projectileAnchor.rotation);
-        }
-
         protected override void Update()
         {
             base.Update();

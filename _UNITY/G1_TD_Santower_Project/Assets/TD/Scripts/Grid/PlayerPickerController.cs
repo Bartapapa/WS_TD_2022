@@ -147,7 +147,7 @@ namespace GSGD1
                     return;
                 }
 
-                if (Physics.Raycast(ray, out hit, float.MaxValue, _selectableLayer))
+                if (Physics.Raycast(ray, out hit, float.MaxValue, _selectableLayer, QueryTriggerInteraction.Ignore))
                 {
                     SelectableObject selectable = hit.collider.gameObject.GetComponent<SelectableObject>();
                     if (selectable != null)

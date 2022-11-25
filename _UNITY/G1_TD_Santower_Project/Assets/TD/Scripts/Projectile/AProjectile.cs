@@ -13,7 +13,10 @@
 		[SerializeField]
 		private int _damage = 1;
 
-		private bool _hitThing = false;
+        [SerializeField]
+        protected float _projectileSpeed = 1f;
+
+        private bool _hitThing = false;
 
 		public bool GetHit{ get { return _hitThing; } }
 
@@ -39,6 +42,12 @@
 					damageable.TakeDamage(_damage);
 				}
 			}
+		}
+
+		public void SetProjectileSPeed(float value)
+		{
+			Debug.Log("!");
+			_projectileSpeed = value;
 		}
 	}
 }
