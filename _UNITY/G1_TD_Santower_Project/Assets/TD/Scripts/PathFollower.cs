@@ -25,12 +25,10 @@
 		[SerializeField]
 		private float _distanceThreshold = 0.5f;
 
-		[SerializeField]
 		private int _currentPathIndex = 0;
-
-		private bool _grosBool = false;
-		[SerializeField]
 		private int _waypointIndex = 0;
+	
+		private bool _grosBool = false;
 
 		private void Start()
 		{
