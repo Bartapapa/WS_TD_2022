@@ -16,7 +16,7 @@
 		private float _explosionRadius = 3;
 
 		[SerializeField]
-		private float _explosionSpeed = 1f;
+		private float _explosionSpeed = 100;
 
 		private void Update()
 		{
