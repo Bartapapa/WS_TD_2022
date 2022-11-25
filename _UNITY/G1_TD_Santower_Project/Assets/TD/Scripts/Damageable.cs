@@ -70,7 +70,9 @@
 				if (_destroyIfKilled == true)
 				{
 					Die();
+					DoDestroy();
 				}
+				Die();
 			}
 		}
 
@@ -89,7 +91,6 @@
             // A remplacer par les scripts / animation de mort
             var particle = Instantiate(_deathParticle);
             particle.transform.position = transform.position;
-			DoDestroy();
         }
 	}
 }

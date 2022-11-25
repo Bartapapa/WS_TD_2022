@@ -6,6 +6,9 @@ using UnityEngine;
 public class Carrier : MonoBehaviour
 {
 	[SerializeField]
+	private Damageable _damageable;
+
+	[SerializeField]
 	private List<WaveEntity> _waveEntity= new List<WaveEntity>();
 
 	[SerializeField]
@@ -17,7 +20,18 @@ public class Carrier : MonoBehaviour
 
 	private List<GameObject> waypoint = new List<GameObject>();
 
-	private void Start()
+	private void OnEnable()
+	{
+		_damageable.CallerDied -= SpawnProcess;
+		_damageable.CallerDied += SpawnProcess;
+	}
+
+	private void OnDisable()
+	{
+		_damageable.CallerDied -= SpawnProcess;
+	}
+
+	private void SpawnProcess(Damageable damageable, int currentHealth, int damage)
 	{
 		GetPath();
 		GetAllWaypoint();
