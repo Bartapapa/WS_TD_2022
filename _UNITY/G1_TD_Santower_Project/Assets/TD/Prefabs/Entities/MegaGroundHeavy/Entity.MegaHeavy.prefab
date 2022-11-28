@@ -66,11 +66,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
-  _moveSpeed: 0.5
+  _moveSpeed: 2.25
   _rotateSpeed: 5
-  _maxRandoMultiplier: 1.1
-  _minRandoMultiplier: 0.9
+  _maxSpeedRandoMultiplier: 1.1
+  _minSpeedRandoMultiplier: 0.9
   _distanceThreshold: 0.5
+  _destinationPositionRandomness: 2.5
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +90,14 @@ MonoBehaviour:
   _aimPosition: {fileID: 2942146038031326620}
   _deathParticle: {fileID: 6159851731732633496, guid: fad479241fc5cca47b823fc8ac0cd376,
     type: 3}
+  _isDead: 0
+  _isInvulnerable: 0
+  _deathTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
+  _invulnerabilityTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
 --- !u!114 &1773812474288713663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dieIfGiveDamage: 1
   _damage: 3
+  _damageable: {fileID: 0}
 --- !u!136 &8954739381906307174
 CapsuleCollider:
   m_ObjectHideFlags: 0
