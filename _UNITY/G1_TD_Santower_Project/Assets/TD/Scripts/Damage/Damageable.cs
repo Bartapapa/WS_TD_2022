@@ -111,7 +111,10 @@
 
 		public void DoDestroy()
 		{
-			Destroy(gameObject);
+			if (_destroyIfKilled == true)
+			{
+				Destroy(gameObject);
+			}
 		}
 
 		public void Die()

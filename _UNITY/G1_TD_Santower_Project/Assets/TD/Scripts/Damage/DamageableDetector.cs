@@ -9,6 +9,9 @@
 		private bool _targetFlyingEnemies = false;
 
 		[SerializeField]
+		private bool _canOnlyTargetFlyingEnemies = false;
+
+		[SerializeField]
 		private List<Damageable> _damageablesInRange = new List<Damageable>();
 
 		public bool HasAnyDamageableInRange()
@@ -61,8 +64,7 @@
 		private void OnTriggerEnter(Collider other)
 		{
 			Damageable damageable = other.GetComponentInParent<Damageable>();
-
-			if (damageable != null && _damageablesInRange.Contains(damageable) == false && damageable.GetIsFlying == _targetFlyingEnemies)
+			if (damageable != null && _damageablesInRange.Contains(damageable) == false && ((damageable.GetIsFlying == _canOnlyTargetFlyingEnemies) || (_targetFlyingEnemies == true)))
 			{
 				damageable.DamageTaken -= Damageable_OnDamageTaken;
 				damageable.DamageTaken += Damageable_OnDamageTaken;
@@ -77,7 +79,7 @@
 		{
 			Damageable damageable = other.GetComponentInParent<Damageable>();
 
-			if (damageable != null && _damageablesInRange.Contains(damageable) == true && damageable.GetIsFlying == _targetFlyingEnemies)
+			if (damageable != null && _damageablesInRange.Contains(damageable) == true && ((damageable.GetIsFlying == _canOnlyTargetFlyingEnemies) || (_targetFlyingEnemies == true)))
 			{
 				damageable.DamageTaken -= Damageable_OnDamageTaken;
                 damageable.CallerDied -= Damageable_OnCallerDied;

@@ -23,10 +23,10 @@
 		MegaSnowman,
 		MegaAirFat,
 		MegaAirCarrier,
-		Boss1,
-		Boss2,
-		Boss3,
-		Boss4,
+		NutCracker,
+		MerryACarrier,
+		MecaSnowman,
+		PereFouettard,
 	}
 
 	[CreateAssetMenu(menuName = "GameSup/WaveDatabase")]

@@ -936,6 +936,8 @@ MonoBehaviour:
   _weapon: {fileID: 302692792590252284}
   _rotationSpeed: 50
   _minAngleToFire: 5
+  _useArtilleryAiming: 0
+  _artilleryAimHeight: 10
 --- !u!114 &302692792590252284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,6 +999,7 @@ GameObject:
   - component: {fileID: 302692793403659940}
   - component: {fileID: 302692793403659937}
   - component: {fileID: 302692793403659942}
+  - component: {fileID: 5669665028413742142}
   - component: {fileID: 302692793403659943}
   - component: {fileID: 302692793403659936}
   m_Layer: 7
@@ -1055,7 +1058,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a1ba8619da3ff498c03a05e4bde244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetFlyingEnemies: 1
+  _targetFlyingEnemies: 0
+  _canOnlyTargetFlyingEnemies: 1
+  _damageablesInRange: []
+--- !u!114 &5669665028413742142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302692793403659941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e7216910b66044bb7d4fa37b7ab39e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _freezeTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
+  _scriptsToFreeze:
+  - {fileID: 302692793403659937}
+  _isFrozen: 0
+  _freezeSound: {fileID: 0}
+  _unfreezeSound: {fileID: 0}
+  _freezeFX: {fileID: 0}
+  _freezeParticles: {fileID: 0}
 --- !u!135 &302692793403659943
 SphereCollider:
   m_ObjectHideFlags: 0

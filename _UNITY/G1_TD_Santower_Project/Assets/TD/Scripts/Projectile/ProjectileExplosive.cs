@@ -1,34 +1,37 @@
-﻿namespace GSGD1
+﻿    namespace GSGD1
 {
 	using System.Collections;
 	using System.Collections.Generic;
 	using UnityEngine;
 
-	public class ProjectileExplosive : AProjectile
-	{
-		[SerializeField]
-		private SphereCollider _explosionCollider;
+    public class ProjectileExplosive : AProjectile
+    {
+        [SerializeField]
+        private SphereCollider _explosionCollider;
 
-		[SerializeField]
-		private float _explosionRadius = 3;
+        [SerializeField]
+        private float _explosionRadius = 3;
 
-		[SerializeField]
-		private float _explosionSpeed = 100;
+        [SerializeField]
+        private float _explosionSpeed = 100;
 
         private void Update()
-		{
-			MoveForward();
+        {
+            MoveForward();
 
-			if (GetHit == true)
-			{
-				_projectileSpeed = 0;
-				_explosionCollider.radius = _explosionCollider.radius + _explosionSpeed * Time.deltaTime;
-				if (_explosionCollider.radius >= _explosionRadius)
-				{
-					Destroy(gameObject);
-				}
-			}
-		}
+            if (GetHit == true)
+            {
+                _projectileSpeed = 0;
+                _explosionCollider.radius = _explosionCollider.radius + _explosionSpeed * Time.deltaTime;
+                if (_explosionCollider.radius >= _explosionRadius)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+
+		public float ExplosionRadius { set => _explosionRadius = value; }
+		public float ExplosionSpeed { set => _explosionSpeed = value; }
 
 		private void MoveForward()
 		{

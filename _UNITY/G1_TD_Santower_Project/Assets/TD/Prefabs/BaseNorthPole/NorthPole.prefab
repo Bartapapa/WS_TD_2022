@@ -554,6 +554,8 @@ MonoBehaviour:
   _weapon: {fileID: 1516171201}
   _rotationSpeed: 2
   _minAngleToFire: 45
+  _useArtilleryAiming: 0
+  _artilleryAimHeight: 10
 --- !u!114 &1516171201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,7 +951,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a1ba8619da3ff498c03a05e4bde244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetFlyingEnemies: 0
+  _targetFlyingEnemies: 1
+  _canOnlyTargetFlyingEnemies: 0
+  _damageablesInRange: []
 --- !u!135 &7921238031995419534
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1354,6 +1358,14 @@ MonoBehaviour:
   _destroyIfKilled: 1
   _aimPosition: {fileID: 0}
   _deathParticle: {fileID: 0}
+  _isDead: 0
+  _isInvulnerable: 0
+  _deathTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
+  _invulnerabilityTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
 --- !u!54 &4766028707496432326
 Rigidbody:
   m_ObjectHideFlags: 0
