@@ -33,8 +33,8 @@ public class Carrier : MonoBehaviour
 
 	private void SpawnProcess(Damageable damageable, int currentHealth, int damage)
 	{
-		GetPath();
 		GetAllWaypoint();
+		GetPath();
 		SpawnEnemies();
 	}
 
@@ -48,19 +48,22 @@ public class Carrier : MonoBehaviour
 
 	private void GetPath()
 	{
-		var tempGet = waypoint[0];
-		for (int i = 0, length = waypoint.Count; i < length; i++)
+		if (waypoint != null)
 		{
-			float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
-			float targetDistance = Vector3.Distance(tempGet.transform.position, transform.position);
-
-			if (distance < targetDistance)
+			var tempGet = waypoint[0];
+			for (int i = 0, length = waypoint.Count; i < length; i++)
 			{
-				tempGet = waypoint[i];
+				float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
+				float targetDistance = Vector3.Distance(tempGet.transform.position, transform.position);
+
+				if (distance < targetDistance)
+				{
+					tempGet = waypoint[i];
+				}
 			}
+			_waypointIndex = tempGet;
+			_path = _waypointIndex.GetComponentInParent<Path>();
 		}
-		_waypointIndex = tempGet;
-		_path = _waypointIndex.GetComponentInParent<Path>();
 	}
 
 	private int GetWaypointIndexInPath()

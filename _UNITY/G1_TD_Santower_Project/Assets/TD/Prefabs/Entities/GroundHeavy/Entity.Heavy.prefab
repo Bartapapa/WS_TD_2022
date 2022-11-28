@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 2942146037294568419}
-  _explosion: {fileID: -7937955209939105875, guid: f9a2a08ea60278a41a1b78ab995e558a,
+  _explosion: {fileID: -7937955209939105875, guid: a7e9a6826759d794686c1ee8c0b1b6b7,
     type: 3}
   _explosionRadius: 3
   _explosionSpeed: 100

@@ -31,7 +31,8 @@ public class ExplosiveEnemies : MonoBehaviour
 
 	private void Explosion(Damageable damageable, int currentHealth, int damageTaken)
 	{
-		//TODO don't instantiate an artillery projectile now, it's bugged. Find another way to generate explosion.
+		_explosion.ExplosionRadius = _explosionRadius;
+		_explosion.ExplosionSpeed = _explosionSpeed;
 		Instantiate(_explosion, transform.position, Quaternion.identity);
 	}
 }
