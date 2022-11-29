@@ -36,7 +36,7 @@
 			if (damageable != null && _needDamageableToCollide == true)
 			{
 				_hitThing= true;
-				damageable.TakeDamage(_damage);
+				damageable.TakeDamage(_damage, false);
 
 				if (_destroyIfGiveDamage == true)
 				{
@@ -48,14 +48,13 @@
 				_hitThing = true;
 				if (damageable != null)
 				{
-					damageable.TakeDamage(_damage);
+					damageable.TakeDamage(_damage, false);
 				}
 			}
 		}
 
 		public void SetProjectileSPeed(float value)
 		{
-			Debug.Log("!");
 			_projectileSpeed = value;
 		}
 	}

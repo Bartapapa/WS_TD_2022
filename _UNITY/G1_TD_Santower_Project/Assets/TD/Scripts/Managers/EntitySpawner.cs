@@ -27,6 +27,17 @@
 
 		//public event System.Action<EntitySpawner, WaveEntity> EntityDestroyed = null;
 
+		private void OnEnable()
+		{
+			EntitySpawned.RemoveListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
+            EntitySpawned.AddListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
+        }
+
+		private void OnDisable()
+		{
+            EntitySpawned.RemoveListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
+        }
+
 		public void StartWave(Wave wave)
 		{
 			_wave = new Wave(wave);
