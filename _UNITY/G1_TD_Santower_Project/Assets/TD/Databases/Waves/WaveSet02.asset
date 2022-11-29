@@ -34,8 +34,10 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
+    - _entityType: 0
+      _extraDurationAfterSpawned: 10
     - _entityType: 1
       _extraDurationAfterSpawned: 0
     - _entityType: 1
@@ -68,7 +70,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 2
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
     - _entityType: 1
       _extraDurationAfterSpawned: 0
@@ -110,8 +112,10 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
+    - _entityType: 0
+      _extraDurationAfterSpawned: 20
     - _entityType: 1
       _extraDurationAfterSpawned: 0
     - _entityType: 1
@@ -132,8 +136,10 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
+    - _entityType: 0
+      _extraDurationAfterSpawned: 20
     - _entityType: 2
       _extraDurationAfterSpawned: 0
     - _entityType: 2
@@ -184,8 +190,10 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
+    - _entityType: 0
+      _extraDurationAfterSpawned: 20
     - _entityType: 1
       _extraDurationAfterSpawned: 0
     - _entityType: 1
@@ -206,8 +214,10 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
+    - _entityType: 0
+      _extraDurationAfterSpawned: 30
     - _entityType: 1
       _extraDurationAfterSpawned: 0
     - _entityType: 1
@@ -228,10 +238,10 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
-    - _entityType: 1
-      _extraDurationAfterSpawned: 40
+    - _entityType: 0
+      _extraDurationAfterSpawned: 20
     - _entityType: 1
       _extraDurationAfterSpawned: 0
     - _entityType: 1
@@ -242,7 +252,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 8
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
     - _entityType: 5
       _extraDurationAfterSpawned: 0
@@ -253,7 +263,7 @@ MonoBehaviour:
     - _entityType: 5
       _extraDurationAfterSpawned: 0
     - _entityType: 5
-      _extraDurationAfterSpawned: 20
+      _extraDurationAfterSpawned: 10
     - _entityType: 5
       _extraDurationAfterSpawned: 0
     - _entityType: 5
@@ -264,21 +274,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 5
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
-  - _waveEntitiesDescriptions:
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
     - _entityType: 5
       _extraDurationAfterSpawned: 0
@@ -292,15 +288,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 5
       _extraDurationAfterSpawned: 0
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    - _entityType: 5
-      _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
     - _entityType: 5
       _extraDurationAfterSpawned: 0
@@ -322,7 +310,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 5
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
   - _waveEntitiesDescriptions:
     - _entityType: 5
       _extraDurationAfterSpawned: 0
@@ -344,6 +332,30 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 5
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 2
+    _durationBetweenSpawnedEntity: 1
+  - _waveEntitiesDescriptions:
+    - _entityType: 0
+      _extraDurationAfterSpawned: 10
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 5
+      _extraDurationAfterSpawned: 0
+    - _entityType: 6
+      _extraDurationAfterSpawned: 0
+    _durationBetweenSpawnedEntity: 1
   _waitingDurationBefore: 0
   _waitingDurationAfter: 5
