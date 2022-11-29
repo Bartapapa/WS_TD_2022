@@ -34,14 +34,29 @@ namespace GSGD1
 
 		[SerializeField]
 		public UnityEvent<SpawnerManager, SpawnerStatus, int> WaveStatusChanged_UnityEvent = null;
+        public UnityEvent WaveStatusStartedSpawning = null;
+        public UnityEvent WaveStatusFinishedSpawning = null;
+        public UnityEvent WaveStatusEnded = null;
 
-		[System.NonSerialized]
+        [System.NonSerialized]
 		private Coroutine _waitForNextWaveCoroutine;
 
 		public delegate void SpawnerEvent(SpawnerManager sender, SpawnerStatus status, int runningWaveCount);
 		public event SpawnerEvent WaveStatusChanged = null;
 
-		[ContextMenu("Start waves")]
+        [SerializeField]
+        private int _enemiesKilled = 0;
+        [SerializeField]
+        private int _enemiesBombed = 0;
+        [System.NonSerialized]
+        private int _numberOfWaveSets;
+        [System.NonSerialized]
+        private int[] _numberOfEnemiesPerWave;
+
+        [SerializeField]
+        private List<Damageable> _livingEntities = new List<Damageable>();
+
+        [ContextMenu("Start waves")]
 		public void StartWaves()
 		{
 			// Start a new wave set only if there are no currently a wave running
@@ -51,10 +66,33 @@ namespace GSGD1
 			}
 		}
 
+		private void Awake()
+		{
+            _numberOfWaveSets = DatabaseManager.Instance.WaveDatabase.Waves.Count;
+            _numberOfEnemiesPerWave = new int[_numberOfWaveSets];
+
+            for (int i = 0; i < _numberOfWaveSets; i++)
+            {
+                _numberOfEnemiesPerWave[i] = 0;
+
+				for (int x = 0; x < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves.Count; x++)
+				{
+					_numberOfEnemiesPerWave[i] += DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].WaveEntitiesDescription.Count;
+				}
+            }
+
+            for (int i = 0; i < _numberOfEnemiesPerWave.Length; i++)
+            {
+                Debug.Log("WaveSet " + i + " has " + _numberOfEnemiesPerWave[i] + " entities inside.");
+            }
+        }
+
 		public void StartNewWaveSet()
 		{
 			_currentWaveSetIndex += 1;
-			var waveDatabase = DatabaseManager.Instance.WaveDatabase;
+            _enemiesKilled = 0;
+            _enemiesBombed = 0;
+            var waveDatabase = DatabaseManager.Instance.WaveDatabase;
 
 			if (waveDatabase.Waves.Count > _currentWaveSetIndex)
 			{
@@ -92,8 +130,10 @@ namespace GSGD1
 			}
 			else
 			{
-				// No waves left : end game
-			}
+                WaveStatusEnded.Invoke();
+                Debug.Log("No waves left!");
+                // No waves left : end game
+            }
 		}
 
 		private void Spawner_OnWaveEnded(EntitySpawner entitySpawner, Wave wave)
@@ -102,8 +142,8 @@ namespace GSGD1
 
 			_currentWaveRunning -= 1;
 
-			WaveStatusChanged?.Invoke(this, SpawnerStatus.Inactive, _currentWaveRunning);
-			WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.Inactive, _currentWaveRunning);
+			//WaveStatusChanged?.Invoke(this, SpawnerStatus.Inactive, _currentWaveRunning);
+			//WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.Inactive, _currentWaveRunning);
 
 			// should we run a new wave?
 			if (_autoStartNextWaves == true && _currentWaveRunning <= 0)
@@ -134,5 +174,44 @@ namespace GSGD1
 			StartNewWaveSet();
 		}
 
-	}
+        public void RegisterEntity(EntitySpawner entitySpawner, WaveEntity waveEntity)
+        {
+            //This function is linked to the EntitySpawner unityEvent!!
+
+            Damageable damageable = waveEntity.GetComponent<Damageable>();
+            if (damageable != null)
+            {
+                _livingEntities.Add(damageable);
+                damageable.CallerDied -= OnEntityDied;
+                damageable.CallerDied += OnEntityDied;
+            }
+        }
+
+        void OnEntityDied(Damageable caller, int currentHealth, int damageTaken)
+        {
+            _enemiesKilled += 1;
+            _livingEntities.Remove(caller);
+            caller.CallerDied -= OnEntityDied;
+
+            if (_enemiesKilled == _numberOfEnemiesPerWave[_currentWaveSetIndex])
+            {
+                WaveStatusChanged?.Invoke(this, SpawnerStatus.Inactive, 0);
+                WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.Inactive, 0);
+                WaveStatusEnded.Invoke();
+            }
+        }
+
+        public void OnEntityReachedBase(Damageable caller)
+        {
+            //_livingEntities.Remove(caller);
+
+            //if (_enemiesKilled == _numberOfEnemiesPerWave[_currentWaveSetIndex])
+            //{
+            //    WaveStatusChanged?.Invoke(this, SpawnerStatus.Inactive, 0);
+            //    WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.Inactive, 0);
+            //    WaveStatusEnded.Invoke();
+            //}
+        }
+
+    }
 }

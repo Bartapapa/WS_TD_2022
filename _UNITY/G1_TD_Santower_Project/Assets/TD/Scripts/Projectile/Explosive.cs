@@ -17,7 +17,7 @@ public class Explosive : MonoBehaviour
 
 		if (damageable != null)
 		{
-			damageable.TakeDamage(_damage);
+			damageable.TakeDamage(_damage, false);
 
 			if (_destroyIfGiveDamage == true)
 			{
