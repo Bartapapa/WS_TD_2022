@@ -107,7 +107,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2942146037294568417}
   - component: {fileID: 5412690654039449867}
-  - component: {fileID: 2942146037294568418}
   - component: {fileID: 9023189632326442900}
   - component: {fileID: 2942146037294568419}
   - component: {fileID: -520755102994360734}
@@ -148,8 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d29ef42c0d8d6c40bb968b9b716d0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pathFollower: {fileID: 2942146037294568418}
+  _pathFollower: {fileID: 0}
   _damageable: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +169,8 @@ MonoBehaviour:
   _minSpeedRandoMultiplier: 0.9
   _distanceThreshold: 0.5
   _destinationPositionRandomness: 2.5
+=======
+>>>>>>> e26e182ce5d48b0dd73198ded668e26c5f36cc99
 --- !u!114 &9023189632326442900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +184,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 2942146037294568419}
+  _destinationPositionRandomness: 0
+  _moveSpeed: 2
+  _rotateSpeed: 2
+  _distanceThreshold: 0.5
   _spawnIntervale:
     _duration: 0
     _stopWhenCompleted: 1
@@ -197,6 +203,7 @@ MonoBehaviour:
   - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
   - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
   _randomSpawnAmplitude: 1
+  _path: {fileID: 0}
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0
