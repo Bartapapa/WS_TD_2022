@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
-  _moveSpeed: 1
+  _moveSpeed: 9
   _rotateSpeed: 5
   _maxSpeedRandoMultiplier: 1.1
   _minSpeedRandoMultiplier: 0.9
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlying: 0
-  _health: 20
+  _health: 10
   _destroyIfKilled: 1
   _aimPosition: {fileID: 2942146038031326620}
   _deathParticle: {fileID: 6159851731732633496, guid: fad479241fc5cca47b823fc8ac0cd376,
@@ -154,8 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587b90f5dfc12844588a49be3b985bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
   _freezeDuration: 1
+  _speed: 1
+  _distanceThreshold: 0.5
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0

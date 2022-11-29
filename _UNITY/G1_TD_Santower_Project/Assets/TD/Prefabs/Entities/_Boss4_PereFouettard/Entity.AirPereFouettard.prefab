@@ -148,6 +148,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathFollower: {fileID: 0}
   _damageable: {fileID: 0}
+<<<<<<< HEAD:_UNITY/G1_TD_Santower_Project/Assets/TD/Prefabs/Entities/_Boss4_PereFouettard/Entity.AirPereFouettard.prefab
+=======
+--- !u!114 &2942146037294568418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937e91f27fde56244bbb7ec133cc6b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _moveSpeed: 2.4
+  _rotateSpeed: 5
+  _maxSpeedRandoMultiplier: 1.1
+  _minSpeedRandoMultiplier: 0.9
+  _distanceThreshold: 0.5
+  _destinationPositionRandomness: 2.5
+>>>>>>> 6bca4ac2c9331384e2b889c90817105bf60fd77e:_UNITY/G1_TD_Santower_Project/Assets/TD/Prefabs/Entities/_Boss4_PereFouettard/Entity.PereFouettard.prefab
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -150,6 +150,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathFollower: {fileID: 0}
   _damageable: {fileID: 0}
+<<<<<<< HEAD
+--- !u!114 &2942146037294568418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937e91f27fde56244bbb7ec133cc6b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _moveSpeed: 1.8
+  _rotateSpeed: 5
+  _maxSpeedRandoMultiplier: 1.1
+  _minSpeedRandoMultiplier: 0.9
+  _distanceThreshold: 0.5
+  _destinationPositionRandomness: 2.5
+=======
+>>>>>>> e26e182ce5d48b0dd73198ded668e26c5f36cc99
 --- !u!114 &9023189632326442900
 MonoBehaviour:
   m_ObjectHideFlags: 0

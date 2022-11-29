@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
-  _moveSpeed: 0.2
+  _moveSpeed: 1.8
   _rotateSpeed: 5
   _maxSpeedRandoMultiplier: 1
   _minSpeedRandoMultiplier: 1
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlying: 0
-  _health: 2000
+  _health: 100
   _destroyIfKilled: 1
   _aimPosition: {fileID: 2942146038031326620}
   _deathParticle: {fileID: 6159851731732633496, guid: fad479241fc5cca47b823fc8ac0cd376,
