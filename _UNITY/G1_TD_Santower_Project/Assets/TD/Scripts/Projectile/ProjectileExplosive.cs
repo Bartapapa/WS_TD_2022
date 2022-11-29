@@ -10,6 +10,9 @@
         private SphereCollider _explosionCollider;
 
         [SerializeField]
+        private bool _impactNeeded = true;
+
+        [SerializeField]
         private float _explosionRadius = 3;
 
         [SerializeField]
@@ -18,17 +21,26 @@
         private void Update()
         {
             MoveForward();
+            if (_impactNeeded == false)
+            {
+                EXPLOSION();
+            }
 
             if (GetHit == true)
             {
-                _projectileSpeed = 0;
-                _explosionCollider.radius = _explosionCollider.radius + _explosionSpeed * Time.deltaTime;
-                if (_explosionCollider.radius >= _explosionRadius)
-                {
-                    Destroy(gameObject);
-                }
+                EXPLOSION();
             }
         }
+
+        private void EXPLOSION()
+        {
+			_projectileSpeed = 0;
+			_explosionCollider.radius = _explosionCollider.radius + _explosionSpeed * Time.deltaTime;
+			if (_explosionCollider.radius >= _explosionRadius)
+			{
+				Destroy(gameObject);
+			}
+		}
 
 		public float ExplosionRadius { set => _explosionRadius = value; }
 		public float ExplosionSpeed { set => _explosionSpeed = value; }

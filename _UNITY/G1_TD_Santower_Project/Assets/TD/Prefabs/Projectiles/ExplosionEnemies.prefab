@@ -59,6 +59,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _explosionCollider: {fileID: 1469653270}
+  _impactNeeded: 0
   _explosionRadius: 3
   _explosionSpeed: 100
 --- !u!135 &1596334011

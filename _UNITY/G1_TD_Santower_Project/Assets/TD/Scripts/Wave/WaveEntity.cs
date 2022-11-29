@@ -32,12 +32,18 @@
 
         public void SetPath(Path path, bool teleportToFirstWaypoint = true)
 		{
-			_pathFollower.SetPath(path, teleportToFirstWaypoint);
+            if (_pathFollower != null)
+            {
+			    _pathFollower.SetPath(path, teleportToFirstWaypoint);
+            }
 		}
 
 		public void SetWaypoint(int waypointIndex)
 		{
-			_pathFollower.SetWaypoint(waypointIndex);
+            if (_pathFollower != null)
+            {
+			    _pathFollower.SetWaypoint(waypointIndex);
+            }
 		}
 
         public IEnumerator HitFlash(float duration, Color color, float intensityFlash)

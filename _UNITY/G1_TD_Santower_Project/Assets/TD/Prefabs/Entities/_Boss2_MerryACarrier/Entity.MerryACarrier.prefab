@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 2942146037294568417}
   - component: {fileID: 5412690654039449867}
   - component: {fileID: 9023189632326442900}
+  - component: {fileID: 25073061}
   - component: {fileID: 2942146037294568419}
   - component: {fileID: -520755102994360734}
   - component: {fileID: 1773812474288713663}
@@ -184,10 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 2942146037294568419}
-  _destinationPositionRandomness: 0
-  _moveSpeed: 2
-  _rotateSpeed: 2
-  _distanceThreshold: 0.5
+  _randomSpawnAmplitude: 1
   _spawnIntervale:
     _duration: 0
     _stopWhenCompleted: 1
@@ -202,8 +200,26 @@ MonoBehaviour:
   - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
   - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
   - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  _randomSpawnAmplitude: 1
+--- !u!114 &25073061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937e91f27fde56244bbb7ec133cc6b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _path: {fileID: 0}
+  _pathLoop: 1
+  _moveSpeed: 1
+  _rotateSpeed: 1
+  _maxSpeedRandoMultiplier: 1
+  _minSpeedRandoMultiplier: 1
+  _distanceThreshold: 0.5
+  _destinationPositionRandomness: 2.5
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0
