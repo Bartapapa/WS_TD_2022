@@ -60,7 +60,6 @@ public class AbilitySlot : MonoBehaviour
         if (_timer.IsRunning)
         {
             ConvertTimerProgressToCDVisualizer();
-            Debug.Log("!");
         }
     }
 
@@ -85,6 +84,8 @@ public class AbilitySlot : MonoBehaviour
 
     private void OnButtonClicked()
     {
+        //TODO Only initialize cooldown afterwards.
+
         if (!_timer.IsRunning)
         {
             _timer.Start();
