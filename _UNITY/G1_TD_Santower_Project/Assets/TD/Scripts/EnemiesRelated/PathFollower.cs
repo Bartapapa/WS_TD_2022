@@ -30,7 +30,7 @@
 
 		[SerializeField]
 		private float _destinationPositionRandomness = 2.5f;
-
+		[SerializeField]
 		private int _currentPathIndex = 0;
 		private int _waypointIndex = 0;
 	

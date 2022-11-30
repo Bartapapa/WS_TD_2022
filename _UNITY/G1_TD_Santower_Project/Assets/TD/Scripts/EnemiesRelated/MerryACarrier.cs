@@ -16,7 +16,10 @@ public class MerryACarrier : MonoBehaviour
 	private Timer _spawnIntervale;
 
 	[SerializeField]
-	private List<WaveEntity> _waveEntity = new List<WaveEntity>();
+	private List<WaveEntityGroupDescription> _waveEntity = new List<WaveEntityGroupDescription>();
+
+	[SerializeField]
+	private WaveDatabase _waveEntityDatas;
 
 	private PathFollower _pathFollower;
 
@@ -28,7 +31,11 @@ public class MerryACarrier : MonoBehaviour
 
 	private List<GameObject> waypoint = new List<GameObject>();
 
+	private WaveEntity _entity;
+
 	private bool _found = false;
+
+	private bool _dead = false;
 
 	private void OnEnable()
 	{
@@ -63,6 +70,11 @@ public class MerryACarrier : MonoBehaviour
 
 	private void SpawnProcess(Damageable damageable, int currentHealth, int damage)
 	{
+		//if (currentHealth <= 0)
+		//{
+		//	_dead = true;
+		//}
+
 		GetAllWaypoint();
 		GetPath();
 		SpawnEnemies();
@@ -89,8 +101,11 @@ public class MerryACarrier : MonoBehaviour
 					_found = true;
 				}
 
-				float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
-				float targetDistance = Vector3.Distance(tempGet.transform.position, transform.position);
+				RaycastHit hit;
+				Physics.Raycast(transform.position, Vector3.down, out hit, float.MaxValue);
+
+				float distance = Vector3.Distance(waypoint[i].transform.position, hit.transform.position);
+				float targetDistance = Vector3.Distance(tempGet.transform.position, hit.transform.position);
 
 				if (distance < targetDistance)
 				{
@@ -117,8 +132,19 @@ public class MerryACarrier : MonoBehaviour
 
 	private void SpawnEnemies()
 	{
-		for (int i = 0; i < _waveEntity.Count; i++)
+		var moshIndex = 0;
+		if (_dead == true)
 		{
+			moshIndex = 0;
+		}
+		else
+		{
+			moshIndex = Random.Range(1, _waveEntity.Count);
+		}
+
+		for (int y = 0; y < _waveEntity[moshIndex].GetWaves[y].WaveEntitiesDescription.Count; y++)
+		{
+			_waveEntityDatas.GetWaveElementFromType(_waveEntity[moshIndex].GetWaves[y].WaveEntitiesDescription[y].EntityType, out _entity);
 			RaycastHit hit;
 			Physics.Raycast(transform.position, Vector3.down, out hit, float.MaxValue);
 			Vector3 spawnPos = new Vector3(
@@ -126,9 +152,9 @@ public class MerryACarrier : MonoBehaviour
 								hit.transform.position.y,
 								Random.Range(-_randomSpawnAmplitude, _randomSpawnAmplitude) + transform.position.z);
 
-			_waveEntity[i].SetPath(_path, false);
-			_waveEntity[i].SetWaypoint(GetWaypointIndexInPath());
-			Instantiate(_waveEntity[i], spawnPos, Quaternion.identity);
+			_entity.SetPath(_path, false);
+			_entity.SetWaypoint(GetWaypointIndexInPath());
+			Instantiate(_entity, spawnPos, Quaternion.identity);
 		}
 	}
 
