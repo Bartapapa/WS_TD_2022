@@ -4,7 +4,6 @@ namespace GSGD1
 	using System.Collections.Generic;
 	using UnityEngine;
 	using UnityEngine.Events;
-	using UnityEngine.iOS;
 
 	public enum SpawnerIndex
 	{
@@ -79,12 +78,12 @@ namespace GSGD1
 
 				for (int x = 0; x < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves.Count; x++)
 				{
-					for (int y = 0; y < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWEGD.GetWaves.Count; y++)
+					for (int y = 0; y < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWaves.Count; y++)
 					{
-						_numberOfEnemiesPerWave[i] += DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWEGD.GetWaves[y].WaveEntitiesDescription.Count;
+						_numberOfEnemiesPerWave[i] += DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWaves[y].WaveEntitiesDescription.Count;
 					}
-				}	
-			}
+				}
+            }
 
             for (int i = 0; i < _numberOfEnemiesPerWave.Length; i++)
             {
@@ -103,31 +102,36 @@ namespace GSGD1
 			{
 				WaveSet waveSet = waveDatabase.Waves[_currentWaveSetIndex];
 				List<Wave> waves = new List<Wave>();
-				foreach (WaveEntityGroupDescriptionField WEGDef in waveSet.Waves)
+				foreach (WaveEntityGroupDescription WEGDef in waveSet.Waves)
 				{
-					foreach (Wave wave in WEGDef.GetWEGD.GetWaves)
+					foreach (Wave wave in WEGDef.GetWaves)
 					{
 						waves.Add(wave);
 					}
-					Debug.Log(WEGDef.GetWEGD.GetWaves.Count);
+				}
 
-					WaveEntityGroupDescriptionField WEGDF = WEGDef;
-					if (WEGDF.WaypointOverride >= 0)
+				for (int i = 0, length = _spawners.Count; i < length; i++)
+				{
+					if (i >= waves.Count)
 					{
-
+						Debug.LogWarningFormat("{0}.StartNewWaveSet() There are more spawner ({1}) than wave ({2}), discarding wave.", GetType().Name, _spawners.Count, waves.Count);
+						break;
 					}
-
-					for (int i = 0; i < waves.Count; i++)
+					if (waves[i] == null)
 					{
-						_currentWaveRunning += 1;
-						var spawner = _spawners[WEGDF.Spawner];
-						spawner.StartWave(waves[i]);
-						spawner.WaveEnded.RemoveListener(Spawner_OnWaveEnded);
-						spawner.WaveEnded.AddListener(Spawner_OnWaveEnded);
-
-						WaveStatusChanged?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
-						WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
+						Debug.LogWarningFormat("{0}.StartNewWaveSet() Null reference found in WaveSet at index {1}, ignoring.", GetType().Name, i);
+						break;
 					}
+					_currentWaveRunning += 1;
+					var spawner = _spawners[i];
+
+                    //TODO alter the next _spawners[i] w/ the spawner override in the chosen waveset.
+                    spawner.StartWave(waves[i]);
+					spawner.WaveEnded.RemoveListener(Spawner_OnWaveEnded);
+					spawner.WaveEnded.AddListener(Spawner_OnWaveEnded);
+
+					WaveStatusChanged?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
+					WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
 				}
 			}
 			else
