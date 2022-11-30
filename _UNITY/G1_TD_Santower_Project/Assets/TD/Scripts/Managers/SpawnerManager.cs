@@ -26,7 +26,7 @@ namespace GSGD1
 		[SerializeField]
 		private bool _autoStartNextWaves = false;
 
-		[System.NonSerialized]
+		[SerializeField]
 		private int _currentWaveSetIndex = -1;
 
 		[System.NonSerialized]
@@ -78,9 +78,9 @@ namespace GSGD1
 
 				for (int x = 0; x < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves.Count; x++)
 				{
-					for (int y = 0; y < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWaves.Count; y++)
+					for (int y = 0; y < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWEGD.GetWaves.Count; y++)
 					{
-						_numberOfEnemiesPerWave[i] += DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWaves[y].WaveEntitiesDescription.Count;
+						_numberOfEnemiesPerWave[i] += DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWEGD.GetWaves[y].WaveEntitiesDescription.Count;
 					}
 				}
             }
@@ -102,37 +102,55 @@ namespace GSGD1
 			{
 				WaveSet waveSet = waveDatabase.Waves[_currentWaveSetIndex];
 				List<Wave> waves = new List<Wave>();
-				foreach (WaveEntityGroupDescription WEGDef in waveSet.Waves)
+				foreach (WaveEntityGroupDescriptionField WEGDef in waveSet.Waves)
 				{
-					foreach (Wave wave in WEGDef.GetWaves)
+					foreach (Wave wave in WEGDef.GetWEGD.GetWaves)
 					{
 						waves.Add(wave);
 					}
 				}
 
-				for (int i = 0, length = _spawners.Count; i < length; i++)
+                for (int i = 0; i < waveSet.Waves.Count; i++)
 				{
-					if (i >= waves.Count)
-					{
-						Debug.LogWarningFormat("{0}.StartNewWaveSet() There are more spawner ({1}) than wave ({2}), discarding wave.", GetType().Name, _spawners.Count, waves.Count);
-						break;
-					}
-					if (waves[i] == null)
-					{
-						Debug.LogWarningFormat("{0}.StartNewWaveSet() Null reference found in WaveSet at index {1}, ignoring.", GetType().Name, i);
-						break;
-					}
 					_currentWaveRunning += 1;
-					var spawner = _spawners[i];
+					var spawner = _spawners[waveSet.Waves[i].Spawner];
 
-                    //TODO alter the next _spawners[i] w/ the spawner override in the chosen waveset.
-                    spawner.StartWave(waves[i]);
-					spawner.WaveEnded.RemoveListener(Spawner_OnWaveEnded);
-					spawner.WaveEnded.AddListener(Spawner_OnWaveEnded);
+                    for (int x = 0; x < waveSet.Waves[i].GetWEGD.GetWaves.Count; x++)
+					{
+						spawner.StartWave(waveSet.Waves[i].GetWEGD.GetWaves[x]);
+                        spawner.WaveEnded.RemoveListener(Spawner_OnWaveEnded);
+                        spawner.WaveEnded.AddListener(Spawner_OnWaveEnded);
 
-					WaveStatusChanged?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
-					WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
+                        WaveStatusChanged?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
+                        WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
+                    }
 				}
+
+
+
+				//for (int i = 0, length = _spawners.Count; i < length; i++)
+				//{
+				//	if (i >= waves.Count)
+				//	{
+				//		Debug.LogWarningFormat("{0}.StartNewWaveSet() There are more spawner ({1}) than wave ({2}), discarding wave.", GetType().Name, _spawners.Count, waves.Count);
+				//		break;
+				//	}
+				//	if (waves[i] == null)
+				//	{
+				//		Debug.LogWarningFormat("{0}.StartNewWaveSet() Null reference found in WaveSet at index {1}, ignoring.", GetType().Name, i);
+				//		break;
+				//	}
+				//	_currentWaveRunning += 1;
+				//	var spawner = _spawners[i];
+
+    //                //TODO alter the next _spawners[i] w/ the spawner override in the chosen waveset.
+    //                spawner.StartWave(waves[i]);
+				//	spawner.WaveEnded.RemoveListener(Spawner_OnWaveEnded);
+				//	spawner.WaveEnded.AddListener(Spawner_OnWaveEnded);
+
+				//	WaveStatusChanged?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
+				//	WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
+				//}
 			}
 			else
 			{

@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: WaveSet00
   m_EditorClassIdentifier: 
   _waves:
-  - {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56, type: 2}
-  - {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56, type: 2}
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56,
+      type: 2}
+    _spawnerIndex: 0
+    _waypointOverride: -1
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56,
+      type: 2}
+    _spawnerIndex: 1
+    _waypointOverride: -1
   _waitingDurationBefore: 0
   _waitingDurationAfter: 5

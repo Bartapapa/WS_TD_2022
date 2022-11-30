@@ -28,7 +28,10 @@
 		[System.NonSerialized]
 		private List<WaveEntity> _runtimeWaveEntities = new List<WaveEntity>();
 
-		public UnityEvent<EntitySpawner, Wave> WaveStarted = null;
+        [System.NonSerialized]
+        private Queue<Wave> _waveQueue = new Queue<Wave>();
+
+        public UnityEvent<EntitySpawner, Wave> WaveStarted = null;
 		public UnityEvent<EntitySpawner, Wave> WaveEnded = null;
 		public UnityEvent<EntitySpawner, WaveEntity> EntitySpawned = null;
 
@@ -60,8 +63,26 @@
 
 		public void StartWave(Wave wave)
 		{
-			_wave = new Wave(wave);
-			Debug.Log(_wave.WaveEntitiesDescription.Count);
+			Debug.Log("new wave!");
+
+			if (_wave != null)
+			{
+				if (_wave.HasWaveElementsLeft == true)
+				{
+					_waveQueue.Enqueue(wave);
+                    Debug.Log("wave enqueued!");
+                    //Queue new wave.
+                    return;
+				}
+				else
+				{
+                    _wave = new Wave(wave);
+                }
+			}
+			else
+			{
+                _wave = new Wave(wave);
+            }
 			_timer.Set(wave.DurationBetweenSpawnedEntity).Start();
 			WaveStarted?.Invoke(this, wave);
 			InstantiateNextWaveElement();
@@ -79,7 +100,7 @@
 		{
 			if (_wave.HasWaveElementsLeft == true)
 			{
-				var nextEntity = _wave.GetNextWaveElement();
+                var nextEntity = _wave.GetNextWaveElement();
 
 				if (DatabaseManager.Instance.WaveDatabase.GetWaveElementFromType(nextEntity.EntityType, out WaveEntity outEntity) == true)
 				{
@@ -107,6 +128,9 @@
 			else
 			{
 				WaveEnded?.Invoke(this, _wave);
+				//if (_waveQueue.Contains(_wave)) _waveQueue.Dequeue();
+				if (_waveQueue.Count >= 1) StartWave(GetNextWave());
+				//TODO if there are any waves in queue, then StartWave(next wave in queue);
 			}
 		}
 
@@ -144,5 +168,14 @@
 
 			_currentSpawnIndex = index;
 		}
-	}
+        public Wave PeekNextWave()
+        {
+            return _waveQueue.Count != 0 ? _waveQueue.Peek() : null;
+        }
+
+        public Wave GetNextWave()
+        {
+            return _waveQueue.Count != 0 ? _waveQueue.Dequeue() : null;
+        }
+    }
 }
