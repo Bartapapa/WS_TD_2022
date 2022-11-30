@@ -97,7 +97,14 @@ namespace GSGD1
 			if (waveDatabase.Waves.Count > _currentWaveSetIndex)
 			{
 				WaveSet waveSet = waveDatabase.Waves[_currentWaveSetIndex];
-				List<Wave> waves = waveSet.Waves;
+				List<Wave> waves = new List<Wave>();
+				foreach (WaveEntityGroupDescription WEGDef in waveSet.Waves)
+				{
+					foreach (Wave wave in WEGDef.GetWaves)
+					{
+						waves.Add(wave);
+					}
+				}
 
 				for (int i = 0, length = _spawners.Count; i < length; i++)
 				{
