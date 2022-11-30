@@ -33,16 +33,24 @@ public class Carrier : MonoBehaviour
 
 	private void SpawnProcess(Damageable damageable, int currentHealth, int damage)
 	{
-		GetAllWaypoint();
+		GetAllWaypoint(false);
 		GetPath();
 		SpawnEnemies();
 	}
 
-	private void GetAllWaypoint()
+	private void GetAllWaypoint(bool findMerryPath)
 	{
+		waypoint.Clear();
 		foreach (GameObject Waypoint in GameObject.FindGameObjectsWithTag("Waypoint"))
 		{
-			waypoint.Add(Waypoint);
+			if (Waypoint.GetComponentInParent<MerryPath>() == false)
+			{
+				waypoint.Add(Waypoint);
+			}
+			else if (findMerryPath == true)
+			{
+				waypoint.Add(Waypoint);
+			}
 		}
 	}
 
@@ -53,7 +61,10 @@ public class Carrier : MonoBehaviour
 			var tempGet = waypoint[0];
 			for (int i = 0, length = waypoint.Count; i < length; i++)
 			{
-				float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
+                RaycastHit hit;
+                Physics.Raycast(transform.position, Vector3.down, out hit, float.MaxValue);
+
+                float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
 				float targetDistance = Vector3.Distance(tempGet.transform.position, transform.position);
 
 				if (distance < targetDistance)
@@ -68,24 +79,26 @@ public class Carrier : MonoBehaviour
 
 	private int GetWaypointIndexInPath()
 	{
-		int temp = 0;
+		int index = 0;
 		for (int i = 0; i < _path.Waypoints.Count; i++)
 		{
 			if (_path.Waypoints[i].transform.position == _waypointIndex.transform.position)
 			{
-				temp = i;
+				index = i;
 			}
 		}
-		return temp;
+		return index;
 	}
 
 	private void SpawnEnemies()
 	{
 		for (int i = 0; i < _waveEntity.Count; i++)
 		{
-			Vector3 spawnPos = new Vector3(
+            RaycastHit hit;
+            Physics.Raycast(transform.position, Vector3.down, out hit, float.MaxValue);
+            Vector3 spawnPos = new Vector3(
 								Random.Range(-_randomSpawnAmplitude, _randomSpawnAmplitude) + transform.position.x,
-								transform.position.y,
+								hit.transform.position.y,
 								Random.Range(-_randomSpawnAmplitude, _randomSpawnAmplitude) + transform.position.z);
 
 			_waveEntity[i].SetPath(_path, false);

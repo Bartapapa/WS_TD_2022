@@ -15,8 +15,12 @@
         [SerializeField]
         private float _explosionRadius = 3;
 
-        [SerializeField]
-        private float _explosionSpeed = 100;
+        private float _explosionSpeed = 33;
+
+        private void Start()
+        {
+            ExplosionSpeed = _explosionSpeed * _explosionRadius;
+        }
 
         private void Update()
         {
