@@ -10,16 +10,7 @@ public class MerryACarrier : MonoBehaviour
 	private Damageable _damageable;
 
 	[SerializeField]
-	private float _destinationPositionRandomness = 0;
-
-	[SerializeField]
-	private float _moveSpeed = 2f;
-	
-	[SerializeField]
-	private float _rotateSpeed = 2f;
-
-	[SerializeField]
-	private float _distanceThreshold = 0.5f;
+	private float _randomSpawnAmplitude = 1.0f;
 
 	[SerializeField]
 	private Timer _spawnIntervale;
@@ -27,21 +18,17 @@ public class MerryACarrier : MonoBehaviour
 	[SerializeField]
 	private List<WaveEntity> _waveEntity = new List<WaveEntity>();
 
-	[SerializeField]
-	private float _randomSpawnAmplitude = 1.0f;
+	private PathFollower _pathFollower;
 
-	[SerializeField]
-	private Path _merryPath;
-	
 	private Path _path;
+
+	private Path _merryPath;
 
 	private GameObject _waypointIndex;
 
 	private List<GameObject> waypoint = new List<GameObject>();
 
-	private int _currentPathIndex = 0;
-
-	private Vector3 _nextDestination;
+	private bool _found = false;
 
 	private void OnEnable()
 	{
@@ -57,12 +44,19 @@ public class MerryACarrier : MonoBehaviour
 	}
 	private void Update()
 	{
+		if (_found == false)
+		{
+			_pathFollower = GetComponent<PathFollower>();
+			GetAllWaypoint();
+			GetPath();
+			_pathFollower.SetPath(_merryPath, false);
+		}
+
 		_spawnIntervale.Update();
 		if (_spawnIntervale.Progress >= 1)
 		{
 			SpawnProcess(_damageable, 1, 1);
 		}
-		UpdateMovement();
 	}
 
 	#region Spawn Process
@@ -89,6 +83,12 @@ public class MerryACarrier : MonoBehaviour
 			var tempGet = waypoint[0];
 			for (int i = 0, length = waypoint.Count; i < length; i++)
 			{
+				if (waypoint[i].GetComponentInParent<MerryPath>() == true && _found == false)
+				{
+					_merryPath = waypoint[i].GetComponentInParent<Path>();
+					_found = true;
+				}
+
 				float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
 				float targetDistance = Vector3.Distance(tempGet.transform.position, transform.position);
 
@@ -134,67 +134,4 @@ public class MerryACarrier : MonoBehaviour
 
 	#endregion Spawn Process
 
-	#region Movement
-
-	private void UpdateMovement()
-	{
-		if (_merryPath == null)
-		{
-			return;
-		}
-
-		if (Vector3.Distance(transform.position, _nextDestination) < _distanceThreshold && _currentPathIndex < _merryPath.Waypoints.Count)
-		{
-			_currentPathIndex = _currentPathIndex + 1;
-			SetNewDestination(Vector3.zero);
-			return;
-		}
-
-		if (Vector3.Distance(transform.position, _nextDestination) < _distanceThreshold && _currentPathIndex >= _merryPath.Waypoints.Count)
-		{
-			_currentPathIndex = 0;
-			SetNewDestination(Vector3.zero);
-			return;
-		}
-
-		MoveTo(_nextDestination);
-		LookAt(_nextDestination);
-	}
-
-	private void MoveTo(Vector3 position)
-	{
-		Vector3 movement = (position - transform.position).normalized * _moveSpeed * Time.deltaTime;
-		transform.position += movement;
-	}
-
-	private void LookAt(Vector3 position)
-	{
-		//transform.LookAt(position, Vector3.up);
-
-		Vector3 direction = position - transform.position;
-		direction.y = 0;
-		Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-		transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _rotateSpeed * Time.deltaTime);
-	}
-
-	private void SetNewDestination(Vector3 position)
-	{
-		if (position == Vector3.zero)
-		{
-			Vector3 randomizedPosition = new Vector3(
-								   Random.Range(-_destinationPositionRandomness, _destinationPositionRandomness),
-								   0,
-								   Random.Range(-_destinationPositionRandomness, _destinationPositionRandomness));
-
-			_nextDestination = _merryPath.Waypoints[_currentPathIndex].position + randomizedPosition;
-		}
-		else
-		{
-			_nextDestination = position;
-		}
-
-
-	}
-
-	#endregion Movement
 }

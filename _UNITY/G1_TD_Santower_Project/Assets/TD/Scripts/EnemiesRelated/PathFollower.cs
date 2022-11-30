@@ -11,6 +11,9 @@
 		private Path _path = null;
 
 		[SerializeField]
+		private bool _pathLoop = false;
+
+		[SerializeField]
 		private float _moveSpeed = 1f;
 
 		[SerializeField]
@@ -78,9 +81,15 @@
 				_grosBool = true;
 			}
 
-			if (Vector3.Distance(transform.position, _nextDestination) < _distanceThreshold)
+			if (Vector3.Distance(transform.position, _nextDestination) < _distanceThreshold && _currentPathIndex < _path.Waypoints.Count - 1)
 			{
 				_currentPathIndex = _currentPathIndex + 1;
+				SetNewDestination(Vector3.zero);
+				return;
+			}
+			else if (Vector3.Distance(transform.position, _nextDestination) < _distanceThreshold && _currentPathIndex >= _path.Waypoints.Count - 1 && _pathLoop == true)
+			{
+				_currentPathIndex = 0;
 				SetNewDestination(Vector3.zero);
 				return;
 			}
@@ -110,11 +119,12 @@
 			if (position == Vector3.zero)
 			{
                 Vector3 randomizedPosition = Vector3.zero;
-                if (_currentPathIndex != 0 && _currentPathIndex != _path.Waypoints.Count - 1)
+                if (_currentPathIndex != 0 && _currentPathIndex != _path.Waypoints.Count - 1 && _pathLoop == false)
                 {
-                    randomizedPosition = new Vector3(Random.Range(-_destinationPositionRandomness, _destinationPositionRandomness),
-                                             0,
-                                             Random.Range(-_destinationPositionRandomness, _destinationPositionRandomness));
+                    randomizedPosition = new Vector3(
+											Random.Range(-_destinationPositionRandomness, _destinationPositionRandomness),
+                                            0,
+                                            Random.Range(-_destinationPositionRandomness, _destinationPositionRandomness));
                 }
 
                 _nextDestination = _path.Waypoints[_currentPathIndex].position + randomizedPosition;
@@ -123,8 +133,6 @@
 			{
 				_nextDestination = position;
 			}
-
-
 		}
 	}
 }
