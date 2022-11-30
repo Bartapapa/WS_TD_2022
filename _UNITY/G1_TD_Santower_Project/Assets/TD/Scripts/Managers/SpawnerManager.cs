@@ -71,13 +71,17 @@ namespace GSGD1
             _numberOfWaveSets = DatabaseManager.Instance.WaveDatabase.Waves.Count;
             _numberOfEnemiesPerWave = new int[_numberOfWaveSets];
 
+			// go through each layer of WaveSet > WaveEntityGroupDescription > Wave > WaveEntitiesDescription to get exacte number of entities in each WaveSet
             for (int i = 0; i < _numberOfWaveSets; i++)
             {
                 _numberOfEnemiesPerWave[i] = 0;
 
 				for (int x = 0; x < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves.Count; x++)
 				{
-					_numberOfEnemiesPerWave[i] += DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].WaveEntitiesDescription.Count;
+					for (int y = 0; y < DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWaves.Count; y++)
+					{
+						_numberOfEnemiesPerWave[i] += DatabaseManager.Instance.WaveDatabase.Waves[i].Waves[x].GetWaves[y].WaveEntitiesDescription.Count;
+					}
 				}
             }
 
