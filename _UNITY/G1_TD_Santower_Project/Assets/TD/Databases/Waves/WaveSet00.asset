@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: WaveSet00
   m_EditorClassIdentifier: 
   _waves:
+<<<<<<< HEAD
+  - _waveEntitiesDescriptions:
+    - _entityType: 16
+      _extraDurationAfterSpawned: 30
+    _durationBetweenSpawnedEntity: 1
+=======
   - {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56, type: 2}
   - {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56, type: 2}
+>>>>>>> 4fed94cb886d598d32321087740ce9d489e65541
   _waitingDurationBefore: 0
-  _waitingDurationAfter: 5
+  _waitingDurationAfter: 0
