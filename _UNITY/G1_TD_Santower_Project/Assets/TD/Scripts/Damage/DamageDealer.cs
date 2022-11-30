@@ -25,7 +25,7 @@ public class DamageDealer : MonoBehaviour
 
 		if (damageable != null)
 		{
-			damageable.TakeDamage(_damage);
+			damageable.TakeDamage(_damage, true);
 
 			if (_dieIfGiveDamage == true)
 			{

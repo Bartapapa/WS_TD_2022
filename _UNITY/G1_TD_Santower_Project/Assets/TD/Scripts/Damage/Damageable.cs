@@ -34,6 +34,7 @@
 		public delegate void DamageableEvent(Damageable caller, int currentHealth, int damageTaken);
 		private event DamageableEvent _damageTaken = null;
 		private event DamageableEvent _callerDied = null;
+		private event DamageableEvent _northPoleBombed = null;
 
 		private void Awake()
 		{
@@ -66,7 +67,20 @@
             }
         }
 
-		private void Update()
+        public event DamageableEvent NorthPoleBombed
+        {
+            add
+            {
+                _northPoleBombed -= value;
+                _northPoleBombed += value;
+            }
+            remove
+            {
+                _northPoleBombed -= value;
+            }
+        }
+
+        private void Update()
 		{
 			_deathTimer.Update();
 			_invulnerabilityTimer.Update();
@@ -92,7 +106,7 @@
 				return transform.position;
 		}
 
-		public void TakeDamage(int damage)
+		public void TakeDamage(int damage, bool bombNorthPole)
 		{
 			if (_isInvulnerable) return;
 
@@ -103,6 +117,11 @@
             if (_health <= 0)
 			{
 				Die();
+			}
+
+			if (bombNorthPole)
+			{
+				_northPoleBombed?.Invoke(this, _health, damage);
 			}
 		}
 
