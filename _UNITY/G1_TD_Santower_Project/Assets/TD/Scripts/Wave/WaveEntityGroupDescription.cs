@@ -8,6 +8,10 @@ public class WaveEntityGroupDescription : ScriptableObject
 {
 	[SerializeField]
 	private List<Wave> _waves = new List<Wave>();
+	
+	private Path _path;
 
 	public List<Wave> GetWaves => _waves;
+
+	public Path Path => _path;
 }
