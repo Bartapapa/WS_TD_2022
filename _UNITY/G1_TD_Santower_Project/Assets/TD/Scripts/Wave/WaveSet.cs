@@ -8,22 +8,29 @@
 #endif //UNITY_EDITOR
 
 	[System.Serializable]
-	public class WaveEntityGroupDescriptionField : MonoBehaviour
+	public class WaveEntityGroupDescriptionField
 	{
 		[SerializeField]
 		private WaveEntityGroupDescription _waveEntityGroupDescription;
 
 		[SerializeField]
-		private int _spawnerIndex = 0;
+		private int _spawnerIndex;
+
+		[SerializeField]
+		private int _waypointOverride = -1;
 
 		public WaveEntityGroupDescription GetWEGD => _waveEntityGroupDescription;
+
+		public int Spawner => _spawnerIndex;
+
+		public int WaypointOverride => _waypointOverride;
 	}
 
 	[CreateAssetMenu(menuName = "GameSup/WaveSet")]
 	public class WaveSet : ScriptableObject
 	{
 		[SerializeField]
-		private List<WaveEntityGroupDescription> _waves = null;
+		private List<WaveEntityGroupDescriptionField> _waves = null;	
 
 		[SerializeField]
 		private float _waitingDurationBefore = 0f;
@@ -31,7 +38,7 @@
 		[SerializeField]
 		private float _waitingDurationAfter = 5f;
 
-		public List<WaveEntityGroupDescription> Waves => _waves;
+		public List<WaveEntityGroupDescriptionField> Waves => _waves;
 
 		public float WaitingDurationBefore => _waitingDurationBefore;
 		public float WaitingDurationAfter => _waitingDurationAfter;
@@ -41,9 +48,9 @@
 			float duration = 0;
 			for (int i = 0, length = _waves.Count; i < length; i++)
 			{
-				foreach (Wave wave in _waves[i].GetWaves)
-				{
-					duration += wave.GetWaveDuration();	
+				foreach (Wave wave in _waves[i].GetWEGD.GetWaves)
+				{ 
+					duration += wave.GetWaveDuration();
 				}
 			}
 			return duration + _waitingDurationBefore + _waitingDurationAfter;

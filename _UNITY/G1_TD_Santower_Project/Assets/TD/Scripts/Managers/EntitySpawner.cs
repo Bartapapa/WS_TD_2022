@@ -41,6 +41,7 @@
 		public void StartWave(Wave wave)
 		{
 			_wave = new Wave(wave);
+			Debug.Log(_wave.WaveEntitiesDescription.Count);
 			_timer.Set(wave.DurationBetweenSpawnedEntity).Start();
 			WaveStarted?.Invoke(this, wave);
 			InstantiateNextWaveElement();
