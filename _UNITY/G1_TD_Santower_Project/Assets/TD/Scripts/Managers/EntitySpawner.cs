@@ -12,6 +12,13 @@
 		[SerializeField]
 		private Path _path = null;
 
+		[Header("Spawn index")]
+		[SerializeField]
+		//readonly
+		private int _currentSpawnIndex = -1;
+		[SerializeField]
+		private List<Transform> _phaseWaypointSpawns = new List<Transform>();
+
 		[System.NonSerialized]
 		private Timer _timer = new Timer();
 
@@ -27,15 +34,28 @@
 
 		//public event System.Action<EntitySpawner, WaveEntity> EntityDestroyed = null;
 
+		private void Awake()
+		{
+			if (_phaseWaypointSpawns.Count < 4)
+			{
+				Debug.Log(this + "does not have designated phase waypoints for all phases, please fix.");
+			}
+		}
+
 		private void OnEnable()
 		{
 			EntitySpawned.RemoveListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
-            EntitySpawned.AddListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
+			EntitySpawned.AddListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
+
+            GameManager.Instance._gamePhaseChanged -= OnGamePhaseChanged;
+            GameManager.Instance._gamePhaseChanged += OnGamePhaseChanged;
         }
 
 		private void OnDisable()
 		{
             EntitySpawned.RemoveListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
+
+            GameManager.Instance._gamePhaseChanged -= OnGamePhaseChanged;
         }
 
 		public void StartWave(Wave wave)
@@ -63,7 +83,18 @@
 				if (DatabaseManager.Instance.WaveDatabase.GetWaveElementFromType(nextEntity.EntityType, out WaveEntity outEntity) == true)
 				{
 					outEntity = InstantiateEntity(outEntity);
-					outEntity.SetPath(_path);
+
+					if (_currentSpawnIndex <= 0)
+					{
+                        outEntity.SetPath(_path);
+                    }
+					else
+					{
+						outEntity.SetPath(_path, false);
+						outEntity.transform.position = _path.Waypoints[_currentSpawnIndex].position;
+                    }
+
+					//TODO Place waypoint-spawning code here.
 					_timer.Set(_wave.DurationBetweenSpawnedEntity + nextEntity.ExtraDurationAfterSpawned).Start();
 				}
 				else
@@ -94,6 +125,23 @@
 					InstantiateNextWaveElement();
 				}
 			}
+		}
+
+		private void OnGamePhaseChanged(GameManager.GamePhase fromPhase, GameManager.GamePhase toPhase)
+		{
+			int spawnIndex = ((int)toPhase) - 1;
+			SetCurrentSpawnIndex(spawnIndex);
+        }
+
+		public void SetCurrentSpawnIndex(int index)
+		{
+			if (index > _phaseWaypointSpawns.Count - 1)
+			{
+				Debug.Log("Index given is superior to the number of waypoints in phaseWaypointSpawns, ignoring");
+				return;
+			}
+
+			_currentSpawnIndex = index;
 		}
 	}
 }

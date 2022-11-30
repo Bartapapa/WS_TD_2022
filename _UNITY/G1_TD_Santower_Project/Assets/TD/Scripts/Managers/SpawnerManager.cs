@@ -124,7 +124,9 @@ namespace GSGD1
 					}
 					_currentWaveRunning += 1;
 					var spawner = _spawners[i];
-					spawner.StartWave(waves[i]);
+
+                    //TODO alter the next _spawners[i] w/ the spawner override in the chosen waveset.
+                    spawner.StartWave(waves[i]);
 					spawner.WaveEnded.RemoveListener(Spawner_OnWaveEnded);
 					spawner.WaveEnded.AddListener(Spawner_OnWaveEnded);
 
