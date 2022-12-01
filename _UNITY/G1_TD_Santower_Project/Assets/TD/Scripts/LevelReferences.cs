@@ -12,7 +12,12 @@ namespace GSGD1
 		[SerializeField]
 		private SpawnerManager _spawnerManager = null;
 
+		[SerializeField]
+		private Damageable _northPole = null;
+
 		public PlayerPickerController PlayerPickerController => _playerPickerController;
 		public SpawnerManager SpawnerManager => _spawnerManager;
+
+		public Damageable NorthPole => _northPole;
 	}
 }

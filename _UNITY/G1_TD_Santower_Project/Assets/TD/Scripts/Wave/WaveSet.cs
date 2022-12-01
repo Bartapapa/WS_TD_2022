@@ -16,14 +16,9 @@
 		[SerializeField]
 		private int _spawnerIndex;
 
-		[SerializeField]
-		private int _waypointOverride = -1;
-
 		public WaveEntityGroupDescription GetWEGD => _waveEntityGroupDescription;
 
 		public int Spawner => _spawnerIndex;
-
-		public int WaypointOverride => _waypointOverride;
 	}
 
 	[CreateAssetMenu(menuName = "GameSup/WaveSet")]

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ability_RPG
   m_EditorClassIdentifier: 
   _name: RPG
-  _targetingReticle: {fileID: 11400000, guid: 34af3137731e6614e981eedcfd79aadc, type: 2}
+  _targetingReticle: {fileID: 11400000, guid: 99ffe57fc9ab91e479329edf25202bcb, type: 2}
   _icon: {fileID: 21300000, guid: ea57e75e6a1260941a1a3bf39f33549b, type: 3}
   _coolDown: 20

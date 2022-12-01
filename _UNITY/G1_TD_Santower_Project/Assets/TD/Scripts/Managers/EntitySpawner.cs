@@ -50,28 +50,24 @@
 			EntitySpawned.RemoveListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
 			EntitySpawned.AddListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
 
-            GameManager.Instance._gamePhaseChanged -= OnGamePhaseChanged;
-            GameManager.Instance._gamePhaseChanged += OnGamePhaseChanged;
+            GameManager.Instance.GamePhaseChangeEvent_UE.RemoveListener(OnGamePhaseChanged);
+            GameManager.Instance.GamePhaseChangeEvent_UE.AddListener(OnGamePhaseChanged);
         }
 
 		private void OnDisable()
 		{
             EntitySpawned.RemoveListener(LevelReferences.Instance.SpawnerManager.RegisterEntity);
 
-            GameManager.Instance._gamePhaseChanged -= OnGamePhaseChanged;
+            GameManager.Instance.GamePhaseChangeEvent_UE.RemoveListener(OnGamePhaseChanged);
         }
 
 		public void StartWave(Wave wave)
 		{
-			Debug.Log("new wave!");
-
 			if (_wave != null)
 			{
 				if (_wave.HasWaveElementsLeft == true)
 				{
 					_waveQueue.Enqueue(wave);
-                    Debug.Log("wave enqueued!");
-                    //Queue new wave.
                     return;
 				}
 				else
@@ -82,6 +78,7 @@
 			else
 			{
                 _wave = new Wave(wave);
+                LevelReferences.Instance.SpawnerManager.AddCurrentWaveRunning();
             }
 			_timer.Set(wave.DurationBetweenSpawnedEntity).Start();
 			WaveStarted?.Invoke(this, wave);
@@ -106,17 +103,15 @@
 				{
 					outEntity = InstantiateEntity(outEntity);
 
-					if (_currentSpawnIndex <= 0)
-					{
+                    if (_currentSpawnIndex <= 0)
+                    {
                         outEntity.SetPath(_path);
                     }
-					else
-					{
-						outEntity.SetPath(_path, false);
-						outEntity.transform.position = _path.Waypoints[_currentSpawnIndex].position;
+                    else
+                    {
+                        outEntity.SetPath(_path, false);
+                        outEntity.transform.position = _phaseWaypointSpawns[_currentSpawnIndex].position;
                     }
-
-					//TODO Place waypoint-spawning code here.
 					_timer.Set(_wave.DurationBetweenSpawnedEntity + nextEntity.ExtraDurationAfterSpawned).Start();
 				}
 				else
@@ -128,9 +123,11 @@
 			else
 			{
 				WaveEnded?.Invoke(this, _wave);
-				//if (_waveQueue.Contains(_wave)) _waveQueue.Dequeue();
-				if (_waveQueue.Count >= 1) StartWave(GetNextWave());
-				//TODO if there are any waves in queue, then StartWave(next wave in queue);
+				if (_waveQueue.Count >= 1)
+				{
+                    StartWave(GetNextWave());
+                }
+
 			}
 		}
 

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6e39887ac6b404b84c22561b41133e, type: 3}
   m_Name: TR_Point
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 6340134754797299747, guid: ce6149f8ad19e8d4b88b6b64080dfaec, type: 3}
   _targetingReticle: 1
+  _length: 1
+  _width: 1

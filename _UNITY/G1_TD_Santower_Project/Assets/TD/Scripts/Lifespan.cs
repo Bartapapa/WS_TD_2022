@@ -8,6 +8,8 @@ public class Lifespan : MonoBehaviour
     [SerializeField]
     private Timer _lifeTimer;
 
+    public Timer LifeSpanTimer => _lifeTimer;
+
     private void Awake()
     {
         _lifeTimer.Start();
