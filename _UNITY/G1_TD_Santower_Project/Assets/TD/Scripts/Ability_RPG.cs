@@ -1,14 +1,17 @@
 using GSGD1;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Ability_ExplosivePresent : Ability
+public class Ability_RPG : Ability
 {
+    public UnityEvent RenewRequestAbility;
+
     [SerializeField]
-    private ExplosivePresent _explosivePresent;
-    private ExplosivePresent _instantiatedPresent;
+    private ProjectileExplosive _missile;
+    [SerializeField]
+    private ProjectileExplosive _instantiatedMissile;
 
     [SerializeField]
     private AbilitySlot _abilitySlot;
@@ -17,6 +20,11 @@ public class Ability_ExplosivePresent : Ability
     private float _width = 1f;
     [SerializeField]
     private float _length = 1f;
+
+    [SerializeField]
+    private int _maxnumberOfMissiles = 1;
+    [SerializeField]
+    private int _missilesShot = 0;
 
     private void Awake()
     {
@@ -30,11 +38,7 @@ public class Ability_ExplosivePresent : Ability
 
         _requested = true;
 
-        ExplosivePresent newPresent = Instantiate(_explosivePresent);
-        _instantiatedPresent = newPresent;
-
-        LevelReferences.Instance.PlayerPickerController.CreateGhost(newPresent);
-        LevelReferences.Instance.PlayerPickerController.SetTargetingReticle(abilityDescription.TargetingReticle, _width, _length, false);
+        LevelReferences.Instance.PlayerPickerController.SetTargetingReticle(abilityDescription.TargetingReticle, _width, _length, true);
 
         LevelReferences.Instance.PlayerPickerController.ChangeState(PlayerPickerState.Targeting);
     }
@@ -42,14 +46,25 @@ public class Ability_ExplosivePresent : Ability
     public override void ActivateAbility(Vector3 position, Vector3 direction)
     {
         if (!_requested) return;
-        _isReady = false;
         _requested = false;
 
-        _instantiatedPresent.transform.position = LevelReferences.Instance.NorthPole.GetAimPosition();
-        _instantiatedPresent.ThrowPresent(position, direction);
+        ProjectileExplosive newMissile = Instantiate(_missile);
+        _instantiatedMissile = newMissile;
+        newMissile.transform.LookAt(position);
 
-        _abilitySlot.StartCooldownTimer();
-        LevelReferences.Instance.PlayerPickerController.ChangeState(PlayerPickerState.InGame);
+        _missilesShot += 1;
+        if (_missilesShot < _maxnumberOfMissiles)
+        {
+            RenewRequestAbility.Invoke();
+        }
+        else
+        {
+            _isReady = false;
+            _missilesShot = 0;
+            _abilitySlot.StartCooldownTimer();
+            LevelReferences.Instance.PlayerPickerController.ChangeState(PlayerPickerState.InGame);
+        }
+
     }
 
     public override void ReadyAbility()

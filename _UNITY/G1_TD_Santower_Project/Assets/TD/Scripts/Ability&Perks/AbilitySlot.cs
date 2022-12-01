@@ -84,7 +84,7 @@ public class AbilitySlot : MonoBehaviour
         UpdateCDVisualizer(_timer.Progress);
     }
 
-    private void OnButtonClicked()
+    public void OnButtonClicked()
     {
         AbilitySlotClicked.Invoke(_ability);
     }

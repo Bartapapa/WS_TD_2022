@@ -51,8 +51,13 @@ namespace GSGD1
         [SerializeField]
         private LayerMask _groundLayer;
         [SerializeField]
+        private LayerMask _airLayer;
+        [SerializeField]
         private Transform _targetingParent;
+        private bool _isTargetingAir = false;
+        [SerializeField]
         private bool _reticleLocked = false;
+        private Vector3 _firstPoint;
 
         [System.NonSerialized]
 		private IPickerGhost _ghost = null;
@@ -129,12 +134,8 @@ namespace GSGD1
 
         public void ChangeState(PlayerPickerState newState)
         {
-            if (newState == _state) return;
-            else
-            {
-                StateChanged?.Invoke(_state, newState);
-                _state = newState;
-            }
+            StateChanged?.Invoke(_state, newState);
+            _state = newState;
         }
 
         private void Update()
@@ -253,144 +254,345 @@ namespace GSGD1
                         
                         break;
                     case TargetingReticleType.Point:
+                        #region PointTargeting
                         {
-                            if (Physics.Raycast(ray, out hit, float.MaxValue, _groundLayer))
+                            if (_isTargetingAir)
                             {
-                                if (_ghost != null)
+                                if (Physics.Raycast(ray, out hit, float.MaxValue, _airLayer))
                                 {
-                                    _ghost.GetTransform().position = hit.point;
-                                }
-                                if (_targetingReticle != null)
-                                {
-                                    _targetingReticle.transform.position = hit.point;
-                                }
-
-                                if (Input.GetMouseButtonDown(0))
-                                {
-                                    _ghost = null;
-                                    DestroyPreviousTargetingReticle();
-                                    PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
-                                    ChangeState(PlayerPickerState.InGame);
-                                }
-                            }
-
-                            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
-                            {
-                                if (_targetingReticle.activeInHierarchy)
-                                {
-                                    _targetingReticle.SetActive(false);
-                                }
-                                DestroyGhost();
-                                PlayerPickerRequestDenied?.Invoke();
-                                ChangeState(PlayerPickerState.InGame);
-                            }
-                        }
-                        break;
-                    case TargetingReticleType.Area:
-                        {
-                            if (Physics.Raycast(ray, out hit, float.MaxValue, _groundLayer))
-                            {
-                                if (_ghost != null)
-                                {
-                                    _ghost.GetTransform().position = hit.point;
-                                }
-                                if (_targetingReticle != null)
-                                {
-                                    _targetingReticle.transform.position = hit.point;
-                                }
-
-                                if (Input.GetMouseButtonDown(0))
-                                {
-                                    _ghost = null;
-                                    DestroyPreviousTargetingReticle();
-                                    PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
-                                    ChangeState(PlayerPickerState.InGame);
-                                }
-                            }
-
-                            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
-                            {
-                                if (_targetingReticle.activeInHierarchy)
-                                {
-                                    _targetingReticle.SetActive(false);
-                                }
-                                DestroyGhost();
-                                PlayerPickerRequestDenied?.Invoke();
-                                ChangeState(PlayerPickerState.InGame);
-                            }
-                        }                     
-                        break;
-                    case TargetingReticleType.Road:
-                        {
-                            if (Physics.Raycast(ray, out hit, float.MaxValue, _groundLayer))
-                            {
-                                if (_ghost != null)
-                                {
-                                    _ghost.GetTransform().position = hit.point;
-                                }
-                                if (_targetingReticle != null)
-                                {
-                                    if (!_reticleLocked)
+                                    if (_ghost != null)
+                                    {
+                                        _ghost.GetTransform().position = hit.point;
+                                    }
+                                    if (_targetingReticle != null)
                                     {
                                         _targetingReticle.transform.position = hit.point;
-                                    }
-                                    else
-                                    {
-                                        Vector3 ignoreY = new Vector3(hit.point.x, _targetingReticle.transform.position.y, hit.point.z);
-
-                                        _targetingReticle.transform.LookAt(ignoreY);
                                     }
 
                                     if (Input.GetMouseButtonDown(0))
                                     {
-                                        if (!_reticleLocked)
-                                        {
-                                            _reticleLocked = true;
-                                            return;
-                                        }
-
-                                        Vector3 ignoreY = new Vector3(hit.point.x, _targetingReticle.transform.position.y, hit.point.z);
-                                        Vector3 direction = (_targetingReticle.transform.position - ignoreY).normalized;
-
                                         _ghost = null;
                                         DestroyPreviousTargetingReticle();
-                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, direction);
-                                        ChangeState(PlayerPickerState.InGame);
+                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
+                                    }
+                                }
+
+                                if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
+                            }
+                            else
+                            {
+                                if (Physics.Raycast(ray, out hit, float.MaxValue, _groundLayer))
+                                {
+                                    if (_ghost != null)
+                                    {
+                                        _ghost.GetTransform().position = hit.point;
+                                    }
+                                    if (_targetingReticle != null)
+                                    {
+                                        _targetingReticle.transform.position = hit.point;
                                     }
 
+                                    if (Input.GetMouseButtonDown(0))
+                                    {
+                                        _ghost = null;
+                                        DestroyPreviousTargetingReticle();
+                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
+                                    }
+                                }
+
+                                if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
                                 }
                             }
 
-                            if (Input.GetMouseButtonDown(1))
+
+                        }
+                        #endregion
+                        break;
+                    case TargetingReticleType.Area:
+                        #region AreaTargeting
+                        {
+                            if (_isTargetingAir)
                             {
-                                if (_targetingReticle.activeInHierarchy)
+                                if (Physics.Raycast(ray, out hit, float.MaxValue, _airLayer))
                                 {
-                                    _targetingReticle.SetActive(false);
+                                    if (_ghost != null)
+                                    {
+                                        _ghost.GetTransform().position = hit.point;
+                                    }
+                                    if (_targetingReticle != null)
+                                    {
+                                        _targetingReticle.transform.position = hit.point;
+                                    }
+
+                                    if (Input.GetMouseButtonDown(0))
+                                    {
+                                        _ghost = null;
+                                        DestroyPreviousTargetingReticle();
+                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
+                                    }
                                 }
-                                _reticleLocked = false;
-                                DestroyGhost();
-                                PlayerPickerRequestDenied?.Invoke();
-                                ChangeState(PlayerPickerState.InGame);
+
+                                if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
+                            }
+                            else
+                            {
+                                if (Physics.Raycast(ray, out hit, float.MaxValue, _groundLayer))
+                                {
+                                    if (_ghost != null)
+                                    {
+                                        _ghost.GetTransform().position = hit.point;
+                                    }
+                                    if (_targetingReticle != null)
+                                    {
+                                        _targetingReticle.transform.position = hit.point;
+                                    }
+
+                                    if (Input.GetMouseButtonDown(0))
+                                    {
+                                        _ghost = null;
+                                        DestroyPreviousTargetingReticle();
+                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
+                                    }
+                                }
+
+                                if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
                             }
 
-                            if (Input.GetKeyDown(KeyCode.Escape))
+
+                        }
+                        #endregion
+                        break;
+                    case TargetingReticleType.Road:
+                        #region RoadTargeting
+                        {
+                            if (_isTargetingAir)
                             {
-                                if (_targetingReticle.activeInHierarchy)
+                                if (Physics.Raycast(ray, out hit, float.MaxValue, _airLayer))
                                 {
-                                    _targetingReticle.SetActive(false);
+                                    if (_ghost != null)
+                                    {
+                                        _ghost.GetTransform().position = hit.point;
+                                    }
+                                    if (_targetingReticle != null)
+                                    {
+                                        if (!_reticleLocked)
+                                        {
+                                            _targetingReticle.transform.position = hit.point;
+                                        }
+                                        else
+                                        {
+                                            Vector3 ignoreY = new Vector3(hit.point.x, _targetingReticle.transform.position.y, hit.point.z);
+
+                                            _targetingReticle.transform.LookAt(ignoreY);
+                                        }
+
+                                        if (Input.GetMouseButtonDown(0))
+                                        {
+                                            if (!_reticleLocked)
+                                            {
+                                                _reticleLocked = true;
+                                                _firstPoint = hit.point;
+                                                return;
+                                            }
+
+                                            _ghost = null;
+                                            _reticleLocked = false;
+                                            DestroyPreviousTargetingReticle();
+                                            PlayerPickerTargetingConfirmed?.Invoke(_firstPoint, hit.point);
+                                        }
+
+                                    }
                                 }
-                                _reticleLocked = false;
-                                DestroyGhost();
-                                PlayerPickerRequestDenied?.Invoke();
-                                ChangeState(PlayerPickerState.InGame);
+
+                                if (Input.GetMouseButtonDown(1))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    _reticleLocked = false;
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
+
+                                if (Input.GetKeyDown(KeyCode.Escape))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    _reticleLocked = false;
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
+                            }
+                            else
+                            {
+                                if (Physics.Raycast(ray, out hit, float.MaxValue, _groundLayer))
+                                {
+                                    if (_ghost != null)
+                                    {
+                                        _ghost.GetTransform().position = hit.point;
+                                    }
+                                    if (_targetingReticle != null)
+                                    {
+                                        if (!_reticleLocked)
+                                        {
+                                            _targetingReticle.transform.position = hit.point;
+                                        }
+                                        else
+                                        {
+                                            Vector3 ignoreY = new Vector3(hit.point.x, _targetingReticle.transform.position.y, hit.point.z);
+
+                                            _targetingReticle.transform.LookAt(ignoreY);
+                                        }
+
+                                        if (Input.GetMouseButtonDown(0))
+                                        {
+                                            if (!_reticleLocked)
+                                            {
+                                                
+                                                _reticleLocked = true;
+                                                _firstPoint = hit.point;
+                                                return;
+                                            }
+                                            _ghost = null;
+                                            _reticleLocked = false;
+                                            DestroyPreviousTargetingReticle();
+                                            PlayerPickerTargetingConfirmed?.Invoke(_firstPoint, hit.point);
+                                        }
+
+                                    }
+                                }
+
+                                if (Input.GetMouseButtonDown(1))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    _reticleLocked = false;
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
+
+                                if (Input.GetKeyDown(KeyCode.Escape))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    _reticleLocked = false;
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
                             }
                         }
+                        #endregion
+                        break;
+                    case TargetingReticleType.Sphere:
+                        #region SphereTargeting
+                        {
+                            if (_isTargetingAir)
+                            {
+                                if (Physics.Raycast(ray, out hit, float.MaxValue, _airLayer))
+                                {
+                                    if (_ghost != null)
+                                    {
+                                        _ghost.GetTransform().position = hit.point;
+                                    }
+                                    if (_targetingReticle != null)
+                                    {
+                                        _targetingReticle.transform.position = hit.point;
+                                    }
+
+                                    if (Input.GetMouseButtonDown(0))
+                                    {
+                                        _ghost = null;
+                                        DestroyPreviousTargetingReticle();
+                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
+                                    }
+                                }
+
+                                if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
+                            }
+                            else
+                            {
+                                if (Physics.Raycast(ray, out hit, float.MaxValue, _groundLayer))
+                                {
+                                    if (_ghost != null)
+                                    {
+                                        _ghost.GetTransform().position = hit.point;
+                                    }
+                                    if (_targetingReticle != null)
+                                    {
+                                        _targetingReticle.transform.position = hit.point;
+                                    }
+
+                                    if (Input.GetMouseButtonDown(0))
+                                    {
+                                        _ghost = null;
+                                        DestroyPreviousTargetingReticle();
+                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
+                                    }
+                                }
+
+                                if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+                                {
+                                    if (_targetingReticle.activeInHierarchy)
+                                    {
+                                        _targetingReticle.SetActive(false);
+                                    }
+                                    DestroyGhost();
+                                    PlayerPickerRequestDenied?.Invoke();
+                                }
+                            }
+                        }
+                        #endregion
                         break;
                     default:
                         {
                             DestroyGhost();
                             PlayerPickerRequestDenied?.Invoke();
-                            ChangeState(PlayerPickerState.InGame);
                         }                       
                         break;
                 }
@@ -399,7 +601,7 @@ namespace GSGD1
 
         }
 
-        public void SetTargetingReticle(TargetingReticle targetingReticle, float width, float length)
+        public void SetTargetingReticle(TargetingReticle targetingReticle, float width, float length, bool targetsAir)
         {
             //instantiate targetingReticle.prefab at parent, and then displace it to cursor's raycast position on Update().
             //Also alter the targetingReticle's prefab sizes based on the TargetingReticle's length and width, based on targetingReticle's targetingReticleType.
@@ -413,29 +615,44 @@ namespace GSGD1
             switch (targetingReticle.TargetingReticleType)
             {
                 case TargetingReticleType.None:
-                    DestroyPreviousTargetingReticle();
+                    {
+                        DestroyPreviousTargetingReticle();
+                    }          
                     break;
                 case TargetingReticleType.Point:
                     //Nothing.
                     break;
                 case TargetingReticleType.Area:
-                    newTargetingReticle.transform.localScale = new Vector3(width,
-                                                                           newTargetingReticle.transform.localScale.y,
-                                                                           length);
+                    {
+                        newTargetingReticle.transform.localScale = new Vector3(width,
+                                                                               newTargetingReticle.transform.localScale.y,
+                                                                               length);
+                    }
                     break;
                 case TargetingReticleType.Road:
-                    newTargetingReticle.transform.localScale = new Vector3(width,
-                                                       newTargetingReticle.transform.localScale.y,
-                                                       length);
+                    {
+                        newTargetingReticle.transform.localScale = new Vector3(width,
+                                                                               newTargetingReticle.transform.localScale.y,
+                                                                               length);
+                    }
+                    break;
+                case TargetingReticleType.Sphere:
+                    {
+                        newTargetingReticle.transform.localScale = new Vector3(width,
+                                                                               width,
+                                                                               width);
+                    }
                     break;
                 default:
                     DestroyPreviousTargetingReticle();
                     break;
             }
+            _isTargetingAir = targetsAir;
         }
 
         private void DestroyPreviousTargetingReticle()
         {
+            _targetingReticleDescription = null;
             Destroy(_targetingReticle);
         }
 

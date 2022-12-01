@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1469653270}
   - component: {fileID: 1241841740681876576}
   m_Layer: 7
-  m_Name: ProjectileExplosive
+  m_Name: ProjectileSantaRPG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,17 +50,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destroyIfGiveDamage: 0
-  _needDamageableToCollide: 0
-  _damage: 10
-  _projectileSpeed: 1
-  _useArtilleryMovement: 1
+  _needDamageableToCollide: 1
+  _damage: 50
+  _projectileSpeed: 30
+  _useArtilleryMovement: 0
   _maximumProjectileHeight: 10
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
   _explosionCollider: {fileID: 1469653270}
   _impactNeeded: 1
-  _explosionRadius: 3
+  _explosionRadius: 7
+  _accelerateToMaxSpeed: 1
+  _acceleration: 3
 --- !u!135 &1596334011
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -116,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTimer:
-    _duration: 5
+    _duration: 10
     _stopWhenCompleted: 1
 --- !u!1 &1697648429891245682
 GameObject:
@@ -148,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 1697648429891245682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.76233315}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.7726}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1697648429471405644}

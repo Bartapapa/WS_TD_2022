@@ -7,6 +7,7 @@ public enum TargetingReticleType
     None,
     Point,
     Area,
+    Sphere,
     Road,
 }
 

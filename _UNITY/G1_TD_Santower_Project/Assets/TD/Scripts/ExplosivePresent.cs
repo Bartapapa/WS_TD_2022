@@ -81,10 +81,10 @@ public class ExplosivePresent : MonoBehaviour, IPickerGhost
     public void ThrowPresent(Vector3 targetPosition, Vector3 direction)
     {
         transform.LookAt(targetPosition);
-        StartCoroutine(ArcPresent(targetPosition, direction));
+        StartCoroutine(ArcPresent(targetPosition));
     }
 
-    IEnumerator ArcPresent(Vector3 targetPosition, Vector3 direction)
+    IEnumerator ArcPresent(Vector3 targetPosition)
     {
         _isMoving = true;
         Vector3 destinationPoint = targetPosition;

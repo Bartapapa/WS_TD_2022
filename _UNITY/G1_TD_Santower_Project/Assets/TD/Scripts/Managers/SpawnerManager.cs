@@ -63,6 +63,7 @@ namespace GSGD1
 			if (_currentWaveRunning <= 0)
 			{
 				StartNewWaveSet();
+				Debug.Log("2");
 			}
 		}
 
@@ -100,6 +101,8 @@ namespace GSGD1
 
 			if (waveDatabase.Waves.Count > _currentWaveSetIndex)
 			{
+				Debug.Log("3");
+				Debug.Log(waveDatabase.Waves.Count);
 				WaveSet waveSet = waveDatabase.Waves[_currentWaveSetIndex];
 				List<Wave> waves = new List<Wave>();
 				foreach (WaveEntityGroupDescriptionField WEGDef in waveSet.Waves)
@@ -116,6 +119,7 @@ namespace GSGD1
 
                     for (int x = 0; x < waveSet.Waves[i].GetWEGD.GetWaves.Count; x++)
 					{
+						Debug.Log("4");
                         spawner.StartWave(waves[i]);
                         spawner.WaveEnded.RemoveListener(Spawner_OnWaveEnded);
                         spawner.WaveEnded.AddListener(Spawner_OnWaveEnded);

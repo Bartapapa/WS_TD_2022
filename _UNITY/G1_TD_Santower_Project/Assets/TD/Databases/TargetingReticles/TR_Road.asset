@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: TR_Road
   m_EditorClassIdentifier: 
   _prefab: {fileID: 8814153644871105413, guid: 478f0eee3ea8c9143b16738841faf9a6, type: 3}
-  _targetingReticle: 3
-  _length: 500
-  _width: 4
+  _targetingReticle: 4
