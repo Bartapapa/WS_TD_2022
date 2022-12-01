@@ -597,6 +597,7 @@ MonoBehaviour:
   - {fileID: 2056067642}
   _autoStartNextWaves: 1
   _currentWaveSetIndex: -1
+  _currentWaveRunning: 0
   WaveStatusChanged_UnityEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -618,7 +619,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1538
+  m_Name: pb_Mesh-2396
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3855,6 +3856,16 @@ MonoBehaviour:
     m_Bits: 0
   _currentSelectable: {fileID: 0}
   _hoveringOver: {fileID: 0}
+  _targetingReticleDescription: {fileID: 0}
+  _targetingReticle: {fileID: 0}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _airLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _targetingParent: {fileID: 0}
+  _reticleLocked: 0
 --- !u!1 &634248569
 GameObject:
   m_ObjectHideFlags: 0
@@ -5200,7 +5211,7 @@ PrefabInstance:
     - target: {fileID: 8491755099251913143, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8491755099251913143, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
@@ -5210,7 +5221,7 @@ PrefabInstance:
     - target: {fileID: 8491755099251913143, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8491755099251913143, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
@@ -7140,6 +7151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerPickerController: {fileID: 632168672}
   _spawnerManager: {fileID: 114427185}
+  _northPole: {fileID: 0}
 --- !u!4 &1043908362
 Transform:
   m_ObjectHideFlags: 0
@@ -7208,6 +7220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentPhase: 0
+  GamePhaseChangeEvent_UE:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1057269551
 GameObject:
   m_ObjectHideFlags: 0
@@ -7874,7 +7889,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1566
+  m_Name: pb_Mesh-2424
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8297,7 +8312,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24512
+  m_Name: pb_Mesh29438
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12719,17 +12734,17 @@ PrefabInstance:
     - target: {fileID: 4262874677863048037, guid: be78e8b03b8d91241a68adabf1642988,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.13
+      value: -23.98
       objectReference: {fileID: 0}
     - target: {fileID: 4262874677863048037, guid: be78e8b03b8d91241a68adabf1642988,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12
+      value: 12.65
       objectReference: {fileID: 0}
     - target: {fileID: 4262874677863048037, guid: be78e8b03b8d91241a68adabf1642988,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.9
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 4262874677863048037, guid: be78e8b03b8d91241a68adabf1642988,
         type: 3}
@@ -12770,7 +12785,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 8951516517517404495, guid: 18a13305c36c58347b67e97c25fab201,
+      objectReference: {fileID: 7154179259702376063, guid: ef447b52c9486c14cbe3139894fb9abb,
         type: 3}
     - target: {fileID: 4262874677863048046, guid: be78e8b03b8d91241a68adabf1642988,
         type: 3}
@@ -12785,7 +12800,7 @@ PrefabInstance:
     - target: {fileID: 4262874677863048047, guid: be78e8b03b8d91241a68adabf1642988,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be78e8b03b8d91241a68adabf1642988, type: 3}

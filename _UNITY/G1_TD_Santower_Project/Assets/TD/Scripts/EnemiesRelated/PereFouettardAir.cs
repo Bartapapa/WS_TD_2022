@@ -1,6 +1,5 @@
 using GSGD1;
 using UnityEngine;
-using UnityEngine.ProBuilder;
 
 public class PereFouettardAir : MonoBehaviour
 {
@@ -28,9 +27,6 @@ public class PereFouettardAir : MonoBehaviour
 	
 	private Vector3 _exitPos;
 
-	[SerializeField]
-	private GameObject ball;
-
 	private void DoOnEnable()
 	{
 		_pathFollower = GetComponent<PathFollower>();
@@ -46,8 +42,8 @@ public class PereFouettardAir : MonoBehaviour
 			FindNewPos();
 		}
 
+		MoveTo(_innerCiclePos);
 		LookAt(_northPole.transform.position);
-		MoveTo();
     }
 
 	private void FindNorthPole()
@@ -58,12 +54,14 @@ public class PereFouettardAir : MonoBehaviour
 		}
 	}
 
-	private void MoveTo()
+	private void MoveTo(Vector3 position)
 	{
 		Distance();
-		Vector3 movement = (_exitPos - transform.position).normalized * _moveSpeed * Time.deltaTime;
+		var oui = position + -_exitPos;
+
+        Vector3 movement = (oui - transform.position).normalized * _moveSpeed * Time.deltaTime;
 		transform.position += movement;
-		if (Vector3.Distance(transform.position, _exitPos.normalized) < _threshold)
+		if (Vector3.Distance(transform.position, oui) < _threshold)
 		{
 			FindNewPos();
 		}
@@ -71,13 +69,11 @@ public class PereFouettardAir : MonoBehaviour
 
 	private void Distance()
 	{
-		_exitPos = (_outerCiclePos + _innerCiclePos) / 2;
+		_exitPos = _outerCiclePos - _innerCiclePos;
 	}
 
 	private void LookAt(Vector3 position)
 	{
-		//transform.LookAt(position, Vector3.up);
-
 		Vector3 direction = position - transform.position;
 		direction.y = 0;
 		Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
