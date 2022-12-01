@@ -9,16 +9,35 @@ public class Carrier : MonoBehaviour
 	private Damageable _damageable;
 
 	[SerializeField]
-	private List<WaveEntity> _waveEntity= new List<WaveEntity>();
+	private bool _isMerryACarrier = false;
+
+	[SerializeField]
+	private Timer _spawnIntervale;
 
 	[SerializeField]
 	private float _randomSpawnAmplitude = 1.0f;
+	
+	[SerializeField]
+	private List<WaveEntityGroupDescription> _waveEntity = new List<WaveEntityGroupDescription>();
+
+	[SerializeField]
+	private WaveDatabase _waveEntityDatas;
+
+	private PathFollower _pathFollower;
 
 	private Path _path;
+
+	private Path _merryPath;
 
 	private GameObject _waypointIndex;
 
 	private List<GameObject> waypoint = new List<GameObject>();
+
+	private WaveEntity _entity;
+
+	private bool _found = false;
+
+	private bool _dead = false;
 
 	private void OnEnable()
 	{
@@ -30,15 +49,39 @@ public class Carrier : MonoBehaviour
 	{
 		_damageable.CallerDied -= SpawnProcess;
 	}
+	private void Update()
+	{
+		if (_isMerryACarrier == true)
+		{
+			if (_found == false)
+			{
+				_pathFollower = GetComponent<PathFollower>();
+				GetAllWaypoint(true);
+				GetPath();
+				_pathFollower.SetPath(_merryPath, false);
+			}
 
+			_spawnIntervale.Update();
+			if (_spawnIntervale.Progress >= 1)
+			{
+				_spawnIntervale.Update();
+				SpawnProcess(_damageable, 1, 1);
+			}
+		}
+	}
 	private void SpawnProcess(Damageable damageable, int currentHealth, int damage)
 	{
+		if (currentHealth <= 0)
+		{
+			_dead = true;
+		}
+
 		GetAllWaypoint(false);
 		GetPath();
 		SpawnEnemies();
 	}
 
-	private void GetAllWaypoint(bool findMerryPath)
+	private void GetAllWaypoint(bool findMerryPath = false)
 	{
 		waypoint.Clear();
 		foreach (GameObject Waypoint in GameObject.FindGameObjectsWithTag("Waypoint"))
@@ -61,10 +104,13 @@ public class Carrier : MonoBehaviour
 			var tempGet = waypoint[0];
 			for (int i = 0, length = waypoint.Count; i < length; i++)
 			{
-                RaycastHit hit;
-                Physics.Raycast(transform.position, Vector3.down, out hit, float.MaxValue);
+				if (waypoint[i].GetComponentInParent<MerryPath>() == true && _found == false)
+				{
+					_merryPath = waypoint[i].GetComponentInParent<Path>();
+					_found = true;
+				}
 
-                float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
+				float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
 				float targetDistance = Vector3.Distance(tempGet.transform.position, transform.position);
 
 				if (distance < targetDistance)
@@ -92,18 +138,35 @@ public class Carrier : MonoBehaviour
 
 	private void SpawnEnemies()
 	{
-		for (int i = 0; i < _waveEntity.Count; i++)
+		var moshIndex = 0;
+		if (_isMerryACarrier == true)
 		{
-            RaycastHit hit;
-            Physics.Raycast(transform.position, Vector3.down, out hit, float.MaxValue);
-            Vector3 spawnPos = new Vector3(
-								Random.Range(-_randomSpawnAmplitude, _randomSpawnAmplitude) + transform.position.x,
-								hit.transform.position.y,
-								Random.Range(-_randomSpawnAmplitude, _randomSpawnAmplitude) + transform.position.z);
+			if (_dead == true)
+			{
+				moshIndex = 0;
+			}
+			else
+			{
+				moshIndex = Random.Range(1, _waveEntity.Count);
+			}
+		}
 
-			_waveEntity[i].SetPath(_path, false);
-			_waveEntity[i].SetWaypoint(GetWaypointIndexInPath());
-			Instantiate(_waveEntity[i], spawnPos, Quaternion.identity);
+		for (int y = 0; y < _waveEntity[moshIndex].GetWaves.Count; y++)
+		{
+			for (int i = 0; i < _waveEntity[moshIndex].GetWaves[y].WaveEntitiesDescription.Count; i++)
+			{
+				_waveEntityDatas.GetWaveElementFromType(_waveEntity[moshIndex].GetWaves[y].WaveEntitiesDescription[i].EntityType, out _entity);
+				RaycastHit hit;
+				Physics.Raycast(transform.position, Vector3.down, out hit, float.MaxValue);
+				Vector3 spawnPos = new Vector3(
+									Random.Range(-_randomSpawnAmplitude, _randomSpawnAmplitude) + transform.position.x,
+									hit.transform.position.y,
+									Random.Range(-_randomSpawnAmplitude, _randomSpawnAmplitude) + transform.position.z);
+
+				_entity.SetPath(_path, false);
+				_entity.SetWaypoint(GetWaypointIndexInPath());
+				Instantiate(_entity, spawnPos, Quaternion.identity);
+			}
 		}
 	}
 }

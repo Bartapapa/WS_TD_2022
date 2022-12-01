@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2942146037294568417}
   - component: {fileID: 5412690654039449867}
-  - component: {fileID: 9023189632326442900}
+  - component: {fileID: -4485951798951431200}
   - component: {fileID: 25073061}
   - component: {fileID: 2942146037294568419}
   - component: {fileID: -520755102994360734}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathFollower: {fileID: 0}
   _damageable: {fileID: 0}
---- !u!114 &9023189632326442900
+--- !u!114 &-4485951798951431200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,17 +159,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2942146037294568416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64ed482cf655e3744aa79efbc41fa28c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fb5fd1d069bc3d43b53c2104bf753d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageable: {fileID: 2942146037294568419}
-  _randomSpawnAmplitude: 1
+  _damageable: {fileID: 0}
+  _isMerryACarrier: 1
   _spawnIntervale:
     _duration: 0
     _stopWhenCompleted: 1
+  _randomSpawnAmplitude: 1
   _waveEntity:
   - {fileID: 11400000, guid: 0de6992feefe20848b0bde2f6b151a04, type: 2}
-  - {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56, type: 2}
+  - {fileID: 0}
   _waveEntityDatas: {fileID: 11400000, guid: 0c39ccefeb617144c9db545ace8b6e29, type: 2}
 --- !u!114 &25073061
 MonoBehaviour:

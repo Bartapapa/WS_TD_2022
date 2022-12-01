@@ -112,9 +112,6 @@ public class MerryACarrier : MonoBehaviour
 					_found = true;
 				}
 
-				RaycastHit hit;
-                Physics.Raycast(transform.position, Vector3.down, out hit, float.MaxValue);
-
                 float distance = Vector3.Distance(waypoint[i].transform.position, transform.position);
                 float targetDistance = Vector3.Distance(tempGet.transform.position, transform.position);
 
