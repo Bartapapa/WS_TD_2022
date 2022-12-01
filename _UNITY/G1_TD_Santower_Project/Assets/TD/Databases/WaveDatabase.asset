@@ -66,3 +66,5 @@ MonoBehaviour:
     _entityType: 0
   _waves:
   - {fileID: 11400000, guid: a459061dc5860024590f76ddef462ecd, type: 2}
+  - {fileID: 11400000, guid: a28e6b1bbcc8cc7438b0b8027bfc0655, type: 2}
+  - {fileID: 11400000, guid: 3bf0ad40a2ead5e4d9a6bfbedb78710b, type: 2}
