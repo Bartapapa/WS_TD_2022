@@ -45,6 +45,6 @@ public class BaseNorthPole : MonoBehaviour
 
 	private void QuitToEditor()
 	{
-		UnityEditor.EditorApplication.isPlaying = false;
+		//UnityEditor.EditorApplication.isPlaying = false;
 	}
 }

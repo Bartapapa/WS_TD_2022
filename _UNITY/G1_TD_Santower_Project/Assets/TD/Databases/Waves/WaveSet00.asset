@@ -16,14 +16,14 @@ MonoBehaviour:
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56,
       type: 2}
     _spawnerIndex: 0
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56,
-      type: 2}
-    _spawnerIndex: 1
-    _waypointOverride: -1
+    _timeBeforeNextMosh: 0
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56,
       type: 2}
     _spawnerIndex: 0
-    _waypointOverride: -1
+    _timeBeforeNextMosh: 0
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56,
+      type: 2}
+    _spawnerIndex: 0
+    _timeBeforeNextMosh: 0
   _waitingDurationBefore: 0
   _waitingDurationAfter: 5

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6e39887ac6b404b84c22561b41133e, type: 3}
   m_Name: TR_Area
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 2040203419617363759, guid: c75399f80916b2e40a1d17ed8e98fdac, type: 3}
   _targetingReticle: 2
+  _length: 7
+  _width: 7

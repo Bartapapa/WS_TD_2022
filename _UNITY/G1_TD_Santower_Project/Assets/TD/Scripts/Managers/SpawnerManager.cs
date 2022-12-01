@@ -29,7 +29,7 @@ namespace GSGD1
 		[SerializeField]
 		private int _currentWaveSetIndex = -1;
 
-		[System.NonSerialized]
+		[SerializeField]
 		private int _currentWaveRunning = 0;
 
 		[SerializeField]
@@ -106,18 +106,17 @@ namespace GSGD1
 				{
 					foreach (Wave wave in WEGDef.GetWEGD.GetWaves)
 					{
-						waves.Add(wave);
+                        waves.Add(wave);
 					}
 				}
-
                 for (int i = 0; i < waveSet.Waves.Count; i++)
 				{
-					_currentWaveRunning += 1;
+
 					var spawner = _spawners[waveSet.Waves[i].Spawner];
 
                     for (int x = 0; x < waveSet.Waves[i].GetWEGD.GetWaves.Count; x++)
 					{
-						spawner.StartWave(waveSet.Waves[i].GetWEGD.GetWaves[x]);
+                        spawner.StartWave(waves[i]);
                         spawner.WaveEnded.RemoveListener(Spawner_OnWaveEnded);
                         spawner.WaveEnded.AddListener(Spawner_OnWaveEnded);
 
@@ -170,6 +169,7 @@ namespace GSGD1
 			//WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.Inactive, _currentWaveRunning);
 
 			// should we run a new wave?
+
 			if (_autoStartNextWaves == true && _currentWaveRunning <= 0)
 			{
 				// prevent overlapping routines
@@ -236,6 +236,11 @@ namespace GSGD1
             //    WaveStatusEnded.Invoke();
             //}
         }
+
+		public void AddCurrentWaveRunning()
+		{
+			_currentWaveRunning += 1;
+		}
 
     }
 }

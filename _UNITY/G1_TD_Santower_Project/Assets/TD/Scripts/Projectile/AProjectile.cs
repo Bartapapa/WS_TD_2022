@@ -29,7 +29,9 @@
 
 		public bool GetHit{ get { return _hitThing; } }
 
-		public virtual void OnTriggerEnter(Collider other)
+        public int Damage { set => _damage = value; }
+
+        public virtual void OnTriggerEnter(Collider other)
 		{
 			var damageable = other.GetComponentInParent<Damageable>();
 
