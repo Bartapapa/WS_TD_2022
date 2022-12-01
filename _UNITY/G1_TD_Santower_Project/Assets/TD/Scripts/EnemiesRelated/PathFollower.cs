@@ -30,9 +30,11 @@
 
 		[SerializeField]
 		private float _destinationPositionRandomness = 2.5f;
-
-		private int _currentPathIndex = 0;
-		private int _waypointIndex = 0;
+		
+		[SerializeField]
+		private int _currentPathIndex;
+		
+		//private int _waypointIndex;
 	
 		private bool _grosBool = false;
 
@@ -45,7 +47,7 @@
 
 		public void SetWaypoint(int indexPath)
 		{
-			_waypointIndex = indexPath;
+			//_waypointIndex = indexPath;
 			_currentPathIndex = indexPath;
 
             SetNewDestination(Vector3.zero);
@@ -77,7 +79,8 @@
 			}
 			if (_grosBool == false)
 			{
-				SetWaypoint(_waypointIndex);
+				//Debug.Log(_waypointIndex + " sasa " + _currentPathIndex);
+				SetWaypoint(_currentPathIndex);
 				_grosBool = true;
 			}
 

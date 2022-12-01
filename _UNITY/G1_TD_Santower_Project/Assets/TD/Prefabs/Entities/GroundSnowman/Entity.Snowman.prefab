@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
+  _pathLoop: 0
   _moveSpeed: 6
   _rotateSpeed: 5
   _maxSpeedRandoMultiplier: 1.1
@@ -219,7 +220,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc16189a57d4e748b18ba84618533e0, type: 2}
+  - {fileID: 2100000, guid: 8d07ff150266ce54aa44f713ce9e2547, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -349,7 +350,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc16189a57d4e748b18ba84618533e0, type: 2}
+  - {fileID: 2100000, guid: 8d07ff150266ce54aa44f713ce9e2547, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
