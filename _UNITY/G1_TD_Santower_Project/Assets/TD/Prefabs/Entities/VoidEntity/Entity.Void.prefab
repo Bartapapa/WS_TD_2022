@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2942146037294568418}
   - component: {fileID: 2942146037294568419}
   - component: {fileID: 2576836552219271351}
+  - component: {fileID: 8820988665775905100}
   m_Layer: 8
   m_Name: Entity.Void
   m_TagString: Untagged
@@ -62,12 +63,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
+  _dropOnDeath: {fileID: 8820988665775905100}
+  _pathLoop: 0
   _moveSpeed: 3
   _rotateSpeed: 5
   _maxSpeedRandoMultiplier: 1.1
   _minSpeedRandoMultiplier: 0.9
   _distanceThreshold: 0.5
   _destinationPositionRandomness: 2.5
+  _currentPathIndex: 0
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,3 +113,18 @@ MonoBehaviour:
   _lifeTimer:
     _duration: 1
     _stopWhenCompleted: 1
+--- !u!114 &8820988665775905100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b9f6c6470262b4fa1ecfc91357f086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageable: {fileID: 0}
+  _cookiesDropped: 0
+  _milkDropped: 0

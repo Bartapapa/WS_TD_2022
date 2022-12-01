@@ -163,12 +163,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
+  _dropOnDeath: {fileID: -5847032270740190781}
+  _pathLoop: 0
   _moveSpeed: 1.44
   _rotateSpeed: 5
   _maxSpeedRandoMultiplier: 1.1
   _minSpeedRandoMultiplier: 0.9
   _distanceThreshold: 0.5
   _destinationPositionRandomness: 2.5
+  _currentPathIndex: 0
 --- !u!114 &103649186480568630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,18 +188,9 @@ MonoBehaviour:
   _spawnIntervale:
     _duration: 20
     _stopWhenCompleted: 0
-  _waveEntity:
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
-  - {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41, type: 3}
+  _waveEntities: {fileID: 0}
   _spawner: []
+  _waveEntityDatas: {fileID: 11400000, guid: 0c39ccefeb617144c9db545ace8b6e29, type: 2}
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0

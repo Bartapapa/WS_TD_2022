@@ -45,7 +45,6 @@
 					shortestDistanceIndex = i;
 				}
 			}
-
 			return _damageablesInRange[shortestDistanceIndex];
 		}
 

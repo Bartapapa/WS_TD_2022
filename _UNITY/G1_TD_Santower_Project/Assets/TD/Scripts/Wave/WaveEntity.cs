@@ -7,10 +7,10 @@
 
 	public class WaveEntity : MonoBehaviour
 	{
-		[SerializeField]
+        [SerializeField]
 		private PathFollower _pathFollower = null;
 
-		[SerializeField]
+        [SerializeField]
 		private Damageable _damageable = null;
 
 		private void Awake()
@@ -45,6 +45,11 @@
 			    _pathFollower.SetWaypoint(waypointIndex);
             }
 		}
+
+        public void DisableDropOnDeath()
+        {
+            _pathFollower.DisableDropOnDeath();
+        }
 
         public IEnumerator HitFlash(float duration, Color color, float intensityFlash)
         {

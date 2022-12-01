@@ -17,6 +17,13 @@ public class Barricade : MonoBehaviour
 		{
 			DestroyBarricade();
 		}
+		for (int i = 0; i < _pathFollowers.Count; i++)
+		{
+			if (_pathFollowers[i].GetComponent<Boss>() == true)
+			{
+				DestroyBarricade();
+			}
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)

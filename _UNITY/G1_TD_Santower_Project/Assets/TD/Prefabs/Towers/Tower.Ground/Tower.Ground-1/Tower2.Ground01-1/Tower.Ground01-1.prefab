@@ -1101,9 +1101,10 @@ GameObject:
   - component: {fileID: -8124775280018812071}
   - component: {fileID: 302692793403659943}
   - component: {fileID: 302692793403659936}
+  - component: {fileID: 4092340725965543437}
   m_Layer: 7
   m_Name: Tower.Ground01-1
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1145,6 +1146,7 @@ MonoBehaviour:
   _selectableObject: {fileID: 1964456534}
   _towerDescription: {fileID: 11400000, guid: 20326c3875a86b449919986bd6ebd35e, type: 2}
   _totalCookieCost: 0
+  _enabledByDefault: 0
 --- !u!114 &302692793403659942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,6 +1213,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4092340725965543437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302692793403659941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968f346eb553e164c875a02622739750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isFlying: 0
+  _health: 10
+  _destroyIfKilled: 1
+  _aimPosition: {fileID: 0}
+  _deathParticle: {fileID: 0}
+  _isDead: 0
+  _isInvulnerable: 0
+  _deathTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
+  _invulnerabilityTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
 --- !u!1 &302692793443834627
 GameObject:
   m_ObjectHideFlags: 0

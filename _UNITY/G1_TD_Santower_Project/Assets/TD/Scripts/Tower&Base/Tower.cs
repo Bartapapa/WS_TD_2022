@@ -27,12 +27,15 @@
         //Readonly
         private int _totalCookieCost = 0;
 
+		[SerializeField]
+		private bool _enabledByDefault = false;
+
         public TowerDescription TowerDescription => _towerDescription;
         public int GetTotalCookieCost => _totalCookieCost;
 
         protected virtual void Awake()
 		{
-			enabled = false;
+			enabled = _enabledByDefault;
 			_selectableObject.SetCanBeSelected(false);
 		}
 
