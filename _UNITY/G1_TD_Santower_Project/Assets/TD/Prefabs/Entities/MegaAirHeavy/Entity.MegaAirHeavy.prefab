@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 0}
-  _cookiesDropped: 0
+  _cookiesDropped: 9
   _milkDropped: 1
 --- !u!1 &2942146037963372806
 GameObject:

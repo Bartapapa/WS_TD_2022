@@ -98,6 +98,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!114 &2576836552219271351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +115,7 @@ MonoBehaviour:
   _lifeTimer:
     _duration: 1
     _stopWhenCompleted: 1
+  _destroyOnEnd: 0
 --- !u!114 &8820988665775905100
 MonoBehaviour:
   m_ObjectHideFlags: 0

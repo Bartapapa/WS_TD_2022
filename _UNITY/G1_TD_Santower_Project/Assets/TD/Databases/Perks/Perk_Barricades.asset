@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Barricades
   _icon: {fileID: 21300000, guid: 8fa297b7ec66b944eab90904199905a4, type: 3}
-  _milkCost: 5
+  _milkCost: 6

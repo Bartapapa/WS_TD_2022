@@ -29,6 +29,11 @@
 		[SerializeField]
 		private Timer _invulnerabilityTimer;
 
+		[SerializeField]
+		private bool _hasLifespan = true;
+		[SerializeField]
+		private Lifespan _lifespan;
+
 		public bool IsDead => _isDead;
 
 		public delegate void DamageableEvent(Damageable caller, int currentHealth, int damageTaken);
@@ -39,6 +44,11 @@
 		private void Awake()
 		{
 			Invulnerability(.1f);
+
+			if (_hasLifespan)
+			{
+				_lifespan = GetComponent<Lifespan>();
+			}
 		}
 
 		public event DamageableEvent DamageTaken
@@ -94,6 +104,23 @@
 			{
 				DoDestroy();
 			}
+		}
+
+		private void OnEnable()
+		{
+			if (_hasLifespan && _lifespan != null)
+			{
+				_lifespan.lifespanEnded -= OnLifespanEnded;
+                _lifespan.lifespanEnded += OnLifespanEnded;
+            }
+		}
+
+		private void OnDisable()
+		{
+			if (_hasLifespan && _lifespan != null)
+			{
+                _lifespan.lifespanEnded -= OnLifespanEnded;
+            }
 		}
 
 		public Vector3 GetAimPosition()
@@ -157,5 +184,10 @@
 			_invulnerabilityTimer.Start();
 			_isInvulnerable = true;
         }
+
+		private void OnLifespanEnded(Lifespan lifespan)
+		{
+			Die();
+		}
 	}
 }

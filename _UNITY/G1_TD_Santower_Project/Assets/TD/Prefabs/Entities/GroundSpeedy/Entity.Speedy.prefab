@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dieIfGiveDamage: 1
-  _damage: 1
+  _damage: 3
   _damageable: {fileID: 0}
 --- !u!136 &1307804053467939346
 CapsuleCollider:
