@@ -23,7 +23,7 @@ public class DamageDealer : MonoBehaviour
 	{
 		var damageable = other.GetComponentInParent<Damageable>();
 
-		if (damageable != null)
+		if (damageable != null && other.GetComponentInParent<Tower>() == false)
 		{
 			damageable.TakeDamage(_damage, true);
 

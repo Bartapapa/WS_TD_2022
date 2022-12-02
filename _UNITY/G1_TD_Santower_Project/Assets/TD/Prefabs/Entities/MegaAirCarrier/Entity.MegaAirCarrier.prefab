@@ -66,12 +66,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
+  _dropOnDeath: {fileID: -4269915439347841951}
+  _pathLoop: 0
   _moveSpeed: 2.25
   _rotateSpeed: 5
   _maxSpeedRandoMultiplier: 1.1
   _minSpeedRandoMultiplier: 0.9
   _distanceThreshold: 0.5
   _destinationPositionRandomness: 2.5
+  _currentPathIndex: 0
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,23 +129,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 2942146037294568419}
-  _waveEntity:
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: 0bf05c3b4dcbce74f99337061d768f04, type: 3}
-  - {fileID: 5412690654039449867, guid: 5e3c08dd4a6bacf42b6cfcade9706784, type: 3}
-  - {fileID: 5412690654039449867, guid: 5e3c08dd4a6bacf42b6cfcade9706784, type: 3}
-  - {fileID: 5412690654039449867, guid: 5e3c08dd4a6bacf42b6cfcade9706784, type: 3}
-  - {fileID: 5412690654039449867, guid: 5e3c08dd4a6bacf42b6cfcade9706784, type: 3}
-  - {fileID: 5412690654039449867, guid: 0bf05c3b4dcbce74f99337061d768f04, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
+  _isMerryACarrier: 0
+  _spawnIntervale:
+    _duration: 0
+    _stopWhenCompleted: 1
   _randomSpawnAmplitude: 1
+  _waveEntity:
+  - {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56, type: 2}
+  _waveEntityDatas: {fileID: 11400000, guid: 0c39ccefeb617144c9db545ace8b6e29, type: 2}
 --- !u!136 &8954739381906307174
 CapsuleCollider:
   m_ObjectHideFlags: 0

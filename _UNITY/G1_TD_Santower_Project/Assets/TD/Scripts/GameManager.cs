@@ -2,7 +2,7 @@ using GSGD1;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -17,16 +17,14 @@ public class GameManager : Singleton<GameManager>
         GameLose,
     }
 
-    public delegate void GamePhaseChangeEvent(GamePhase fromPhase, GamePhase toPhase);
-    public event GamePhaseChangeEvent _gamePhaseChanged = null;
-
-
     [SerializeField]
     private GamePhase _currentPhase = GamePhase.Intro;
 
+    public UnityEvent<GamePhase, GamePhase> GamePhaseChangeEvent_UE;
+
     public void ChangePhase(GamePhase toPhase)
     {
-        _gamePhaseChanged?.Invoke(_currentPhase, toPhase);
+        GamePhaseChangeEvent_UE.Invoke(_currentPhase, toPhase);
         _currentPhase = toPhase;
 
         switch (toPhase)

@@ -17,6 +17,20 @@
 
         private float _explosionSpeed = 33;
 
+        [SerializeField]
+        private bool _accelerateToMaxSpeed = false;
+        [SerializeField]
+        private float _acceleration = 1f;
+        private float _currentSpeed = 0f;
+
+        [SerializeField]
+        private Lifespan _lifespan;
+
+        private void Awake()
+        {
+            _lifespan = GetComponent<Lifespan>();
+        }
+
         private void Start()
         {
             ExplosionSpeed = _explosionSpeed * _explosionRadius;
@@ -31,6 +45,11 @@
             }
 
             if (GetHit == true)
+            {
+                EXPLOSION();
+            }
+
+            if (_lifespan.LifeSpanTimer.Progress >= 1)
             {
                 EXPLOSION();
             }
@@ -57,7 +76,16 @@
 			}
 			else
 			{
-                transform.position = transform.position + _projectileSpeed * Time.deltaTime * transform.forward;
+                if (_accelerateToMaxSpeed)
+                {
+                    float newSpeed = Mathf.Lerp(_currentSpeed, _projectileSpeed, _acceleration * Time.deltaTime);
+                    _currentSpeed = newSpeed;
+                    transform.position = transform.position + _currentSpeed * Time.deltaTime * transform.forward;
+                }
+                else
+                {
+                    transform.position = transform.position + _projectileSpeed * Time.deltaTime * transform.forward;
+                }
             }
 		}
 

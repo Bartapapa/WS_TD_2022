@@ -165,6 +165,7 @@ public class Carrier : MonoBehaviour
 
 				_entity.SetPath(_path, false);
 				_entity.SetWaypoint(GetWaypointIndexInPath());
+				_entity.DisableDropOnDeath();
 				Instantiate(_entity, spawnPos, Quaternion.identity);
 			}
 		}

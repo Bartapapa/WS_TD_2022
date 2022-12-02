@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6e39887ac6b404b84c22561b41133e, type: 3}
   m_Name: TR_Road
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
-  _targetingReticle: 3
+  _prefab: {fileID: 8814153644871105413, guid: 478f0eee3ea8c9143b16738841faf9a6, type: 3}
+  _targetingReticle: 4

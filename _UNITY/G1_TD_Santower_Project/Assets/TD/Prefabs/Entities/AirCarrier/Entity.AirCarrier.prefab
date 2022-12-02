@@ -66,12 +66,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
+  _dropOnDeath: {fileID: -520755102994360734}
+  _pathLoop: 0
   _moveSpeed: 1.5
   _rotateSpeed: 5
   _maxSpeedRandoMultiplier: 1.1
   _minSpeedRandoMultiplier: 0.9
   _distanceThreshold: 0.5
   _destinationPositionRandomness: 2.5
+  _currentPathIndex: 0
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,18 +129,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 2942146037294568419}
-  _waveEntity:
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
-  - {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811, type: 3}
+  _isMerryACarrier: 0
+  _spawnIntervale:
+    _duration: 0
+    _stopWhenCompleted: 1
   _randomSpawnAmplitude: 1
+  _waveEntity:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _waveEntityDatas: {fileID: 0}
 --- !u!136 &8954739381906307174
 CapsuleCollider:
   m_ObjectHideFlags: 0

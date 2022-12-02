@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class AbilitySlot : MonoBehaviour
 {
-    public UnityEvent AbilitySlotClicked;
+    public UnityEvent<AbilityDescription> AbilitySlotClicked;
+    public UnityEvent OnCooldownFinished;
 
     [SerializeField]
     private AbilityDescription _ability;
@@ -70,6 +71,7 @@ public class AbilitySlot : MonoBehaviour
         if (scaleX >= 1f)
         {
             _coolDownVisualizer.GetComponent<Image>().color = Color.green;
+            OnCooldownFinished.Invoke();
         }
         else
         {
@@ -82,17 +84,16 @@ public class AbilitySlot : MonoBehaviour
         UpdateCDVisualizer(_timer.Progress);
     }
 
-    private void OnButtonClicked()
+    public void OnButtonClicked()
     {
-        //TODO Only initialize cooldown afterwards.
+        AbilitySlotClicked.Invoke(_ability);
+    }
 
+    public void StartCooldownTimer()
+    {
         if (!_timer.IsRunning)
         {
             _timer.Start();
-
-            AbilitySlotClicked.Invoke();
         }
-        //What do when clicked?
-        //Change PlayerPickerController's state.
     }
 }
