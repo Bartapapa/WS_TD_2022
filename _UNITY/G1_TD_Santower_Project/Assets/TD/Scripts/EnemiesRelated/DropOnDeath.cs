@@ -10,7 +10,7 @@ public class DropOnDeath : MonoBehaviour
     [SerializeField] private int _cookiesDropped = 0;
     [SerializeField] private int _milkDropped = 0;
 
-    private void Awake()
+	private void Awake()
     {
         _damageable = GetComponent<Damageable>();
     }
@@ -27,8 +27,8 @@ public class DropOnDeath : MonoBehaviour
     }
 
     private void OnCallerDied(Damageable caller, int currentHealth, int damageTaken)
-    {
-        ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, _cookiesDropped);
-        ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, _milkDropped);
-    }
+	{
+		ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, _cookiesDropped);
+		ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, _milkDropped);
+	}
 }

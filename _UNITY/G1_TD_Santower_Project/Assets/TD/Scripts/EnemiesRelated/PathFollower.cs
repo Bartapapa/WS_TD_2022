@@ -11,6 +11,9 @@
 		private Path _path = null;
 
 		[SerializeField]
+		private DropOnDeath _dropOnDeath;
+
+		[SerializeField]
 		private bool _pathLoop = false;
 
 		[SerializeField]
@@ -33,9 +36,7 @@
 		
 		[SerializeField]
 		private int _currentPathIndex;
-		
-		//private int _waypointIndex;
-	
+
 		private bool _grosBool = false;
 
 		private Vector3 _nextDestination;
@@ -47,7 +48,6 @@
 
 		public void SetWaypoint(int indexPath)
 		{
-			//_waypointIndex = indexPath;
 			_currentPathIndex = indexPath;
 
             SetNewDestination(Vector3.zero);
@@ -71,6 +71,11 @@
 			}
 		}
 
+		public void DisableDropOnDeath()
+		{
+			_dropOnDeath.enabled= false;
+		}
+
 		private void Update()
 		{
 			if (_path == null || _currentPathIndex >= _path.Waypoints.Count)
@@ -79,7 +84,6 @@
 			}
 			if (_grosBool == false)
 			{
-				//Debug.Log(_waypointIndex + " sasa " + _currentPathIndex);
 				SetWaypoint(_currentPathIndex);
 				_grosBool = true;
 			}

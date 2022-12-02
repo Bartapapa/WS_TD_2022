@@ -66,12 +66,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
+  _dropOnDeath: {fileID: -3899305546933665811}
+  _pathLoop: 0
   _moveSpeed: 1.2
   _rotateSpeed: 5
   _maxSpeedRandoMultiplier: 1.1
   _minSpeedRandoMultiplier: 0.9
   _distanceThreshold: 0.5
   _destinationPositionRandomness: 2.5
+  _currentPathIndex: 0
 --- !u!114 &2942146037294568419
 MonoBehaviour:
   m_ObjectHideFlags: 0

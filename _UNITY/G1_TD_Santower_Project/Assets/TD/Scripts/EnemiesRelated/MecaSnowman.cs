@@ -12,10 +12,13 @@ public class MecaSnowman : MonoBehaviour
 	private Timer _spawnIntervale;
 
 	[SerializeField]
-	private List<WaveEntity> _waveEntity = new List<WaveEntity>();
-	
+	private WaveEntityGroupDescription _waveEntities;
+
 	[SerializeField]
 	private List<EntitySpawner> _spawner = new List<EntitySpawner>();
+
+	[SerializeField]
+	private WaveDatabase _waveEntityDatas;
 
 	private List<GameObject> _tower = new List<GameObject>();
 
@@ -24,6 +27,8 @@ public class MecaSnowman : MonoBehaviour
 	private Path _path;
 
 	private GameObject _waypointIndex;
+
+	private WaveEntity _entity;
 
 	private void OnEnable()
 	{
@@ -93,12 +98,16 @@ public class MecaSnowman : MonoBehaviour
 
 	private void SpawnEnemies(EntitySpawner spawner)
 	{
-		for (int i = 0; i < _waveEntity.Count; i++)
+		for (int y = 0; y < _waveEntities.GetWaves.Count; y++)
 		{
-			Vector3 spawnPos = spawner.transform.position;
+			for (int i = 0; i < _waveEntities.GetWaves[y].WaveEntitiesDescription.Count; i++)
+			{
+				_waveEntityDatas.GetWaveElementFromType(_waveEntities.GetWaves[y].WaveEntitiesDescription[i].EntityType, out _entity);
+				Vector3 spawnPos = spawner.transform.position;
 
-			_waveEntity[i].SetPath(_path, false);
-			Instantiate(_waveEntity[i], spawnPos, Quaternion.identity);
+				_entity.SetPath(_path, false);
+				Instantiate(_entity, spawnPos, Quaternion.identity);
+			}
 		}
 	}
 

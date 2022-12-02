@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: -520755102994360734}
   - component: {fileID: 1773812474288713663}
   - component: {fileID: 8954739381906307174}
+  - component: {fileID: 7103282572181935209}
   m_Layer: 8
   m_Name: Entity.MerryACarrier
   m_TagString: Untagged
@@ -170,7 +171,9 @@ MonoBehaviour:
   _randomSpawnAmplitude: 1
   _waveEntity:
   - {fileID: 11400000, guid: 0de6992feefe20848b0bde2f6b151a04, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f690ea652b95f0643ad1e2da67730f19, type: 2}
+  - {fileID: 11400000, guid: 240246e109d8ee145835e5584740f4af, type: 2}
+  - {fileID: 11400000, guid: 445f659ff80e5934387a74c3799b4825, type: 2}
   _waveEntityDatas: {fileID: 11400000, guid: 0c39ccefeb617144c9db545ace8b6e29, type: 2}
 --- !u!114 &25073061
 MonoBehaviour:
@@ -185,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
+  _dropOnDeath: {fileID: 7103282572181935209}
   _pathLoop: 1
   _moveSpeed: 1
   _rotateSpeed: 1
@@ -263,6 +267,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7103282572181935209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b9f6c6470262b4fa1ecfc91357f086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageable: {fileID: 0}
+  _cookiesDropped: 0
+  _milkDropped: 0
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0
