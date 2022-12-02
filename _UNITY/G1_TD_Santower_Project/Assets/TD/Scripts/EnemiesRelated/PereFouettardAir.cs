@@ -1,4 +1,5 @@
 using GSGD1;
+using UnityEditor;
 using UnityEngine;
 
 public class PereFouettardAir : MonoBehaviour
@@ -10,10 +11,16 @@ public class PereFouettardAir : MonoBehaviour
 	private float _rotateSpeed = 200;
 
 	[SerializeField]
+	private float _fireRadius = 7;
+
+	[SerializeField]
 	private float _innerCicleRad = 5;
 
 	[SerializeField]
 	private float _outerCicleRad = 50;
+
+	[SerializeField]
+	private WeaponController _weaponController;
 
 	private float _threshold = 0.5f;
 
@@ -42,8 +49,14 @@ public class PereFouettardAir : MonoBehaviour
 			FindNewPos();
 		}
 
-		MoveTo(_innerCiclePos);
+		//MoveTo(_innerCiclePos);
 		LookAt(_northPole.transform.position);
+		//if (Vector3.Distance(_northPole.transform.position, transform.position) <= _fireRadius )
+		{
+			//Debug.Log("ssssssssss");
+			_weaponController.LookAtAndFire(_northPole.transform.position);
+		}
+		//Debug.Log(Vector3.Distance(_northPole.transform.position, transform.position));
     }
 
 	private void FindNorthPole()
@@ -82,8 +95,8 @@ public class PereFouettardAir : MonoBehaviour
 
 	private void FindNewPos()
 	{
-		_innerCiclePos = RandomPosInRadius(_innerCicleRad);
 		_outerCiclePos = RandomPosInRadius(_outerCicleRad);
+		_innerCiclePos = RandomPosInRadius(_innerCicleRad);
 		transform.position = _outerCiclePos;
 	}
 
@@ -92,7 +105,7 @@ public class PereFouettardAir : MonoBehaviour
 		var Pose = _northPole.transform.position;
 		Vector3 randomPos = Random.insideUnitSphere * radius;
 		randomPos += Pose;
-		randomPos.y = 0f;
+		randomPos.y = 12f;
 
 		Vector3 direction = randomPos - Pose;
 		direction.Normalize();

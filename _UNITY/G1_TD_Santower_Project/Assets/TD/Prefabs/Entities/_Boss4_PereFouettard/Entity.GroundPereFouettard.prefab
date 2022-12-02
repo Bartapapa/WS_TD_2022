@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 5412690654039449867}
   - component: {fileID: 2942146037294568418}
   - component: {fileID: 8464331773039067455}
+  - component: {fileID: 4534463255682805405}
   - component: {fileID: 141158296177427049}
   - component: {fileID: 7823290607996952989}
   - component: {fileID: -6292638737442430726}
@@ -198,6 +199,20 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+--- !u!114 &4534463255682805405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38603086dd95c144b8d09695d7a4cd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireRadius: 10
+  _weaponController: {fileID: 8569745150794409676}
 --- !u!114 &141158296177427049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +509,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2958769032138497101}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -429,7 +429,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 25a9fb42d361f46ad89221f6d301e96e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -944,9 +944,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5190943296906918427}
   - component: {fileID: 6642927475936807184}
-  - component: {fileID: 7921238031995419534}
   - component: {fileID: 651142518}
   - component: {fileID: 1628836842}
+  - component: {fileID: 736236888}
   m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
@@ -985,19 +985,6 @@ MonoBehaviour:
   _targetFlyingEnemies: 1
   _canOnlyTargetFlyingEnemies: 0
   _damageablesInRange: []
---- !u!135 &7921238031995419534
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042878395038333652}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 8
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &651142518
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1031,6 +1018,21 @@ MonoBehaviour:
   _selectableObject: {fileID: 1966292294}
   _towerDescription: {fileID: 0}
   _totalCookieCost: 0
+  _enabledByDefault: 0
+--- !u!136 &736236888
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042878395038333652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 8
+  m_Height: 40
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2613864369327911261
 GameObject:
   m_ObjectHideFlags: 0
