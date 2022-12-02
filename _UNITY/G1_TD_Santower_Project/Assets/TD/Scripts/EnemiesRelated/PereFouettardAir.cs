@@ -49,15 +49,15 @@ public class PereFouettardAir : MonoBehaviour
 			FindNewPos();
 		}
 
-		//MoveTo(_innerCiclePos);
+		MoveTo(_innerCiclePos);
 		LookAt(_northPole.transform.position);
-		//if (Vector3.Distance(_northPole.transform.position, transform.position) <= _fireRadius )
+		if (Vector3.Distance(_northPole.transform.position, transform.position) <= _fireRadius)
 		{
 			//Debug.Log("ssssssssss");
 			_weaponController.LookAtAndFire(_northPole.transform.position);
 		}
 		//Debug.Log(Vector3.Distance(_northPole.transform.position, transform.position));
-    }
+	}
 
 	private void FindNorthPole()
 	{

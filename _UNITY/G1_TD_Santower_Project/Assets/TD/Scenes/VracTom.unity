@@ -12740,6 +12740,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Entity.AirPereFouettard
       objectReference: {fileID: 0}
+    - target: {fileID: 5938454536135404047, guid: be78e8b03b8d91241a68adabf1642988,
+        type: 3}
+      propertyPath: _timer._stopWhenCompleted
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be78e8b03b8d91241a68adabf1642988, type: 3}
 --- !u!1001 &5642243808691494244

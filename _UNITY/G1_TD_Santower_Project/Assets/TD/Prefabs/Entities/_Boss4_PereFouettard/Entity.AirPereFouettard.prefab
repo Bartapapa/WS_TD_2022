@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 5
   _rotateSpeed: 2
-  _fireRadius: 20
+  _fireRadius: 15
   _innerCicleRad: 5
   _outerCicleRad: 20
   _weaponController: {fileID: 2862634358252692446}
