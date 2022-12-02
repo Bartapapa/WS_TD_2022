@@ -22,7 +22,7 @@ MonoBehaviour:
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 69183fa287ea4244db602691fb462615,
       type: 2}
     _spawnerIndex: 2
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 69183fa287ea4244db602691fb462615,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: dad4a28b5e2f1364e9e74b3d4fa9ffbb,
       type: 2}
     _spawnerIndex: 3
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 69183fa287ea4244db602691fb462615,
@@ -31,7 +31,7 @@ MonoBehaviour:
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 69183fa287ea4244db602691fb462615,
       type: 2}
     _spawnerIndex: 5
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 69183fa287ea4244db602691fb462615,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: dad4a28b5e2f1364e9e74b3d4fa9ffbb,
       type: 2}
     _spawnerIndex: 6
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 69183fa287ea4244db602691fb462615,

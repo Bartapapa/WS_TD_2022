@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da9a6db39be39646a07910370d78b4b, type: 3}
-  m_Name: Perk_RudolphRemoteControl
+  m_Script: {fileID: 11500000, guid: 6b40b2c90fd8d714b9a4b619b5e01725, type: 3}
+  m_Name: 1Sn
   m_EditorClassIdentifier: 
-  _name: Rudolph Remote Control
-  _icon: {fileID: 0}
-  _milkCost: 0
+  _waves:
+  - _waveEntitiesDescriptions:
+    - _entityType: 4
+      _extraDurationAfterSpawned: 0
+    _durationBetweenSpawnedEntity: 1

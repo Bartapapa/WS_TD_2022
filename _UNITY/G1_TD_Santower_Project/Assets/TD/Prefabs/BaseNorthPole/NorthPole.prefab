@@ -235,6 +235,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 170, y: 170, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &323722257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323722258}
+  m_Layer: 7
+  m_Name: AimPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323722258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323722257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8491755099251913143}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540323955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1392,7 @@ MonoBehaviour:
   _isFlying: 0
   _health: 100
   _destroyIfKilled: 1
-  _aimPosition: {fileID: 0}
+  _aimPosition: {fileID: 323722258}
   _deathParticle: {fileID: 0}
   _isDead: 0
   _isInvulnerable: 0
@@ -1519,6 +1550,7 @@ Transform:
   - {fileID: 965387245}
   - {fileID: 178082515}
   - {fileID: 574829530}
+  - {fileID: 323722258}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

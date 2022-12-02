@@ -132,4 +132,14 @@ public class ExplosivePresent : MonoBehaviour, IPickerGhost
         transform.LookAt(Vector3.right);
         _activationTimer.Start();
     }
+
+    public void SetExplosionRadius(float radius)
+    {
+        _explosionRadius = radius;
+    }
+
+    public void SetExplosionDamage(int damage)
+    {
+        _explosionDamage = damage;
+    }
 }

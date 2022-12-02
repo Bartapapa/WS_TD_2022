@@ -25,6 +25,8 @@ public class Ability_RPG : Ability
     private int _maxnumberOfMissiles = 1;
     [SerializeField]
     private int _missilesShot = 0;
+    [SerializeField]
+    private bool _missilesCreateShrapnel = false;
 
     private void Awake()
     {
@@ -50,6 +52,11 @@ public class Ability_RPG : Ability
 
         ProjectileExplosive newMissile = Instantiate(_missile);
         _instantiatedMissile = newMissile;
+        if (_missilesCreateShrapnel)
+        {
+            newMissile.SetCanProduceShrapnel(true);
+        }
+
         newMissile.transform.LookAt(position);
 
         _missilesShot += 1;
@@ -76,5 +83,15 @@ public class Ability_RPG : Ability
     {
         _requested = false;
         LevelReferences.Instance.PlayerPickerController.ChangeState(PlayerPickerState.InGame);
+    }
+
+    public void UpgradeMaxMissile()
+    {
+        _maxnumberOfMissiles = 2;
+    }
+
+    public void UpgradeShrapnelMissile()
+    {
+        _missilesCreateShrapnel = true;
     }
 }

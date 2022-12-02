@@ -6,6 +6,9 @@
 
     public class ProjectileExplosive : AProjectile
     {
+        public delegate void ExplosiveEvent();
+        public event ExplosiveEvent Exploded = null;
+
         [SerializeField]
         private SphereCollider _explosionCollider;
 
@@ -25,6 +28,12 @@
 
         [SerializeField]
         private Lifespan _lifespan;
+
+        [SerializeField]
+        private bool _canProduceShrapnel = false;
+        private bool _hasExploded = false;
+
+        public bool CanProduceShrapnel => _canProduceShrapnel;
 
         private void Awake()
         {
@@ -49,7 +58,7 @@
                 EXPLOSION();
             }
 
-            if (_lifespan.LifeSpanTimer.Progress >= 1)
+            if (_lifespan.LifeSpanTimer.Progress >= .9)
             {
                 EXPLOSION();
             }
@@ -59,6 +68,13 @@
         {
 			_projectileSpeed = 0;
 			_explosionCollider.radius = _explosionCollider.radius + _explosionSpeed * Time.deltaTime;
+
+            if (!_hasExploded)
+            {
+                _hasExploded = true;
+                Exploded?.Invoke();
+            }
+
 			if (_explosionCollider.radius >= _explosionRadius)
 			{
 				Destroy(gameObject);
@@ -131,6 +147,11 @@
                 yield return null;
             }
             yield return null;
+        }
+
+        public void SetCanProduceShrapnel(bool value)
+        {
+            _canProduceShrapnel = value;
         }
     }
 }

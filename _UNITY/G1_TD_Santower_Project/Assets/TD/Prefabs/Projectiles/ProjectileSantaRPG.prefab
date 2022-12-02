@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &823038579588228715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5358004934585851439}
+  m_Layer: 7
+  m_Name: ShrapnelDirection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5358004934585851439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823038579588228715}
+  m_LocalRotation: {x: 0.6087605, y: -0, z: -0, w: 0.79335415}
+  m_LocalPosition: {x: 0, y: -0.50699997, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1697648429471405644}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
 --- !u!1 &1697648429471405641
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +45,7 @@ GameObject:
   - component: {fileID: 2938074756315380218}
   - component: {fileID: 1469653270}
   - component: {fileID: 1241841740681876576}
+  - component: {fileID: 6712400361104604945}
   m_Layer: 7
   m_Name: ProjectileSantaRPG
   m_TagString: Untagged
@@ -34,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1697648429891245683}
+  - {fileID: 5358004934585851439}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63,6 +96,8 @@ MonoBehaviour:
   _explosionRadius: 7
   _accelerateToMaxSpeed: 1
   _acceleration: 3
+  _lifespan: {fileID: 0}
+  _canProduceShrapnel: 0
 --- !u!135 &1596334011
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -120,6 +155,24 @@ MonoBehaviour:
   _lifeTimer:
     _duration: 10
     _stopWhenCompleted: 1
+--- !u!114 &6712400361104604945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697648429471405641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c3715da9ddc2541bc252da4f2c88ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projExplosive: {fileID: 0}
+  _shrapnel: {fileID: -7937955209939105875, guid: a2e2f43871b33c44fa260123a73de6f3,
+    type: 3}
+  _shrapnelSpawner: {fileID: 5358004934585851439}
+  _shrapnelQuantity: 5
+  _spread: 15
 --- !u!1 &1697648429891245682
 GameObject:
   m_ObjectHideFlags: 0

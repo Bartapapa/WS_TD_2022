@@ -262,7 +262,16 @@ namespace GSGD1
                                 {
                                     if (_ghost != null)
                                     {
-                                        _ghost.GetTransform().position = hit.point;
+                                        if (!_reticleLocked)
+                                        {
+                                            _ghost.GetTransform().position = hit.point;
+                                        }
+                                        else
+                                        {
+                                            Vector3 ignoreY = new Vector3(hit.point.x, _targetingReticle.transform.position.y, hit.point.z);
+
+                                            _ghost.GetTransform().LookAt(ignoreY);
+                                        }
                                     }
                                     if (_targetingReticle != null)
                                     {
@@ -271,9 +280,17 @@ namespace GSGD1
 
                                     if (Input.GetMouseButtonDown(0))
                                     {
+                                        if (!_reticleLocked)
+                                        {
+                                            _reticleLocked = true;
+                                            _firstPoint = hit.point;
+                                            return;
+                                        }
+
                                         _ghost = null;
+                                        _reticleLocked = false;
                                         DestroyPreviousTargetingReticle();
-                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
+                                        PlayerPickerTargetingConfirmed?.Invoke(_firstPoint, hit.point);
                                     }
                                 }
 
@@ -293,7 +310,16 @@ namespace GSGD1
                                 {
                                     if (_ghost != null)
                                     {
-                                        _ghost.GetTransform().position = hit.point;
+                                        if (!_reticleLocked)
+                                        {
+                                            _ghost.GetTransform().position = hit.point;
+                                        }
+                                        else
+                                        {
+                                            Vector3 ignoreY = new Vector3(hit.point.x, _targetingReticle.transform.position.y, hit.point.z);
+
+                                            _ghost.GetTransform().LookAt(ignoreY);
+                                        }
                                     }
                                     if (_targetingReticle != null)
                                     {
@@ -302,9 +328,17 @@ namespace GSGD1
 
                                     if (Input.GetMouseButtonDown(0))
                                     {
+                                        if (!_reticleLocked)
+                                        {
+                                            _reticleLocked = true;
+                                            _firstPoint = hit.point;
+                                            return;
+                                        }
+
                                         _ghost = null;
+                                        _reticleLocked = false;
                                         DestroyPreviousTargetingReticle();
-                                        PlayerPickerTargetingConfirmed?.Invoke(hit.point, Vector3.zero);
+                                        PlayerPickerTargetingConfirmed?.Invoke(_firstPoint, hit.point);
                                     }
                                 }
 

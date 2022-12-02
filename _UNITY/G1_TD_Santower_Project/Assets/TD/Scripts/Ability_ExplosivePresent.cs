@@ -14,9 +14,9 @@ public class Ability_ExplosivePresent : Ability
     private AbilitySlot _abilitySlot;
 
     [SerializeField]
-    private float _width = 1f;
+    private float _presentExplosionRadius = 7f;
     [SerializeField]
-    private float _length = 1f;
+    private int _presentDamage = 50;
 
     private void Awake()
     {
@@ -32,9 +32,11 @@ public class Ability_ExplosivePresent : Ability
 
         ExplosivePresent newPresent = Instantiate(_explosivePresent);
         _instantiatedPresent = newPresent;
+        newPresent.SetExplosionDamage(_presentDamage);
+        newPresent.SetExplosionRadius(_presentExplosionRadius);
 
         LevelReferences.Instance.PlayerPickerController.CreateGhost(newPresent);
-        LevelReferences.Instance.PlayerPickerController.SetTargetingReticle(abilityDescription.TargetingReticle, _width, _length, false);
+        LevelReferences.Instance.PlayerPickerController.SetTargetingReticle(abilityDescription.TargetingReticle, _presentExplosionRadius, _presentExplosionRadius, false);
 
         LevelReferences.Instance.PlayerPickerController.ChangeState(PlayerPickerState.Targeting);
     }
@@ -61,5 +63,13 @@ public class Ability_ExplosivePresent : Ability
     {
         _requested = false;
         LevelReferences.Instance.PlayerPickerController.ChangeState(PlayerPickerState.InGame);
+    }
+
+    public void UpgradePresent()
+    {
+        //I could really do this by creating a sort of dictionary which takes in the AbilityDescription's level and outputs a thing regarding what bonuses that level grants.
+        //But it's friday, and I need to be quick to ge this done before the end of the day so we can have a working build.
+        _presentExplosionRadius = 10f;
+        _presentDamage = 75;
     }
 }

@@ -96,4 +96,9 @@ public class AbilitySlot : MonoBehaviour
             _timer.Start();
         }
     }
+
+    public void SetAbility(AbilityDescription ability)
+    {
+        _ability = ability;
+    }
 }
