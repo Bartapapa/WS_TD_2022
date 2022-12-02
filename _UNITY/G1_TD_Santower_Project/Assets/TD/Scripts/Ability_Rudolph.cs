@@ -15,6 +15,8 @@ public class Ability_Rudolph : Ability
 
     [SerializeField]
     private AbilitySlot _abilitySlot;
+    [SerializeField]
+    private AbilityDescription _level2;
 
     [SerializeField]
     private float _width = 1f;
@@ -98,5 +100,15 @@ public class Ability_Rudolph : Ability
     {
         _requested = false;
         LevelReferences.Instance.PlayerPickerController.ChangeState(PlayerPickerState.InGame);
+    }
+
+    public void UpgradeCarpetBomb()
+    {
+        _abilitySlot.SetAbility(_level2);
+    }
+
+    public void UpgradeCDouble()
+    {
+        _maxnumberOfSleighs = 2;
     }
 }

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9da9a6db39be39646a07910370d78b4b, type: 3}
-  m_Name: Perk_RudolphRemoteControl
+  m_Name: Perk_RudolphAndRocket
   m_EditorClassIdentifier: 
-  _name: Rudolph Remote Control
+  _name: RudolphAndRocket
   _icon: {fileID: 0}
   _milkCost: 0
