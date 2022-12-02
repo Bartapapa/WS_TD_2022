@@ -170,7 +170,9 @@ MonoBehaviour:
   _randomSpawnAmplitude: 1
   _waveEntity:
   - {fileID: 11400000, guid: 0de6992feefe20848b0bde2f6b151a04, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f690ea652b95f0643ad1e2da67730f19, type: 2}
+  - {fileID: 11400000, guid: 240246e109d8ee145835e5584740f4af, type: 2}
+  - {fileID: 11400000, guid: 445f659ff80e5934387a74c3799b4825, type: 2}
   _waveEntityDatas: {fileID: 11400000, guid: 0c39ccefeb617144c9db545ace8b6e29, type: 2}
 --- !u!114 &25073061
 MonoBehaviour:

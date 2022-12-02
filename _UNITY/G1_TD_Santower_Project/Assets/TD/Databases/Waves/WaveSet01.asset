@@ -17,7 +17,7 @@ MonoBehaviour:
       type: 2}
     _spawnerIndex: 0
     _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 22e897f147d6dde4fbeff90f5bbac324,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 69183fa287ea4244db602691fb462615,
       type: 2}
     _spawnerIndex: 1
     _waypointOverride: -1

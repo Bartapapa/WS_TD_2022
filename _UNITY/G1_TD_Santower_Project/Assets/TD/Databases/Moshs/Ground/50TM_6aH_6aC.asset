@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b40b2c90fd8d714b9a4b619b5e01725, type: 3}
-  m_Name: _MoshMerryACarrierDeath
+  m_Name: 50TM_6aH_6aC
   m_EditorClassIdentifier: 
   _waves:
   - _waveEntitiesDescriptions:
@@ -20,83 +20,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
-      _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 7
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
@@ -108,7 +32,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 7
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
@@ -124,13 +48,13 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 7
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 7
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
@@ -140,7 +64,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 7
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
@@ -156,7 +80,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 6
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
@@ -178,11 +102,11 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 7
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 6
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
@@ -192,7 +116,7 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 6
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
@@ -202,16 +126,16 @@ MonoBehaviour:
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 2
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 6
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    - _entityType: 1
+    - _entityType: 6
       _extraDurationAfterSpawned: 0
     - _entityType: 1
       _extraDurationAfterSpawned: 0
-    _durationBetweenSpawnedEntity: 0
+    _durationBetweenSpawnedEntity: 1
