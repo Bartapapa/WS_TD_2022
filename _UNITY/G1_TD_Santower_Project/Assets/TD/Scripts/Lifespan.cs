@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class Lifespan : MonoBehaviour
 {
+    public delegate void LifespanEvent(Lifespan lifespan);
+    public event LifespanEvent lifespanEnded = null;
+
     [SerializeField]
     private Timer _lifeTimer;
+    [SerializeField]
+    private bool _destroyOnEnd = true;
 
     public Timer LifeSpanTimer => _lifeTimer;
 
@@ -21,7 +26,14 @@ public class Lifespan : MonoBehaviour
 
         if (_lifeTimer.Progress >= 1)
         {
-            Destroy(this.gameObject);
+            if (_destroyOnEnd)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                lifespanEnded?.Invoke(this);
+            }  
         }
     }
 }

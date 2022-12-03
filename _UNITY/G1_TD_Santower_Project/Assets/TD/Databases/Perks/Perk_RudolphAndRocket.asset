@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: RudolphAndRocket
   _icon: {fileID: 0}
-  _milkCost: 0
+  _milkCost: 29

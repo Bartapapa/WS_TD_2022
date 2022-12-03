@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 0}
-  _cookiesDropped: 15
-  _milkDropped: 0
+  _cookiesDropped: 90
+  _milkDropped: 5
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0
