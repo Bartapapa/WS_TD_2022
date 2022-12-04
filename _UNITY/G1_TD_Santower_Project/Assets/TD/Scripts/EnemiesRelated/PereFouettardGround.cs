@@ -36,6 +36,7 @@ public class PereFouettardGround : MonoBehaviour
 		var tower = GetNearestTower();
 		if (Vector3.Distance(tower.transform.position, transform.position) <= _fireRadius )
 		{
+			Debug.Log(tower);
 			_pathFollower.SetCanMove(false);
 			_weaponController.LookAtAndFire(tower.transform.position);
 			if (tower == null)
@@ -66,12 +67,15 @@ public class PereFouettardGround : MonoBehaviour
 		int shortestDistanceIndex = 0;
 		for (int i = 0; i < _tower.Count; i++)
 		{
-			var distance = (_tower[i].transform.position - transform.position).sqrMagnitude;
-			if (distance < shortestDistance)
+			if (_tower[i] != null)
 			{
-				shortestDistance = distance;
-				shortestDistanceIndex = i;
-			}
+                var distance = (_tower[i].transform.position - transform.position).sqrMagnitude;
+                if (distance < shortestDistance)
+                {
+                    shortestDistance = distance;
+                    shortestDistanceIndex = i;
+                }
+            }
 		}
 		return _tower[shortestDistanceIndex];
 	}

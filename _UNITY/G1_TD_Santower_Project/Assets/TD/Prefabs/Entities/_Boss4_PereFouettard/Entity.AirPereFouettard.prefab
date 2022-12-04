@@ -147,6 +147,7 @@ MonoBehaviour:
   _weapon: {fileID: 5938454536135404047}
   _rotationSpeed: 5
   _minAngleToFire: 10
+  _projectileSpeed: 60
   _useArtilleryAiming: 0
   _artilleryAimHeight: 10
 --- !u!114 &5938454536135404047
@@ -163,11 +164,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timer:
     _duration: 0.1
-    _stopWhenCompleted: 0
+    _stopWhenCompleted: 1
+  _projectileSpeed: 60
   _projectile: {fileID: 1697648429471405643, guid: 22fcc0a31c0a1a74a8758f113602682f,
     type: 3}
   _projectileAnchor: {fileID: 267331096078307050}
-  _projectileSpeed: 60
 --- !u!1 &4262874677863048047
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isFlying: 1
   _health: 450
-  _destroyIfKilled: 1
+  _destroyIfKilled: 0
   _aimPosition: {fileID: 4262874678671416599}
   _deathParticle: {fileID: 6159851731732633496, guid: fad479241fc5cca47b823fc8ac0cd376,
     type: 3}
@@ -246,6 +247,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!114 &4262874677863048046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +266,8 @@ MonoBehaviour:
   _fireRadius: 15
   _innerCicleRad: 5
   _outerCicleRad: 20
-  _weaponController: {fileID: 2862634358252692446}
+  _pereFouettardGround: {fileID: 2942146037294568416, guid: 7e6d96daff0c28f449f5e07b1a42b0f2,
+    type: 3}
 --- !u!136 &4262874677863048032
 CapsuleCollider:
   m_ObjectHideFlags: 0

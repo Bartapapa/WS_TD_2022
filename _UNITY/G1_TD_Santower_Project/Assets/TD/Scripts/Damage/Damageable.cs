@@ -35,6 +35,9 @@
 		private Lifespan _lifespan;
 
 		public bool IsDead => _isDead;
+		public bool GetIsFlying => _isFlying;
+		public int GetHealth => _health;
+        public bool DestroyIfKilled { set => _destroyIfKilled = value; }
 
 		public delegate void DamageableEvent(Damageable caller, int currentHealth, int damageTaken);
 		private event DamageableEvent _damageTaken = null;
@@ -152,10 +155,7 @@
 			}
 		}
 
-		public bool GetIsFlying { get { return _isFlying; } }
-		public int GetHealth { get { return _health; } }
-
-		public void DoDestroy()
+        public void DoDestroy()
 		{
 			if (_destroyIfKilled == true)
 			{

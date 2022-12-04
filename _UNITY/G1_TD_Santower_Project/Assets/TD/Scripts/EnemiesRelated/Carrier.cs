@@ -49,6 +49,7 @@ public class Carrier : MonoBehaviour
 	{
 		_damageable.CallerDied -= SpawnProcess;
 	}
+
 	private void Update()
 	{
 		if (_isMerryACarrier == true)

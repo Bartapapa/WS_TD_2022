@@ -1,5 +1,6 @@
 using GSGD1;
 using UnityEditor;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PereFouettardAir : MonoBehaviour
@@ -11,16 +12,20 @@ public class PereFouettardAir : MonoBehaviour
 	private float _rotateSpeed = 200;
 
 	[SerializeField]
-	private float _fireRadius = 7;
+	private float _fireRadius = 15;
 
 	[SerializeField]
 	private float _innerCicleRad = 5;
 
 	[SerializeField]
 	private float _outerCicleRad = 50;
-
+    
 	[SerializeField]
+	private GameObject _pereFouettardGround;
+
 	private WeaponController _weaponController;
+
+    private Damageable _damageable;
 
 	private float _threshold = 0.5f;
 
@@ -34,29 +39,40 @@ public class PereFouettardAir : MonoBehaviour
 	
 	private Vector3 _exitPos;
 
-	private void DoOnEnable()
-	{
+	private Vector3 _northPoleAimPos;
+
+    private void Awake()
+    {
+        _damageable = GetComponent<Damageable>();
+        _weaponController = GetComponentInChildren<WeaponController>();
+		
 		_pathFollower = GetComponent<PathFollower>();
 		_pathFollower.enabled = false;
+	
 		FindNorthPole();
-	}
+        FindNewPos();
+    }
 
-	void Update()
+    private void OnEnable()
     {
-		if (_pathFollower == null)
-		{
-			DoOnEnable();
-			FindNewPos();
-		}
+        _damageable.CallerDied -= Die;
+        _damageable.CallerDied += Die;
+    }
 
+    private void OnDisable()
+    {
+        _damageable.CallerDied -= Die;
+    }
+
+    void Update()
+    {
 		MoveTo(_innerCiclePos);
-		LookAt(_northPole.transform.position);
-		if (Vector3.Distance(_northPole.transform.position, transform.position) <= _fireRadius)
+		LookAt(_northPoleAimPos);
+		
+		if (Vector3.Distance(_northPoleAimPos, transform.position) <= _fireRadius)
 		{
-			//Debug.Log("ssssssssss");
-			_weaponController.LookAtAndFire(_northPole.transform.position);
+			_weaponController.LookAtAndFire(_northPoleAimPos);
 		}
-		//Debug.Log(Vector3.Distance(_northPole.transform.position, transform.position));
 	}
 
 	private void FindNorthPole()
@@ -64,6 +80,7 @@ public class PereFouettardAir : MonoBehaviour
 		foreach (GameObject northPole in GameObject.FindGameObjectsWithTag("NorthPole"))
 		{
 			_northPole = northPole;
+			_northPoleAimPos= northPole.GetComponentInChildren<Damageable>().GetAimPosition();
 		}
 	}
 
@@ -117,5 +134,12 @@ public class PereFouettardAir : MonoBehaviour
 		randomPos.z = Mathf.Sin(dotProductAngle * (Random.value > 0.5f ? 1f : -1f)) * radius + Pose.z;
 
 		return randomPos;
+	}
+
+	private void Die(Damageable damageable, int currentHealth, int damage)
+	{
+		Instantiate(_pereFouettardGround, transform.position, Quaternion.identity);
+		_damageable.DestroyIfKilled = true;
+		_damageable.DoDestroy();
 	}
 }

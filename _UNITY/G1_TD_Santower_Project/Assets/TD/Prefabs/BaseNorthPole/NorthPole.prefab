@@ -259,7 +259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323722257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.45, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -585,6 +585,7 @@ MonoBehaviour:
   _weapon: {fileID: 1516171201}
   _rotationSpeed: 2
   _minAngleToFire: 45
+  _projectileSpeed: 1
   _useArtilleryAiming: 0
   _artilleryAimHeight: 10
 --- !u!114 &1516171201
@@ -602,10 +603,10 @@ MonoBehaviour:
   _timer:
     _duration: 0.2
     _stopWhenCompleted: 1
+  _projectileSpeed: 25
   _projectile: {fileID: 1697648429471405643, guid: a1a1140bdc5abfd4b923056be28d793a,
     type: 3}
   _projectileAnchor: {fileID: 540323956}
-  _projectileSpeed: 25
   _continueFiringDuration: 2.5
   _isFiring: 0
 --- !u!114 &1709344319
@@ -1019,6 +1020,7 @@ MonoBehaviour:
   _towerDescription: {fileID: 0}
   _totalCookieCost: 0
   _enabledByDefault: 0
+  _projectileSpeed: 25
 --- !u!136 &736236888
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1402,6 +1404,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!54 &4766028707496432326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1429,9 +1433,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 2.56
-  m_Height: 15
+  m_Height: 12
   m_Direction: 1
-  m_Center: {x: 0, y: 2.5, z: 0}
+  m_Center: {x: 0, y: 1.54, z: 0}
 --- !u!1 &8491755099228603324
 GameObject:
   m_ObjectHideFlags: 0
