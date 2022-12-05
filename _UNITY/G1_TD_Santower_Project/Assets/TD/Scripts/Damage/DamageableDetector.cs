@@ -58,6 +58,21 @@
 			{
 				return null;
 			}
+		}	
+		public Damageable GetSecondDamageable()
+		{
+			if (HasAnyDamageableInRange() == true && _damageablesInRange.Count > 1)
+			{
+				return _damageablesInRange[1];
+			}
+			else if (HasAnyDamageableInRange() == true && _damageablesInRange.Count == 1)
+			{
+				return _damageablesInRange[0];
+			}
+			else
+			{
+				return null;
+			}
 		}
 
 		public Damageable GetNearestDamageable()
