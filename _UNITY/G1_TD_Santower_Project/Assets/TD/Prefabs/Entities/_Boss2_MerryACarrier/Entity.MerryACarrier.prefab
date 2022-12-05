@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 1773812474288713663}
   - component: {fileID: 8954739381906307174}
   - component: {fileID: 7103282572181935209}
+  - component: {fileID: 3570152154215617902}
   m_Layer: 8
   m_Name: Entity.MerryACarrier
   m_TagString: Untagged
@@ -223,6 +224,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!114 &-520755102994360734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +285,19 @@ MonoBehaviour:
   _damageable: {fileID: 0}
   _cookiesDropped: 0
   _milkDropped: 0
+--- !u!114 &3570152154215617902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60256c38322aa8f418c07829a6300b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gamePhase: 3
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0

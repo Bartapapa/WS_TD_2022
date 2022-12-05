@@ -266,6 +266,37 @@ Transform:
   m_Father: {fileID: 8491755099251913143}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &404975747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404975748}
+  m_Layer: 7
+  m_Name: ProjectileAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404975748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404975747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.159}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065735766}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540323955
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +482,121 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &769199670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769199671}
+  m_Layer: 7
+  m_Name: Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &769199671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769199670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 894768966}
+  m_Father: {fileID: 1065735766}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &894768965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894768966}
+  - component: {fileID: 894768968}
+  - component: {fileID: 894768967}
+  m_Layer: 7
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &894768966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894768965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.509}
+  m_LocalScale: {x: 0.25754, y: 0.25754, z: 1.0815134}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 769199671}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &894768968
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894768965}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &894768967
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894768965}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 25a9fb42d361f46ad89221f6d301e96e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &921380146
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +679,137 @@ MonoBehaviour:
   _perkSlotPrefab: {fileID: 8780984221575259693, guid: 257290704fa87b54e819cb55964b1235,
     type: 3}
   _camera: {fileID: 574829531}
+--- !u!1 &1065735765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065735766}
+  - component: {fileID: 1065735770}
+  - component: {fileID: 1065735769}
+  - component: {fileID: 1065735768}
+  - component: {fileID: 1065735767}
+  m_Layer: 7
+  m_Name: WeaponController.01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1065735766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065735765}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 769199671}
+  - {fileID: 404975748}
+  m_Father: {fileID: 5190943296906918427}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1065735770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065735765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a359563d28733241b63a6582bf325a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 1065735769}
+  _rotationSpeed: 2
+  _minAngleToFire: 45
+  _useArtilleryAiming: 0
+  _artilleryAimHeight: 10
+--- !u!114 &1065735769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065735765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819d2d704fe03ca4e98155c8bc9f26e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timer:
+    _duration: 0.2
+    _stopWhenCompleted: 1
+  _projectile: {fileID: 1697648429471405643, guid: a1a1140bdc5abfd4b923056be28d793a,
+    type: 3}
+  _projectileAnchor: {fileID: 404975748}
+  _projectileSpeed: 25
+  _continueFiringDuration: 2.5
+  _isFiring: 0
+--- !u!114 &1065735768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065735765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fb70bb36020f0439528c7a84359b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningFor: {fileID: 11400000, guid: a1b4e8083cb65a74bbc2b43b70996d7a, type: 2}
+  OnPerkAcquired_UE:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1065735769}
+        m_TargetAssemblyTypeName: GSGD1.SantaGatling, Assembly-CSharp
+        m_MethodName: GatlingUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1065735767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065735765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fb70bb36020f0439528c7a84359b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningFor: {fileID: 11400000, guid: b3c5f64dc4f0ab641a6acdccc1a89710, type: 2}
+  OnPerkAcquired_UE:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1065735770}
+        m_TargetAssemblyTypeName: GSGD1.WeaponController, Assembly-CSharp
+        m_MethodName: UpgradeRotationSpeed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 3.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1516171199
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +862,6 @@ MonoBehaviour:
   _weapon: {fileID: 1516171201}
   _rotationSpeed: 2
   _minAngleToFire: 45
-  _projectileSpeed: 1
   _useArtilleryAiming: 0
   _artilleryAimHeight: 10
 --- !u!114 &1516171201
@@ -603,10 +879,10 @@ MonoBehaviour:
   _timer:
     _duration: 0.2
     _stopWhenCompleted: 1
-  _projectileSpeed: 25
   _projectile: {fileID: 1697648429471405643, guid: a1a1140bdc5abfd4b923056be28d793a,
     type: 3}
   _projectileAnchor: {fileID: 540323956}
+  _projectileSpeed: 25
   _continueFiringDuration: 2.5
   _isFiring: 0
 --- !u!114 &1709344319
@@ -968,6 +1244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1516171200}
+  - {fileID: 1065735766}
   m_Father: {fileID: 8491755099251913143}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1020,7 +1297,7 @@ MonoBehaviour:
   _towerDescription: {fileID: 0}
   _totalCookieCost: 0
   _enabledByDefault: 0
-  _projectileSpeed: 25
+  _weaponController2: {fileID: 1065735770}
 --- !u!136 &736236888
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1341,6 +1618,7 @@ GameObject:
   - component: {fileID: 291541567315959986}
   - component: {fileID: 4766028707496432326}
   - component: {fileID: 5427147770519115708}
+  - component: {fileID: 7279725786830727160}
   m_Layer: 7
   m_Name: Base
   m_TagString: Untagged
@@ -1436,6 +1714,19 @@ CapsuleCollider:
   m_Height: 12
   m_Direction: 1
   m_Center: {x: 0, y: 1.54, z: 0}
+--- !u!114 &7279725786830727160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862876340951427867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60256c38322aa8f418c07829a6300b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gamePhase: 6
 --- !u!1 &8491755099228603324
 GameObject:
   m_ObjectHideFlags: 0
