@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 302692792171481250}
   - component: {fileID: 302692792171481251}
   - component: {fileID: 302692792171481248}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Mesh.Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,6 +1140,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!1 &302692793443834627
 GameObject:
   m_ObjectHideFlags: 0
