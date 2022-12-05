@@ -10,7 +10,7 @@
 	/// </summary>
 	public class Tower : MonoBehaviour, IPickerGhost, ICellChild, IPlateChild
 	{
-        [SerializeField]
+		[SerializeField]
 		private WeaponController _weaponController = null;
 
 		[SerializeField]
@@ -33,6 +33,8 @@
         public TowerDescription TowerDescription => _towerDescription;
         public int GetTotalCookieCost => _totalCookieCost;
 
+		public DamageableDetector damageableDetector => _damageableDetector;
+
         protected virtual void Awake()
 		{
 			enabled = _enabledByDefault;
@@ -49,7 +51,7 @@
 		{
 			if (_damageableDetector.HasAnyDamageableInRange() == true)
 			{
-				Damageable damageableTarget = _damageableDetector.GetFirstDamageable();
+				Damageable damageableTarget = _damageableDetector.GetTarget();
 				//_weaponController.LookAt(damageableTarget.GetAimPosition());
 				//_weaponController.Fire();
 

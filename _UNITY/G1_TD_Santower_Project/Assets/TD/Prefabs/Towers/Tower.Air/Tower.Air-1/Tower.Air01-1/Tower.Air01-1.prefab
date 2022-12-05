@@ -357,7 +357,8 @@ GameObject:
   - component: {fileID: 302692792171481250}
   - component: {fileID: 302692792171481251}
   - component: {fileID: 302692792171481248}
-  m_Layer: 7
+  - component: {fileID: 7537517892076097011}
+  m_Layer: 10
   m_Name: Mesh.Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,6 +888,19 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!65 &7537517892076097011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302692792171481255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.9944491, z: 1}
+  m_Center: {x: 0, y: 1.4972246, z: 0}
 --- !u!1 &302692792590252162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1154,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!1 &302692793443834627
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,11 +6,30 @@ namespace GSGD1
 
     public class Tower_NorthPole : Tower
     {
+        [SerializeField]
+        private WeaponController _weaponController2;
+
         protected override void Awake()
         {
             Enable(true);
         }
-    }
+
+		private void Update()
+		{
+			if (damageableDetector.HasAnyDamageableInRange() == true)
+			{
+				Damageable damageableTarget = damageableDetector.GetHighestHealthDamageable();
+				//_weaponController.LookAt(damageableTarget.GetAimPosition());
+				//_weaponController.Fire();
+
+				_weaponController2.LookAtAndFire(damageableTarget.GetAimPosition());
+				if (damageableTarget == null)
+				{
+					damageableDetector.RemoveNullItemsFromList();
+				}
+			}
+		}
+	}
 
  
 }
