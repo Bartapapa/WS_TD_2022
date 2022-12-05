@@ -707,7 +707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065735765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.24, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1224,6 +1224,7 @@ GameObject:
   - component: {fileID: 651142518}
   - component: {fileID: 1628836842}
   - component: {fileID: 736236888}
+  - component: {fileID: 130113981}
   m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
@@ -1260,6 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a1ba8619da3ff498c03a05e4bde244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mode: 0
   _targetFlyingEnemies: 1
   _canOnlyTargetFlyingEnemies: 0
   _damageablesInRange: []
@@ -1312,6 +1314,34 @@ CapsuleCollider:
   m_Height: 40
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &130113981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042878395038333652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fb70bb36020f0439528c7a84359b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningFor: {fileID: 11400000, guid: e898a2df41a89464ba60a3ac52824d36, type: 2}
+  OnPerkAcquired_UE:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1628836842}
+        m_TargetAssemblyTypeName: GSGD1.Tower_NorthPole, Assembly-CSharp
+        m_MethodName: DoubleGatling
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2613864369327911261
 GameObject:
   m_ObjectHideFlags: 0
