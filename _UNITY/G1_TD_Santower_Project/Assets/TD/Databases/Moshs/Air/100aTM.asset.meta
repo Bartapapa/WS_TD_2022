@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:_UNITY/G1_TD_Santower_Project/Assets/TD/Databases/Moshs/Air/100aTM.asset.meta
 guid: e9b0270442d2dea48845a11bcc0d3657
+========
+guid: 7aec3ca281673a645a60825803ebde63
+>>>>>>>> 338f348984e58ba65abafcd1638ada097d471099:_UNITY/G1_TD_Santower_Project/Assets/TD/Databases/Moshs/Air/100aTM_20aH.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

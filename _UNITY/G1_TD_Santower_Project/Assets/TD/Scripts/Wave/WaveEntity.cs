@@ -13,21 +13,48 @@
         [SerializeField]
 		private Damageable _damageable = null;
 
+        [SerializeField]
+        private AnimatorHandler _anim;
+
+        private Transform _northPoleTarget;
+
+        public AnimatorHandler AnimatorHandler => _anim;
+
+        private bool _isAir = false;
+        private bool _isFallingToDeath = false;
+
 		private void Awake()
 		{
             _pathFollower = GetComponent<PathFollower>();
             _damageable = GetComponent<Damageable>();
+            _northPoleTarget = LevelReferences.Instance.NorthPole.transform;
+
+            _isAir = _damageable.GetIsFlying;
+
+            if (_anim == null)
+            {
+                Debug.Log(name + " doesn't have an animatorHandler. Please advise.");
+            }
+            else
+            {
+                _anim.SetWalkAnimation();
+            }
 		}
 
         private void OnEnable()
         {
             _damageable.DamageTaken -= OnDamageTaken;
             _damageable.DamageTaken += OnDamageTaken;
+
+            _damageable.CallerDied -= OnCallerDied;
+            _damageable.CallerDied += OnCallerDied;
         }
 
         private void OnDisable()
         {
             _damageable.DamageTaken -= OnDamageTaken;
+
+            _damageable.CallerDied -= OnCallerDied;
         }
 
         public void SetPath(Path path, bool teleportToFirstWaypoint = true)
@@ -38,7 +65,24 @@
             }
 		}
 
-		public void SetWaypoint(int waypointIndex)
+        private void Update()
+        {
+            if (Vector3.Distance(transform.position, _northPoleTarget.position) <= 5)
+            {
+                if (_anim != null)
+                {
+                    _anim.Animator.SetTrigger("Attack");
+                }
+
+            }
+
+            if (_isFallingToDeath)
+            {
+                transform.position += (Vector3.down * _pathFollower.Speed * Time.deltaTime) + (transform.forward * _pathFollower.Speed * Time.deltaTime);
+            }
+        }
+
+        public void SetWaypoint(int waypointIndex)
 		{
             if (_pathFollower != null)
             {
@@ -88,6 +132,23 @@
             }
 
             //particles, etc
+        }
+
+        void OnCallerDied(Damageable caller, int currentHealth, int damageTaken)
+        {
+            _pathFollower.SetCanMove(false);
+
+            if (_anim != null)
+            {
+                _anim.SetDeathAnimation();
+                _anim.Animator.SetTrigger("Die");
+            }
+
+
+            if (_isAir)
+            {
+                _isFallingToDeath = true;
+            }
         }
     }
 }
