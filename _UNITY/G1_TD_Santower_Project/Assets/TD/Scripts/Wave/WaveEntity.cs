@@ -20,11 +20,16 @@
 
         public AnimatorHandler AnimatorHandler => _anim;
 
+        private bool _isAir = false;
+        private bool _isFallingToDeath = false;
+
 		private void Awake()
 		{
             _pathFollower = GetComponent<PathFollower>();
             _damageable = GetComponent<Damageable>();
             _northPoleTarget = LevelReferences.Instance.NorthPole.transform;
+
+            _isAir = _damageable.GetIsFlying;
 
             if (_anim == null)
             {
@@ -32,7 +37,7 @@
             }
             else
             {
-                _anim.SetInteger(true, 2);
+                _anim.SetWalkAnimation();
             }
 		}
 
@@ -64,7 +69,16 @@
         {
             if (Vector3.Distance(transform.position, _northPoleTarget.position) <= 5)
             {
-                _anim.Animator.SetTrigger("Attack");
+                if (_anim != null)
+                {
+                    _anim.Animator.SetTrigger("Attack");
+                }
+
+            }
+
+            if (_isFallingToDeath)
+            {
+                transform.position += (Vector3.down * _pathFollower.Speed * Time.deltaTime) + (transform.forward * _pathFollower.Speed * Time.deltaTime);
             }
         }
 
@@ -123,8 +137,18 @@
         void OnCallerDied(Damageable caller, int currentHealth, int damageTaken)
         {
             _pathFollower.SetCanMove(false);
-            _anim.SetInteger(true, 4);
-            _anim.Animator.SetTrigger("Die");
+
+            if (_anim != null)
+            {
+                _anim.SetDeathAnimation();
+                _anim.Animator.SetTrigger("Die");
+            }
+
+
+            if (_isAir)
+            {
+                _isFallingToDeath = true;
+            }
         }
     }
 }

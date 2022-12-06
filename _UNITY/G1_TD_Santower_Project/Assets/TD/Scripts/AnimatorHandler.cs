@@ -7,6 +7,12 @@ public class AnimatorHandler : MonoBehaviour
     [SerializeField]
     private Animator _anim;
 
+    [Header("Animations")]
+    [SerializeField]
+    private int _maxWalkAnims = 0;
+    [SerializeField]
+    private int _maxDeathAnims = 0;
+
     private int integer;
 
     public Animator Animator => _anim;
@@ -19,7 +25,17 @@ public class AnimatorHandler : MonoBehaviour
         }
     }
 
-    public virtual void SetInteger(bool isRandom, int valueMaxExclusive)
+    public virtual void SetWalkAnimation()
+    {
+        SetInteger(true, _maxWalkAnims);
+    }
+
+    public virtual void SetDeathAnimation()
+    {
+        SetInteger(true, _maxDeathAnims);
+    }
+
+    private void SetInteger(bool isRandom, int valueMaxExclusive)
     {
         if (isRandom)
         {
