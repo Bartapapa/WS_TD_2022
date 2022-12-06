@@ -13,21 +13,43 @@
         [SerializeField]
 		private Damageable _damageable = null;
 
+        [SerializeField]
+        private AnimatorHandler _anim;
+
+        private Transform _northPoleTarget;
+
+        public AnimatorHandler AnimatorHandler => _anim;
+
 		private void Awake()
 		{
             _pathFollower = GetComponent<PathFollower>();
             _damageable = GetComponent<Damageable>();
+            _northPoleTarget = LevelReferences.Instance.NorthPole.transform;
+
+            if (_anim == null)
+            {
+                Debug.Log(name + " doesn't have an animatorHandler. Please advise.");
+            }
+            else
+            {
+                _anim.SetInteger(true, 2);
+            }
 		}
 
         private void OnEnable()
         {
             _damageable.DamageTaken -= OnDamageTaken;
             _damageable.DamageTaken += OnDamageTaken;
+
+            _damageable.CallerDied -= OnCallerDied;
+            _damageable.CallerDied += OnCallerDied;
         }
 
         private void OnDisable()
         {
             _damageable.DamageTaken -= OnDamageTaken;
+
+            _damageable.CallerDied -= OnCallerDied;
         }
 
         public void SetPath(Path path, bool teleportToFirstWaypoint = true)
@@ -38,7 +60,15 @@
             }
 		}
 
-		public void SetWaypoint(int waypointIndex)
+        private void Update()
+        {
+            if (Vector3.Distance(transform.position, _northPoleTarget.position) <= 5)
+            {
+                _anim.Animator.SetTrigger("Attack");
+            }
+        }
+
+        public void SetWaypoint(int waypointIndex)
 		{
             if (_pathFollower != null)
             {
@@ -88,6 +118,13 @@
             }
 
             //particles, etc
+        }
+
+        void OnCallerDied(Damageable caller, int currentHealth, int damageTaken)
+        {
+            _pathFollower.SetCanMove(false);
+            _anim.SetInteger(true, 4);
+            _anim.Animator.SetTrigger("Die");
         }
     }
 }
