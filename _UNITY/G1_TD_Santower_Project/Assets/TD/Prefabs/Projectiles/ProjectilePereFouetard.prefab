@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1697648429471405643}
   - component: {fileID: 1697648429471405642}
   - component: {fileID: 8269167292691892953}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: ProjectilePereFouetard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -87,6 +87,7 @@ MonoBehaviour:
   _lifeTimer:
     _duration: 5
     _stopWhenCompleted: 1
+  _destroyOnEnd: 1
 --- !u!1 &1697648429891245682
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ GameObject:
   - component: {fileID: 1697648429891245684}
   - component: {fileID: 1697648429891245686}
   - component: {fileID: 3720685451282916917}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

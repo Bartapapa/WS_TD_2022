@@ -5,6 +5,17 @@
 
 	public class DamageableDetector : MonoBehaviour
 	{
+		public enum Mode
+		{
+			firstEnter,
+			nearest,
+			highestHealth,
+			lowestHealth
+		}
+
+		[SerializeField]
+		private Mode _mode = Mode.firstEnter;
+
 		[SerializeField]
 		private bool _targetFlyingEnemies = false;
 
@@ -13,6 +24,23 @@
 
 		[SerializeField]
 		private List<Damageable> _damageablesInRange = new List<Damageable>();
+
+		public Damageable GetTarget()
+		{
+			switch (_mode)
+			{
+				case Mode.firstEnter:
+					return GetFirstDamageable();
+				case Mode.nearest:
+					return GetNearestDamageable();
+				case Mode.highestHealth:
+					return GetHighestHealthDamageable();
+				case Mode.lowestHealth:
+					return GetLowestHealthDamageable();
+				default:
+					return default;
+			}
+		}
 
 		public bool HasAnyDamageableInRange()
 		{
@@ -23,6 +51,21 @@
 		public Damageable GetFirstDamageable()
 		{
 			if (HasAnyDamageableInRange() == true)
+			{
+				return _damageablesInRange[0];
+			}
+			else
+			{
+				return null;
+			}
+		}	
+		public Damageable GetSecondDamageable()
+		{
+			if (HasAnyDamageableInRange() == true && _damageablesInRange.Count > 1)
+			{
+				return _damageablesInRange[1];
+			}
+			else if (HasAnyDamageableInRange() == true && _damageablesInRange.Count == 1)
 			{
 				return _damageablesInRange[0];
 			}
@@ -46,6 +89,36 @@
 				}
 			}
 			return _damageablesInRange[shortestDistanceIndex];
+		}
+
+		public Damageable GetLowestHealthDamageable()
+		{
+			float lowestHealth = 0;
+			int lowestHealthIndex = 0;
+			for (int i = 0, length = _damageablesInRange.Count; i < length; i++)
+			{ 
+				if (_damageablesInRange[i].GetHealth < lowestHealth)
+				{
+					lowestHealth = _damageablesInRange[i].GetHealth;
+					lowestHealthIndex = i;
+				}
+			}
+			return _damageablesInRange[lowestHealthIndex];
+		}
+
+		public Damageable GetHighestHealthDamageable()
+		{
+			float highestHealth = 0;
+			int highestHealthIndex = 0;
+			for (int i = 0, length = _damageablesInRange.Count; i < length; i++)
+			{
+				if (_damageablesInRange[i].GetHealth > highestHealth)
+				{
+					highestHealth = _damageablesInRange[i].GetHealth;
+					highestHealthIndex = i;
+				}
+			}
+			return _damageablesInRange[highestHealthIndex];
 		}
 
 		public void RemoveNullItemsFromList()

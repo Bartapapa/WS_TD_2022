@@ -20,6 +20,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GamePhase _currentPhase = GamePhase.Intro;
 
+    [SerializeField]
+    private GameObject _victoryScreen;
+    [SerializeField]
+    private GameObject _defeatScreen;
+
     public UnityEvent<GamePhase, GamePhase> GamePhaseChangeEvent_UE;
 
     public void ChangePhase(GamePhase toPhase)
@@ -46,9 +51,11 @@ public class GameManager : Singleton<GameManager>
                 break;
             case GamePhase.GameWin:
                 //This phase is reserved for after defeating Father Fouettard.
+                Victory();
                 break;
             case GamePhase.GameLose:
                 //This phase is reserved for if the player loses all base health.
+                Defeat();
                 break;
             default:
                 break;
@@ -57,5 +64,14 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("Game phase changed to " + toPhase);
     }
 
+    private void Defeat()
+    {
+        _defeatScreen.SetActive(true);
+    }
+
+    private void Victory()
+    {
+        _victoryScreen.SetActive(true);
+    }
 
 }

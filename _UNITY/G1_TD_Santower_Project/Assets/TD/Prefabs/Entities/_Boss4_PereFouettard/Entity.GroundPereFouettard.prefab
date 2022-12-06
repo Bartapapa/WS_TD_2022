@@ -111,7 +111,6 @@ GameObject:
   - component: {fileID: 8464331773039067455}
   - component: {fileID: 4534463255682805405}
   - component: {fileID: 141158296177427049}
-  - component: {fileID: 7823290607996952989}
   - component: {fileID: -6292638737442430726}
   m_Layer: 8
   m_Name: Entity.GroundPereFouettard
@@ -199,6 +198,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!114 &4534463255682805405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,20 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60256c38322aa8f418c07829a6300b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &7823290607996952989
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2942146037294568416}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.13
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  _gamePhase: 5
 --- !u!114 &-6292638737442430726
 MonoBehaviour:
   m_ObjectHideFlags: 0

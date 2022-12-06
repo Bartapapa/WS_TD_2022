@@ -34,17 +34,11 @@ public class BaseNorthPole : MonoBehaviour
 		if (_damageable.GetHealth <= 0)
 		{
 			// Insert Code for defeat screen
-			QuitToEditor();
 		}
 	}
 
 	private void OnNorthPoleBombed(Damageable caller, int currentHealth, int damageTaken)
 	{
 		EnemyBombed.Invoke(caller);
-	}
-
-	private void QuitToEditor()
-	{
-		//UnityEditor.EditorApplication.isPlaying = false;
 	}
 }

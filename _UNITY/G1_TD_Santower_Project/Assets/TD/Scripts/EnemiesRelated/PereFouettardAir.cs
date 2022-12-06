@@ -86,18 +86,20 @@ public class PereFouettardAir : MonoBehaviour
 
 	private void MoveTo(Vector3 position)
 	{
-		Distance();
-		var oui = position + -_exitPos;
 
-        Vector3 movement = (oui - transform.position).normalized * _moveSpeed * Time.deltaTime;
+
+		ExitPosition();
+		var exitPos = position + -_exitPos;
+
+        Vector3 movement = (exitPos - transform.position).normalized * _moveSpeed * Time.deltaTime;
 		transform.position += movement;
-		if (Vector3.Distance(transform.position, oui) < _threshold)
+		if (Vector3.Distance(transform.position, exitPos) < _threshold)
 		{
 			FindNewPos();
 		}
 	}
 
-	private void Distance()
+	private void ExitPosition()
 	{
 		_exitPos = _outerCiclePos - _innerCiclePos;
 	}
