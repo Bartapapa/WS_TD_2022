@@ -101,6 +101,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!114 &1773812474288713663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,15 +137,6 @@ MonoBehaviour:
     _stopWhenCompleted: 1
   _randomSpawnAmplitude: 1
   _waveEntity:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   _waveEntityDatas: {fileID: 0}
 --- !u!136 &8954739381906307174

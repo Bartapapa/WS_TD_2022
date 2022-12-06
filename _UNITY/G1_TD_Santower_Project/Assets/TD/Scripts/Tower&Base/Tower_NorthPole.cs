@@ -12,13 +12,14 @@ namespace GSGD1
         protected override void Awake()
         {
             Enable(true);
+			_weaponController2.enabled = false;
         }
 
 		private void LateUpdate()
 		{
 			if (damageableDetector.HasAnyDamageableInRange() == true)
 			{
-				Damageable damageableTarget = damageableDetector.GetHighestHealthDamageable();
+				Damageable damageableTarget = damageableDetector.GetSecondDamageable();
 				//_weaponController.LookAt(damageableTarget.GetAimPosition());
 				//_weaponController.Fire();
 
@@ -29,8 +30,10 @@ namespace GSGD1
 				}
 			}
 		}
+		public void DoubleGatling()
+		{
+			_weaponController2.enabled = true;
+		}
 	}
-
- 
 }
 

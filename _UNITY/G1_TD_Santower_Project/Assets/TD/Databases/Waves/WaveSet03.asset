@@ -13,85 +13,65 @@ MonoBehaviour:
   m_Name: WaveSet03
   m_EditorClassIdentifier: 
   _waves:
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 54f312efab49ad546ab53c6d1166db4a,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 3544975755393204d9545c515c6c9282,
       type: 2}
     _spawnerIndex: 0
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: c5a1144298264a7449d060b60f1a4df5,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 3544975755393204d9545c515c6c9282,
       type: 2}
     _spawnerIndex: 1
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 6983837bb923fde42ad51cf8e745dc37,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: a314b1f1ce95c894ca840c57b9718899,
       type: 2}
     _spawnerIndex: 2
-    _waypointOverride: -1
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: c5a1144298264a7449d060b60f1a4df5,
+      type: 2}
+    _spawnerIndex: 0
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 3a46bdda40387b044a14fa4a7974b197,
+      type: 2}
+    _spawnerIndex: 1
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: c5a1144298264a7449d060b60f1a4df5,
+      type: 2}
+    _spawnerIndex: 2
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 579c367eb69bb7f4e96442ed325b2926,
       type: 2}
     _spawnerIndex: 3
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 18fc737bffdd4b7489dc244f367662bf,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 579c367eb69bb7f4e96442ed325b2926,
       type: 2}
     _spawnerIndex: 4
-    _waypointOverride: -1
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 579c367eb69bb7f4e96442ed325b2926,
       type: 2}
     _spawnerIndex: 5
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: b91a68eba9565de428c120cb3d9e2646,
-      type: 2}
-    _spawnerIndex: 6
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: b91a68eba9565de428c120cb3d9e2646,
-      type: 2}
-    _spawnerIndex: 7
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: b91a68eba9565de428c120cb3d9e2646,
-      type: 2}
-    _spawnerIndex: 0
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 0330b2aea4ffe2f4ca42991466e1b62b,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: dad4a28b5e2f1364e9e74b3d4fa9ffbb,
       type: 2}
     _spawnerIndex: 1
-    _waypointOverride: -1
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 9245cc9efb5d8574998d6758279fc972,
       type: 2}
     _spawnerIndex: 2
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 87e184923f4c82444be42b539ae1a40e,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: db362c959e94ca8438d58f126341a528,
       type: 2}
     _spawnerIndex: 8
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 87e184923f4c82444be42b539ae1a40e,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: db362c959e94ca8438d58f126341a528,
+      type: 2}
+    _spawnerIndex: 8
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 06ac5f8c6772e3845a1d463e0527717b,
       type: 2}
     _spawnerIndex: 9
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 87e184923f4c82444be42b539ae1a40e,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 06ac5f8c6772e3845a1d463e0527717b,
       type: 2}
     _spawnerIndex: 10
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 87e184923f4c82444be42b539ae1a40e,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: f01b7f6778e398b4488a3d0225b1307f,
       type: 2}
     _spawnerIndex: 11
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: bea79686bb33d444994542666c4bc726,
-      type: 2}
-    _spawnerIndex: 8
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 3a1ae7f6872ce3f4197e13ac385393a2,
-      type: 2}
-    _spawnerIndex: 9
-    _waypointOverride: -1
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 19c73c6e0a3a265498b1797e2d2a3bd3,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: f07ba4841ebfff349bc3847be551e3bf,
       type: 2}
     _spawnerIndex: 12
-    _waypointOverride: -1
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 19c73c6e0a3a265498b1797e2d2a3bd3,
       type: 2}
     _spawnerIndex: 13
-    _waypointOverride: -1
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 19c73c6e0a3a265498b1797e2d2a3bd3,
       type: 2}
     _spawnerIndex: 14
-    _waypointOverride: -1
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 19c73c6e0a3a265498b1797e2d2a3bd3,
+      type: 2}
+    _spawnerIndex: 15
   _waitingDurationBefore: 0
   _waitingDurationAfter: 10
