@@ -28,6 +28,6 @@
 			Vector3 lookPos = position - transform.position;
 			Quaternion lookRotation = Quaternion.LookRotation(lookPos);
 			_projectileAnchor.rotation = lookRotation;
-        }
+		}
     }
 }

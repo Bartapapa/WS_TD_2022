@@ -14,7 +14,7 @@ namespace GSGD1
             Enable(true);
         }
 
-		private void Update()
+		private void LateUpdate()
 		{
 			if (damageableDetector.HasAnyDamageableInRange() == true)
 			{
