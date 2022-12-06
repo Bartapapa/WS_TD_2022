@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: -4180293061430927919}
   - component: {fileID: 8055379430261719677}
   m_Layer: 8
-  m_Name: Entity.Light
+  m_Name: Entity.LightWElf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

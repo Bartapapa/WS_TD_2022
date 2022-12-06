@@ -48,14 +48,14 @@ namespace GSGD1
             _timer.Set(0.15f);
         }
 
-        public override void AnchorLookAt(Vector3 position)
-        {
-            //TODO force anchor to follow WeaponController.forward.
+        //public override void AnchorLookAt(Vector3 position)
+        //{
+        //    //TODO force anchor to follow WeaponController.forward.
 
-            //Vector3 lookPos = position - transform.position;
-            //Quaternion lookRotation = Quaternion.LookRotation(lookPos);
-            //_projectileAnchor.rotation = lookRotation;
-        }
+        //    //Vector3 lookPos = position - transform.position;
+        //    //Quaternion lookRotation = Quaternion.LookRotation(lookPos);
+        //    //_projectileAnchor.rotation = lookRotation;
+        //}
 
     }
 }
