@@ -13,6 +13,7 @@ public class PereFouettardGround : MonoBehaviour
 
 	private List<GameObject> _waypoint = new List<GameObject>();
 
+	[SerializeField]
 	private List<GameObject> _tower = new List<GameObject>();
 
 	private GameObject _waypointIndex;
@@ -21,7 +22,7 @@ public class PereFouettardGround : MonoBehaviour
 
 	private Path _path;
 
-	private void Start()
+	private void Awake()
 	{
 		_pathFollower = GetComponent<PathFollower>();
 		GetAllWaypoint();
@@ -34,20 +35,19 @@ public class PereFouettardGround : MonoBehaviour
 	private void Update()
 	{
 		var tower = GetNearestTower();
-		if (Vector3.Distance(tower.transform.position, transform.position) <= _fireRadius )
+		if (tower != null)
 		{
-			Debug.Log(tower);
-			_pathFollower.SetCanMove(false);
-			_weaponController.LookAtAndFire(tower.transform.position);
-			if (tower == null)
+			if (Vector3.Distance(tower.transform.position, transform.position) <= _fireRadius)
 			{
-				RemoveNullItemsFromList();
+				_pathFollower.SetCanMove(false);
+				_weaponController.LookAtAndFire(tower.transform.position);
+			}
+			else
+			{
+				_pathFollower.SetCanMove(true);
 			}
 		}
-		else
-		{ 
-			_pathFollower.SetCanMove(true);
-		}
+		RemoveNullItemsFromList();
 	}
 
 	public void RemoveNullItemsFromList()
