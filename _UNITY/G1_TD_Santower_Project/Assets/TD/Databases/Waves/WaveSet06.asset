@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636b0da55f87f134581345d8bdb601fd, type: 3}
+  m_Name: WaveSet06
+  m_EditorClassIdentifier: 
+  _waves:
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 7a0ac38e6a486c84888873bb620d8211,
+      type: 2}
+    _spawnerIndex: 0
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 1
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 2
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 3
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: d3bc5e2e35201704da6c9506c61a6634,
+      type: 2}
+    _spawnerIndex: 4
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 753d4ead41efacb41b2ec329fb50bab5,
+      type: 2}
+    _spawnerIndex: 5
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 89c7ccdb23a8a954196084ea00e57da7,
+      type: 2}
+    _spawnerIndex: 6
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 67e358555bad1914ab1f24676b6c1177,
+      type: 2}
+    _spawnerIndex: 7
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 0
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 1
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 7a0ac38e6a486c84888873bb620d8211,
+      type: 2}
+    _spawnerIndex: 2
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 922b2c5c404028544aa5e51bc999668a,
+      type: 2}
+    _spawnerIndex: 3
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 32bccdc72bdd0414d9cb969ad12706a1,
+      type: 2}
+    _spawnerIndex: 4
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 5
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 6
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: b8278342f0466a84fb3261b38f73b78d,
+      type: 2}
+    _spawnerIndex: 7
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: b366e718c4138d14c942f032b91fa60b,
+      type: 2}
+    _spawnerIndex: 0
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 1
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 2
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 80152810ad0a0734d8c437b46fb824a2,
+      type: 2}
+    _spawnerIndex: 3
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 7a0ac38e6a486c84888873bb620d8211,
+      type: 2}
+    _spawnerIndex: 4
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 7a0ac38e6a486c84888873bb620d8211,
+      type: 2}
+    _spawnerIndex: 0
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 9dfd3cea8543f9644a33bc5dbb2509a3,
+      type: 2}
+    _spawnerIndex: 5
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: beea8dec6db5c644cbc990fe9457290d,
+      type: 2}
+    _spawnerIndex: 6
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: beea8dec6db5c644cbc990fe9457290d,
+      type: 2}
+    _spawnerIndex: 7
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: beea8dec6db5c644cbc990fe9457290d,
+      type: 2}
+    _spawnerIndex: 1
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: beea8dec6db5c644cbc990fe9457290d,
+      type: 2}
+    _spawnerIndex: 2
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: ecd17c1415e8c3b488d8a99dfb76f005,
+      type: 2}
+    _spawnerIndex: 3
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: d4247ef6fa318e6468bdb7e3eb6acaa2,
+      type: 2}
+    _spawnerIndex: 4
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 93505d8e10dac3e43a05e53edbd15364,
+      type: 2}
+    _spawnerIndex: 8
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: f5d0ffb01cb5a304290789b000941657,
+      type: 2}
+    _spawnerIndex: 9
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: f5d0ffb01cb5a304290789b000941657,
+      type: 2}
+    _spawnerIndex: 10
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 93505d8e10dac3e43a05e53edbd15364,
+      type: 2}
+    _spawnerIndex: 8
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 93505d8e10dac3e43a05e53edbd15364,
+      type: 2}
+    _spawnerIndex: 9
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 2274694d04faaee4296f689796416161,
+      type: 2}
+    _spawnerIndex: 10
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: dbfe983d3602b514f88544045d3ea6bb,
+      type: 2}
+    _spawnerIndex: 11
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 93505d8e10dac3e43a05e53edbd15364,
+      type: 2}
+    _spawnerIndex: 8
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 93505d8e10dac3e43a05e53edbd15364,
+      type: 2}
+    _spawnerIndex: 9
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 1fe163cc46a6d5d4682f381be5d8a231,
+      type: 2}
+    _spawnerIndex: 10
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 5f31df1d0a592704181a3501f669731b,
+      type: 2}
+    _spawnerIndex: 11
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 2274694d04faaee4296f689796416161,
+      type: 2}
+    _spawnerIndex: 8
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 2274694d04faaee4296f689796416161,
+      type: 2}
+    _spawnerIndex: 9
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: ccb853a4e5a02284a8b8b9d7e3a88495,
+      type: 2}
+    _spawnerIndex: 10
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: f5d0ffb01cb5a304290789b000941657,
+      type: 2}
+    _spawnerIndex: 8
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 1fe163cc46a6d5d4682f381be5d8a231,
+      type: 2}
+    _spawnerIndex: 9
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: ccb853a4e5a02284a8b8b9d7e3a88495,
+      type: 2}
+    _spawnerIndex: 10
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: ec711684f2b8b2e418d3d3f37e41a82c,
+      type: 2}
+    _spawnerIndex: 11
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 3aec861ac14182044b5435bb1a0a9d3c,
+      type: 2}
+    _spawnerIndex: 8
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 93505d8e10dac3e43a05e53edbd15364,
+      type: 2}
+    _spawnerIndex: 9
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 2274694d04faaee4296f689796416161,
+      type: 2}
+    _spawnerIndex: 10
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: a8f104803f38b324888077acdb9cfb6f,
+      type: 2}
+    _spawnerIndex: 8
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 23c0b1119dcc6cd4b8558017ae4073e3,
+      type: 2}
+    _spawnerIndex: 9
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 23c0b1119dcc6cd4b8558017ae4073e3,
+      type: 2}
+    _spawnerIndex: 10
+  _waitingDurationBefore: 0
+  _waitingDurationAfter: 10
