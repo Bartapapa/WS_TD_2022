@@ -72,7 +72,7 @@ MonoBehaviour:
   _maxSpeedRandoMultiplier: 1.1
   _minSpeedRandoMultiplier: 0.9
   _distanceThreshold: 0.5
-  _destinationPositionRandomness: 2.5
+  _destinationPositionRandomness: 1.75
   _currentPathIndex: 0
 --- !u!114 &2942146037294568419
 MonoBehaviour:
@@ -100,6 +100,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!114 &1773812474288713663
 MonoBehaviour:
   m_ObjectHideFlags: 0
