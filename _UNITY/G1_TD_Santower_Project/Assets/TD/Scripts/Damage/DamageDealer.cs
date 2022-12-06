@@ -29,7 +29,6 @@ public class DamageDealer : MonoBehaviour
 
 			if (_dieIfGiveDamage == true)
 			{
-				//A remplacer par Die() du Damageable!
 				if (_damageable != null)
 				{
                     _damageable.Die();

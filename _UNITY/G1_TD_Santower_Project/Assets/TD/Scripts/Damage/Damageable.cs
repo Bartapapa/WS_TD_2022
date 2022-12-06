@@ -165,6 +165,8 @@
 
 		public void Die()
 		{
+			if (_isDead) return;
+
 			_callerDied?.Invoke(this, _health, 0);
 
             // A remplacer par les scripts / animation de mort
@@ -175,7 +177,7 @@
             }
 
 			_isDead = true;
-			DoDestroy();
+			_deathTimer.Start();
         }
 
 		private void Invulnerability(float duration)

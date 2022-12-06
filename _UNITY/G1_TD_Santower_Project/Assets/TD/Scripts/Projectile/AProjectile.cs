@@ -37,6 +37,7 @@
 
 			if (damageable != null && _needDamageableToCollide == true)
 			{
+
 				_hitThing= true;
 				damageable.TakeDamage(_damage, false);
 
@@ -47,7 +48,7 @@
 			}
 			else if (_needDamageableToCollide == false)
 			{
-				_hitThing = true;
+                _hitThing = true;
 				if (damageable != null)
 				{
 					damageable.TakeDamage(_damage, false);

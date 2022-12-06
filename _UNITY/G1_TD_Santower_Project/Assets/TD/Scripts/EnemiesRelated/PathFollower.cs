@@ -37,6 +37,8 @@
 		[SerializeField]
 		private int _currentPathIndex;
 
+		public float Speed => _moveSpeed;
+
 		private bool _grosBool = false;
 
 		private Vector3 _nextDestination;
