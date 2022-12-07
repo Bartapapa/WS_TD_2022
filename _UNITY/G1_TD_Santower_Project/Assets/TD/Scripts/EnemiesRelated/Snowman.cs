@@ -14,6 +14,9 @@ public class Snowman : MonoBehaviour
 	[SerializeField]
 	private float _distanceThreshold = 0.5f;
 
+	[SerializeField]
+	private AnimatorHandler _anim;
+
 	private bool _target = false;
 
 	private GameObject _towerTarget;
@@ -27,9 +30,8 @@ public class Snowman : MonoBehaviour
 			if (Vector3.Distance(transform.position, _towerTarget.transform.position) < _distanceThreshold)
 			{
 				_towerTarget.GetComponent<Freezer>().Freeze(_freezeDuration);
-				
-				// Replace with animation script
-				Destroy(gameObject);
+
+				_anim.Animator.SetTrigger("Attack");
 			}
 		}
 	}
@@ -47,6 +49,7 @@ public class Snowman : MonoBehaviour
 			_towerTarget = other.gameObject;
 			GetComponent<PathFollower>().enabled = false;
 			_target = true;
+			_anim.Animator.SetFloat("Multiplier", 2f);
 		}
 	}
 }
