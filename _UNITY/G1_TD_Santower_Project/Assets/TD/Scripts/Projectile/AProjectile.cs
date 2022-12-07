@@ -13,23 +13,22 @@
 		[SerializeField]
 		private int _damage = 1;
 
-        [SerializeField]
-        protected float _projectileSpeed = 1f;
+		[SerializeField]
+		protected float _projectileSpeed = 1f;
 
 		[Header("Artillery")]
-        [SerializeField]
-        protected bool _useArtilleryMovement = false;
-        [SerializeField]
-        protected float _maximumProjectileHeight = 10f;
-        [SerializeField]
-        protected LayerMask _enemyLayer;
-        protected bool _isMoving = false;
+		[SerializeField]
+		protected bool _useArtilleryMovement = false;
+		[SerializeField]
+		protected float _maximumProjectileHeight = 10f;
+		[SerializeField]
+		protected LayerMask _enemyLayer;
+		protected bool _isMoving = false;
 
-        protected bool _hitThing = false;
+		protected bool _hitThing = false;
 
+		public int Damage { set { _damage = value; } }
 		public bool GetHit{ get { return _hitThing; } }
-
-        public int Damage { set => _damage = value; }
 
         public virtual void OnTriggerEnter(Collider other)
 		{
@@ -54,6 +53,11 @@
 					damageable.TakeDamage(_damage, false);
 				}
 			}
+		}
+
+		public void SetDamage(int value)
+		{ 
+			_damage = value; 
 		}
 
 		public void SetProjectileSPeed(float value)

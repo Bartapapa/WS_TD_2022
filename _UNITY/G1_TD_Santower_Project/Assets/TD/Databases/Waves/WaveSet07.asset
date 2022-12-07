@@ -112,7 +112,7 @@ MonoBehaviour:
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 2274694d04faaee4296f689796416161,
       type: 2}
     _spawnerIndex: 11
-  - _waveEntityGroupDescription: {fileID: 11400000, guid: 53eeeb601a762714f9bd4c49284a4854,
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: 2274694d04faaee4296f689796416161,
       type: 2}
     _spawnerIndex: 12
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 2274694d04faaee4296f689796416161,
