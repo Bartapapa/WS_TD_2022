@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4379473493243448686}
   - component: {fileID: 3919990916019999736}
   m_Layer: 11
-  m_Name: Capsule.01
+  m_Name: Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 79f52a34ee62fdc4793c28b7a2d4a265, type: 2}
+  - {fileID: 2100000, guid: cc8090ce49847cd40b4def82be56d460, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathFollower: {fileID: 2942146037294568418}
   _damageable: {fileID: 0}
+  _anim: {fileID: 0}
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
