@@ -15,6 +15,6 @@ MonoBehaviour:
   _waves:
   - _waveEntityGroupDescription: {fileID: 11400000, guid: 0345d1d2e34266649877a279de600abb,
       type: 2}
-    _spawnerIndex: 0
+    _spawnerIndex: 8
   _waitingDurationBefore: 0
   _waitingDurationAfter: 10
