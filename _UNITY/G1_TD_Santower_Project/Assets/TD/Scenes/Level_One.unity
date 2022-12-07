@@ -11248,7 +11248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc6a132f80360b47adbce422bc336da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentPhase: 2
+  _currentPhase: 0
   _victoryScreen: {fileID: 0}
   _defeatScreen: {fileID: 0}
   GamePhaseChangeEvent_UE:

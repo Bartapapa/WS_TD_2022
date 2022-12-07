@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DelimitationNiveau : MonoBehaviour
+public class TowerRangeByLevel : MonoBehaviour
 {
     [SerializeField]
     private float myPlayingFieldRadius1 = 1f;
@@ -12,9 +12,6 @@ public class DelimitationNiveau : MonoBehaviour
 
     [SerializeField]
     private float myPlayingFieldRadius3 = 1f;
-
-
-
 
     private void OnDrawGizmos()
     {

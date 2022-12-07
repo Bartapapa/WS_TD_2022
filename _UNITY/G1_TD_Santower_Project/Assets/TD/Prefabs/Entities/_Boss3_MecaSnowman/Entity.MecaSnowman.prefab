@@ -115,7 +115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5736636271082257314
 Transform:
   m_ObjectHideFlags: 0
@@ -284,6 +284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 2942146037294568419}
+  _fireRadius: 10
+  _weaponController: {fileID: 0}
   _spawnIntervale:
     _duration: 20
     _stopWhenCompleted: 0

@@ -11,9 +11,14 @@ public class TutorialManager : MonoBehaviour
 
 	private void Start()
 	{
-		if (true)
+		if (_wantTuto == false)
 		{
-			GameManager.Instance.ChangePhase(GameManager.GamePhase.Phase2);
+			GameManager.Instance.ChangePhase(GameManager.GamePhase.Phase1	);
 		}
+		else
+		{
+			GameManager.Instance.ChangePhase(GameManager.GamePhase.Intro);
+		}
+
 	}
 }
