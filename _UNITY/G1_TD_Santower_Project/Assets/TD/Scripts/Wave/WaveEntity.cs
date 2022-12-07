@@ -14,11 +14,11 @@
 		private Damageable _damageable = null;
 
         [SerializeField]
-        private AnimatorHandler _anim;
+        private AnimatorHandler_Entity _anim;
 
         private Transform _northPoleTarget;
 
-        public AnimatorHandler AnimatorHandler => _anim;
+        public AnimatorHandler_Entity AnimatorHandler => _anim;
 
         private bool _isAir = false;
         private bool _isFallingToDeath = false;
