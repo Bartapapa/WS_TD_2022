@@ -15,10 +15,14 @@
 		[SerializeField]
 		protected float _projectileSpeed = 1f;
 
+		[SerializeField]
+		protected int _projectileDamage = 2;
+
 		protected override void DoFire()
 		{
 			AProjectile newProjectile = Instantiate(_projectile, _projectileAnchor.position, _projectileAnchor.rotation);
 			newProjectile.SetProjectileSPeed(_projectileSpeed);
+			newProjectile.SetDamage(_projectileDamage);
 		}
 
         public override void AnchorLookAt(Vector3 position)

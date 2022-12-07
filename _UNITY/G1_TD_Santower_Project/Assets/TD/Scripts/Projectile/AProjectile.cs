@@ -29,8 +29,6 @@
 
 		public bool GetHit{ get { return _hitThing; } }
 
-        public int Damage { set => _damage = value; }
-
         public virtual void OnTriggerEnter(Collider other)
 		{
 			var damageable = other.GetComponentInParent<Damageable>();
@@ -54,6 +52,11 @@
 					damageable.TakeDamage(_damage, false);
 				}
 			}
+		}
+
+		public void SetDamage(int value)
+		{ 
+			_damage = value; 
 		}
 
 		public void SetProjectileSPeed(float value)
