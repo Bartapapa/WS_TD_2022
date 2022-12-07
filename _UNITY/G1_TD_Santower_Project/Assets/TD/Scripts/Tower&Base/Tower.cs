@@ -19,6 +19,12 @@
 		[SerializeField]
 		private SelectableObject _selectableObject = null;
 
+		[SerializeField]
+		private AnimatorHandler_Tower _anim = null;
+
+		[SerializeField]
+		private Damageable _damageable = null;
+
         [SerializeField]
         //Readonly
         private TowerDescription _towerDescription = null;
@@ -39,12 +45,39 @@
 		{
 			enabled = _enabledByDefault;
 			_selectableObject.SetCanBeSelected(false);
-		}
+
+            if (_anim == null)
+            {
+                Debug.Log(name + " doesn't have an animatorHandler. Please advise.");
+            }
+            else
+            {
+                _anim.Initialize();
+            }
+        }
 
 		public void Enable(bool isEnabled)
 		{
 			enabled = isEnabled;
             _selectableObject.SetCanBeSelected(isEnabled);
+
+			if (isEnabled)
+			{
+				if (_anim != null)
+				{
+                    _anim.Animator.SetTrigger("Spawn");
+                }
+
+            }
+
+			else
+			{
+				if (_anim != null)
+				{
+                    _anim.Animator.SetTrigger("Die");
+                }
+
+            }
         }
 
 		private void Update()
@@ -82,7 +115,7 @@
 		{
 			Enable(true);
 			_selectableObject.SetCanBeSelected(true);
-		}
+        }
 
         public Transform GetParent()
         {
@@ -93,5 +126,14 @@
         {
             return transform.parent.gameObject.GetComponent<Cell>();
         }
+
+		public void KillTower()
+		{
+			Enable(false);
+			if (_damageable != null)
+			{
+				_damageable.Die();
+			}
+		}
     }
 }

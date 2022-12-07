@@ -20,6 +20,8 @@
 
 		protected override void DoFire()
 		{
+			base.DoFire();
+
 			AProjectile newProjectile = Instantiate(_projectile, _projectileAnchor.position, _projectileAnchor.rotation);
 			newProjectile.SetProjectileSPeed(_projectileSpeed);
 			newProjectile.SetDamage(_projectileDamage);

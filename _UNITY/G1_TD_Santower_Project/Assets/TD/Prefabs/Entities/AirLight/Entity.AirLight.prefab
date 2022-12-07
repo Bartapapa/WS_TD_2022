@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 1773812474288713663}
   - component: {fileID: 8954739381906307174}
   - component: {fileID: 7166478489442094961}
-  - component: {fileID: 4459083967925529271}
+  - component: {fileID: 4147135398360244085}
   m_Layer: 8
   m_Name: Entity.AirLight
   m_TagString: Untagged
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathFollower: {fileID: 2942146037294568418}
   _damageable: {fileID: 0}
-  _anim: {fileID: 4459083967925529271}
+  _anim: {fileID: 0}
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
   _damageable: {fileID: 0}
   _cookiesDropped: 1
   _milkDropped: 0
---- !u!114 &4459083967925529271
+--- !u!114 &4147135398360244085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2942146037294568416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92f3d4c81290f354ba9a3a385682345e, type: 3}
+  m_Script: {fileID: 11500000, guid: b8cceeddc70f77d4d874c62dbaa11623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 914635381026921050}
