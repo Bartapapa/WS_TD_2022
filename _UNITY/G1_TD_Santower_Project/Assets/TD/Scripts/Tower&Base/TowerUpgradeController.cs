@@ -72,7 +72,7 @@ public class TowerUpgradeController : MonoBehaviour
 
             upgradedTower.SetTotalCookieCost(_tower.GetTotalCookieCost + sender.TowerDescription.CookieCost);
 
-            Destroy(_tower.gameObject);
+            _tower.KillTower();
         }
     }
 
