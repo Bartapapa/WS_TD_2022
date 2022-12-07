@@ -972,7 +972,8 @@ MonoBehaviour:
   _projectile: {fileID: -7937955209939105875, guid: f9a2a08ea60278a41a1b78ab995e558a,
     type: 3}
   _projectileAnchor: {fileID: 302692792940769431}
-  _projectileSpeed: 1
+  _projectileSpeed: 0.45
+  _projectileDamage: 20
 --- !u!1 &302692792940769428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,7 +1115,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 45
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &302692793403659936
 Rigidbody:
