@@ -15433,7 +15433,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -15759,6 +15759,22 @@ PrefabInstance:
     - target: {fileID: 178082514, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 736236888, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
+      propertyPath: m_Radius
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065735765, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516171201, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
+      propertyPath: _projectileSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516171202, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
+      propertyPath: _rotationSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8491755099251913143, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}

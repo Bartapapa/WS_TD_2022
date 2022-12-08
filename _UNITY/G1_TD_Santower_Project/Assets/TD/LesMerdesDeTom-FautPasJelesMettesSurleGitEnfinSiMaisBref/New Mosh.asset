@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b40b2c90fd8d714b9a4b619b5e01725, type: 3}
   m_Name: New Mosh
   m_EditorClassIdentifier: 
-  _waves: []
+  _waves:
+  - _waveEntitiesDescriptions:
+    - _entityType: 15
+      _extraDurationAfterSpawned: 0
+    _durationBetweenSpawnedEntity: 0

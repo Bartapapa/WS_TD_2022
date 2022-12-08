@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636b0da55f87f134581345d8bdb601fd, type: 3}
   m_Name: New Wave Set
   m_EditorClassIdentifier: 
-  _waves: []
+  _waves:
+  - _waveEntityGroupDescription: {fileID: 11400000, guid: d836b6b67070dab438094955b233fd58,
+      type: 2}
+    _spawnerIndex: 0
   _waitingDurationBefore: 0
   _waitingDurationAfter: 5

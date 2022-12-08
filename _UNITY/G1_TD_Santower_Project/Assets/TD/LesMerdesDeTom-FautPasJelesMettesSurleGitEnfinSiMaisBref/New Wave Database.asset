@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd99a8f66606c214aa1a24137aa27a36, type: 3}
   m_Name: New Wave Database
   m_EditorClassIdentifier: 
-  _waveEntityDatas: []
-  _waves: []
+  _waveEntityDatas:
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: d4d3f6736634d714ab2c7183c56e2404,
+      type: 3}
+    _entityType: 15
+  _waves:
+  - {fileID: 11400000, guid: 31f0556dd1bfe2c4c8a92386e7feb7c5, type: 2}

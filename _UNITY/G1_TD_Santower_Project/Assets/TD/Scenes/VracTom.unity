@@ -598,7 +598,7 @@ MonoBehaviour:
   - {fileID: 430054391}
   - {fileID: 784475304}
   - {fileID: 2056067642}
-  _autoStartNextWaves: 1
+  _autoStartNextWaves: 0
   _currentWaveSetIndex: -1
   _currentWaveRunning: 0
   WaveStatusChanged_UnityEvent:
@@ -2145,7 +2145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9642afa5289d3542bacf1aec765f572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveDatabase: {fileID: 11400000, guid: 0c39ccefeb617144c9db545ace8b6e29, type: 2}
+  _waveDatabase: {fileID: 11400000, guid: e686a58412ce8ee4e824b276fcc53259, type: 2}
 --- !u!4 &313130625
 Transform:
   m_ObjectHideFlags: 0
@@ -9030,7 +9030,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45710
+  m_Name: pb_Mesh186074
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
