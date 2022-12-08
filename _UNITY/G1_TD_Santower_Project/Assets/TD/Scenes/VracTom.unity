@@ -7130,8 +7130,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 36.9, z: -42.2}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalPosition: {x: 0, y: 20, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7397,8 +7397,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a76273170aa83e4f929b0151867c5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementLimits: {fileID: 2086335490}
   _cameraSpeed: 10
+  _movementLimits:
+  - {fileID: 0}
+  _boxColliderSize: []
+  _CameraYAxis: []
 --- !u!114 &973040094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8898,7 +8901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8a4951b5f865440a9b748df6e968a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraZoom: 15
+  _cameraZoom: []
 --- !u!1 &1180134348
 GameObject:
   m_ObjectHideFlags: 0

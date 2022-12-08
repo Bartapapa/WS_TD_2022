@@ -6,9 +6,18 @@ using UnityEngine;
 public class MecaSnowman : MonoBehaviour
 {
 	[SerializeField]
-	private Damageable _damageable;
+	private AnimatorHandler _anim;
 
 	[SerializeField]
+	private Damageable _damageable;
+
+    [SerializeField]
+    private float _fireRadius = 10f;
+
+    [SerializeField]
+    private WeaponController _weaponController;
+
+    [SerializeField]
 	private Timer _spawnIntervale;
 
 	[SerializeField]
@@ -17,7 +26,6 @@ public class MecaSnowman : MonoBehaviour
 	[SerializeField]
 	private List<EntitySpawner> _spawner = new List<EntitySpawner>();
 
-	[SerializeField]
 	private WaveDatabase _waveEntityDatas;
 
 	private List<GameObject> _tower = new List<GameObject>();
@@ -30,7 +38,21 @@ public class MecaSnowman : MonoBehaviour
 
 	private WaveEntity _entity;
 
-	private void OnEnable()
+	private PathFollower _pathFollower;
+
+    private void Awake()
+    {
+		_waveEntityDatas = DatabaseManager.Instance.WaveDatabase;
+
+		_pathFollower = GetComponent<PathFollower>();
+        _pathFollower.SetPath(_path, true);
+
+		_anim = GetComponent<WaveEntity>().AnimatorHandler;
+
+        GetAllTurret();
+    }
+
+    private void OnEnable()
 	{
 		_damageable.CallerDied -= OnDeath;
 		_damageable.CallerDied += OnDeath;
@@ -48,11 +70,68 @@ public class MecaSnowman : MonoBehaviour
 		_spawnIntervale.Update();
 		if (_spawnIntervale.Progress >= 1)
 		{
+            //TODO make the hordeSpawn an event called in animation.
+            _anim.Animator.SetTrigger("Call");
 			HordeSpawn();
 		}
-	}
+       
+		//var tower = GetNearestTower();
+  //      if (tower != null)
+  //      {
+  //          if (Vector3.Distance(tower.transform.position, transform.position) <= _fireRadius && tower.GetComponent<Freezer>().IsFrozen == false)
+		//	{ 
+		//		_tower.Add(tower);
 
-	private void OnDeath(Damageable damageable, int currentHealth, int damageTaken)
+  //              _pathFollower.SetCanMove(false);
+  //              _weaponController.LookAtAndFire(tower.transform.position);
+  //          }
+  //          else
+  //          {
+  //              _pathFollower.SetCanMove(true);
+  //          }
+  //      }
+  //      RemoveNullItemsFromList();
+    }
+
+    private void GetAllTurret()
+    {
+        foreach (GameObject Tower in GameObject.FindGameObjectsWithTag("Tower"))
+        {
+            _tower.Add(Tower);
+        }
+    }
+
+    public void RemoveNullItemsFromList()
+    {
+        for (var i = _tower.Count - 1; i > -1; i--)
+        {
+            if (_tower[i] == null)
+            {
+                _tower.RemoveAt(i);
+            }
+        }
+    }
+
+    private GameObject GetNearestTower()
+    {
+        float shortestDistance = 0;
+        int shortestDistanceIndex = 0;
+        for (int i = 0; i < _tower.Count; i++)
+        {
+            if (_tower[i] != null)
+            {
+                var distance = (_tower[i].transform.position - transform.position).sqrMagnitude;
+                if (distance < shortestDistance && _tower[i].GetComponent<Freezer>().IsFrozen == false)
+                {
+                    shortestDistance = distance;
+                    shortestDistanceIndex = i;
+                }
+            }
+        }
+        return _tower[shortestDistanceIndex];
+    }
+
+    private void OnDeath(Damageable damageable, int currentHealth, int damageTaken)
 	{
 		foreach (GameObject Tower in _tower)
 		{
@@ -116,7 +195,10 @@ public class MecaSnowman : MonoBehaviour
 		if (other.GetComponent<Freezer>() && other.GetComponent<Freezer>().IsFrozen == false)
 		{
 			other.GetComponent<Freezer>().Freeze(99999);
-			_tower.Add(other.gameObject);
+            _anim.Animator.SetTrigger("Freeze");
+            _tower.Add(other.gameObject);
+
+			//TODO make the freezing an event called in animation.
 		}
 	}
 }
