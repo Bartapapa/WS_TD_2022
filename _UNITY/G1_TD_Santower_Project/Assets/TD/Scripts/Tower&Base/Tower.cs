@@ -46,6 +46,8 @@
 			enabled = _enabledByDefault;
 			_selectableObject.SetCanBeSelected(false);
 
+			_damageable = GetComponent<Damageable>();
+
             if (_anim == null)
             {
                 Debug.Log(name + " doesn't have an animatorHandler. Please advise.");
@@ -130,6 +132,7 @@
 		public void KillTower()
 		{
 			Enable(false);
+			_selectableObject.SetCanBeSelected(false);
 			if (_damageable != null)
 			{
 				_damageable.Die();
