@@ -20,7 +20,6 @@ public class Carrier : MonoBehaviour
 	[SerializeField]
 	private List<WaveEntityGroupDescription> _waveEntity = new List<WaveEntityGroupDescription>();
 
-	[SerializeField]
 	private WaveDatabase _waveEntityDatas;
 
 	private PathFollower _pathFollower;
@@ -48,6 +47,11 @@ public class Carrier : MonoBehaviour
 	private void OnDisable()
 	{
 		_damageable.CallerDied -= SpawnProcess;
+	}
+
+	private void Awake()
+	{
+		_waveEntityDatas = DatabaseManager.Instance.WaveDatabase;
 	}
 
 	private void Update()
