@@ -26,7 +26,6 @@ public class MecaSnowman : MonoBehaviour
 	[SerializeField]
 	private List<EntitySpawner> _spawner = new List<EntitySpawner>();
 
-	[SerializeField]
 	private WaveDatabase _waveEntityDatas;
 
 	private List<GameObject> _tower = new List<GameObject>();
@@ -43,7 +42,9 @@ public class MecaSnowman : MonoBehaviour
 
     private void Awake()
     {
-        _pathFollower = GetComponent<PathFollower>();
+		_waveEntityDatas = DatabaseManager.Instance.WaveDatabase;
+
+		_pathFollower = GetComponent<PathFollower>();
         _pathFollower.SetPath(_path, true);
 
 		_anim = GetComponent<WaveEntity>().AnimatorHandler;
@@ -74,22 +75,22 @@ public class MecaSnowman : MonoBehaviour
 			HordeSpawn();
 		}
        
-		var tower = GetNearestTower();
-        if (tower != null)
-        {
-            if (Vector3.Distance(tower.transform.position, transform.position) <= _fireRadius && tower.GetComponent<Freezer>().IsFrozen == false)
-			{ 
-				_tower.Add(tower);
+		//var tower = GetNearestTower();
+  //      if (tower != null)
+  //      {
+  //          if (Vector3.Distance(tower.transform.position, transform.position) <= _fireRadius && tower.GetComponent<Freezer>().IsFrozen == false)
+		//	{ 
+		//		_tower.Add(tower);
 
-                _pathFollower.SetCanMove(false);
-                _weaponController.LookAtAndFire(tower.transform.position);
-            }
-            else
-            {
-                _pathFollower.SetCanMove(true);
-            }
-        }
-        RemoveNullItemsFromList();
+  //              _pathFollower.SetCanMove(false);
+  //              _weaponController.LookAtAndFire(tower.transform.position);
+  //          }
+  //          else
+  //          {
+  //              _pathFollower.SetCanMove(true);
+  //          }
+  //      }
+  //      RemoveNullItemsFromList();
     }
 
     private void GetAllTurret()
