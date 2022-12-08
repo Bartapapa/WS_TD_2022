@@ -16,6 +16,9 @@
 		[SerializeField]
 		protected float _projectileSpeed = 1f;
 
+		[SerializeField]
+		protected bool _canFreeze = false;
+
 		[Header("Artillery")]
 		[SerializeField]
 		protected bool _useArtilleryMovement = false;
@@ -27,16 +30,23 @@
 
 		protected bool _hitThing = false;
 
+		protected Collider _collider;
+
+		public Collider GetCollider => _collider;
 		public int Damage { set { _damage = value; } }
 		public bool GetHit{ get { return _hitThing; } }
 
         public virtual void OnTriggerEnter(Collider other)
 		{
+			_collider = other;
 			var damageable = other.GetComponentInParent<Damageable>();
 
 			if (damageable != null && _needDamageableToCollide == true)
 			{
-
+				if (_canFreeze == true)
+				{
+					other.GetComponentInParent<Freezer>().Freeze(9999);
+				}
 				_hitThing= true;
 				damageable.TakeDamage(_damage, false);
 

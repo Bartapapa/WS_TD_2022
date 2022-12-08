@@ -86,8 +86,6 @@ public class PereFouettardAir : MonoBehaviour
 
 	private void MoveTo(Vector3 position)
 	{
-
-
 		ExitPosition();
 		var exitPos = position + -_exitPos;
 

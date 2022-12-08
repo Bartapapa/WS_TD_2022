@@ -30,7 +30,7 @@ public class MecaSnowman : MonoBehaviour
 
 	private List<GameObject> _tower = new List<GameObject>();
 
-	private List<GameObject> waypoint = new List<GameObject>();
+	private List<GameObject> _waypoint = new List<GameObject>();
 
 	private Path _path;
 
@@ -45,12 +45,16 @@ public class MecaSnowman : MonoBehaviour
 		_waveEntityDatas = DatabaseManager.Instance.WaveDatabase;
 
 		_pathFollower = GetComponent<PathFollower>();
-        _pathFollower.SetPath(_path, true);
-
 		_anim = GetComponent<WaveEntity>().AnimatorHandler;
-
-        GetAllTurret();
-    }
+		
+		foreach (EntitySpawner spawner in LevelReferences.Instance.SpawnerManager.Spawner)
+		{
+			if (spawner.tag != "Air")
+			{
+				_spawner.Add(spawner);
+			}
+		}
+	}
 
     private void OnEnable()
 	{
@@ -70,104 +74,49 @@ public class MecaSnowman : MonoBehaviour
 		_spawnIntervale.Update();
 		if (_spawnIntervale.Progress >= 1)
 		{
-            //TODO make the hordeSpawn an event called in animation.
-            _anim.Animator.SetTrigger("Call");
+			//TODO make the hordeSpawn an event called in animation.
+			_anim.Animator.SetTrigger("Call");
 			HordeSpawn();
 		}
-       
-		//var tower = GetNearestTower();
-  //      if (tower != null)
-  //      {
-  //          if (Vector3.Distance(tower.transform.position, transform.position) <= _fireRadius && tower.GetComponent<Freezer>().IsFrozen == false)
-		//	{ 
-		//		_tower.Add(tower);
-
-  //              _pathFollower.SetCanMove(false);
-  //              _weaponController.LookAtAndFire(tower.transform.position);
-  //          }
-  //          else
-  //          {
-  //              _pathFollower.SetCanMove(true);
-  //          }
-  //      }
-  //      RemoveNullItemsFromList();
-    }
-
-    private void GetAllTurret()
-    {
-        foreach (GameObject Tower in GameObject.FindGameObjectsWithTag("Tower"))
-        {
-            _tower.Add(Tower);
-        }
-    }
-
-    public void RemoveNullItemsFromList()
-    {
-        for (var i = _tower.Count - 1; i > -1; i--)
-        {
-            if (_tower[i] == null)
-            {
-                _tower.RemoveAt(i);
-            }
-        }
-    }
-
-    private GameObject GetNearestTower()
-    {
-        float shortestDistance = 0;
-        int shortestDistanceIndex = 0;
-        for (int i = 0; i < _tower.Count; i++)
-        {
-            if (_tower[i] != null)
-            {
-                var distance = (_tower[i].transform.position - transform.position).sqrMagnitude;
-                if (distance < shortestDistance && _tower[i].GetComponent<Freezer>().IsFrozen == false)
-                {
-                    shortestDistance = distance;
-                    shortestDistanceIndex = i;
-                }
-            }
-        }
-        return _tower[shortestDistanceIndex];
-    }
+	}
 
     private void OnDeath(Damageable damageable, int currentHealth, int damageTaken)
 	{
-		foreach (GameObject Tower in _tower)
+		foreach (GameObject tower in _tower)
 		{
-			Tower.GetComponent<Freezer>().Unfreeze();
+			tower.GetComponent<Freezer>().Unfreeze();
 		}
 	}
 
 	private void HordeSpawn()
 	{
-		foreach (EntitySpawner Spawner in _spawner)
+		foreach (EntitySpawner spawner in _spawner)
 		{
-			GetPath(Spawner);
-			SpawnEnemies(Spawner);
+			GetPath(spawner);
+			SpawnEnemies(spawner);
 		}
 	}
 
 	private void GetAllWaypoint()
 	{
-		foreach (GameObject Waypoint in GameObject.FindGameObjectsWithTag("Waypoint"))
+		foreach (GameObject waypoint in GameObject.FindGameObjectsWithTag("Waypoint"))
 		{
-			waypoint.Add(Waypoint);
+			_waypoint.Add(waypoint);
 		}
 	}
 
 	private void GetPath(EntitySpawner spawner)
 	{
 		GetAllWaypoint();
-		var tempGet = waypoint[0];
-		for (int i = 0, length = waypoint.Count; i < length; i++)
+		var tempGet = _waypoint[0];
+		for (int i = 0, length = _waypoint.Count; i < length; i++)
 		{
-			float distance = Vector3.Distance(waypoint[i].transform.position, spawner.transform.position);
+			float distance = Vector3.Distance(_waypoint[i].transform.position, spawner.transform.position);
 			float targetDistance = Vector3.Distance(tempGet.transform.position, spawner.transform.position);
 
 			if (distance < targetDistance)
 			{
-				tempGet = waypoint[i];
+				tempGet = _waypoint[i];
 			}
 		}
 		_waypointIndex = tempGet;
@@ -190,14 +139,30 @@ public class MecaSnowman : MonoBehaviour
 		}
 	}
 
+	private void LookAt(Vector3 position)
+	{
+		Vector3 direction = position - transform.position;
+		direction.y = 0;
+		Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+		transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 10 * Time.deltaTime);
+	}
+
+	private void Freezing(Collider other)
+	{
+		_pathFollower.SetCanMove(false);
+		LookAt(other.transform.position);
+		_anim.Animator.SetTrigger("Freeze");
+		_weaponController.LookAtAndFire(other.transform.position);
+		_tower.Add(other.gameObject);
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.GetComponent<Freezer>() && other.GetComponent<Freezer>().IsFrozen == false)
+		if (other.GetComponentInParent<Freezer>().IsFrozen == false)
 		{
-			other.GetComponent<Freezer>().Freeze(99999);
-            _anim.Animator.SetTrigger("Freeze");
-            _tower.Add(other.gameObject);
+			Freezing(other);
 
+			_pathFollower.SetCanMove(true);
 			//TODO make the freezing an event called in animation.
 		}
 	}
