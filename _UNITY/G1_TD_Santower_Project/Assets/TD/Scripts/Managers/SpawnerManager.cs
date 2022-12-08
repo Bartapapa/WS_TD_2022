@@ -56,6 +56,8 @@ namespace GSGD1
         [SerializeField]
         private List<Damageable> _livingEntities = new List<Damageable>();
 
+		public List<EntitySpawner> Spawner => _spawners;
+
         [ContextMenu("Start waves")]
 		public void StartWaves()
 		{

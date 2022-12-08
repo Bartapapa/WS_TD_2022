@@ -353,7 +353,7 @@ MonoBehaviour:
   _freezeDuration: 1
   _speed: 1
   _distanceThreshold: 0.5
-  _anim: {fileID: 0}
+  _anim: {fileID: 5477491883243221544}
 --- !u!114 &5477491883243221544
 MonoBehaviour:
   m_ObjectHideFlags: 0
