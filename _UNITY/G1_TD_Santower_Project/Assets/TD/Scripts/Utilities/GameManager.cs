@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
 
     public UnityEvent<GamePhase, GamePhase> GamePhaseChangeEvent_UE;
 
+
     public void ChangePhase(GamePhase toPhase)
     {
         GamePhaseChangeEvent_UE.Invoke(_currentPhase, toPhase);
