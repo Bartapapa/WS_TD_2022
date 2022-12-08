@@ -163,7 +163,6 @@ public class MecaSnowman : MonoBehaviour
 			Freezing(other);
 
 			_pathFollower.SetCanMove(true);
-			//TODO make the freezing an event called in animation.
 		}
 	}
 }
