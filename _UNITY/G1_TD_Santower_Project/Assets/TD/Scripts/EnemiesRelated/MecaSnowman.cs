@@ -6,6 +6,9 @@ using UnityEngine;
 public class MecaSnowman : MonoBehaviour
 {
 	[SerializeField]
+	private AnimatorHandler _anim;
+
+	[SerializeField]
 	private Damageable _damageable;
 
     [SerializeField]
@@ -43,6 +46,8 @@ public class MecaSnowman : MonoBehaviour
         _pathFollower = GetComponent<PathFollower>();
         _pathFollower.SetPath(_path, true);
 
+		_anim = GetComponent<WaveEntity>().AnimatorHandler;
+
         GetAllTurret();
     }
 
@@ -64,6 +69,8 @@ public class MecaSnowman : MonoBehaviour
 		_spawnIntervale.Update();
 		if (_spawnIntervale.Progress >= 1)
 		{
+            //TODO make the hordeSpawn an event called in animation.
+            _anim.Animator.SetTrigger("Call");
 			HordeSpawn();
 		}
        
@@ -187,7 +194,10 @@ public class MecaSnowman : MonoBehaviour
 		if (other.GetComponent<Freezer>() && other.GetComponent<Freezer>().IsFrozen == false)
 		{
 			other.GetComponent<Freezer>().Freeze(99999);
-			_tower.Add(other.gameObject);
+            _anim.Animator.SetTrigger("Freeze");
+            _tower.Add(other.gameObject);
+
+			//TODO make the freezing an event called in animation.
 		}
 	}
 }
