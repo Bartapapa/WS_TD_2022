@@ -143,5 +143,29 @@
 				_nextDestination = position;
 			}
 		}
+
+		public void SetWaypointDestination(Transform waypoint)
+		{
+			int indexDestination = -1;
+
+			for (int i = 0; i < _path.Waypoints.Count; i++)
+			{
+				if (waypoint == _path.Waypoints[i])
+				{
+					indexDestination = i;
+				}
+			}
+
+			if (indexDestination < 0)
+			{
+				_currentPathIndex = 0;
+                SetNewDestination(Vector3.zero);
+			}
+			else
+			{
+				_currentPathIndex = indexDestination;
+				SetNewDestination(Vector3.zero);
+			}
+		}
 	}
 }

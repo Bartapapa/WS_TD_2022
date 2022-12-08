@@ -90,6 +90,11 @@
             }
 		}
 
+        public void SetDestination (Transform destination)
+        {
+            _pathFollower.SetWaypointDestination(destination);
+        }
+
         public void DisableDropOnDeath()
         {
             _pathFollower.DisableDropOnDeath();

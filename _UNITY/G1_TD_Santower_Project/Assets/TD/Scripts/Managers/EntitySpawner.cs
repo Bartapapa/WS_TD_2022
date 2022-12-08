@@ -103,13 +103,14 @@
 				{
 					outEntity = InstantiateEntity(outEntity);
 
-                    if (_currentSpawnIndex <= 0)
+                    if (_currentSpawnIndex < 0)
                     {
                         outEntity.SetPath(_path);
                     }
                     else
                     {
                         outEntity.SetPath(_path, false);
+						outEntity.SetDestination(_phaseWaypointSpawns[_currentSpawnIndex]);
                         outEntity.transform.position = _phaseWaypointSpawns[_currentSpawnIndex].position;
                     }
 					_timer.Set(_wave.DurationBetweenSpawnedEntity + nextEntity.ExtraDurationAfterSpawned).Start();
@@ -152,6 +153,7 @@
 		private void OnGamePhaseChanged(GameManager.GamePhase fromPhase, GameManager.GamePhase toPhase)
 		{
 			int spawnIndex = ((int)toPhase) - 1;
+			Debug.Log(spawnIndex);
 			SetCurrentSpawnIndex(spawnIndex);
         }
 
@@ -159,7 +161,7 @@
 		{
 			if (index > _phaseWaypointSpawns.Count - 1)
 			{
-				Debug.Log("Index given is superior to the number of waypoints in phaseWaypointSpawns, ignoring");
+				Debug.Log(name + " Index given is superior to the number of waypoints in phaseWaypointSpawns, ignoring");
 				return;
 			}
 
