@@ -34,6 +34,8 @@
 		[SerializeField]
 		private Lifespan _lifespan;
 
+		private CapsuleCollider _collider;
+
 		public bool IsDead => _isDead;
 		public bool GetIsFlying => _isFlying;
 		public int GetHealth => _health;
@@ -47,6 +49,7 @@
 		private void Awake()
 		{
 			Invulnerability(.1f);
+			_collider = GetComponent<CapsuleCollider>();
 
 			if (_hasLifespan)
 			{
@@ -168,6 +171,8 @@
 			if (_isDead) return;
 
 			_callerDied?.Invoke(this, _health, 0);
+
+			_collider.enabled = false;
 
             // A remplacer par les scripts / animation de mort
 			if (_deathParticle != null)

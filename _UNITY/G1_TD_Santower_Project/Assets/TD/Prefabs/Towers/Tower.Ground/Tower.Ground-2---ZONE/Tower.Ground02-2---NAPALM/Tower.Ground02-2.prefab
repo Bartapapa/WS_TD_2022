@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4321159110712453884}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CanonBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 302692792171481254}
   - component: {fileID: 302692792171481250}
   - component: {fileID: 3880569796141524151}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: ProjectileCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ MonoBehaviour:
   _weapon: {fileID: 302692792590252284}
   _rotationSpeed: 10
   _minAngleToFire: 10
-  _useArtilleryAiming: 0
+  _useArtilleryAiming: 1
   _artilleryAimHeight: 10
 --- !u!114 &302692792590252284
 MonoBehaviour:
@@ -497,14 +497,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timer:
-    _duration: 0.3
+    _duration: 1
     _stopWhenCompleted: 1
   _anim: {fileID: 0}
-  _projectile: {fileID: -7937955209939105875, guid: f9a2a08ea60278a41a1b78ab995e558a,
+  _projectile: {fileID: -7657351730962438757, guid: 84f4d67a58d67c54c96aa3b778baf0f3,
     type: 3}
   _projectileAnchor: {fileID: 302692792940769431}
   _projectileSpeed: 20
   _projectileDamage: 6
+  _spread: 0
 --- !u!114 &5044857435062831350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4995978252417797209}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343636442795033004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7714535801244071959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CanonBase_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2245227502115113129}
   - component: {fileID: 2638198474743062779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: polySurface24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,7 +997,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5776911001379138603}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BaseLow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1030,7 +1031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5024248050836335031}
   - component: {fileID: 6085258282444353108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TowerGroundNapalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1087,7 @@ GameObject:
   - component: {fileID: 382515912807407910}
   - component: {fileID: 5631412256799504039}
   - component: {fileID: 1422771202033406557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: flag.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8808814642844264732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BaseLow_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1201,7 @@ GameObject:
   - component: {fileID: 604289900458248636}
   - component: {fileID: 2330848172960052459}
   - component: {fileID: 933225851769349742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foundation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
