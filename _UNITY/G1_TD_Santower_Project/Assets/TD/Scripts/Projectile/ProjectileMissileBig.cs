@@ -8,10 +8,12 @@ public class ProjectileMissileBig : AProjectile
     public delegate void ExplosiveEvent();
     public event ExplosiveEvent Exploded = null;
 
-    [SerializeField]
-    private List<Damageable> damageables= new List<Damageable>();
+    private List<Damageable> _damageables= new List<Damageable>();
 
-    [Header("Missile")]
+	[SerializeField]
+	private DamageableDetector _damageableDetector;
+
+	[Header("Missile")]
     [SerializeField]
     private float _heightExplosion = 6.5f;
 
@@ -65,6 +67,7 @@ public class ProjectileMissileBig : AProjectile
 
     private void EXPLOSION()
     {
+        _applyDamage= true;
         _projectileSpeed = 0;
         _explosionCollider.radius = _explosionCollider.radius + _explosionSpeed * Time.deltaTime;
 
@@ -83,10 +86,19 @@ public class ProjectileMissileBig : AProjectile
 
     private void SpawnMissiles()
     {
+       _damageables = _damageableDetector.DamageablesInRange;
         for (int i = 0; i < _smolMissileSpawn; i++)
         {
-            ProjectileMissileSmol missile = Instantiate(_smolMissile, transform.position + new Vector3(Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile), Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile), Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile)), Quaternion.identity);
-            missile.Target = damageables[i];
+            if (_damageables.Count > 0)
+            {
+                ProjectileMissileSmol missile = Instantiate(_smolMissile, 
+                                                            transform.position + new Vector3 (
+                                                            Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile), 
+                                                            Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile), 
+                                                            Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile)), 
+                                                            Quaternion.identity);
+                missile.Target = _damageables[Random.Range(0, _damageables.Count - 1)];
+            }
         }
     }
 }

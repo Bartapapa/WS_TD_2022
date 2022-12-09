@@ -25,6 +25,8 @@
 		[SerializeField]
 		private List<Damageable> _damageablesInRange = new List<Damageable>();
 
+		public List<Damageable> DamageablesInRange => _damageablesInRange;
+
 		public Damageable GetTarget()
 		{
 			switch (_mode)
