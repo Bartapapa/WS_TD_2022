@@ -228,7 +228,7 @@ MonoBehaviour:
   _isDead: 0
   _isInvulnerable: 0
   _deathTimer:
-    _duration: 0
+    _duration: 5
     _stopWhenCompleted: 1
   _invulnerabilityTimer:
     _duration: 0
@@ -270,7 +270,6 @@ MonoBehaviour:
   _randomSpawnAmplitude: 1
   _waveEntity:
   - {fileID: 0}
-  _waveEntityDatas: {fileID: 0}
 --- !u!136 &8954739381906307174
 CapsuleCollider:
   m_ObjectHideFlags: 0

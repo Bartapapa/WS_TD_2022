@@ -10,6 +10,8 @@ namespace GSGD1
         [SerializeField] private bool _isFiring = false;
         private float _continueFiringTimer = 0f;
 
+        public bool IsFiring => _isFiring;
+
         protected override void Update()
         {
             base.Update();
@@ -26,6 +28,8 @@ namespace GSGD1
                     _isFiring = false;
                 }
             }
+
+            _anim.Animator.SetBool("isFiring", _isFiring);
         }
 
         public override void AnchorLookAt(Vector3 position)
