@@ -6,9 +6,18 @@ using UnityEngine;
 public class MecaSnowman : MonoBehaviour
 {
 	[SerializeField]
-	private Damageable _damageable;
+	private AnimatorHandler _anim;
 
 	[SerializeField]
+	private Damageable _damageable;
+
+    [SerializeField]
+    private float _fireRadius = 10f;
+
+    [SerializeField]
+    private WeaponController _weaponController;
+
+    [SerializeField]
 	private Timer _spawnIntervale;
 
 	[SerializeField]
@@ -17,12 +26,11 @@ public class MecaSnowman : MonoBehaviour
 	[SerializeField]
 	private List<EntitySpawner> _spawner = new List<EntitySpawner>();
 
-	[SerializeField]
 	private WaveDatabase _waveEntityDatas;
 
 	private List<GameObject> _tower = new List<GameObject>();
 
-	private List<GameObject> waypoint = new List<GameObject>();
+	private List<GameObject> _waypoint = new List<GameObject>();
 
 	private Path _path;
 
@@ -30,7 +38,25 @@ public class MecaSnowman : MonoBehaviour
 
 	private WaveEntity _entity;
 
-	private void OnEnable()
+	private PathFollower _pathFollower;
+
+    private void Awake()
+    {
+		_waveEntityDatas = DatabaseManager.Instance.WaveDatabase;
+
+		_pathFollower = GetComponent<PathFollower>();
+		_anim = GetComponent<WaveEntity>().AnimatorHandler;
+		
+		foreach (EntitySpawner spawner in LevelReferences.Instance.SpawnerManager.Spawner)
+		{
+			if (spawner.tag != "Air")
+			{
+				_spawner.Add(spawner);
+			}
+		}
+	}
+
+    private void OnEnable()
 	{
 		_damageable.CallerDied -= OnDeath;
 		_damageable.CallerDied += OnDeath;
@@ -48,47 +74,49 @@ public class MecaSnowman : MonoBehaviour
 		_spawnIntervale.Update();
 		if (_spawnIntervale.Progress >= 1)
 		{
+			//TODO make the hordeSpawn an event called in animation.
+			_anim.Animator.SetTrigger("Call");
 			HordeSpawn();
 		}
 	}
 
-	private void OnDeath(Damageable damageable, int currentHealth, int damageTaken)
+    private void OnDeath(Damageable damageable, int currentHealth, int damageTaken)
 	{
-		foreach (GameObject Tower in _tower)
+		foreach (GameObject tower in _tower)
 		{
-			Tower.GetComponent<Freezer>().Unfreeze();
+			tower.GetComponent<Freezer>().Unfreeze();
 		}
 	}
 
 	private void HordeSpawn()
 	{
-		foreach (EntitySpawner Spawner in _spawner)
+		foreach (EntitySpawner spawner in _spawner)
 		{
-			GetPath(Spawner);
-			SpawnEnemies(Spawner);
+			GetPath(spawner);
+			SpawnEnemies(spawner);
 		}
 	}
 
 	private void GetAllWaypoint()
 	{
-		foreach (GameObject Waypoint in GameObject.FindGameObjectsWithTag("Waypoint"))
+		foreach (GameObject waypoint in GameObject.FindGameObjectsWithTag("Waypoint"))
 		{
-			waypoint.Add(Waypoint);
+			_waypoint.Add(waypoint);
 		}
 	}
 
 	private void GetPath(EntitySpawner spawner)
 	{
 		GetAllWaypoint();
-		var tempGet = waypoint[0];
-		for (int i = 0, length = waypoint.Count; i < length; i++)
+		var tempGet = _waypoint[0];
+		for (int i = 0, length = _waypoint.Count; i < length; i++)
 		{
-			float distance = Vector3.Distance(waypoint[i].transform.position, spawner.transform.position);
+			float distance = Vector3.Distance(_waypoint[i].transform.position, spawner.transform.position);
 			float targetDistance = Vector3.Distance(tempGet.transform.position, spawner.transform.position);
 
 			if (distance < targetDistance)
 			{
-				tempGet = waypoint[i];
+				tempGet = _waypoint[i];
 			}
 		}
 		_waypointIndex = tempGet;
@@ -111,12 +139,30 @@ public class MecaSnowman : MonoBehaviour
 		}
 	}
 
+	private void LookAt(Vector3 position)
+	{
+		Vector3 direction = position - transform.position;
+		direction.y = 0;
+		Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+		transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 10 * Time.deltaTime);
+	}
+
+	private void Freezing(Collider other)
+	{
+		_pathFollower.SetCanMove(false);
+		LookAt(other.transform.position);
+		_anim.Animator.SetTrigger("Freeze");
+		_weaponController.LookAtAndFire(other.transform.position);
+		_tower.Add(other.gameObject);
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.GetComponent<Freezer>() && other.GetComponent<Freezer>().IsFrozen == false)
+		if (other.GetComponentInParent<Freezer>().IsFrozen == false)
 		{
-			other.GetComponent<Freezer>().Freeze(99999);
-			_tower.Add(other.gameObject);
+			Freezing(other);
+
+			_pathFollower.SetCanMove(true);
 		}
 	}
 }

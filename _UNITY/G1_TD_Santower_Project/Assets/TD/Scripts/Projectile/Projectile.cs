@@ -13,14 +13,7 @@
 
 		private void MoveForward()
 		{
-            if (_useArtilleryMovement)
-            {
-
-            }
-            else
-            {
                 transform.position = transform.position + _projectileSpeed * Time.deltaTime * transform.forward;
-            }
         }
 	}
 }

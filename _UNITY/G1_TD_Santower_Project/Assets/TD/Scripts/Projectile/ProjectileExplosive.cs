@@ -34,6 +34,8 @@
         private bool _hasExploded = false;
 
         public bool CanProduceShrapnel => _canProduceShrapnel;
+		public float ExplosionRadius { set => _explosionRadius = value; }
+		public float ExplosionSpeed { set => _explosionSpeed = value; }
 
         private void Awake()
         {
@@ -81,8 +83,6 @@
 			}
 		}
 
-		public float ExplosionRadius { set => _explosionRadius = value; }
-		public float ExplosionSpeed { set => _explosionSpeed = value; }
 
 		private void MoveForward()
 		{
