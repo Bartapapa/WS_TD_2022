@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathFollower: {fileID: 2942146037294568418}
   _damageable: {fileID: 0}
-  _anim: {fileID: 0}
+  _anim: {fileID: 4147135398360244085}
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0

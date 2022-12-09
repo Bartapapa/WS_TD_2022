@@ -8,7 +8,7 @@
 		protected Timer _timer = null;
 
 		[SerializeField]
-		private AnimatorHandler_Tower _anim = null;
+		protected AnimatorHandler_Tower _anim = null;
 
 		private void Awake()
 		{
