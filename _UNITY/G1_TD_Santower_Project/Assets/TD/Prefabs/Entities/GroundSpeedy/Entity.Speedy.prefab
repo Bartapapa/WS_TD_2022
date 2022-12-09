@@ -97,7 +97,7 @@ MonoBehaviour:
   _isDead: 0
   _isInvulnerable: 0
   _deathTimer:
-    _duration: 0
+    _duration: 5
     _stopWhenCompleted: 1
   _invulnerabilityTimer:
     _duration: 0

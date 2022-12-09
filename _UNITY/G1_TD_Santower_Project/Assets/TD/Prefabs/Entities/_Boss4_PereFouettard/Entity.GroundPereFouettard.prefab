@@ -195,7 +195,7 @@ MonoBehaviour:
   _isDead: 0
   _isInvulnerable: 0
   _deathTimer:
-    _duration: 0
+    _duration: 5
     _stopWhenCompleted: 1
   _invulnerabilityTimer:
     _duration: 0
@@ -542,10 +542,13 @@ MonoBehaviour:
   _timer:
     _duration: 0.1
     _stopWhenCompleted: 1
+  _anim: {fileID: 0}
   _projectile: {fileID: 1697648429471405643, guid: 22fcc0a31c0a1a74a8758f113602682f,
     type: 3}
   _projectileAnchor: {fileID: 6430412199542074034}
   _projectileSpeed: 60
+  _projectileDamage: 2
+  _spread: 0
 --- !u!1 &4904753753277482475
 GameObject:
   m_ObjectHideFlags: 0
