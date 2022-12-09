@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c78294bca23e774408c13df8115afb72, type: 3}
-  m_Name: TowerDescription.Ground
+  m_Name: TowerDescription.Air01---SINGLE
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 302692793403659937, guid: 11db3aa737362e04eaf46bfb3eed223a, type: 3}
+  _prefab: {fileID: 302692793403659937, guid: b9a4d930745f8e641948251aadf67351, type: 3}
   _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 0.12904951, g: 0.9433962, b: 0.35619384, a: 1}
-  _cookieCost: 30
+  _iconColor: {r: 1, g: 0.599411, b: 0.27843142, a: 1}
+  _cookieCost: 180
   _upgradeList:
-  - {fileID: 11400000, guid: 148609f929643944991f2df907ca6d3f, type: 2}
-  - {fileID: 11400000, guid: c915b83ca2c789146ad5147a1b7f8458, type: 2}
+  - {fileID: 11400000, guid: 0eadaa4276bf30e47acbaee8ab11cd1e, type: 2}
+  - {fileID: 11400000, guid: d0b47efbf05953d48bd0d9dd5951e1fc, type: 2}

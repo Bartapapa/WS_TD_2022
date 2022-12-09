@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c78294bca23e774408c13df8115afb72, type: 3}
-  m_Name: TowerDescription.Ground
+  m_Name: TowerDescription.Air01-1---PHALANX
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 302692793403659937, guid: 11db3aa737362e04eaf46bfb3eed223a, type: 3}
+  _prefab: {fileID: 302692793403659937, guid: b38dc67486d537140b66a12a999773cb, type: 3}
   _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 0.12904951, g: 0.9433962, b: 0.35619384, a: 1}
-  _cookieCost: 30
-  _upgradeList:
-  - {fileID: 11400000, guid: 148609f929643944991f2df907ca6d3f, type: 2}
-  - {fileID: 11400000, guid: c915b83ca2c789146ad5147a1b7f8458, type: 2}
+  _iconColor: {r: 0.5566038, g: 0.25992346, b: 0.3192606, a: 1}
+  _cookieCost: 990
+  _upgradeList: []

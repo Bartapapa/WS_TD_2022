@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c78294bca23e774408c13df8115afb72, type: 3}
-  m_Name: TowerDescription.Ground
+  m_Name: TowerDescription.Ground01-2---SNIPER
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 302692793403659937, guid: 11db3aa737362e04eaf46bfb3eed223a, type: 3}
+  _prefab: {fileID: 302692793403659937, guid: 50b0336cfd05b594db42a745b8607e1c, type: 3}
   _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 0.12904951, g: 0.9433962, b: 0.35619384, a: 1}
-  _cookieCost: 30
-  _upgradeList:
-  - {fileID: 11400000, guid: 148609f929643944991f2df907ca6d3f, type: 2}
-  - {fileID: 11400000, guid: c915b83ca2c789146ad5147a1b7f8458, type: 2}
+  _iconColor: {r: 0.41162336, g: 0.6981132, b: 0.6258986, a: 1}
+  _cookieCost: 900
+  _upgradeList: []
