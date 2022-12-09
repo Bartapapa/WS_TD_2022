@@ -36,6 +36,9 @@
 		[SerializeField]
 		private bool _enabledByDefault = false;
 
+		[SerializeField]
+		private bool _canBeSelectedByDefault = false;
+
         public TowerDescription TowerDescription => _towerDescription;
         public int GetTotalCookieCost => _totalCookieCost;
 
@@ -44,7 +47,7 @@
         protected virtual void Awake()
 		{
 			enabled = _enabledByDefault;
-			_selectableObject.SetCanBeSelected(false);
+			_selectableObject.SetCanBeSelected(_canBeSelectedByDefault);
 
 			_damageable = GetComponent<Damageable>();
 
@@ -84,6 +87,8 @@
 
 		private void Update()
 		{
+			if (_damageableDetector == null) return;
+
 			if (_damageableDetector.HasAnyDamageableInRange() == true)
 			{
 				Damageable damageableTarget = _damageableDetector.GetTarget();
@@ -136,6 +141,10 @@
 			if (_damageable != null)
 			{
 				_damageable.Die();
+			}
+			else
+			{
+				Destroy(this.gameObject);
 			}
 		}
     }

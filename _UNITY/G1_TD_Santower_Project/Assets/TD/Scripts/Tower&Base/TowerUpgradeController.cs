@@ -64,13 +64,23 @@ public class TowerUpgradeController : MonoBehaviour
         if (ResourceManager.Instance.CanBuy(ResourceManager.ResourceType.Cookie, sender.TowerDescription.CookieCost))
         {
             Tower upgradedTower = sender.TowerDescription.Instantiate(sender.TowerDescription.Prefab);
-            upgradedTower.GetTransform().position = _tower.GetParent().position;
-            upgradedTower.transform.parent = _tower.GetParent();
+            upgradedTower.transform.position = _tower.transform.position;
+            //upgradedTower.GetTransform().position = _tower.GetParent().position;
+            //upgradedTower.transform.parent = _tower.GetParent();
             upgradedTower.Enable(true);
 
-            ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, -sender.TowerDescription.CookieCost);
+            if (sender.TowerDescription.CookieCost >= 0)
+            {
+                ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, -sender.TowerDescription.CookieCost);
+                upgradedTower.SetTotalCookieCost(_tower.GetTotalCookieCost + sender.TowerDescription.CookieCost);
+            }
+            else
+            {
+                ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, _tower.GetTotalCookieCost);
+                //TODO Make a formula here to only acquire a % of totalCookieCost
+                upgradedTower.SetTotalCookieCost(0);
+            }
 
-            upgradedTower.SetTotalCookieCost(_tower.GetTotalCookieCost + sender.TowerDescription.CookieCost);
 
             _upgradePanel.SetActive(false);
             _tower.KillTower();
