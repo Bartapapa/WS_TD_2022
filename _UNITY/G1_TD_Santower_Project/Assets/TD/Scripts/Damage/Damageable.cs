@@ -172,7 +172,7 @@
 
 			_callerDied?.Invoke(this, _health, 0);
 
-			_collider.enabled = false;
+			//_collider.enabled = false;
 
             // A remplacer par les scripts / animation de mort
 			if (_deathParticle != null)
