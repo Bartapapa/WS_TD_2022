@@ -4,13 +4,25 @@
 
 	public abstract class AWeapon : MonoBehaviour
 	{
-		[SerializeField]
+        [SerializeField]
+        private bool _followTarget = false;
+
+        [SerializeField]
+        private float _rotationSpeed = 10;
+
+        private Damageable _target;
+
+        [SerializeField]
 		protected Timer _timer = null;
 
 		[SerializeField]
 		protected AnimatorHandler_Tower _anim = null;
 
-		private void Awake()
+        public bool FollowTarget => _target;
+        public float RotationSpeed => _rotationSpeed;
+        public Damageable Target => _target;
+
+        private void Awake()
 		{
 			_anim = GetComponent<AnimatorHandler_Tower>();
 

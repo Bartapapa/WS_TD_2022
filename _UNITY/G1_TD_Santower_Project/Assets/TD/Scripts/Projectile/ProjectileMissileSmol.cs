@@ -32,7 +32,7 @@ public class ProjectileMissileSmol : AProjectile
     public float ExplosionRadius { set => _explosionRadius = value; }
     public float ExplosionSpeed { set => _explosionSpeed = value; }
 
-    public Damageable Target { set => _target = value; }
+    public Damageable GetTarget { set => _target = value; }
 
     private void Start()
     {
@@ -82,14 +82,14 @@ public class ProjectileMissileSmol : AProjectile
         _lastLookRotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, _lastLookRotation, _rotationSpeed * Time.deltaTime);
 
+        Vector3 lookPos = position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = lookRotation;
         AnchorLookAt(position);
     }
     public void AnchorLookAt(Vector3 position)
     {
         //TODO force anchor to follow WeaponController.forward.
 
-        Vector3 lookPos = position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = lookRotation;
     }
 }

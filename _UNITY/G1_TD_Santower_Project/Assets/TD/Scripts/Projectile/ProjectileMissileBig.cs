@@ -8,7 +8,7 @@ public class ProjectileMissileBig : AProjectile
     public delegate void ExplosiveEvent();
     public event ExplosiveEvent Exploded = null;
 
-    private List<Damageable> _damageables= new List<Damageable>();
+    private List<Damageable> _damageables= new();
 
 	[SerializeField]
 	private DamageableDetector _damageableDetector;
@@ -69,7 +69,7 @@ public class ProjectileMissileBig : AProjectile
     {
         _applyDamage= true;
         _projectileSpeed = 0;
-        _explosionCollider.radius = _explosionCollider.radius + _explosionSpeed * Time.deltaTime;
+        _explosionCollider.radius += _explosionSpeed * Time.deltaTime;
 
         if (!_hasExploded)
         {
@@ -97,7 +97,7 @@ public class ProjectileMissileBig : AProjectile
                                                             Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile), 
                                                             Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile)), 
                                                             Quaternion.identity);
-                missile.Target = _damageables[Random.Range(0, _damageables.Count - 1)];
+                missile.GetTarget = _damageables[Random.Range(0, _damageables.Count - 1)];
             }
         }
     }
