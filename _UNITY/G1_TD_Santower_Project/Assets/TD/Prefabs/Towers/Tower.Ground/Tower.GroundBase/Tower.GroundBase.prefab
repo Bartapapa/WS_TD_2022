@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857122703686788880}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BaseLow_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,6 +487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7f346b16eef3347a7f5f9a3781f931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _followTarget: 0
+  _rotationSpeed: 10
   _timer:
     _duration: 0.4
     _stopWhenCompleted: 1
@@ -497,6 +499,7 @@ MonoBehaviour:
   _projectileSpeed: 100
   _projectileDamage: 2
   _spread: 0
+  _damageableDetector: {fileID: 0}
 --- !u!114 &7408387914325232012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,7 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2757143633724565435}
   - component: {fileID: 8116466547307593153}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TowerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8268900369473394553}
   - component: {fileID: 1158212013548600967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8169370590134456224}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +987,7 @@ GameObject:
   - component: {fileID: 8037481977120656828}
   - component: {fileID: 2262294943590274961}
   - component: {fileID: 1931867079978865371}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fondation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 645536528642225691}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CanonBase_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2674051967547492071}
   - component: {fileID: 2762722151356390834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: polySurface3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1183,7 +1186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3733858542031102503}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BaseLow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1215,7 +1218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6344787014731752688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CanonBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1247,7 +1250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2787630026648781397}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
