@@ -456,7 +456,7 @@ MonoBehaviour:
   _destroyIfGiveDamage: 1
   _needDamageableToCollide: 1
   _damage: 6
-  _projectileSpeed: 10
+  _projectileSpeed: 40
   _canFreeze: 0
   _useArtilleryMovement: 0
   _maximumProjectileHeight: 10
