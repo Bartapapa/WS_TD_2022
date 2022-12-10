@@ -13,7 +13,6 @@
 		[SerializeField]
 		private float _minAngleToFire = 10f;
 
-
 		[Header("Artillery")]
 		[SerializeField]
 		private bool _useArtilleryAiming = false;
@@ -27,7 +26,7 @@
 
 		private void Awake()
 		{
-			_damageableDetector = GetComponent<DamageableDetector>();
+			_damageableDetector = GetComponentInParent<DamageableDetector>();
 		}
 
 		public virtual void LookAt(Vector3 position)

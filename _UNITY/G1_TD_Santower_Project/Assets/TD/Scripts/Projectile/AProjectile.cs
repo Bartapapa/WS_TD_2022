@@ -23,7 +23,15 @@
 		[SerializeField]
 		protected bool _applyDamage = true;
 
-		[Header("Artillery")]
+        [SerializeField]
+        private bool _followTarget = false;
+
+        [SerializeField]
+        private float _rotationFollowSpeed = 10;
+
+        private Damageable _target;
+
+        [Header("Artillery")]
 		[SerializeField]
 		protected bool _useArtilleryMovement = false;
 		[SerializeField]
@@ -36,11 +44,18 @@
 
 		protected Collider _collider;
 
+
+
 		public Collider GetCollider => _collider;
+
 		public int Damage { set { _damage = value; } }
 		public bool GetHit { get { return _hitThing; } }
 
-		public virtual void OnTriggerEnter(Collider other)
+        public bool FollowTarget { get => _followTarget; set => _followTarget = value; }
+        public Damageable Target { get => _target; set => _target = value; }
+        public float RotationSpeed { get => _rotationFollowSpeed; set => _rotationFollowSpeed = value; }
+
+        public virtual void OnTriggerEnter(Collider other)
 		{
 			if (_applyDamage == true)
 			{

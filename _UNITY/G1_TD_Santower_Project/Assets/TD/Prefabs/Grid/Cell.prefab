@@ -203,7 +203,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 10
+  m_VersionIndex: 15
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -252,7 +252,7 @@ Transform:
   m_Children:
   - {fileID: 5267595377306215397}
   - {fileID: 8531496496274665289}
-  - {fileID: 9146946500922642849}
+  - {fileID: 2988924008040852061}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3435ca6bdd53684449e2378f3e73bb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &3501610506183267242
+--- !u!1001 &7427150322663041110
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -337,9 +337,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97719b90c7bf4d44a7173d91bd51f64, type: 3}
---- !u!4 &9146946500922642849 stripped
+--- !u!4 &2988924008040852061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5649839755159618059, guid: b97719b90c7bf4d44a7173d91bd51f64,
     type: 3}
-  m_PrefabInstance: {fileID: 3501610506183267242}
+  m_PrefabInstance: {fileID: 7427150322663041110}
   m_PrefabAsset: {fileID: 0}

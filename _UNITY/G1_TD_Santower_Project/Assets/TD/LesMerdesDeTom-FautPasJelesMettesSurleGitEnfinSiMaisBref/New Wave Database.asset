@@ -13,8 +13,55 @@ MonoBehaviour:
   m_Name: New Wave Database
   m_EditorClassIdentifier: 
   _waveEntityDatas:
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: c6c2d06bfe39bfd4686f87dcb8c67811,
+      type: 3}
+    _entityType: 1
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 0bf05c3b4dcbce74f99337061d768f04,
+      type: 3}
+    _entityType: 2
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 5e3c08dd4a6bacf42b6cfcade9706784,
+      type: 3}
+    _entityType: 3
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: f8e14f33defd27c4ea755bda4147fe41,
+      type: 3}
+    _entityType: 4
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 6d4f342b71530d1429ca64fc016dfa43,
+      type: 3}
+    _entityType: 5
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 399302b9ce0a25044aa8762a3dccc75f,
+      type: 3}
+    _entityType: 6
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: c5cb474a3b6f2b44e9ee66f01aca8df2,
+      type: 3}
+    _entityType: 7
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 8b674d38f3df0e148bb3f84adbef7c87,
+      type: 3}
+    _entityType: 8
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: b53699038a782f34dbe5f0548607b3d5,
+      type: 3}
+    _entityType: 9
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 1cb30c3b3c99a9f46a0b41d223d9b8af,
+      type: 3}
+    _entityType: 10
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: d7346f757e7934a498131c2f14681d02,
+      type: 3}
+    _entityType: 11
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 1d703760ff80c3b41855c65f7fe0b69a,
+      type: 3}
+    _entityType: 12
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: 071b78bd6c4e95240b94be99fa9d4d09,
+      type: 3}
+    _entityType: 13
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: df2e173344cc8f2498a875bbef465759,
+      type: 3}
+    _entityType: 14
   - _waveEntityPrefab: {fileID: 5412690654039449867, guid: d4d3f6736634d714ab2c7183c56e2404,
       type: 3}
     _entityType: 15
+  - _waveEntityPrefab: {fileID: 0}
+    _entityType: 16
+  - _waveEntityPrefab: {fileID: 5412690654039449867, guid: aa75f6ea58a6a20489e34e4768411ecc,
+      type: 3}
+    _entityType: 0
   _waves:
   - {fileID: 11400000, guid: 31f0556dd1bfe2c4c8a92386e7feb7c5, type: 2}
