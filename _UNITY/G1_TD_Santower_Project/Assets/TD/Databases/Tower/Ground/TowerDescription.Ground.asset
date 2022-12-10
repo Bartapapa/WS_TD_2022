@@ -17,5 +17,6 @@ MonoBehaviour:
   _iconColor: {r: 0.12904951, g: 0.9433962, b: 0.35619384, a: 1}
   _cookieCost: 30
   _upgradeList:
+  - {fileID: 11400000, guid: a1079b58088878e4fbaca60b3fa9cb7a, type: 2}
   - {fileID: 11400000, guid: 148609f929643944991f2df907ca6d3f, type: 2}
   - {fileID: 11400000, guid: c915b83ca2c789146ad5147a1b7f8458, type: 2}
