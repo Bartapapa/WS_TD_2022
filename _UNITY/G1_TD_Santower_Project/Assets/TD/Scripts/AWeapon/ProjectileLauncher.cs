@@ -21,14 +21,6 @@
         [SerializeField]
         private float _spread = 0;
 
-        [SerializeField]
-        private DamageableDetector _damageableDetector;
-
-        private void Awake()
-        {
-            _damageableDetector = GetComponentInParent<DamageableDetector>();
-        }
-
         protected override void DoFire()
         {
             base.DoFire();

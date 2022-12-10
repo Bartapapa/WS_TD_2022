@@ -10,6 +10,7 @@
         [SerializeField]
         private float _rotationSpeed = 10;
 
+		[SerializeField]
         private Damageable _target;
 
         [SerializeField]
@@ -18,12 +19,17 @@
 		[SerializeField]
 		protected AnimatorHandler_Tower _anim = null;
 
-        public bool FollowTarget => _target;
+        public bool FollowTarget => _followTarget;
         public float RotationSpeed => _rotationSpeed;
         public Damageable Target => _target;
 
+        [SerializeField]
+        public DamageableDetector _damageableDetector;
+
+
         private void Awake()
 		{
+            _damageableDetector = GetComponentInParent<DamageableDetector>();
 			_anim = GetComponent<AnimatorHandler_Tower>();
 
             if (_anim == null)

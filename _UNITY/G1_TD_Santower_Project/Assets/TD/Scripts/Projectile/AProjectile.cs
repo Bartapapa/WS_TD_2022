@@ -27,7 +27,7 @@
         private bool _followTarget = false;
 
         [SerializeField]
-        private float _rotationSpeed = 10;
+        private float _rotationFollowSpeed = 10;
 
         private Damageable _target;
 
@@ -53,7 +53,7 @@
 
         public bool FollowTarget { get => _followTarget; set => _followTarget = value; }
         public Damageable Target { get => _target; set => _target = value; }
-        public float RotationSpeed { get => _rotationSpeed; set => _rotationSpeed = value; }
+        public float RotationSpeed { get => _rotationFollowSpeed; set => _rotationFollowSpeed = value; }
 
         public virtual void OnTriggerEnter(Collider other)
 		{
