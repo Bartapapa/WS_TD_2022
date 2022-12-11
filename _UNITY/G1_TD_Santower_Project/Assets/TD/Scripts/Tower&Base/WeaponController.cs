@@ -13,15 +13,21 @@
 		[SerializeField]
 		private float _minAngleToFire = 10f;
 
-
 		[Header("Artillery")]
 		[SerializeField]
 		private bool _useArtilleryAiming = false;
 		[SerializeField]
 		private float _artilleryAimHeight = 10f;
 
+		private DamageableDetector _damageableDetector;
+
 		[System.NonSerialized]
 		private Quaternion _lastLookRotation = Quaternion.identity;
+
+		private void Awake()
+		{
+			_damageableDetector = GetComponentInParent<DamageableDetector>();
+		}
 
 		public virtual void LookAt(Vector3 position)
 		{

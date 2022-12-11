@@ -20,6 +20,9 @@ public class Carrier : MonoBehaviour
 	[SerializeField]
 	private List<WaveEntityGroupDescription> _waveEntity = new List<WaveEntityGroupDescription>();
 
+	[SerializeField]
+	private AnimatorHandler_Entity _anim;
+
 	private WaveDatabase _waveEntityDatas;
 
 	private PathFollower _pathFollower;
@@ -50,8 +53,10 @@ public class Carrier : MonoBehaviour
 	}
 
 	private void Awake()
-	{
+	{ 
 		_waveEntityDatas = DatabaseManager.Instance.WaveDatabase;
+
+		_anim = GetComponent<AnimatorHandler_Entity>();
 	}
 
 	private void Update()
@@ -71,6 +76,11 @@ public class Carrier : MonoBehaviour
 			{
 				_spawnIntervale.Update();
 				SpawnProcess(_damageable, 1, 1);
+
+				if (_isMerryACarrier)
+				{
+					_anim.Animator.SetTrigger("Spawn");
+				}
 			}
 		}
 	}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Perk_RudolphAndRocket
   m_EditorClassIdentifier: 
   _name: RudolphAndRocket
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: f655b657cf8a9254ead2a04cc89ab530, type: 3}
   _milkCost: 29

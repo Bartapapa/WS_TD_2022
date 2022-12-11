@@ -14,6 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - _waveEntitiesDescriptions:
-    - _entityType: 15
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
+      _extraDurationAfterSpawned: 0
+    - _entityType: 3
       _extraDurationAfterSpawned: 0
     _durationBetweenSpawnedEntity: 0
