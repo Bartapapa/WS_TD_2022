@@ -15,10 +15,11 @@ public class GameManager : Singleton<GameManager>
         Phase4,
         GameWin,
         GameLose,
+        None,
     }
 
     [SerializeField]
-    private GamePhase _currentPhase = GamePhase.Intro;
+    private GamePhase _currentPhase = GamePhase.None;
 
     [SerializeField]
     private GameObject _victoryScreen;
@@ -26,7 +27,6 @@ public class GameManager : Singleton<GameManager>
     private GameObject _defeatScreen;
 
     public UnityEvent<GamePhase, GamePhase> GamePhaseChangeEvent_UE;
-
 
     public void ChangePhase(GamePhase toPhase)
     {
@@ -58,6 +58,9 @@ public class GameManager : Singleton<GameManager>
                 //This phase is reserved for if the player loses all base health.
                 Defeat();
                 break;
+            case GamePhase.None:
+                //When not in game.
+                break;
             default:
                 break;
         }
@@ -73,6 +76,17 @@ public class GameManager : Singleton<GameManager>
     private void Victory()
     {
         _victoryScreen.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        Loader.Load(Loader.Scene.Level_One);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        ChangePhase(GamePhase.None);
+        Loader.Load(Loader.Scene.MainMenu);
     }
 
 }
