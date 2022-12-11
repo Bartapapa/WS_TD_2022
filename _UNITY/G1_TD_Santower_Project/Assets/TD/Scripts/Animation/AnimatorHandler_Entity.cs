@@ -12,13 +12,21 @@ public class AnimatorHandler_Entity : AnimatorHandler
 
     private int integer;
 
-    public virtual void SetWalkAnimation()
+    public virtual void SetWalkAnimation(int value = -1)
     {
+        if (value >= 0)
+        {
+            _anim.SetInteger("Int", value);
+        }
         SetInteger(true, _maxWalkAnims);
     }
 
-    public virtual void SetDeathAnimation()
+    public virtual void SetDeathAnimation(int value = -1)
     {
+        if (value >= 0)
+        {
+            _anim.SetInteger("Int", value);
+        }
         SetInteger(true, _maxDeathAnims);
     }
 
