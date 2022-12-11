@@ -5,51 +5,62 @@ using UnityEngine;
 
 public class Snowman : MonoBehaviour
 {
-	[SerializeField]
-	private float _freezeDuration = 1f;
+    [SerializeField]
+    private float _freezeDuration = 1f;
 
-	[SerializeField]
-	private float _speed = 1f;
+    [SerializeField]
+    private float _speed = 1f;
 
-	[SerializeField]
-	private float _distanceThreshold = 0.5f;
+    [SerializeField]
+    private float _distanceThreshold = 0.5f;
 
-	[SerializeField]
-	private AnimatorHandler _anim;
+    [SerializeField]
+    private AnimatorHandler _anim;
 
-	private bool _target = false;
+    private bool _target = false;
 
-	private GameObject _towerTarget;
+    private GameObject _towerTarget;
 
+    private PathFollower _pathFollower;
 
-	private void Update()
-	{
-		if (_target == true)
-		{
-			MoveTo(_towerTarget.transform.position);
-			if (Vector3.Distance(transform.position, _towerTarget.transform.position) < _distanceThreshold)
-			{
-				_towerTarget.GetComponent<Freezer>().Freeze(_freezeDuration);
+    private void Awake()
+    {
+        _pathFollower = GetComponent<PathFollower>();
+    }
 
-				_anim.Animator.SetTrigger("Attack");
-			}
-		}
-	}
+    private void Update()
+    {
+        if (_target == true)
+        {
+            MoveTo(_towerTarget.transform.position);
+            if (Vector3.Distance(transform.position, _towerTarget.transform.position) < _distanceThreshold)
+            {
+                _towerTarget.GetComponent<Freezer>().Freeze(_freezeDuration);
 
-	private void MoveTo(Vector3 position)
-	{
-		Vector3 movement = (position - transform.position).normalized * _speed * Time.deltaTime;
-		transform.position += movement;
-	}
+                _anim.Animator.SetTrigger("Attack");
+            }
+            if (_towerTarget.GetComponent<Freezer>().IsFrozen == false)
+            {
+                _target = false;
+                _pathFollower.enabled = true;
+            }
+        }
+    }
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.GetComponent<Freezer>() && other.GetComponent<Freezer>().IsFrozen == false)
-		{
-			_towerTarget = other.gameObject;
-			GetComponent<PathFollower>().enabled = false;
-			_target = true;
-			_anim.Animator.SetFloat("Multiplier", 2f);
-		}
-	}
+    private void MoveTo(Vector3 position)
+    {
+        Vector3 movement = (position - transform.position).normalized * _speed * Time.deltaTime;
+        transform.position += movement;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Freezer>().IsFrozen == false)
+        {
+            _pathFollower.enabled = false;
+            _towerTarget = other.gameObject;
+            _target = true;
+            _anim.Animator.SetFloat("Multiplier", 2f);
+        }
+    }
 }

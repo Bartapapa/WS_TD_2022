@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Napalm : MonoBehaviour
+public class DamageOnZone : AProjectile
 {
 	[SerializeField]
 	private Timer _timer;
+
+	[SerializeField]
+	private bool _teleportOnTarget = false;
 
 	private List<Damageable> _damageable = new List<Damageable>();
 
@@ -23,10 +26,15 @@ public class Napalm : MonoBehaviour
 	private void OnEnable()
 	{
 		_timer.Start();
+		
 	}
 
 	private void Update()
 	{
+		if (_teleportOnTarget == true && Target != null)
+		{
+			transform.position = Target.transform.position;
+		}
 		_damageable = _damageableDetector.DamageablesInRange;
 		_timer.Update();
 		if (_timer.Progress >= 1)
@@ -34,7 +42,7 @@ public class Napalm : MonoBehaviour
 			_timer.Update();
 			foreach (Damageable damageable in _damageable)
 			{
-				damageable.TakeDamage(1, false);
+				damageable.TakeDamage(Damage, false);
 			}
 
 		}

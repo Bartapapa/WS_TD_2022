@@ -665,14 +665,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7f346b16eef3347a7f5f9a3781f931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _followTarget: 0
+  _rotationSpeed: 10
+  _target: {fileID: 0}
   _timer:
     _duration: 0.45
     _stopWhenCompleted: 1
   _anim: {fileID: 0}
-  _projectile: {fileID: -7937955209939105875, guid: f9a2a08ea60278a41a1b78ab995e558a,
+  _damageableDetector: {fileID: 0}
+  _removeDamageableCollider: 1
+  _projectile: {fileID: 1697648429471405643, guid: 08f509cb484c4e044b098aa98e8332bd,
     type: 3}
   _projectileAnchor: {fileID: 302692792940769431}
-  _projectileSpeed: 1
+  _projectileSpeed: 10
   _projectileDamage: 6
   _spread: 0
 --- !u!114 &5418796966759952494

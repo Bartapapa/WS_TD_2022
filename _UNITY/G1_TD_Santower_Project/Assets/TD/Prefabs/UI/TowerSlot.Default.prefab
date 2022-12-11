@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 5642243809065775959}
   - component: {fileID: 381103669}
   - component: {fileID: 381103666}
-  - component: {fileID: 5238999917696844491}
   m_Layer: 5
   m_Name: TowerSlot.Default
   m_TagString: Untagged
@@ -434,7 +433,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5238999917696844491}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: testButton, Assembly-CSharp
         m_MethodName: Boop
         m_Mode: 1
@@ -446,18 +445,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5238999917696844491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5642243809065775956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0cee731da5b8874eb4d2c3ce11034b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5642243810149677614
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,8 @@
         [SerializeField]
         public DamageableDetector _damageableDetector;
 
+		[SerializeField]
+		public bool _removeDamageableCollider = false;
 
         private void Awake()
 		{

@@ -273,6 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2179703540230020662}
   - component: {fileID: 2083761054}
+  - component: {fileID: 154009753760397808}
   m_Layer: 0
   m_Name: Sleigh
   m_TagString: Untagged
@@ -314,9 +315,25 @@ MonoBehaviour:
   _bombSpawner: {fileID: 634025992}
   _speed: 20
   _bombingInterval:
-    _duration: 0.5
+    _duration: 0.2
     _stopWhenCompleted: 0
   _targetPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &154009753760397808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179703540230020663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48b6b3a043828747a88b090fe224162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeTimer:
+    _duration: 10
+    _stopWhenCompleted: 1
+  _destroyOnEnd: 1
 --- !u!1 &3799188632590944808
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5496770772751339280}
   - component: {fileID: 6577550715787892650}
   - component: {fileID: 59698092561693292}
-  - component: {fileID: 4955699522220274900}
   - component: {fileID: 28468258828524625}
   - component: {fileID: 811586836}
+  - component: {fileID: 8598526236482081077}
   m_Layer: 7
-  m_Name: ZoneNapalm
+  m_Name: ZoneHurricane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   _timer:
     _duration: 0.5
     _stopWhenCompleted: 0
-  _teleportOnTarget: 0
+  _teleportOnTarget: 1
 --- !u!114 &59698092561693292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,19 +82,6 @@ MonoBehaviour:
     _duration: 5
     _stopWhenCompleted: 1
   _destroyOnEnd: 1
---- !u!65 &4955699522220274900
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2613228259748860216}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7, y: 1, z: 7}
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &28468258828524625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +114,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &8598526236482081077
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613228259748860216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
