@@ -3992,7 +3992,7 @@ MonoBehaviour:
   - {fileID: 284568281}
   - {fileID: 1339788892}
   - {fileID: 342773677}
-  _autoStartNextWaves: 0
+  _autoStartNextWaves: 1
   _currentWaveSetIndex: -1
   _currentWaveRunning: 0
   WaveStatusChanged_UnityEvent:
@@ -4006,7 +4006,19 @@ MonoBehaviour:
       m_Calls: []
   WaveStatusEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114427185}
+        m_TargetAssemblyTypeName: GSGD1.SpawnerManager, Assembly-CSharp
+        m_MethodName: StartNewWaveSet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _enemiesKilled: 0
   _enemiesBombed: 0
   _livingEntities: []
@@ -14913,7 +14925,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 1
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -15049,6 +15061,14 @@ PrefabInstance:
     - target: {fileID: 178082515, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
       propertyPath: m_SizeDelta.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 574829530, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 574829530, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.3
       objectReference: {fileID: 0}
     - target: {fileID: 8491755099251913143, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
@@ -18222,7 +18242,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-546740
+  m_Name: pb_Mesh102744
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24285,7 +24305,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh187804
+  m_Name: pb_Mesh102252
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30578,7 +30598,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh186660
+  m_Name: pb_Mesh100988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33186,6 +33206,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1766805347}
     m_Modifications:
+    - target: {fileID: 349632499, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: _fogRadius.Array.data[0]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 349632499, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: _fogRadius.Array.data[1]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 349632499, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: _fogRadius.Array.data[2]
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 349632499, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: _fogRadius.Array.data[3]
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133214704, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133214704, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: _fogRadius.Array.data[0]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133214704, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: _fogRadius.Array.data[1]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133214704, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: _fogRadius.Array.data[2]
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133214704, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: _fogRadius.Array.data[3]
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156359561379718651, guid: f6f792c1bb05d104cb902e73a5393a69,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5156359562322981306, guid: f6f792c1bb05d104cb902e73a5393a69,
         type: 3}
       propertyPath: m_Name
@@ -33246,7 +33307,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6035298223134318075, guid: f6f792c1bb05d104cb902e73a5393a69,
+        type: 3}
+      propertyPath: _fogRadius.Array.data[0]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035298223134318075, guid: f6f792c1bb05d104cb902e73a5393a69,
+        type: 3}
+      propertyPath: _fogRadius.Array.data[1]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035298223134318075, guid: f6f792c1bb05d104cb902e73a5393a69,
+        type: 3}
+      propertyPath: _fogRadius.Array.data[2]
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035298223134318075, guid: f6f792c1bb05d104cb902e73a5393a69,
+        type: 3}
+      propertyPath: _fogRadius.Array.data[3]
+      value: 135
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1133214704, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
 --- !u!1 &2008748296
 GameObject:

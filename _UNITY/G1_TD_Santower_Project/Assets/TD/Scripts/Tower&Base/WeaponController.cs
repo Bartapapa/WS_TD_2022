@@ -19,6 +19,14 @@
 		[SerializeField]
 		private float _artilleryAimHeight = 10f;
 
+		[Header("Parts")]
+		[SerializeField]
+		private TowerBase _towerBase;
+		[SerializeField]
+		private TowerCannon _towerCannon;
+		[SerializeField]
+		private bool _onlyCanonRotates = false;
+
 		private DamageableDetector _damageableDetector;
 
 		[System.NonSerialized]
@@ -33,15 +41,22 @@
 		{
             Vector3 direction = (position - transform.position).normalized;
 
+            _towerBase.BaseLookAt(position, _rotationSpeed, _onlyCanonRotates);
+
             if (_useArtilleryAiming)
 			{
 				direction = ((position + new Vector3(0, _artilleryAimHeight, 0)) - transform.position).normalized;
+				_towerCannon.CannonLookAt(direction, _rotationSpeed, _onlyCanonRotates);
 			}
 
-			_lastLookRotation = Quaternion.LookRotation(direction, Vector3.up);
-			transform.rotation = Quaternion.Slerp(transform.rotation, _lastLookRotation, _rotationSpeed * Time.deltaTime);
+            _towerCannon.CannonLookAt(direction, _rotationSpeed, _onlyCanonRotates);
+            
+			
+			
+			//_lastLookRotation = Quaternion.LookRotation(direction, Vector3.up);
+   //         transform.rotation = Quaternion.Slerp(transform.rotation, _lastLookRotation, _rotationSpeed * Time.deltaTime);
 
-			_weapon.AnchorLookAt(position);
+   //         _weapon.AnchorLookAt(position);
 		}
 
 		public void Fire()

@@ -29,7 +29,12 @@ public class SoundManager : Singleton<SoundManager>
             Debug.Log(owner.name + " wanted to play a clip, but there's nothing there!");
             return;
         }
-        _sfxSource.PlayOneShot(clip);
+        else
+        {
+            _sfxSource.PlayOneShot(clip);
+            Debug.Log("clip played!");
+        }
+
     }
 
     public void PlayMusic(AudioClip music)
