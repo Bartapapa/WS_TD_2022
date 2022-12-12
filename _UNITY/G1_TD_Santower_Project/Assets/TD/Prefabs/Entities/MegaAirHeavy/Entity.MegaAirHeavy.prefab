@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 2942146037294568419}
   - component: {fileID: 1773812474288713663}
   - component: {fileID: 8954739381906307174}
-  - component: {fileID: -8901015444460767669}
   - component: {fileID: -3672695551926352895}
   - component: {fileID: 6909970324577099938}
   m_Layer: 8
@@ -153,6 +152,9 @@ MonoBehaviour:
   _pathFollower: {fileID: 2942146037294568418}
   _damageable: {fileID: 0}
   _anim: {fileID: 6909970324577099938}
+  _forceWalkValue: -1
+  _forceDeathValue: -1
+  _deathSounds: []
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,23 +234,6 @@ CapsuleCollider:
   m_Height: 3.63
   m_Direction: 2
   m_Center: {x: 0, y: 0.08, z: 0}
---- !u!114 &-8901015444460767669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2942146037294568416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fd1aa624652df4fb6bdc707a6f1b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageable: {fileID: 2942146037294568419}
-  _explosion: {fileID: -7937955209939105875, guid: a7e9a6826759d794686c1ee8c0b1b6b7,
-    type: 3}
-  _explosionRadius: 3
-  _explosionSpeed: 100
 --- !u!114 &-3672695551926352895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +647,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseGO: {fileID: 2942146037294568416}
+--- !u!114 &3010375847793915709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743593836709224912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fd1aa624652df4fb6bdc707a6f1b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageable: {fileID: 2942146037294568419}
+  _explosion: {fileID: -7937955209939105875, guid: a7e9a6826759d794686c1ee8c0b1b6b7,
+    type: 3}
+  _explosionRadius: 3
+  _explosionSpeed: 100
+  _explodeImmediatelyOnDeath: 0
 --- !u!4 &4087080906208410474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ff8e913e324faa4b90f464420a9fd3d,

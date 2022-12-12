@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7f346b16eef3347a7f5f9a3781f931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followTarget: 0
+  _followTarget: 1
   _rotationSpeed: 10
   _target: {fileID: 0}
   _timer:
@@ -510,7 +510,7 @@ MonoBehaviour:
   _projectile: {fileID: -7657351730962438757, guid: 84f4d67a58d67c54c96aa3b778baf0f3,
     type: 3}
   _projectileAnchor: {fileID: 302692792940769431}
-  _projectileSpeed: 20
+  _projectileSpeed: 50
   _projectileDamage: 6
   _spread: 0
 --- !u!114 &5044857435062831350

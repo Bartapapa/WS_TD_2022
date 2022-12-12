@@ -60,7 +60,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697648429471405641}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b48b6b3a043828747a88b090fe224162, type: 3}
   m_Name: 
@@ -87,11 +87,44 @@ MonoBehaviour:
   _projectileSpeed: 1
   _canFreeze: 0
   _applyDamage: 1
-  _useArtilleryMovement: 1
-  _maximumProjectileHeight: 10
-  _enemyLayer:
+  _followTarget: 0
+  _rotationFollowSpeed: 10
+  _removeDamageableCollider: 0
+  useArtilleryMovement: 1
+  _curve:
     serializedVersion: 2
-    m_Bits: 256
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0041656494
+      value: -0.0047187805
+      inSlope: 2.0095654
+      outSlope: 2.0095654
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50097424
+      value: 0.9936505
+      inSlope: -0.0033419132
+      outSlope: -0.0033419132
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9916992
+      value: 0.0042266846
+      inSlope: -2.0162492
+      outSlope: -2.0162492
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _projectileMaxHeight: 1
   _napalm: {fileID: 6577550715787892650, guid: f0b243fa3ebbe844aa744338c3a83f07, type: 3}
   _explosionCollider: {fileID: 2001150835}
   _explosionRadius: 3
