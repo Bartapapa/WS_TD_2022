@@ -154,6 +154,8 @@ MonoBehaviour:
   _pathFollower: {fileID: 2942146037294568418}
   _damageable: {fileID: 0}
   _anim: {fileID: 4817382629480045279}
+  _forceWalkValue: -1
+  _forceDeathValue: -1
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,9 +204,8 @@ MonoBehaviour:
   _invulnerabilityTimer:
     _duration: 0
     _stopWhenCompleted: 1
-  _hasLifespan: 1
+  _hasLifespan: 0
   _lifespan: {fileID: 0}
-  _removeColliderOnDeath: 0
 --- !u!114 &1773812474288713663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,8 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 0}
-  _cookiesDropped: 5
-  _milkDropped: 0
+  _cookiesDropped: 270
+  _milkDropped: 35
 --- !u!114 &2487371484409772392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,8 +389,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anim: {fileID: 4817382629480045279}
   _damageable: {fileID: 2942146037294568419}
-  _fireRadius: 6
-  _weaponController: {fileID: 4963983374237347834}
   _spawnIntervale:
     _duration: 20
     _stopWhenCompleted: 0

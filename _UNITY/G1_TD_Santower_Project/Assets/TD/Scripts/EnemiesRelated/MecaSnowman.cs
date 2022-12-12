@@ -12,12 +12,6 @@ public class MecaSnowman : MonoBehaviour
     private Damageable _damageable;
 
     [SerializeField]
-    private float _fireRadius = 10f;
-
-    [SerializeField]
-    private WeaponController _weaponController;
-
-    [SerializeField]
     private Timer _spawnIntervale;
 
     [SerializeField]
@@ -28,10 +22,6 @@ public class MecaSnowman : MonoBehaviour
 
     private WaveDatabase _waveEntityDatas;
 
-    private List<GameObject> _tower = new List<GameObject>();
-
-    private List<GameObject> _towerTemp = new List<GameObject>();
-
     private List<GameObject> _waypoint = new List<GameObject>();
 
     private Path _path;
@@ -40,13 +30,10 @@ public class MecaSnowman : MonoBehaviour
 
     private WaveEntity _entity;
 
-    private PathFollower _pathFollower;
-
     private void Awake()
     {
         _waveEntityDatas = DatabaseManager.Instance.WaveDatabase;
 
-        _pathFollower = GetComponentInParent<PathFollower>();
         _anim = GetComponentInParent<WaveEntity>().AnimatorHandler;
 
         foreach (EntitySpawner spawner in LevelReferences.Instance.SpawnerManager.Spawner)
@@ -60,14 +47,11 @@ public class MecaSnowman : MonoBehaviour
 
     private void OnEnable()
     {
-        _damageable.CallerDied -= OnDeath;
-        _damageable.CallerDied += OnDeath;
         _spawnIntervale.Start();
     }
 
     private void OnDisable()
     {
-        _damageable.CallerDied -= OnDeath;
         _spawnIntervale.Stop();
     }
 
@@ -79,21 +63,6 @@ public class MecaSnowman : MonoBehaviour
             //TODO make the hordeSpawn an event called in animation.
             _anim.Animator.SetTrigger("Call");
             HordeSpawn();
-        }
-        if (_towerTemp.Count >= 1)
-        {
-            foreach (GameObject Tower in _towerTemp)
-            {
-                Freezing(Tower);
-            }
-        }
-    }
-
-    private void OnDeath(Damageable damageable, int currentHealth, int damageTaken)
-    {
-        foreach (GameObject tower in _tower)
-        {
-            tower.GetComponent<Freezer>().Unfreeze();
         }
     }
 
@@ -144,36 +113,6 @@ public class MecaSnowman : MonoBehaviour
                 _entity.SetPath(_path, false);
                 Instantiate(_entity, spawnPos, Quaternion.identity);
             }
-        }
-    }
-
-    private void LookAt(Vector3 position)
-    {
-        Vector3 direction = position - transform.position;
-        direction.y = 0;
-        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 10 * Time.deltaTime);
-    }
-
-    private void Freezing(GameObject other)
-    {
-        _pathFollower.SetCanMove(false);
-
-        LookAt(other.transform.position);
-        _anim.Animator.SetTrigger("Freeze");
-        _weaponController.LookAtAndFire(other.transform.position);
-
-        _towerTemp.Remove(other);
-        _tower.Add(other);
-
-        _pathFollower.SetCanMove(true);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponentInParent<Freezer>().IsFrozen == false)
-        {
-            _towerTemp.Add(other.gameObject);
         }
     }
 }
