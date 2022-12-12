@@ -877,6 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerBase: {fileID: 7782269394121877694}
   _anchor: {fileID: 5093856791545010286}
+  _forceOverride: {x: 0, y: 0, z: 0}
 --- !u!1 &2132385280155879965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,8 +1253,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6479757840026619912}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f34b9e8ed457cd240b4f2e582db8577d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 075fee96841aac34f9cb2def71dfff2f, type: 2}
+  m_Avatar: {fileID: 9000000, guid: e1b132f6eb4c39142ab032efefc65339, type: 3}
+  m_Controller: {fileID: 9100000, guid: 3c65e626bf7548f448a477a708523240, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

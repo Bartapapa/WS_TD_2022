@@ -27,15 +27,15 @@ public class TowerCannon : MonoBehaviour
 
         Vector3 direction = (position - transform.position).normalized;
 
-        _lastLookRotation = Quaternion.LookRotation(position, Vector3.up);
-        transform.rotation = Quaternion.Slerp((transform.rotation*Quaternion.Euler(_forceOverride.x, 0, 0)), _lastLookRotation, rotationSpeed * Time.deltaTime);
+        _lastLookRotation = Quaternion.LookRotation(position + _forceOverride, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _lastLookRotation, rotationSpeed * Time.deltaTime);
         if (onlyCanonRotates)
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x + _forceOverride.x, transform.eulerAngles.y, 0);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
         }
         else
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x + _forceOverride.x, _towerBase.transform.eulerAngles.y, 0);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, _towerBase.transform.eulerAngles.y, 0);
         }
 
         //transform.rotation = Quaternion.Euler(transform.rotation.x, 0, 0);
