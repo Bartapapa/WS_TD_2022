@@ -24,16 +24,19 @@
         protected override void DoFire()
         {
             base.DoFire();
+            var target = _damageableDetector.GetTarget();
 
             AProjectile newProjectile = Instantiate(_projectile, _projectileAnchor.position + new Vector3(Random.Range(-_spread, _spread), Random.Range(-_spread, _spread), Random.Range(-_spread, _spread)), _projectileAnchor.rotation);
             newProjectile.SetProjectileSPeed(_projectileSpeed);
             newProjectile.SetDamage(_projectileDamage);
+            newProjectile.RemoveDamageableCollider = _removeDamageableCollider;
+
             if (FollowTarget == true)
             {
                 newProjectile.FollowTarget = true;
-                if (_damageableDetector.GetTarget() != null)
+                if (target != null)
                 {
-                    newProjectile.Target = _damageableDetector.GetTarget();
+                    newProjectile.Target = target;
                 }
             }
         }

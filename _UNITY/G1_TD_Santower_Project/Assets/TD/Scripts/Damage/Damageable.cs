@@ -36,10 +36,13 @@
 
         private CapsuleCollider _collider;
 
+        private bool _removeColliderOnDeath = false;
+
         public bool IsDead => _isDead;
         public bool GetIsFlying => _isFlying;
         public int GetHealth => _health;
         public bool DestroyIfKilled { set => _destroyIfKilled = value; }
+        public bool RemoveColliderOnDeath { get => _removeColliderOnDeath; set => _removeColliderOnDeath = value; }
 
         public delegate void DamageableEvent(Damageable caller, int currentHealth, int damageTaken);
         private event DamageableEvent _damageTaken = null;
@@ -172,7 +175,7 @@
 
             _callerDied?.Invoke(this, _health, 0);
 
-            if (_collider != null)
+            if (_collider != null && _removeColliderOnDeath == true)
             {
                 _collider.enabled = false;
             }

@@ -491,17 +491,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _followTarget: 0
   _rotationSpeed: 10
+  _target: {fileID: 0}
   _timer:
-    _duration: 0.15
+    _duration: 0.02
     _stopWhenCompleted: 1
   _anim: {fileID: 0}
-  _projectile: {fileID: -7937955209939105875, guid: f9a2a08ea60278a41a1b78ab995e558a,
+  _damageableDetector: {fileID: 0}
+  _removeDamageableCollider: 0
+  _projectile: {fileID: 1697648429471405643, guid: 79dac9615b6e86544b7cc8faf28a3b6b,
     type: 3}
   _projectileAnchor: {fileID: 302692792940769431}
-  _projectileSpeed: 1
-  _projectileDamage: 8
-  _spread: 0
-  _damageableDetector: {fileID: 0}
+  _projectileSpeed: 50
+  _projectileDamage: 1
+  _spread: 0.2
 --- !u!114 &5408311259274425426
 MonoBehaviour:
   m_ObjectHideFlags: 0

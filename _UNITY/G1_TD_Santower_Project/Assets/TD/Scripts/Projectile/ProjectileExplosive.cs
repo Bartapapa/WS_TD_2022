@@ -86,7 +86,7 @@
 
 		private void MoveForward()
 		{
-			if (_useArtilleryMovement)
+			if (UseArtilleryMovement)
 			{
                 if (!_isMoving) StartCoroutine(ArcProjectile());
 			}

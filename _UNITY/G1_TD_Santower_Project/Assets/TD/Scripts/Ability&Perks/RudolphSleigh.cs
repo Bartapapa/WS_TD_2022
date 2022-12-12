@@ -49,6 +49,7 @@ public class RudolphSleigh : MonoBehaviour
     public void DropBomb()
     {
         ProjectileExplosive newBomb = Instantiate(_bomb, _bombSpawner.position, _bombSpawner.rotation);
+        newBomb.UseArtilleryMovement = false;
     }
 
     private void MoveSleigh()

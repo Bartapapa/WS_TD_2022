@@ -9,7 +9,7 @@ public class ProjectileNapalm : AProjectile
 	public event ExplosiveEvent Exploded = null;
 
 	[SerializeField]
-	private Napalm _napalm;
+	private DamageOnZone _napalm;
 
 	[SerializeField]
 	private SphereCollider _explosionCollider;
@@ -33,7 +33,7 @@ public class ProjectileNapalm : AProjectile
 
 	private void MoveForward()
 	{
-		if (_useArtilleryMovement)
+		if (UseArtilleryMovement)
 		{
 			if (!_isMoving) StartCoroutine(ArcProjectile());
 		}

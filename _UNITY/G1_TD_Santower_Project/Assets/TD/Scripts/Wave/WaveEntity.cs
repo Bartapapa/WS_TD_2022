@@ -18,6 +18,12 @@
 
         private Transform _northPoleTarget;
 
+
+        [Header("Animation Handler")]
+        [SerializeField]
+        private int _forceWalkValue = -1;
+        [SerializeField]
+        private int _forceDeathValue = -1;
         public AnimatorHandler_Entity AnimatorHandler => _anim;
 
         private bool _isAir = false;
@@ -37,7 +43,7 @@
             }
             else
             {
-                _anim.SetWalkAnimation();
+                _anim.SetWalkAnimation(_forceWalkValue);
             }
 		}
 
@@ -145,7 +151,7 @@
 
             if (_anim != null)
             {
-                _anim.SetDeathAnimation();
+                _anim.SetDeathAnimation(_forceDeathValue);
                 _anim.Animator.SetTrigger("Die");
             }
 

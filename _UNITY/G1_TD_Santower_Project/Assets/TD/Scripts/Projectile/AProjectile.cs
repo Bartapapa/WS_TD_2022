@@ -29,12 +29,15 @@
         [SerializeField]
         private float _rotationFollowSpeed = 10;
 
+		[SerializeField]
+		private bool _removeDamageableCollider = false;
+
         private Damageable _target;
 
         [Header("Artillery")]
-		[SerializeField]
-		protected bool _useArtilleryMovement = false;
-		[SerializeField]
+        [SerializeField]
+        private bool useArtilleryMovement = false;
+        [SerializeField]
 		protected float _maximumProjectileHeight = 10f;
 		[SerializeField]
 		protected LayerMask _enemyLayer;
@@ -44,16 +47,14 @@
 
 		protected Collider _collider;
 
-
-
 		public Collider GetCollider => _collider;
-
-		public int Damage { set { _damage = value; } }
+		public int Damage { get => _damage; set { _damage = value; } }
 		public bool GetHit { get { return _hitThing; } }
-
         public bool FollowTarget { get => _followTarget; set => _followTarget = value; }
         public Damageable Target { get => _target; set => _target = value; }
         public float RotationSpeed { get => _rotationFollowSpeed; set => _rotationFollowSpeed = value; }
+        public bool UseArtilleryMovement { get => useArtilleryMovement; set => useArtilleryMovement = value; }
+        public bool RemoveDamageableCollider { get => _removeDamageableCollider; set => _removeDamageableCollider = value; }
 
         public virtual void OnTriggerEnter(Collider other)
 		{
@@ -61,6 +62,10 @@
 			{
 				_collider = other;
 				var damageable = other.GetComponentInParent<Damageable>();
+				if (damageable != null)
+				{
+					damageable.RemoveColliderOnDeath = _removeDamageableCollider;
+				}
 
 				if (damageable != null && _needDamageableToCollide == true)
 				{

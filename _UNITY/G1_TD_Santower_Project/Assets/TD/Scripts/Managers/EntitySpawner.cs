@@ -153,7 +153,6 @@
 		private void OnGamePhaseChanged(GameManager.GamePhase fromPhase, GameManager.GamePhase toPhase)
 		{
 			int spawnIndex = ((int)toPhase) - 1;
-			Debug.Log(spawnIndex);
 			SetCurrentSpawnIndex(spawnIndex);
         }
 

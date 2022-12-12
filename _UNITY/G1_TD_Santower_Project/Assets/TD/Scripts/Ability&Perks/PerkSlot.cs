@@ -17,7 +17,22 @@ public class PerkSlot : MonoBehaviour
     private Image _icon;
 
     [SerializeField]
+    private Image _ornamentDefault;
+
+    [SerializeField]
+    private Image _ornamentAcquired;
+
+    [SerializeField]
+    private Image _ornamentUnavailable;
+
+    [SerializeField]
     protected TextMeshProUGUI _milkCostNumber;
+
+    [SerializeField]
+    private GameObject _milkIcon;
+
+    private bool _isAcquired = false;
+    private bool _isAvailable = false;
 
     public PerkDescription PerkDescription => _perkDescription;
 
@@ -26,7 +41,7 @@ public class PerkSlot : MonoBehaviour
 
     private void Awake()
     {
-        UpdateSlot();
+        //UpdateSlot();
     }
 
     public void UpdateSlot()
@@ -39,6 +54,41 @@ public class PerkSlot : MonoBehaviour
 
         _icon.sprite = _perkDescription.Icon;
         _milkCostNumber.text = _perkDescription.MilkCost.ToString();
+
+        if (_isAvailable)
+        {
+            if (_isAcquired)
+            {
+                _button.enabled = false;
+
+                _ornamentUnavailable.gameObject.SetActive(false);
+                _ornamentDefault.gameObject.SetActive(false);
+                _ornamentAcquired.gameObject.SetActive(true);
+
+                _milkIcon.SetActive(false);
+            }
+            else
+            {
+                _button.enabled = true;
+
+                _ornamentUnavailable.gameObject.SetActive(false);
+                _ornamentDefault.gameObject.SetActive(true);
+                _ornamentAcquired.gameObject.SetActive(false);
+
+                _milkIcon.SetActive(true);
+            }
+        }
+        else
+        {
+            _button.enabled = false;
+
+            _ornamentUnavailable.gameObject.SetActive(true);
+            _ornamentDefault.gameObject.SetActive(false);
+            _ornamentAcquired.gameObject.SetActive(false);
+
+            _milkIcon.SetActive(false);
+        }
+
     }
 
     public void InitializeSlot(PerkDescription perkDescription)
@@ -60,6 +110,16 @@ public class PerkSlot : MonoBehaviour
     private void OnButtonClicked()
     {
         OnPerkSlotClicked?.Invoke(this);
+    }
+
+    public void SetIsAcquired(bool value)
+    {
+        _isAcquired = value;
+    }
+
+    public void SetIsAvailable(bool value)
+    {
+        _isAvailable = value;
     }
 
 }

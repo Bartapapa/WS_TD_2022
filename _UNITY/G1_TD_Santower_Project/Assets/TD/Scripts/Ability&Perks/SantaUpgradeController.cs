@@ -10,43 +10,37 @@ public class SantaUpgradeController : MonoBehaviour
     private SelectableObject _selectable;
 
     [SerializeField]
-    private GameObject _upgradePanel;
-
-    [SerializeField]
-    private PerkSlot[] _perkSlots;
-
-    [SerializeField]
     private PerkSlot _perkSlotPrefab;
 
     [SerializeField]
     private CinemachineVirtualCamera _camera;
 
+    [SerializeField]
+    private SantaUpgradePanel _santaUpgradePanel;
+
     private void Awake()
     {
-        _upgradePanel.SetActive(false);
+        _santaUpgradePanel.gameObject.SetActive(false);
 
-        _perkSlots = new PerkSlot[PlayerPerkManager.Instance.PerkList.Count];
+        //for (int i = 0; i < PlayerPerkManager.Instance.PerkList.Count; i++)
+        //{
+        //    PerkSlot newPerkSlot = Instantiate<PerkSlot>(_perkSlotPrefab, _upgradePanel.transform);
+        //    newPerkSlot.InitializeSlot(PlayerPerkManager.Instance.PerkList[i]);
+        //    newPerkSlot.UpdateSlot();
+        //    _perkSlots[i] = newPerkSlot;
+        //    newPerkSlot.gameObject.SetActive(false);
+        //}
 
-        for (int i = 0; i < PlayerPerkManager.Instance.PerkList.Count; i++)
-        {
-            PerkSlot newPerkSlot = Instantiate<PerkSlot>(_perkSlotPrefab, _upgradePanel.transform);
-            newPerkSlot.InitializeSlot(PlayerPerkManager.Instance.PerkList[i]);
-            newPerkSlot.UpdateSlot();
-            _perkSlots[i] = newPerkSlot;
-            newPerkSlot.gameObject.SetActive(false);
-            //Instantiate, then setactive(false).
-            //Start listening to the 
-        }
-
-        UpdateCurrentShownPerk();
+        _santaUpgradePanel.InitializePanel();
+        UpdateCurrentAvailablePerk();
     }
 
     private void OnEnable()
     {
-        for (int i = 0, length = _perkSlots.Length; i < length; i++)
+        for (int i = 0, length = _santaUpgradePanel.PerkSlots.Count; i < length; i++)
         {
-            _perkSlots[i].OnPerkSlotClicked -= SantaUpgradeController_OnPerkSlotClicked;
-            _perkSlots[i].OnPerkSlotClicked += SantaUpgradeController_OnPerkSlotClicked;
+            _santaUpgradePanel.PerkSlots[i].OnPerkSlotClicked -= SantaUpgradeController_OnPerkSlotClicked;
+            _santaUpgradePanel.PerkSlots[i].OnPerkSlotClicked += SantaUpgradeController_OnPerkSlotClicked;
         }
 
         _selectable.ObjectSelected -= OnObjectSelected;
@@ -55,9 +49,9 @@ public class SantaUpgradeController : MonoBehaviour
 
     private void OnDisable()
     {
-        for (int i = 0, length = _perkSlots.Length; i < length; i++)
+        for (int i = 0, length = _santaUpgradePanel.PerkSlots.Count; i < length; i++)
         {
-            _perkSlots[i].OnPerkSlotClicked -= SantaUpgradeController_OnPerkSlotClicked;
+            _santaUpgradePanel.PerkSlots[i].OnPerkSlotClicked -= SantaUpgradeController_OnPerkSlotClicked;
         }
 
         _selectable.ObjectSelected -= OnObjectSelected;
@@ -70,25 +64,42 @@ public class SantaUpgradeController : MonoBehaviour
         {
             PlayerPerkManager.Instance.AcquirePerk(PlayerPerkManager.Instance.CurrentPerk + 1);
 
-            UpdateCurrentShownPerk();
+            sender.SetIsAcquired(true);
+            sender.UpdateSlot();
+
+            UpdateCurrentAvailablePerk();
         }
     }
 
-    private void UpdateCurrentShownPerk()
+    private void UpdateCurrentAvailablePerk()
     {
-        for (int i = 0; i < _perkSlots.Length; i++)
+        for (int i = 0; i < _santaUpgradePanel.PerkSlots.Count; i++)
         {
-            _perkSlots[i].gameObject.SetActive(false);
-            if (i == PlayerPerkManager.Instance.CurrentPerk+1)
+
+            if (i < PlayerPerkManager.Instance.CurrentPerk + 1)
             {
-                _perkSlots[i].gameObject.SetActive(true);
+                _santaUpgradePanel.PerkSlots[i].SetIsAcquired(true);
+                _santaUpgradePanel.PerkSlots[i].UpdateSlot();
+                Debug.Log(_santaUpgradePanel.PerkSlots[i].name + " has been acquired already!");
+            }
+            else if (i == PlayerPerkManager.Instance.CurrentPerk + 1)
+            {
+                _santaUpgradePanel.PerkSlots[i].SetIsAvailable(true);
+                _santaUpgradePanel.PerkSlots[i].UpdateSlot();
+                Debug.Log(_santaUpgradePanel.PerkSlots[i].name + " is made available!");
+            }
+            else
+            {
+                _santaUpgradePanel.PerkSlots[i].SetIsAvailable(false);
+                _santaUpgradePanel.PerkSlots[i].UpdateSlot();
+                Debug.Log(i);
             }
         }
     }
 
     private void OnObjectSelected(SelectableObject selectableObject, bool isSelected)
     {
-        _upgradePanel.SetActive(isSelected);
+        _santaUpgradePanel.gameObject.SetActive(isSelected);
         _camera.gameObject.SetActive(isSelected);
 
         if (isSelected)
