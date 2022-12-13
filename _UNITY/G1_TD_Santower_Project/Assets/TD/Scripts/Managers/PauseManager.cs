@@ -12,7 +12,7 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     { 
-        if (Input.GetKeyDown("t"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
 			SetPause();
         }
