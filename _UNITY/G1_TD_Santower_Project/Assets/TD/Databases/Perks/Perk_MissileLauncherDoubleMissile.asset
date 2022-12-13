@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Perk_MissileLauncherDoubleMissile
   m_EditorClassIdentifier: 
   _name: Missile Launcher Double Missile
-  _icon: {fileID: 21300000, guid: f655b657cf8a9254ead2a04cc89ab530, type: 3}
+  _icon: {fileID: 21300000, guid: 3197aa0c7f308cc45b0669c6900d4cf5, type: 3}
   _milkCost: 25
