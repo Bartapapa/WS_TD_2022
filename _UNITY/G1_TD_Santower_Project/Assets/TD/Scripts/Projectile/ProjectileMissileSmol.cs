@@ -24,15 +24,11 @@ public class ProjectileMissileSmol : AProjectile
 
     private bool _canMove = true;
 
-    private Damageable _target;
-
     [System.NonSerialized]
     private Quaternion _lastLookRotation = Quaternion.identity;
 
     public float ExplosionRadius { set => _explosionRadius = value; }
     public float ExplosionSpeed { set => _explosionSpeed = value; }
-
-    public Damageable GetTarget { set => _target = value; }
 
     private void Start()
     {
@@ -49,7 +45,7 @@ public class ProjectileMissileSmol : AProjectile
         {
             EXPLOSION();
         }
-        LookAt(_target.GetAimPosition());
+        LookAt(Target.GetAimPosition());
     }
 
     private void MoveForward()
@@ -85,11 +81,5 @@ public class ProjectileMissileSmol : AProjectile
         Vector3 lookPos = position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(lookPos);
         transform.rotation = lookRotation;
-        AnchorLookAt(position);
-    }
-    public void AnchorLookAt(Vector3 position)
-    {
-        //TODO force anchor to follow WeaponController.forward.
-
     }
 }
