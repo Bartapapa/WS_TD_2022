@@ -38,10 +38,11 @@
         [SerializeField]
         private bool useArtilleryMovement = false;
         [SerializeField]
-		protected float _maximumProjectileHeight = 10f;
-		[SerializeField]
-		protected LayerMask _enemyLayer;
-		protected bool _isMoving = false;
+        protected AnimationCurve _curve;
+        [SerializeField]
+        protected float _projectileMaxHeight = 1f;
+        protected Vector3 _destination;
+        protected bool _isMoving = false;
 
 		protected bool _hitThing = false;
 
