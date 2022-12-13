@@ -35,8 +35,10 @@ public class DamageOnZone : AProjectile
 		{
 			transform.position = Target.transform.position;
 		}
+		
 		_damageable = _damageableDetector.DamageablesInRange;
 		_timer.Update();
+		
 		if (_timer.Progress >= 1)
 		{
 			_timer.Update();

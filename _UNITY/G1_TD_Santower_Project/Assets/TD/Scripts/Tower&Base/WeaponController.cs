@@ -32,6 +32,8 @@
 		[System.NonSerialized]
 		private Quaternion _lastLookRotation = Quaternion.identity;
 
+		public Quaternion LastLookRotation => _lastLookRotation;
+
 		private void Awake()
 		{
 			_damageableDetector = GetComponentInParent<DamageableDetector>();
