@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TowerDescription.Air01-1---PHALANX
   m_EditorClassIdentifier: 
   _prefab: {fileID: 302692793403659937, guid: b38dc67486d537140b66a12a999773cb, type: 3}
-  _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 0.5566038, g: 0.25992346, b: 0.3192606, a: 1}
+  _icon: {fileID: 21300000, guid: 8cc8cbaa21c61a7418d240729f505f15, type: 3}
+  _iconColor: {r: 1, g: 1, b: 1, a: 1}
   _cookieCost: 990
   _upgradeList:
   - {fileID: 11400000, guid: a1079b58088878e4fbaca60b3fa9cb7a, type: 2}

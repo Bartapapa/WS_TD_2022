@@ -898,6 +898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerBase: {fileID: 1228176275}
   _anchor: {fileID: 302692792940769431}
+  _forceOverride: {x: 0, y: 0, z: 0}
 --- !u!1 &3990712223984278869
 GameObject:
   m_ObjectHideFlags: 0
