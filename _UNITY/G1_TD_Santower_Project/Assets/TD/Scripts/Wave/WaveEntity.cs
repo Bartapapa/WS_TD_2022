@@ -24,6 +24,12 @@
         private int _forceWalkValue = -1;
         [SerializeField]
         private int _forceDeathValue = -1;
+
+        [Header("Sounds")]
+        [SerializeField]
+        private List<AudioClip> _deathSounds = new List<AudioClip>();
+
+        private SoundHandler _soundHandler;
         public AnimatorHandler_Entity AnimatorHandler => _anim;
 
         private bool _isAir = false;
@@ -34,6 +40,7 @@
             _pathFollower = GetComponent<PathFollower>();
             _damageable = GetComponent<Damageable>();
             _northPoleTarget = LevelReferences.Instance.NorthPole.transform;
+            _soundHandler = GetComponent<SoundHandler>();
 
             _isAir = _damageable.GetIsFlying;
 
@@ -148,6 +155,11 @@
         void OnCallerDied(Damageable caller, int currentHealth, int damageTaken)
         {
             _pathFollower.SetCanMove(false);
+
+            if(_soundHandler != null)
+            {
+                _soundHandler.PlayRandomClip(_deathSounds, 25f);
+            }
 
             if (_anim != null)
             {

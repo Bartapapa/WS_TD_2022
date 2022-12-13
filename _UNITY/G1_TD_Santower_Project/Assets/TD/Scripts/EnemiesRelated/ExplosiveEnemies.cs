@@ -17,21 +17,33 @@ public class ExplosiveEnemies : MonoBehaviour
 	[SerializeField]
 	private float _explosionSpeed = 100;
 
+	[SerializeField]
+	private bool _explodeImmediatelyOnDeath = true;
+
 	private void OnEnable()
 	{
-		_damageable.CallerDied -= Explosion;
-		_damageable.CallerDied += Explosion;
+		_damageable.CallerDied -= OnCallerDied;
+		_damageable.CallerDied += OnCallerDied;
 	}
 
 	private void OnDisable()
 	{
-		_damageable.CallerDied -= Explosion;
+		_damageable.CallerDied -= OnCallerDied;
 	}
 
-	private void Explosion(Damageable damageable, int currentHealth, int damageTaken)
+	private void OnCallerDied(Damageable damageable, int currentHealth, int damageTaken)
 	{
-		_explosion.ExplosionRadius = _explosionRadius;
-		_explosion.ExplosionSpeed = _explosionSpeed;
-		Instantiate(_explosion, transform.position, Quaternion.identity);
+		if (!_explodeImmediatelyOnDeath) return;
+		Explosion();
+
 	}
+
+	public void Explosion()
+	{
+        _explosion.ExplosionRadius = _explosionRadius;
+        _explosion.ExplosionSpeed = _explosionSpeed;
+        Instantiate(_explosion, transform.position, Quaternion.identity);
+    }
+
+
 }

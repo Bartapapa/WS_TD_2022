@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class BaseNorthPole : MonoBehaviour
 {
 	[SerializeField]
 	private Damageable _damageable;
+
+	[SerializeField]
+	private Slider _health;
 
     public UnityEvent<Damageable> EnemyBombed = null;
 
@@ -31,9 +35,11 @@ public class BaseNorthPole : MonoBehaviour
 
     private void Update()
 	{
+		_health.value = _damageable.GetHealth;
 		if (_damageable.GetHealth <= 0)
 		{
 			// Insert Code for defeat screen
+			Debug.LogWarning("Insert Code for defeat screen");
 		}
 	}
 

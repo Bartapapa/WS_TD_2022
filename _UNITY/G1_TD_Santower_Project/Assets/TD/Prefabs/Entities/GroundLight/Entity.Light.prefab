@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 8954739381906307174}
   - component: {fileID: -4180293061430927919}
   - component: {fileID: 983396465118770188}
+  - component: {fileID: 5784273701818750956}
   m_Layer: 8
   m_Name: Entity.Light
   m_TagString: Untagged
@@ -293,6 +294,11 @@ MonoBehaviour:
   _pathFollower: {fileID: 2942146037294568418}
   _damageable: {fileID: 0}
   _anim: {fileID: 983396465118770188}
+  _forceWalkValue: -1
+  _forceDeathValue: -1
+  _deathSounds:
+  - {fileID: 8300000, guid: f63502a6f8474434989466cd76434503, type: 3}
+  - {fileID: 8300000, guid: 40c0a75a186c1ad4d89cca6afbdc461d, type: 3}
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +408,21 @@ MonoBehaviour:
   _anim: {fileID: 2801179315572389591}
   _maxWalkAnims: 2
   _maxDeathAnims: 4
+--- !u!114 &5784273701818750956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7f801a4e3ace04d9128a27cb3e388c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yeetPercentage: 5
+  _originalObject: {fileID: 2942146037294568416}
+  _rb: {fileID: 2635316537883317229, guid: c98b5a328ce3a804782bf77a0494b09d, type: 3}
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0
