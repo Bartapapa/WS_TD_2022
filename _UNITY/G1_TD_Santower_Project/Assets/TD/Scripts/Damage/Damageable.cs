@@ -38,9 +38,12 @@
 
         private bool _removeColliderOnDeath = false;
 
+        private int _maxHealth;
+
         public bool IsDead => _isDead;
         public bool GetIsFlying => _isFlying;
         public int GetHealth => _health;
+        public int GetMaxHealth => _maxHealth;
         public bool DestroyIfKilled { set => _destroyIfKilled = value; }
         public bool RemoveColliderOnDeath { get => _removeColliderOnDeath; set => _removeColliderOnDeath = value; }
 
@@ -51,6 +54,7 @@
 
         private void Awake()
         {
+            _maxHealth = _health;
             Invulnerability(.1f);
             _collider = GetComponent<CapsuleCollider>();
 
