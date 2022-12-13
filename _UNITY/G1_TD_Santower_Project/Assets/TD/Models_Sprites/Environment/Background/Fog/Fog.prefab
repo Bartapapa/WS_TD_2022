@@ -4826,10 +4826,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fogRadius:
-  - 45
-  - 65
-  - 95
-  - 120
+  - 60
+  - 80
+  - 110
+  - 135
 --- !u!1 &5156359561379718648
 GameObject:
   m_ObjectHideFlags: 0
@@ -9656,10 +9656,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fogRadius:
-  - 45
-  - 65
-  - 95
-  - 120
+  - 60
+  - 80
+  - 110
+  - 135
 --- !u!1 &5156359562322981306
 GameObject:
   m_ObjectHideFlags: 0
@@ -9669,7 +9669,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5156359562322981307}
-  - component: {fileID: 1133214704}
   m_Layer: 0
   m_Name: Fog
   m_TagString: Untagged
@@ -9694,20 +9693,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1133214704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5156359562322981306}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 702cc094ada72984eb564f06bdc99f4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fogRadius:
-  - 45
-  - 65
-  - 95
-  - 120

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TowerDescription.Ground02-1---FIREROLLER
   m_EditorClassIdentifier: 
   _prefab: {fileID: 302692793403659937, guid: 4cff54c134a535c44a8259f4e4aef79e, type: 3}
-  _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 0.27843142, g: 1, b: 0.74671304, a: 1}
+  _icon: {fileID: 21300000, guid: f7ca601c6b45d184796f89e259708df6, type: 3}
+  _iconColor: {r: 1, g: 1, b: 1, a: 1}
   _cookieCost: 1200
   _upgradeList:
   - {fileID: 11400000, guid: a1079b58088878e4fbaca60b3fa9cb7a, type: 2}
