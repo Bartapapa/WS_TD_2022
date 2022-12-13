@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TowerFoundation
   m_EditorClassIdentifier: 
   _prefab: {fileID: 5649839755159618062, guid: b97719b90c7bf4d44a7173d91bd51f64, type: 3}
-  _icon: {fileID: 21300000, guid: 8fa297b7ec66b944eab90904199905a4, type: 3}
+  _icon: {fileID: 21300000, guid: 9088b2bdade98b643a7797ef0879c813, type: 3}
   _iconColor: {r: 1, g: 1, b: 1, a: 1}
   _cookieCost: -1
   _upgradeList:
