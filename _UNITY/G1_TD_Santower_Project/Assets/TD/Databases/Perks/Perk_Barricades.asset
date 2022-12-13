@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Perk_Barricades
   m_EditorClassIdentifier: 
   _name: Barricades
-  _icon: {fileID: 21300000, guid: 8fa297b7ec66b944eab90904199905a4, type: 3}
+  _icon: {fileID: 21300000, guid: e367a2c0212cef344ae8365036f4c540, type: 3}
   _milkCost: 6

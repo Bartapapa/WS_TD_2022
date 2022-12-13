@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Perk_GatlingOil
   m_EditorClassIdentifier: 
   _name: Gatling Oil
-  _icon: {fileID: 21300000, guid: e6dbeae8714eb9b4a98ea67871b905cd, type: 3}
+  _icon: {fileID: 21300000, guid: 399cf5effc3e02047a5b0189db180310, type: 3}
   _milkCost: 4

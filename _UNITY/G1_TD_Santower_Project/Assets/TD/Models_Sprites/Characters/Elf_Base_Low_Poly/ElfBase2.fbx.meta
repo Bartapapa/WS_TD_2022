@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c317ba75df6815248b941f5a874fc9a0
+guid: 6709cac7f86efdd4f81e9399fff1ea98
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -34,8 +34,8 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: _EB_Tpose
-      takeName: Armature|_Tpose
-      internalID: -5065895324553700164
+      takeName: Armature|Armature|Armature|_Tpose
+      internalID: -931649251412811601
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -63,8 +63,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EB_Attack
-      takeName: Armature|Attack
-      internalID: 4723146814002874508
+      takeName: Armature|Armature|Armature|Attack
+      internalID: 7905057574882702443
       firstFrame: 0
       lastFrame: 19
       wrapMode: 0
@@ -92,8 +92,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EB_Death_1
-      takeName: Armature|Death_1
-      internalID: -4291784038030639069
+      takeName: Armature|Armature|Armature|Death_1
+      internalID: 6037210174031617142
       firstFrame: 0
       lastFrame: 99
       wrapMode: 0
@@ -121,8 +121,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EB_Death_2
-      takeName: Armature|Death_2
-      internalID: 8495183035610309734
+      takeName: Armature|Armature|Armature|Death_2
+      internalID: 8971242897594946153
       firstFrame: 0
       lastFrame: 99
       wrapMode: 0
@@ -150,8 +150,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EB_Death_3
-      takeName: Armature|Death_3
-      internalID: 4452451167204219792
+      takeName: Armature|Armature|Armature|Death_3
+      internalID: -2100430711790384104
       firstFrame: 0
       lastFrame: 99
       wrapMode: 0
@@ -179,8 +179,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EB_Death_4
-      takeName: Armature|Death_4
-      internalID: 3997500497755113545
+      takeName: Armature|Armature|Armature|Death_4
+      internalID: 416735559164329629
       firstFrame: 0
       lastFrame: 99
       wrapMode: 0
@@ -208,8 +208,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EB_Walk_1
-      takeName: Armature|Walk_1
-      internalID: 5323013075973705753
+      takeName: Armature|Armature|Armature|Walk_1
+      internalID: -2963518076067043654
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0
@@ -237,8 +237,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EB_Walk_2
-      takeName: Armature|Walk_2
-      internalID: -8640428381985338345
+      takeName: Armature|Armature|Armature|Walk_2
+      internalID: 7204320726123385224
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0

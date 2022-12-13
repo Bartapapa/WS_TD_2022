@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: RPG
   _targetingReticle: {fileID: 11400000, guid: 99ffe57fc9ab91e479329edf25202bcb, type: 2}
-  _icon: {fileID: 21300000, guid: ea57e75e6a1260941a1a3bf39f33549b, type: 3}
+  _icon: {fileID: 21300000, guid: 62b8b16c7fb30e640bc42354e0ac772b, type: 3}
   _coolDown: 20

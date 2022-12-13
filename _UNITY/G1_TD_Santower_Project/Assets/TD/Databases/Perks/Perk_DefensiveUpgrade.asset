@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Perk_DefensiveUpgrade
   m_EditorClassIdentifier: 
   _name: Defensive Upgrade
-  _icon: {fileID: 21300000, guid: f655b657cf8a9254ead2a04cc89ab530, type: 3}
+  _icon: {fileID: 21300000, guid: de5a0365a9625a5459164b4a20641fc6, type: 3}
   _milkCost: 21

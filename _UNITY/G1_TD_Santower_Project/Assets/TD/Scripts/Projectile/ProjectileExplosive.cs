@@ -117,9 +117,6 @@
 
             _destination = Target.transform.position - Target.transform.forward;
 
-            Debug.Log(startPosition);
-            Debug.Log(_destination);
-
             float duration = 60f / _projectileSpeed;
 
             while (time < duration || !_hitThing)
