@@ -3249,6 +3249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower.Ground02
       objectReference: {fileID: 0}
+    - target: {fileID: 302692793403659941, guid: 22c54a52c8e921a439302ef1644b2ebd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c54a52c8e921a439302ef1644b2ebd, type: 3}
 --- !u!1001 &186273871
@@ -8676,6 +8681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower.Ground02-1
       objectReference: {fileID: 0}
+    - target: {fileID: 302692793403659941, guid: 4cff54c134a535c44a8259f4e4aef79e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cff54c134a535c44a8259f4e4aef79e, type: 3}
 --- !u!1001 &1115612882
@@ -12182,7 +12192,7 @@ PrefabInstance:
     - target: {fileID: 2942146037294568416, guid: c6c2d06bfe39bfd4686f87dcb8c67811,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2942146037294568417, guid: c6c2d06bfe39bfd4686f87dcb8c67811,
         type: 3}
@@ -12541,6 +12551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower.Ground02-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 302692793403659941, guid: f9c874b795f0d4148a4b32723d38255d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c874b795f0d4148a4b32723d38255d, type: 3}
