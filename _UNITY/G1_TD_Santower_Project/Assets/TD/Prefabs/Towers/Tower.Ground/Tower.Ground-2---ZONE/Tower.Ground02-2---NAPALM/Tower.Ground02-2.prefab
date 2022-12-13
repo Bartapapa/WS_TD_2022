@@ -811,7 +811,7 @@ ParentConstraint:
   m_TranslationAtRest: {x: 0, y: 0.86190385, z: -0.63508713}
   m_RotationAtRest: {x: -90, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: 0.63508606, z: -1.7980957}
+  - {x: 0, y: 0.6350886, z: -1.7980957}
   m_RotationOffsets:
   - {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
@@ -1005,7 +1005,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34c484e69101b684a9f0f63b7df4a6d0, type: 2}
+  - {fileID: 2100000, guid: 91cd3f3aef623644086e8648457b39ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1189,7 +1189,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34c484e69101b684a9f0f63b7df4a6d0, type: 2}
+  - {fileID: 2100000, guid: 91cd3f3aef623644086e8648457b39ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1350,7 +1350,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2009673191617256569, guid: 595ad910911f4e240836019b4e6ce003, type: 3}
+  - {fileID: 2100000, guid: 91cd3f3aef623644086e8648457b39ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
