@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Rudolph
   _targetingReticle: {fileID: 11400000, guid: 34af3137731e6614e981eedcfd79aadc, type: 2}
-  _icon: {fileID: 21300000, guid: f655b657cf8a9254ead2a04cc89ab530, type: 3}
+  _icon: {fileID: 21300000, guid: 0a251d463ec2f5849a46e8fbd51f2c70, type: 3}
   _coolDown: 60
