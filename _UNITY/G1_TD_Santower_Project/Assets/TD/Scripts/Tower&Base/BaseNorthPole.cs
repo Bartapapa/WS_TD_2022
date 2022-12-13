@@ -35,7 +35,11 @@ public class BaseNorthPole : MonoBehaviour
 
     private void Update()
 	{
-		_health.value = _damageable.GetHealth;
+		if (_health != null)
+		{
+            _health.value = _damageable.GetHealth;
+        }
+
 		if (_damageable.GetHealth <= 0)
 		{
 			// Insert Code for defeat screen
