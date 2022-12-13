@@ -770,7 +770,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5e6a86de613baa42b6032e10b2ca89b, type: 2}
+  - {fileID: 2100000, guid: 137d190bd170347488a86621bf84aa5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -896,7 +896,7 @@ ParentConstraint:
   m_TranslationAtRest: {x: 0, y: 2.75069, z: 0}
   m_RotationAtRest: {x: -0.4681901, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: -0.029310226, z: 0}
+  - {x: 0, y: -0.029309988, z: 0}
   m_RotationOffsets:
   - {x: -0.46819016, y: 0, z: 0}
   m_AffectTranslationX: 1
@@ -1082,8 +1082,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5e6a86de613baa42b6032e10b2ca89b, type: 2}
-  - {fileID: 8425554794358695251, guid: f34b9e8ed457cd240b4f2e582db8577d, type: 3}
+  - {fileID: 2100000, guid: 137d190bd170347488a86621bf84aa5f, type: 2}
+  - {fileID: 2100000, guid: 29e4f4f4f30677745adea14dd1d38da6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1297,7 +1297,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5e6a86de613baa42b6032e10b2ca89b, type: 2}
+  - {fileID: 2100000, guid: 137d190bd170347488a86621bf84aa5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
