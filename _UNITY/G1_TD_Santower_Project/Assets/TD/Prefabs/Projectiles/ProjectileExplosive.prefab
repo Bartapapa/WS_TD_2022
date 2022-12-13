@@ -54,17 +54,51 @@ MonoBehaviour:
   _damage: 10
   _projectileSpeed: 1
   _canFreeze: 0
-  _useArtilleryMovement: 1
-  _maximumProjectileHeight: 10
-  _enemyLayer:
+  _applyDamage: 1
+  _followTarget: 0
+  _rotationFollowSpeed: 10
+  _removeDamageableCollider: 0
+  useArtilleryMovement: 1
+  _curve:
     serializedVersion: 2
-    m_Bits: 256
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.00000025331974
+      value: 0.0000013187528
+      inSlope: 2.0399518
+      outSlope: 2.0399518
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4882745
+      value: 0.9960583
+      inSlope: 0.04904437
+      outSlope: 0.04904437
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.002357483
+      inSlope: -1.9418631
+      outSlope: -1.9418631
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _projectileMaxHeight: 10
   _explosionCollider: {fileID: 1469653270}
   _impactNeeded: 1
   _explosionRadius: 3
   _accelerateToMaxSpeed: 0
   _acceleration: 1
-  _lifespan: {fileID: 0}
+  _lifespan: {fileID: 1241841740681876576}
   _canProduceShrapnel: 0
 --- !u!135 &1596334011
 SphereCollider:

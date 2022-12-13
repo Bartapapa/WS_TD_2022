@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 8954739381906307174}
   - component: {fileID: 7166478489442094961}
   - component: {fileID: 4147135398360244085}
+  - component: {fileID: 3818940846643774098}
   m_Layer: 8
   m_Name: Entity.AirLight
   m_TagString: Untagged
@@ -534,6 +535,11 @@ MonoBehaviour:
   _pathFollower: {fileID: 2942146037294568418}
   _damageable: {fileID: 0}
   _anim: {fileID: 4147135398360244085}
+  _forceWalkValue: -1
+  _forceDeathValue: -1
+  _deathSounds:
+  - {fileID: 8300000, guid: f63502a6f8474434989466cd76434503, type: 3}
+  - {fileID: 8300000, guid: 40c0a75a186c1ad4d89cca6afbdc461d, type: 3}
 --- !u!114 &2942146037294568418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +649,18 @@ MonoBehaviour:
   _anim: {fileID: 914635381026921050}
   _maxWalkAnims: 3
   _maxDeathAnims: 3
+--- !u!114 &3818940846643774098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942146037294568416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83891f44c5771844184f5321c769baf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2942146037963372806
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,7 +947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4012666432683291522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.576, z: 0.82}
+  m_LocalPosition: {x: 0, y: -1.6, z: 0.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
