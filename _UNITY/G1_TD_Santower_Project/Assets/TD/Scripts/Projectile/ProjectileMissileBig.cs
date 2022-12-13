@@ -97,7 +97,7 @@ public class ProjectileMissileBig : AProjectile
                                                             Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile), 
                                                             Random.Range(-_radiusSpawnSmolMissile, _radiusSpawnSmolMissile)), 
                                                             Quaternion.identity);
-                missile.GetTarget = _damageables[Random.Range(0, _damageables.Count - 1)];
+                missile.Target = _damageables[Random.Range(0, _damageables.Count - 1)];
             }
         }
     }

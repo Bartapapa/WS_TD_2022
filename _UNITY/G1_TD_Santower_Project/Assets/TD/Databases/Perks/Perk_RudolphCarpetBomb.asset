@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Perk_RudolphCarpetBomb
   m_EditorClassIdentifier: 
   _name: Rudolph Carpet Bomb
-  _icon: {fileID: 21300000, guid: f655b657cf8a9254ead2a04cc89ab530, type: 3}
+  _icon: {fileID: 21300000, guid: 16a968daa3e8adb49a82b73ed147d020, type: 3}
   _milkCost: 8

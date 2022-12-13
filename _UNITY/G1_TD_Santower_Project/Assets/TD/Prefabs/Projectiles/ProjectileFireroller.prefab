@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1697648429471405642}
   - component: {fileID: 8269167292691892953}
   - component: {fileID: 8699135520364450316}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: ProjectileFireroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,11 +54,17 @@ MonoBehaviour:
   _projectileSpeed: 10
   _canFreeze: 0
   _applyDamage: 1
-  _useArtilleryMovement: 0
-  _maximumProjectileHeight: 10
-  _enemyLayer:
+  _followTarget: 0
+  _rotationFollowSpeed: 10
+  _removeDamageableCollider: 0
+  useArtilleryMovement: 0
+  _curve:
     serializedVersion: 2
-    m_Bits: 0
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _projectileMaxHeight: 1
 --- !u!54 &1697648429471405642
 Rigidbody:
   m_ObjectHideFlags: 0
