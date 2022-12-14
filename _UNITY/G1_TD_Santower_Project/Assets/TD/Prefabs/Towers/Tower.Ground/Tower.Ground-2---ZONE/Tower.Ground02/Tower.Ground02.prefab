@@ -398,7 +398,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72e972fc80ec3f74bb025748a3b206ef, type: 2}
+  - {fileID: 2100000, guid: 49ab812e0ce859d41ac86a7d278b3a4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1014,7 +1014,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1050076981586561643, guid: 957545b836778e444a111afe9dcdd973, type: 3}
+  - {fileID: 2100000, guid: 49ab812e0ce859d41ac86a7d278b3a4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1243,7 +1243,7 @@ ParentConstraint:
   m_TranslationAtRest: {x: 0, y: 0.86190385, z: -0.63508713}
   m_RotationAtRest: {x: -90, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: 0.63508695, z: -1.1280961}
+  - {x: 0, y: 0.6350871, z: -1.1280962}
   m_RotationOffsets:
   - {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
