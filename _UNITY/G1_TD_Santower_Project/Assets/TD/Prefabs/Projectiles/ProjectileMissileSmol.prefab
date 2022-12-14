@@ -432,13 +432,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697648429471405641}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b48b6b3a043828747a88b090fe224162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTimer:
-    _duration: 2
+    _duration: 5
     _stopWhenCompleted: 1
   _destroyOnEnd: 1
 --- !u!114 &6006614761674067318
@@ -458,11 +458,18 @@ MonoBehaviour:
   _damage: 6
   _projectileSpeed: 40
   _canFreeze: 0
-  _useArtilleryMovement: 0
-  _maximumProjectileHeight: 10
-  _enemyLayer:
+  _applyDamage: 1
+  _followTarget: 0
+  _rotationFollowSpeed: 10
+  _removeDamageableCollider: 0
+  useArtilleryMovement: 0
+  _curve:
     serializedVersion: 2
-    m_Bits: 256
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _projectileMaxHeight: 1
   _explosionCollider: {fileID: 1469653270}
   _explosionRadius: 3
   _rotationSpeed: 10

@@ -360,7 +360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &114427184
 Transform:
   m_ObjectHideFlags: 0
@@ -981,6 +981,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower.GroundBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147384967266561749, guid: 11db3aa737362e04eaf46bfb3eed223a,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
+      value: 0.021903515
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147384967266561749, guid: 11db3aa737362e04eaf46bfb3eed223a,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].z
+      value: -0.32508612
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11db3aa737362e04eaf46bfb3eed223a, type: 3}
@@ -1922,6 +1932,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower.Ground02-1
       objectReference: {fileID: 0}
+    - target: {fileID: 5378047045597522171, guid: 4cff54c134a535c44a8259f4e4aef79e,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
+      value: 0.86190367
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378047045597522171, guid: 4cff54c134a535c44a8259f4e4aef79e,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].z
+      value: -0.635087
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cff54c134a535c44a8259f4e4aef79e, type: 3}
 --- !u!1 &632168669
@@ -2339,6 +2359,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower.Ground01-2
       objectReference: {fileID: 0}
+    - target: {fileID: 3424948336620869835, guid: 50b0336cfd05b594db42a745b8607e1c,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
+      value: 0.86190367
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424948336620869835, guid: 50b0336cfd05b594db42a745b8607e1c,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].z
+      value: -0.635087
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50b0336cfd05b594db42a745b8607e1c, type: 3}
 --- !u!1001 &715660549
@@ -2407,6 +2437,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower.Ground01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429825424136492614, guid: 28efab7630ebbd3488efbf4c9b317e19,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
+      value: 0.085903645
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429825424136492614, guid: 28efab7630ebbd3488efbf4c9b317e19,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].z
+      value: -0.635087
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28efab7630ebbd3488efbf4c9b317e19, type: 3}
@@ -2727,6 +2767,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820297186260300582, guid: a59c9d15f7a07d84ca0ca9796382116d,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].z
+      value: 1.3891659
       objectReference: {fileID: 0}
     - target: {fileID: 6909446824767439014, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
@@ -3520,12 +3565,6 @@ Transform:
   m_Father: {fileID: 938780688}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &972958736 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6545418169687456306, guid: a59c9d15f7a07d84ca0ca9796382116d,
-    type: 3}
-  m_PrefabInstance: {fileID: 841357695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &973040092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4874,6 +4913,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower.Ground02
       objectReference: {fileID: 0}
+    - target: {fileID: 533408655330334475, guid: 22c54a52c8e921a439302ef1644b2ebd,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
+      value: 0.63508695
+      objectReference: {fileID: 0}
+    - target: {fileID: 533408655330334475, guid: 22c54a52c8e921a439302ef1644b2ebd,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].z
+      value: -1.1280961
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c54a52c8e921a439302ef1644b2ebd, type: 3}
 --- !u!1 &1332528734
@@ -5436,37 +5485,6 @@ Transform:
   - {fileID: 980445253}
   m_Father: {fileID: 938780688}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1431951718
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1431951719}
-  m_Layer: 0
-  m_Name: SantaPivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1431951719
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431951718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 972958736}
-  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1439750074
 GameObject:
@@ -7025,6 +7043,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower.Ground01-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728299020971087624, guid: eeefaa06854894c4fa587f3f58110578,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
+      value: 0.86190367
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728299020971087624, guid: eeefaa06854894c4fa587f3f58110578,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].z
+      value: -0.635087
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeefaa06854894c4fa587f3f58110578, type: 3}

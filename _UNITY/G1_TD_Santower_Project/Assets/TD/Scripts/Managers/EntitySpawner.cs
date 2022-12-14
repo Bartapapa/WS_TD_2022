@@ -158,7 +158,7 @@
 
 		public void SetCurrentSpawnIndex(int index)
 		{
-			if (index > _phaseWaypointSpawns.Count - 1)
+			if (index > _phaseWaypointSpawns.Count)
 			{
 				Debug.Log(name + " Index given is superior to the number of waypoints in phaseWaypointSpawns, ignoring");
 				return;

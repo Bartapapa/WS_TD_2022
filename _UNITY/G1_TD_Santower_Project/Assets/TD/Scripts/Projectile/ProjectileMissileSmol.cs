@@ -45,7 +45,10 @@ public class ProjectileMissileSmol : AProjectile
         {
             EXPLOSION();
         }
-        LookAt(Target.GetAimPosition());
+        if (Target != null)
+        {
+            LookAt(Target.GetAimPosition());
+        }
     }
 
     private void MoveForward()
