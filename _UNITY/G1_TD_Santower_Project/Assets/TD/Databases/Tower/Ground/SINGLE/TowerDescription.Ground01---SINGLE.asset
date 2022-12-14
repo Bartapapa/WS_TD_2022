@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TowerDescription.Ground01---SINGLE
   m_EditorClassIdentifier: 
   _prefab: {fileID: 302692793403659937, guid: 28efab7630ebbd3488efbf4c9b317e19, type: 3}
-  _icon: {fileID: 21300000, guid: 782b88c042b68c84886d3da8649dfa5a, type: 3}
-  _iconColor: {r: 0.17501779, g: 0.5377358, b: 0.17656809, a: 1}
+  _icon: {fileID: 21300000, guid: dcf0a64542ff8cb4dac3568710df0185, type: 3}
+  _iconColor: {r: 1, g: 1, b: 1, a: 1}
   _cookieCost: 180
   _upgradeList:
   - {fileID: 11400000, guid: a1079b58088878e4fbaca60b3fa9cb7a, type: 2}

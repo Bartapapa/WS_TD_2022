@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Perk_ExplosivePresents
   m_EditorClassIdentifier: 
   _name: Explosive Presents
-  _icon: {fileID: 21300000, guid: 0afe9c77f708c8e45a120d7b507e6cad, type: 3}
+  _icon: {fileID: 21300000, guid: f80731589b7b8084d99e9dbf8fda6033, type: 3}
   _milkCost: 3

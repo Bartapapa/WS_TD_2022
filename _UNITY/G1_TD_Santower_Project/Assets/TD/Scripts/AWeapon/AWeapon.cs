@@ -19,11 +19,12 @@
 		[SerializeField]
 		protected AnimatorHandler_Tower _anim = null;
 
-        public bool FollowTarget => _followTarget;
+		public bool FollowTarget { get => _followTarget; set => _followTarget = value; }
         public float RotationSpeed => _rotationSpeed;
         public Damageable Target => _target;
 
-        [SerializeField]
+
+		[SerializeField]
         public DamageableDetector _damageableDetector;
 
 		[SerializeField]

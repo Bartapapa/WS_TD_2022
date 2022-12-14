@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Present
   _targetingReticle: {fileID: 11400000, guid: 34af3137731e6614e981eedcfd79aadc, type: 2}
-  _icon: {fileID: 21300000, guid: 0afe9c77f708c8e45a120d7b507e6cad, type: 3}
+  _icon: {fileID: 21300000, guid: f80731589b7b8084d99e9dbf8fda6033, type: 3}
   _coolDown: 15

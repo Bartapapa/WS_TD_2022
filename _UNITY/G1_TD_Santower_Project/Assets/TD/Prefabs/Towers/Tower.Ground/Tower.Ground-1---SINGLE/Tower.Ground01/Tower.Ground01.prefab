@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7f346b16eef3347a7f5f9a3781f931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followTarget: 0
+  _followTarget: 1
   _rotationSpeed: 10
   _target: {fileID: 0}
   _timer:
@@ -582,7 +582,7 @@ MonoBehaviour:
   _damageable: {fileID: 0}
   _towerDescription: {fileID: 11400000, guid: 148609f929643944991f2df907ca6d3f, type: 2}
   _totalCookieCost: 0
-  _enabledByDefault: 1
+  _enabledByDefault: 0
   _canBeSelectedByDefault: 0
 --- !u!114 &302692793403659942
 MonoBehaviour:
@@ -730,8 +730,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 454f34f8430769e4aad2198741f5f4e1, type: 2}
-  - {fileID: 2100000, guid: 454f34f8430769e4aad2198741f5f4e1, type: 2}
+  - {fileID: 2100000, guid: b4d1363b349112042ab7115de1c5b4c7, type: 2}
+  - {fileID: 2100000, guid: e465ff12b0e0f7847a2b9dc69a5b19cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -826,7 +826,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 454f34f8430769e4aad2198741f5f4e1, type: 2}
+  - {fileID: 2100000, guid: b4d1363b349112042ab7115de1c5b4c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1209,7 +1209,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 454f34f8430769e4aad2198741f5f4e1, type: 2}
+  - {fileID: 2100000, guid: b4d1363b349112042ab7115de1c5b4c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

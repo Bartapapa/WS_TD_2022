@@ -429,7 +429,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c2d4b72c6f653aa4aa081d75dbf1c34e, type: 2}
+  - {fileID: 2100000, guid: c2db9bcde8f207645b93baa7c2e1d727, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -524,7 +524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c2d4b72c6f653aa4aa081d75dbf1c34e, type: 2}
+  - {fileID: 2100000, guid: c2db9bcde8f207645b93baa7c2e1d727, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -791,7 +791,7 @@ MonoBehaviour:
   _damageable: {fileID: 0}
   _towerDescription: {fileID: 11400000, guid: eff3f80e19eb0214c8954ea25752f5c2, type: 2}
   _totalCookieCost: 0
-  _enabledByDefault: 1
+  _enabledByDefault: 0
   _canBeSelectedByDefault: 0
 --- !u!114 &302692793403659942
 MonoBehaviour:
@@ -933,7 +933,7 @@ ParentConstraint:
   m_TranslationAtRest: {x: 0, y: 0.86190385, z: -0.63508713}
   m_RotationAtRest: {x: -90, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: 0.86190385, z: -0.63508606}
+  - {x: 0, y: 0.86190385, z: -0.63508713}
   m_RotationOffsets:
   - {x: -89.96574, y: 0, z: 0}
   m_AffectTranslationX: 1
@@ -1196,7 +1196,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3902327733873388291, guid: 9160cafca7a0aab4684257e039ed160a, type: 3}
+  - {fileID: 2100000, guid: c2db9bcde8f207645b93baa7c2e1d727, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

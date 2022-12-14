@@ -391,7 +391,7 @@ ParentConstraint:
   m_TranslationAtRest: {x: 0, y: 0.86190385, z: -0.63508713}
   m_RotationAtRest: {x: -90, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: 0.86190385, z: -0.63508606}
+  - {x: 0, y: 0.86190385, z: -0.63508713}
   m_RotationOffsets:
   - {x: -89.96574, y: 0, z: 0}
   m_AffectTranslationX: 1
@@ -642,7 +642,7 @@ MonoBehaviour:
   _damageable: {fileID: 0}
   _towerDescription: {fileID: 11400000, guid: 20326c3875a86b449919986bd6ebd35e, type: 2}
   _totalCookieCost: 0
-  _enabledByDefault: 1
+  _enabledByDefault: 0
   _canBeSelectedByDefault: 0
 --- !u!114 &302692793403659942
 MonoBehaviour:
@@ -1242,9 +1242,9 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d0c4690dbcc0847478d028a8f84eb0e0, type: 2}
-  - {fileID: 2100000, guid: d0c4690dbcc0847478d028a8f84eb0e0, type: 2}
-  - {fileID: 2100000, guid: d0c4690dbcc0847478d028a8f84eb0e0, type: 2}
+  - {fileID: 2100000, guid: a5da6822648ba2f4a8354270fcb6aa35, type: 2}
+  - {fileID: 2100000, guid: 052f5f1238633b046a66ba196a183827, type: 2}
+  - {fileID: 2100000, guid: c1ac581b4627ae9458282276d25284cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1548,7 +1548,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1822974591752990683, guid: ac14154fc94503041ba90f57437436d5, type: 3}
+  - {fileID: 2100000, guid: a5da6822648ba2f4a8354270fcb6aa35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1755,7 +1755,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d0c4690dbcc0847478d028a8f84eb0e0, type: 2}
+  - {fileID: 2100000, guid: a5da6822648ba2f4a8354270fcb6aa35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
