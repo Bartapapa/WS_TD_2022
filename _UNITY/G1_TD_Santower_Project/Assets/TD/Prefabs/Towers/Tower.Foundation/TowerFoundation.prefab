@@ -454,9 +454,10 @@ GameObject:
   - component: {fileID: 5649839755159618059}
   - component: {fileID: 5649839755159618062}
   - component: {fileID: 5717850585851558782}
+  - component: {fileID: 2090048222985732461}
   m_Layer: 7
   m_Name: TowerFoundation
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,7 +498,7 @@ MonoBehaviour:
   _damageableDetector: {fileID: 0}
   _selectableObject: {fileID: 5357913767543690491}
   _anim: {fileID: 5717850585851558782}
-  _damageable: {fileID: 0}
+  _damageable: {fileID: 2090048222985732461}
   _towerDescription: {fileID: 11400000, guid: a1079b58088878e4fbaca60b3fa9cb7a, type: 2}
   _totalCookieCost: 0
   _enabledByDefault: 1
@@ -517,6 +518,33 @@ MonoBehaviour:
   _anim: {fileID: 4815739606410840741}
   _baseAnimationIndex: 0
   _cannonAnimationIndex: 0
+--- !u!114 &2090048222985732461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649839755159618058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968f346eb553e164c875a02622739750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isFlying: 0
+  _health: 1
+  _destroyIfKilled: 1
+  _aimPosition: {fileID: 0}
+  _deathParticle: {fileID: 0}
+  _isDead: 0
+  _isInvulnerable: 0
+  _deathTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
+  _invulnerabilityTimer:
+    _duration: 0
+    _stopWhenCompleted: 1
+  _hasLifespan: 1
+  _lifespan: {fileID: 0}
 --- !u!1 &7695563755889492988
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +818,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 51eaeb0fc8bc7834c8af6cccaece8027,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.366
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 51eaeb0fc8bc7834c8af6cccaece8027,
         type: 3}
@@ -832,6 +860,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2970274400219400666, guid: 51eaeb0fc8bc7834c8af6cccaece8027,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e493c0d0b92996848a1806a7b26a7240, type: 2}
     - target: {fileID: 919132149155446097, guid: 51eaeb0fc8bc7834c8af6cccaece8027,
         type: 3}
       propertyPath: m_Name
