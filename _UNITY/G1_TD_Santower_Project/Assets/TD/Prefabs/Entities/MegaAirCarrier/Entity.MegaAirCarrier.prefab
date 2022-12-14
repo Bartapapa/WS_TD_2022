@@ -593,11 +593,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8297950662493989198, guid: 5bba20afeb37ff84b890ff420b142603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 287c1b0c065aff944a5d72ed3a981b64, type: 2}
+    - target: {fileID: -387025466570942756, guid: 5bba20afeb37ff84b890ff420b142603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 287c1b0c065aff944a5d72ed3a981b64, type: 2}
     - target: {fileID: 919132149155446097, guid: 5bba20afeb37ff84b890ff420b142603,
         type: 3}
       propertyPath: m_Name
       value: CarrierAir2
       objectReference: {fileID: 0}
+    - target: {fileID: 1273389907313696377, guid: 5bba20afeb37ff84b890ff420b142603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 287c1b0c065aff944a5d72ed3a981b64, type: 2}
+    - target: {fileID: 1273389907313696377, guid: 5bba20afeb37ff84b890ff420b142603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 287c1b0c065aff944a5d72ed3a981b64, type: 2}
+    - target: {fileID: 1840574362878423749, guid: 5bba20afeb37ff84b890ff420b142603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 287c1b0c065aff944a5d72ed3a981b64, type: 2}
+    - target: {fileID: 6691612038145114602, guid: 5bba20afeb37ff84b890ff420b142603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 287c1b0c065aff944a5d72ed3a981b64, type: 2}
+    - target: {fileID: 7656447841159742829, guid: 5bba20afeb37ff84b890ff420b142603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 287c1b0c065aff944a5d72ed3a981b64, type: 2}
+    - target: {fileID: 9037586853354589727, guid: 5bba20afeb37ff84b890ff420b142603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 287c1b0c065aff944a5d72ed3a981b64, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bba20afeb37ff84b890ff420b142603, type: 3}
 --- !u!1 &2602990329025373812 stripped

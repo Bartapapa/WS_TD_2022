@@ -534,11 +534,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -375093935012511692, guid: c5958a2d044ec9043841f65c027738c5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48a530234db9c6c4192a1a553fbb2f9e, type: 2}
+    - target: {fileID: 248921573769497925, guid: c5958a2d044ec9043841f65c027738c5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48a530234db9c6c4192a1a553fbb2f9e, type: 2}
     - target: {fileID: 919132149155446097, guid: c5958a2d044ec9043841f65c027738c5,
         type: 3}
       propertyPath: m_Name
       value: MSnowman2
       objectReference: {fileID: 0}
+    - target: {fileID: 3523057327601760320, guid: c5958a2d044ec9043841f65c027738c5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48a530234db9c6c4192a1a553fbb2f9e, type: 2}
+    - target: {fileID: 3523057327601760320, guid: c5958a2d044ec9043841f65c027738c5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48a530234db9c6c4192a1a553fbb2f9e, type: 2}
+    - target: {fileID: 3797145546121631694, guid: c5958a2d044ec9043841f65c027738c5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48a530234db9c6c4192a1a553fbb2f9e, type: 2}
+    - target: {fileID: 4770217687749917768, guid: c5958a2d044ec9043841f65c027738c5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48a530234db9c6c4192a1a553fbb2f9e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5958a2d044ec9043841f65c027738c5, type: 3}
 --- !u!1 &3911307646333997120 stripped
