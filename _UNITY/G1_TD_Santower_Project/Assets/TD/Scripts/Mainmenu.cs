@@ -14,6 +14,9 @@ public class Mainmenu : MonoBehaviour
     [SerializeField]
     private Slider _volume;
 
+    [SerializeField]
+    private GameObject _credit;
+
     private void Start()
     {
         SoundManager.Instance.PlayMusic(_mainMenuMusic);
@@ -27,5 +30,15 @@ public class Mainmenu : MonoBehaviour
     public void StartGame()
     {
         GameManager.Instance.StartGame();
+    }
+
+    public void OpenCredit()
+    {
+        _credit.SetActive(true);
+    }
+
+    public void CloseCredit()
+    {
+        _credit.SetActive(false);
     }
 }

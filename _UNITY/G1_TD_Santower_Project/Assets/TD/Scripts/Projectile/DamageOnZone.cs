@@ -36,16 +36,17 @@ public class DamageOnZone : AProjectile
 			transform.position = Target.transform.position;
 		}
 		
-		_damageable = _damageableDetector.DamageablesInRange;
 		_timer.Update();
 		
 		if (_timer.Progress >= 1)
 		{
-			_timer.Update();
+			_damageable = _damageableDetector.DamageablesInRange;
 			foreach (Damageable damageable in _damageable)
 			{
 				damageable.TakeDamage(Damage, false);
+				_damageableDetector.RemoveNullItemsFromList();
 			}
+			_timer.Update();
 
 		}
 	}
