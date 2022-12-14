@@ -43,7 +43,7 @@ public class Ability_Barricade : Ability
         }
         _instantiatedBarricade = newBarricade;
 
-        newBarricade.SetCanBlock(false);
+        newBarricade.SetCanBlock(true);
 
         LevelReferences.Instance.PlayerPickerController.CreateGhost(newBarricade);
         LevelReferences.Instance.PlayerPickerController.SetTargetingReticle(abilityDescription.TargetingReticle, 1, 1, false);

@@ -42,4 +42,9 @@ public class Mainmenu : MonoBehaviour
     {
         _credit.SetActive(false);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

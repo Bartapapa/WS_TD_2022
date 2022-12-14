@@ -71,11 +71,13 @@ public class GameManager : Singleton<GameManager>
     private void Defeat()
     {
         _defeatScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     private void Victory()
     {
         _victoryScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void StartGame()
