@@ -5274,7 +5274,19 @@ MonoBehaviour:
       m_Calls: []
   WaveStatusEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114427185}
+        m_TargetAssemblyTypeName: GSGD1.SpawnerManager, Assembly-CSharp
+        m_MethodName: StartNewWaveSet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _enemiesKilled: 0
   _enemiesBombed: 0
   _livingEntities: []
@@ -26764,6 +26776,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1065735765, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 24198161967188428, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
       propertyPath: _health
@@ -26773,6 +26789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RotationOffsets.Array.data[0].x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927293525221065936, guid: a59c9d15f7a07d84ca0ca9796382116d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8249252316230502198, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
@@ -28917,9 +28938,9 @@ MonoBehaviour:
   _abilitySlot: {fileID: 0}
   _level2: {fileID: 11400000, guid: 68f00ced0eadf0849a8ac53a195b182e, type: 2}
   _width: 7
-  _length: 500
-  _level: 2
-  _maxnumberOfSleighs: 5
+  _length: 7
+  _level: 1
+  _maxnumberOfSleighs: 1
   _sleighsShot: 0
 --- !u!114 &1051029448
 MonoBehaviour:
@@ -32380,7 +32401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 32.084686, y: 0}
+  m_AnchoredPosition: {x: 32.084473, y: 0}
   m_SizeDelta: {x: 64.17064, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219169325

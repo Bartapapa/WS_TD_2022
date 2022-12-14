@@ -588,11 +588,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7300656037932401958, guid: a214c66ef6306df4dad34abd5b9fa170,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69c813c99057dc343bb5dd8c817c35fc, type: 2}
+    - target: {fileID: -6664904998409411293, guid: a214c66ef6306df4dad34abd5b9fa170,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69c813c99057dc343bb5dd8c817c35fc, type: 2}
+    - target: {fileID: -3634856776935971205, guid: a214c66ef6306df4dad34abd5b9fa170,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69c813c99057dc343bb5dd8c817c35fc, type: 2}
+    - target: {fileID: 333977472850101690, guid: a214c66ef6306df4dad34abd5b9fa170,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69c813c99057dc343bb5dd8c817c35fc, type: 2}
     - target: {fileID: 919132149155446097, guid: a214c66ef6306df4dad34abd5b9fa170,
         type: 3}
       propertyPath: m_Name
       value: ElfAirBase2
       objectReference: {fileID: 0}
+    - target: {fileID: 1473045435694925279, guid: a214c66ef6306df4dad34abd5b9fa170,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69c813c99057dc343bb5dd8c817c35fc, type: 2}
+    - target: {fileID: 4051795903308400032, guid: a214c66ef6306df4dad34abd5b9fa170,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69c813c99057dc343bb5dd8c817c35fc, type: 2}
+    - target: {fileID: 4724236005832049584, guid: a214c66ef6306df4dad34abd5b9fa170,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69c813c99057dc343bb5dd8c817c35fc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a214c66ef6306df4dad34abd5b9fa170, type: 3}
 --- !u!4 &8266485793643974958 stripped

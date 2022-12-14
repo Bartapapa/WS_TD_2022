@@ -571,11 +571,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6805539596955222158, guid: e7e5615acd6af3a419fcd4e61e4e8d2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72761ed6f8add8a4ab220fc6483cceb4, type: 2}
+    - target: {fileID: -6476563141017015160, guid: e7e5615acd6af3a419fcd4e61e4e8d2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72761ed6f8add8a4ab220fc6483cceb4, type: 2}
+    - target: {fileID: -1893657575194919110, guid: e7e5615acd6af3a419fcd4e61e4e8d2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72761ed6f8add8a4ab220fc6483cceb4, type: 2}
     - target: {fileID: 919132149155446097, guid: e7e5615acd6af3a419fcd4e61e4e8d2b,
         type: 3}
       propertyPath: m_Name
       value: FatElf2
       objectReference: {fileID: 0}
+    - target: {fileID: 3192902196076843128, guid: e7e5615acd6af3a419fcd4e61e4e8d2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72761ed6f8add8a4ab220fc6483cceb4, type: 2}
+    - target: {fileID: 4418834999246775707, guid: e7e5615acd6af3a419fcd4e61e4e8d2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 265081fa5e87c3141b9ca28422b5cc75, type: 2}
+    - target: {fileID: 6886114391818919101, guid: e7e5615acd6af3a419fcd4e61e4e8d2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72761ed6f8add8a4ab220fc6483cceb4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e5615acd6af3a419fcd4e61e4e8d2b, type: 3}
 --- !u!1 &3642190495848959459 stripped
@@ -604,6 +634,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3107959169906984828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642190495848959459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bce5eaa9f66f34c81f56c4c20b3eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseGO: {fileID: 2942146037294568416}
 --- !u!114 &6858078490798089600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,19 +665,6 @@ MonoBehaviour:
   _explosionRadius: 3
   _explosionSpeed: 100
   _explodeImmediatelyOnDeath: 1
---- !u!114 &3107959169906984828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3642190495848959459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97bce5eaa9f66f34c81f56c4c20b3eb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseGO: {fileID: 2942146037294568416}
 --- !u!4 &4161458383361267545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e7e5615acd6af3a419fcd4e61e4e8d2b,
