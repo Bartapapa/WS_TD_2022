@@ -571,6 +571,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeavyAir2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c8370a7c1c64b246b84bedbc37fe271,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1513062705464188836, guid: 9c8370a7c1c64b246b84bedbc37fe271,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -629,7 +634,7 @@ MonoBehaviour:
   _damageable: {fileID: 2942146037294568419}
   _explosion: {fileID: -7937955209939105875, guid: a7e9a6826759d794686c1ee8c0b1b6b7,
     type: 3}
-  _explosionRadius: 3
+  _explosionRadius: 8
   _explosionSpeed: 100
   _explodeImmediatelyOnDeath: 1
 --- !u!114 &4705111596823994739

@@ -1,6 +1,7 @@
 using GSGD1;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using static UnityEngine.ProBuilder.AutoUnwrapSettings;
 
@@ -27,7 +28,16 @@ public class ExplosivePresent : MonoBehaviour, IPickerGhost
     private bool _canExplode = false;
 
     [SerializeField]
+    private AnimationCurve _curve;
+
+    [SerializeField]
+    private float _presentMaxHeight = 1f;
+
+    [SerializeField]
     private Timer _activationTimer;
+
+    [SerializeField]
+    private AnimatorHandler _anim;
 
     private void Awake()
     {
@@ -55,14 +65,16 @@ public class ExplosivePresent : MonoBehaviour, IPickerGhost
         WaveEntity entity = other.GetComponent<WaveEntity>();
         if (entity != null)
         {
+
+            _canExplode = false;
             ProjectileExplosive newExplosion = Instantiate(_explosion, transform.position, Quaternion.identity);
             newExplosion.ExplosionRadius = _explosionRadius;
             newExplosion.Damage = _explosionDamage;
-            ExplodePresent();
+            _anim.Animator.SetTrigger("Die");
         }
     }
 
-    private void ExplodePresent()
+    public void ExplodePresent()
     {
         //Replace with anims and such.
         Destroy(this.gameObject);
@@ -87,41 +99,27 @@ public class ExplosivePresent : MonoBehaviour, IPickerGhost
     IEnumerator ArcPresent(Vector3 targetPosition)
     {
         _isMoving = true;
-        Vector3 destinationPoint = targetPosition;
-        Debug.Log(destinationPoint);
+        float time = 0f;
+        Vector3 startPosition = transform.position;
 
-        float travelDistance = Vector3.Distance(transform.position, destinationPoint);
-        float halfTravelDistance = travelDistance * .5f;
-        float distanceTravelled = 0f;
-        Vector3 currentPos = transform.position;
-        float distanceRatio = 0f;
+        Vector3 destination = targetPosition;
 
-        while (distanceTravelled < halfTravelDistance)
+        float duration = 60f / _projectileSpeed;
+
+        while (time < duration)
         {
-            transform.position += (transform.forward * _projectileSpeed * Time.deltaTime);
-            distanceTravelled += Vector3.Distance(currentPos, transform.position);
-            currentPos = transform.position;
+            time += Time.deltaTime;
 
-            distanceRatio = 1 - (distanceTravelled / halfTravelDistance);
-            float rise = _projectileSpeed * distanceRatio * Time.deltaTime;
-            transform.position += new Vector3(0, rise, 0);
+            float linearT = time / duration;
+            float heightT = _curve.Evaluate(linearT);
+
+            float height = Mathf.Lerp(0f, _presentMaxHeight, heightT);
+
+            transform.position = Vector3.Lerp(startPosition, destination, linearT) + new Vector3(0f, height);
 
             yield return null;
         }
-        distanceTravelled = 0f;
-        while (distanceTravelled < halfTravelDistance)
-        {
-            transform.position += (transform.forward * _projectileSpeed * Time.deltaTime);
-            distanceTravelled += Vector3.Distance(currentPos, transform.position);
-            currentPos = transform.position;
 
-            distanceRatio = distanceTravelled / halfTravelDistance;
-            float fall = _projectileSpeed * distanceRatio * Time.deltaTime;
-            transform.position += new Vector3(0, -fall, 0);
-
-            yield return null;
-        }
-        transform.position = destinationPoint;
         _isMoving = false;
         PresentLand();
         yield return null;
@@ -129,7 +127,7 @@ public class ExplosivePresent : MonoBehaviour, IPickerGhost
 
     private void PresentLand()
     {
-        transform.LookAt(Vector3.right);
+        _anim.Animator.SetTrigger("Landed");
         _activationTimer.Start();
     }
 
