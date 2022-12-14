@@ -105,10 +105,17 @@ public class Ability_Rudolph : Ability
     public void UpgradeCarpetBomb()
     {
         _abilitySlot.SetAbility(_level2);
+        _level = 2;
     }
 
     public void UpgradeCDouble()
     {
         _maxnumberOfSleighs = 2;
+    }
+
+    public void SetReticleLengthWidthLevel2()
+    {
+        _width = 7f;
+        _length = 500f;
     }
 }

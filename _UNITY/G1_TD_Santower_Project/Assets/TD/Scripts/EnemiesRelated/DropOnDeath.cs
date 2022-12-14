@@ -29,6 +29,6 @@ public class DropOnDeath : MonoBehaviour
     private void OnCallerDied(Damageable caller, int currentHealth, int damageTaken)
 	{
 		ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, _cookiesDropped);
-		ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, _milkDropped);
+		ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Milk, _milkDropped);
 	}
 }
