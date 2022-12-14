@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 5056176409317074810}
   - component: {fileID: 5746053548492009241}
   - component: {fileID: 5374150731014375450}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BarricadeStrong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6965557161070898645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,6 +316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barricadespolySurface11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d836435c383ffbb4fa515497205716b3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d836435c383ffbb4fa515497205716b3, type: 3}

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/TD/Scenes/Test_Scene_LD.unity
+    path: Assets/TD/Scenes/VracMap/Test_Scene_LD.unity
     guid: 41878a0ba71910b4e8e6f9d245db4de4
   - enabled: 1
     path: Assets/TD/Scenes/MainMenu.unity

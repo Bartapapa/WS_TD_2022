@@ -552,7 +552,7 @@ MonoBehaviour:
   _projectile: {fileID: 1697648429471405643, guid: a1a1140bdc5abfd4b923056be28d793a,
     type: 3}
   _projectileAnchor: {fileID: 302692792940769431}
-  _projectileSpeed: 250
+  _projectileSpeed: 100
   _projectileDamage: 20
   _spread: 0
 --- !u!114 &3558039830269736841
@@ -1024,7 +1024,7 @@ ParentConstraint:
   m_TranslationOffsets:
   - {x: 0, y: 0.86190385, z: -0.63508713}
   m_RotationOffsets:
-  - {x: -89.96574, y: 0, z: 0}
+  - {x: -89.980225, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1

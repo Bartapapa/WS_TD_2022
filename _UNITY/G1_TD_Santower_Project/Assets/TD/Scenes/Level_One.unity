@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 897097831}
-  m_IndirectSpecularColor: {r: 0.3731195, g: 0.3807401, b: 0.35872737, a: 1}
+  m_IndirectSpecularColor: {r: 0.37336558, g: 0.38108698, b: 0.35923523, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 4949449}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7492,7 +7492,7 @@ GameObject:
   - component: {fileID: 193931443}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16189,7 +16189,7 @@ GameObject:
   - component: {fileID: 462459045}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21345,7 +21345,7 @@ GameObject:
   - component: {fileID: 704027202}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28478,6 +28478,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6820297186260300582, guid: a59c9d15f7a07d84ca0ca9796382116d,
         type: 3}
+      propertyPath: m_RotationOffsets.Array.data[0].x
+      value: -89.980225
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820297186260300582, guid: a59c9d15f7a07d84ca0ca9796382116d,
+        type: 3}
       propertyPath: m_TranslationOffsets.Array.data[0].z
       value: 1.3891662
       objectReference: {fileID: 0}
@@ -28555,6 +28560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RotationOffsets.Array.data[0].x
       value: -89.96574
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875552254701297853, guid: a59c9d15f7a07d84ca0ca9796382116d,
+        type: 3}
+      propertyPath: m_RotationOffsets.Array.data[0].x
+      value: -89.980225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a59c9d15f7a07d84ca0ca9796382116d, type: 3}
@@ -40094,7 +40104,7 @@ GameObject:
   - component: {fileID: 1345443512}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44509,7 +44519,7 @@ GameObject:
   - component: {fileID: 1495051953}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45433,7 +45443,7 @@ GameObject:
   - component: {fileID: 1513698703}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45707,7 +45717,7 @@ GameObject:
   - component: {fileID: 1521734629}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
