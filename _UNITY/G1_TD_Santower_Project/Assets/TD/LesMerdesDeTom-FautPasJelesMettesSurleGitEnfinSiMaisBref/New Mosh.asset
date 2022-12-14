@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - _waveEntitiesDescriptions:
-    - _entityType: 13
+    - _entityType: 1
+      _extraDurationAfterSpawned: 0
+    - _entityType: 1
+      _extraDurationAfterSpawned: 0
+    - _entityType: 1
+      _extraDurationAfterSpawned: 0
+    - _entityType: 1
+      _extraDurationAfterSpawned: 0
+    - _entityType: 1
       _extraDurationAfterSpawned: 0
     _durationBetweenSpawnedEntity: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 897097831}
-  m_IndirectSpecularColor: {r: 0.37336558, g: 0.38108698, b: 0.35923523, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731195, g: 0.3807401, b: 0.35872737, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28249,6 +28249,37 @@ Transform:
   m_Father: {fileID: 980445253}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &967910118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 967910119}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &967910119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967910118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1463876208}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &968045530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b92260e1b904d3544a35c68ee3668c92,
@@ -35317,7 +35348,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49046
+  m_Name: pb_Mesh417332
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43275,6 +43306,7 @@ Transform:
   m_Children:
   - {fileID: 1921675845}
   - {fileID: 854906318}
+  - {fileID: 967910119}
   m_Father: {fileID: 1105829885}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
@@ -43329,6 +43361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraSpeed: 25
+  _rotationSpeed: 30
+  _canRotate: 1
+  _cameraPivot: {fileID: 967910118}
   _movementLimits:
   - {fileID: 2011483340}
   - {fileID: 1794332445}
@@ -43340,10 +43375,15 @@ MonoBehaviour:
   - 3
   - 4
   _CameraYAxis:
-  - 17
   - 19
-  - 22
-  - 25
+  - 21
+  - 24
+  - 27
+  _cameraPos:
+  - 23
+  - 25.3
+  - 29
+  - 32.6
 --- !u!114 &1463876211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44671,7 +44711,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh48314
+  m_Name: pb_Mesh416600
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -54728,7 +54768,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46148
+  m_Name: pb_Mesh414430
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
