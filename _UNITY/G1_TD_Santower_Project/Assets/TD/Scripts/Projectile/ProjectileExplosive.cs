@@ -133,6 +133,8 @@
                 yield return null;
             }
 
+            Debug.Log("BOOM!");
+
             EXPLOSION();
 
             //_isMoving = true;

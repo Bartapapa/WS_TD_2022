@@ -38,6 +38,7 @@ public class DamageOnZone : AProjectile
 		
 		_damageable = _damageableDetector.DamageablesInRange;
 		_timer.Update();
+		_damageableDetector.RemoveNullItemsFromList();
 		
 		if (_timer.Progress >= 1)
 		{
