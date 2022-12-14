@@ -116,22 +116,6 @@ namespace GSGD1
 			return false;
 		}
 
-		public bool TrySetGhostAsPlateChild()
-		{
-			if (_gridPicker.TryGetPlate(out Plate plate) == true)
-			{
-				if (plate.HasChild == false || plate.HasChild == true)
-				{
-					if (plate.SetChild(_ghost as IPlateChild) == true)
-					{
-						_ghost = null;
-						return true;
-					}
-				}
-			}
-			return false;
-		}
-
         public void ChangeState(PlayerPickerState newState)
         {
             StateChanged?.Invoke(_state, newState);

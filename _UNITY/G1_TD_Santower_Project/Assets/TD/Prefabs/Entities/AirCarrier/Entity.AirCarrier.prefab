@@ -272,7 +272,7 @@ MonoBehaviour:
     _stopWhenCompleted: 1
   _randomSpawnAmplitude: 1
   _waveEntity:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 5c26e93c227e048478abd3c4f468fe56, type: 2}
   _anim: {fileID: 0}
 --- !u!136 &8954739381906307174
 CapsuleCollider:

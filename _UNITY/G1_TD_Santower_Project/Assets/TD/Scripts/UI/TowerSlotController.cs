@@ -60,27 +60,6 @@
             }
 		}
 
-		private void Update()
-		{
-			if (_state == State.GhostVisible)
-			{
-				if (Input.GetMouseButtonDown(0) == true)
-				{
-					if (PlayerPickerController.TrySetGhostAsCellChild() == true || PlayerPickerController.TrySetGhostAsPlateChild() == true)
-					{
-                        ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, -_currentTowerDescription.CookieCost);
-						ChangeState(State.Available);
-                        PlayerPickerController.ChangeState(PlayerPickerState.InGame);
-                    }
-				}
-				if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape) == true)
-				{
-					ChangeState(State.Available);
-                    PlayerPickerController.ChangeState(PlayerPickerState.InGame);
-                }
-			}
-		}
-
 		public void ChangeState(State newState)
 		{
 			switch (newState)
