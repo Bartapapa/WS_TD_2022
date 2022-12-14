@@ -95,7 +95,8 @@
 				//_weaponController.LookAt(damageableTarget.GetAimPosition());
 				//_weaponController.Fire();
 
-				_weaponController.LookAtAndFire(damageableTarget.GetAimPosition());
+                _weaponController.LookAtAndFire(damageableTarget.GetAimPosition());
+
 				if (damageableTarget == null)
 				{
                     _damageableDetector.RemoveNullItemsFromList();
