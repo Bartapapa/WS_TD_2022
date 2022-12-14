@@ -22,6 +22,8 @@ public class RudolphSleigh : MonoBehaviour
     private bool _targetPositionSet = false;
     private bool _hasDroppedBomb = false;
 
+    public Timer Timer => _bombingInterval;
+
     void Update()
     {
         _bombingInterval.Update();

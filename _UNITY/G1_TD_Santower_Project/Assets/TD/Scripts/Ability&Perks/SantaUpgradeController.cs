@@ -80,19 +80,16 @@ public class SantaUpgradeController : MonoBehaviour
             {
                 _santaUpgradePanel.PerkSlots[i].SetIsAcquired(true);
                 _santaUpgradePanel.PerkSlots[i].UpdateSlot();
-                Debug.Log(_santaUpgradePanel.PerkSlots[i].name + " has been acquired already!");
             }
             else if (i == PlayerPerkManager.Instance.CurrentPerk + 1)
             {
                 _santaUpgradePanel.PerkSlots[i].SetIsAvailable(true);
                 _santaUpgradePanel.PerkSlots[i].UpdateSlot();
-                Debug.Log(_santaUpgradePanel.PerkSlots[i].name + " is made available!");
             }
             else
             {
                 _santaUpgradePanel.PerkSlots[i].SetIsAvailable(false);
                 _santaUpgradePanel.PerkSlots[i].UpdateSlot();
-                Debug.Log(i);
             }
         }
     }

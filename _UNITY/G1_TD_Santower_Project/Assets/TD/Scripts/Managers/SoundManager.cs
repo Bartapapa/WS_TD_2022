@@ -46,10 +46,12 @@ public class SoundManager : Singleton<SoundManager>
         }
         _musicSource.clip = music;
         _musicSource.Play();
+        _musicSource.loop = true;
     }
 
     public void NullMusic()
     {
         _musicSource.Stop();
+        _musicSource.loop = false;
     }
 }

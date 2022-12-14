@@ -35315,8 +35315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d56d99051baacf469181a059f79c9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _victoryScreen: {fileID: 0}
-  _defeatScreen: {fileID: 0}
+  _victoryScreen: {fileID: 1172188854}
+  _defeatScreen: {fileID: 1530280775}
 --- !u!4 &1250563102
 Transform:
   m_ObjectHideFlags: 0
