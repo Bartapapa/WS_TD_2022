@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 897097831}
-  m_IndirectSpecularColor: {r: 0.37336558, g: 0.38108698, b: 0.35923523, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731195, g: 0.3807401, b: 0.35872737, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -34266,7 +34266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 32.084473, y: -55.46511}
+  m_AnchoredPosition: {x: 32.084473, y: -55.46512}
   m_SizeDelta: {x: 64.17064, y: 110.929794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219169325
@@ -35471,7 +35471,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh503334
+  m_Name: pb_Mesh561828
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -44986,7 +44986,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh502602
+  m_Name: pb_Mesh561070
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -55414,7 +55414,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh500428
+  m_Name: pb_Mesh558878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -60900,6 +60900,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1766805347}
     m_Modifications:
+    - target: {fileID: 349632501, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.5784184
+      objectReference: {fileID: 0}
+    - target: {fileID: 349632501, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.54347634
+      objectReference: {fileID: 0}
+    - target: {fileID: 349632501, guid: f6f792c1bb05d104cb902e73a5393a69, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.6509434
+      objectReference: {fileID: 0}
     - target: {fileID: 5156359562322981306, guid: f6f792c1bb05d104cb902e73a5393a69,
         type: 3}
       propertyPath: m_Name
