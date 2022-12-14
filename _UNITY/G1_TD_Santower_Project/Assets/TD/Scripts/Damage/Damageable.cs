@@ -105,6 +105,11 @@
 
         private void Update()
         {
+            if(_health <= 0)
+            {
+                Die();
+            }
+
             _deathTimer.Update();
             _invulnerabilityTimer.Update();
 
@@ -189,6 +194,12 @@
             {
                 var particle = Instantiate(_deathParticle);
                 particle.transform.position = transform.position;
+            }
+
+            Collider collider = GetComponent<Collider>();
+            if (collider != null)
+            {
+                collider.enabled = false;
             }
 
             _isDead = true;

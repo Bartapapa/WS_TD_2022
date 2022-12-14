@@ -68,6 +68,8 @@
 					damageable.RemoveColliderOnDeath = _removeDamageableCollider;
 				}
 
+				Debug.Log(other);
+
 				if (damageable != null && _needDamageableToCollide == true)
 				{
 					if (_canFreeze == true)
