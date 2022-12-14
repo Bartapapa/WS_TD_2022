@@ -22,16 +22,16 @@ public class VictoryDefeat : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_gameManager.GamePhaseChangeEvent_UE.RemoveListener(VictoryDefeat);
-		_gameManager.GamePhaseChangeEvent_UE.AddListener(VictoryDefeat);
+		_gameManager.GamePhaseChangeEvent_UE.RemoveListener(aaaaaaaaaa);
+		_gameManager.GamePhaseChangeEvent_UE.AddListener(aaaaaaaaaa);
 	}
 
 	private void OnDisable()
 	{
-		_gameManager.GamePhaseChangeEvent_UE.RemoveListener(VictoryDefeat);
+		_gameManager.GamePhaseChangeEvent_UE.RemoveListener(aaaaaaaaaa);
 	}
 
-	private void VictoryDefeat(GameManager.GamePhase fromPhase, GameManager.GamePhase toPhase)
+	private void aaaaaaaaaa(GameManager.GamePhase fromPhase, GameManager.GamePhase toPhase)
 	{
 		if (toPhase == GameManager.GamePhase.GameWin)
 		{
