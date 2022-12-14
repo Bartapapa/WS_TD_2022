@@ -22,7 +22,6 @@
 		private Transform _computedGridPosition = null;
 
 		private Cell _lastFoundCell = null;
-		private Plate _lastFoundPlate = null;
 
 		public Transform GetGridPosition
 		{
@@ -81,16 +80,7 @@
 			}
 			return cell = null;
 		}
-		public bool TryGetPlate(out Plate plate)
-		{
-			Transform hitTransform = GetGridPosition;
-			if (hitTransform != null)
-			{
-				_lastFoundPlate = plate = hitTransform.GetComponentInParent<Plate>();
-				return plate != null;
-			}
-			return plate = null;
-		}
+
 		public void Activate(bool isActive, bool showHighlighter = true)
 		{
 			enabled = isActive;
