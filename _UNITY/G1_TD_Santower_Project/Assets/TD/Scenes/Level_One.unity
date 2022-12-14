@@ -5346,7 +5346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1168ee84af57954b9ef89791a4a98c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cookie: 50
+  _cookie: 2222222
   _milk: 22222
 --- !u!4 &118690691 stripped
 Transform:
@@ -38180,7 +38180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1348179407}
   - component: {fileID: 1348179408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CameraConfiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
