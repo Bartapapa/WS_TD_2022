@@ -66,16 +66,11 @@ public class AbilitySlot : MonoBehaviour
 
     private void UpdateCDVisualizer(float scaleX)
     {
-        _coolDownVisualizer.transform.localScale = new Vector3(scaleX, 1, 1);
+        _coolDownVisualizer.transform.localScale = new Vector3(scaleX * 3, scaleX * 3, scaleX * 3);
 
         if (scaleX >= 1f)
         {
-            _coolDownVisualizer.GetComponent<Image>().color = Color.green;
             OnCooldownFinished.Invoke();
-        }
-        else
-        {
-            _coolDownVisualizer.GetComponent<Image>().color = Color.red;
         }
     }
 

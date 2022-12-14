@@ -170,7 +170,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -667,7 +667,7 @@ ParticleSystem:
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
-    donutRadius: 20
+    donutRadius: 10
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
@@ -4826,10 +4826,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fogRadius:
-  - 60
-  - 80
+  - 45
+  - 65
+  - 95
   - 110
-  - 135
 --- !u!1 &5156359561379718648
 GameObject:
   m_ObjectHideFlags: 0
@@ -5000,7 +5000,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5497,7 +5497,7 @@ ParticleSystem:
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
-    donutRadius: 20
+    donutRadius: 10
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
@@ -5579,7 +5579,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 120
+      value: 45
       mode: 0
       spread: 0
       speed:
@@ -9656,10 +9656,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fogRadius:
-  - 60
-  - 80
+  - 45
+  - 65
+  - 95
   - 110
-  - 135
 --- !u!1 &5156359562322981306
 GameObject:
   m_ObjectHideFlags: 0
