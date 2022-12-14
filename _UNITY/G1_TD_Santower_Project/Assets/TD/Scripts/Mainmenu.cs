@@ -29,6 +29,7 @@ public class Mainmenu : MonoBehaviour
 
     public void StartGame()
     {
+        SoundManager.Instance.NullMusic();
         GameManager.Instance.StartGame();
     }
 
