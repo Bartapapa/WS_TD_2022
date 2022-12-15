@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3728aa709ed1dfe45a17798a3d49ff82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bomb: {fileID: -7937955209939105875, guid: 2998674bb673cc74cabc7549c7f9cceb, type: 3}
+  _bomb: {fileID: -7937955209939105875, guid: f9a2a08ea60278a41a1b78ab995e558a, type: 3}
   _bombSpawner: {fileID: 634025992}
   _speed: 20
   _bombingInterval:

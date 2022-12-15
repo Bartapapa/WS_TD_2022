@@ -29,7 +29,7 @@ public class RudolphSleigh : MonoBehaviour
         _bombingInterval.Update();
         MoveSleigh();
 
-        if (_bombingInterval.Progress >= 1f)
+        if (_bombingInterval.Progress == 1f)
         {
             DropBomb();
         }
@@ -52,6 +52,8 @@ public class RudolphSleigh : MonoBehaviour
     {
         ProjectileExplosive newBomb = Instantiate(_bomb, _bombSpawner.position, _bombSpawner.rotation);
         newBomb.UseArtilleryMovement = false;
+        newBomb.ExplosionRadius = 7f;
+        newBomb.SetProjectileSPeed(20f);
     }
 
     private void MoveSleigh()

@@ -30,5 +30,7 @@ public class DropOnDeath : MonoBehaviour
 	{
 		ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Cookie, _cookiesDropped);
 		ResourceManager.Instance.AcquireResource(ResourceManager.ResourceType.Milk, _milkDropped);
+
+        Debug.Log("acquired!");
 	}
 }
