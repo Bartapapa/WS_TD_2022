@@ -64,7 +64,7 @@ public class PereFouettardGround : MonoBehaviour
 	private GameObject GetNearestTower()
 	{
 		float shortestDistance = 0;
-		int shortestDistanceIndex = 0;
+		int shortestDistanceIndex = -1;
 		for (int i = 0; i < _tower.Count; i++)
 		{
 			if (_tower[i] != null)
@@ -77,7 +77,14 @@ public class PereFouettardGround : MonoBehaviour
                 }
             }
 		}
-		return _tower[shortestDistanceIndex];
+		if (shortestDistanceIndex >= 0)
+		{
+			return _tower[shortestDistanceIndex];
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 	private void GetAllTurret()

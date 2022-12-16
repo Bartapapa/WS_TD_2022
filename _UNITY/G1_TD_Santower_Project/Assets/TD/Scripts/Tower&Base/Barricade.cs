@@ -15,6 +15,7 @@ public class Barricade : MonoBehaviour, IPickerGhost
 
 	void Update()
     {
+		RemoveNullItemsFromList();
 		if (_pathFollowers.Count >= _numberBeforeBreaking)
 		{
 			DestroyBarricade();
@@ -50,7 +51,18 @@ public class Barricade : MonoBehaviour, IPickerGhost
 		Destroy(gameObject);
 	}
 
-	public void SetCanBlock(bool value)
+    public void RemoveNullItemsFromList()
+    {
+        for (var i = _pathFollowers.Count - 1; i > -1; i--)
+        {
+            if (_pathFollowers[i] == null)
+            {
+                _pathFollowers.RemoveAt(i);
+            }
+        }
+    }
+
+    public void SetCanBlock(bool value)
 	{
 		_canBlock = value;
 	}

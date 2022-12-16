@@ -55,7 +55,7 @@ public class Snowman : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Freezer>().IsFrozen == false)
+        if (other.GetComponent<Freezer>() == true && other.GetComponent<Freezer>().IsFrozen == false)
         {
             _pathFollower.enabled = false;
             _towerTarget = other.gameObject;

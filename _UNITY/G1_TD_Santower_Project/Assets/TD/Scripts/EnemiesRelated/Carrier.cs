@@ -101,7 +101,7 @@ public class Carrier : MonoBehaviour
 		waypoint.Clear();
 		foreach (GameObject Waypoint in GameObject.FindGameObjectsWithTag("Waypoint"))
 		{
-			if (Waypoint.GetComponentInParent<MerryPath>() == false && Waypoint.GetComponentInParent<Path>().tag != "Air")
+			if (Waypoint.GetComponentInParent<MerryPath>() == false)
 			{
 				waypoint.Add(Waypoint);
 			}

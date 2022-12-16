@@ -755,7 +755,7 @@ MonoBehaviour:
     _duration: 0.35
     _stopWhenCompleted: 1
   _anim: {fileID: 6156578719417829433}
-  _damageableDetector: {fileID: 0}
+  _damageableDetector: {fileID: 6642927475936807184}
   _removeDamageableCollider: 0
   _projectile: {fileID: 1697648429471405643, guid: a1a1140bdc5abfd4b923056be28d793a,
     type: 3}
@@ -765,7 +765,7 @@ MonoBehaviour:
   _spread: 0
   _continueFiringDuration: 2.5
   _isFiring: 0
-  _weaponController: {fileID: 0}
+  _weaponController: {fileID: 1065735770}
   _minAngleToFollowTarget: 5
 --- !u!114 &1065735768
 MonoBehaviour:

@@ -21,11 +21,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GamePhase _currentPhase = GamePhase.None;
 
-    [SerializeField]
-    private GameObject _victoryScreen;
-    [SerializeField]
-    private GameObject _defeatScreen;
-
     public UnityEvent<GamePhase, GamePhase> GamePhaseChangeEvent_UE;
 
     public void ChangePhase(GamePhase toPhase)
@@ -70,13 +65,11 @@ public class GameManager : Singleton<GameManager>
 
     private void Defeat()
     {
-        _defeatScreen.SetActive(true);
         Time.timeScale = 0;
     }
 
     private void Victory()
     {
-        _victoryScreen.SetActive(true);
         Time.timeScale = 0;
     }
 
@@ -88,6 +81,7 @@ public class GameManager : Singleton<GameManager>
     public void ReturnToMainMenu()
     {
         ChangePhase(GamePhase.None);
+        Time.timeScale = 1;
         Loader.Load(Loader.Scene.MainMenu);
     }
 

@@ -16,9 +16,6 @@ public class ExplosivePresent : MonoBehaviour, IPickerGhost
     [SerializeField]
     private int _explosionDamage;
 
-    [SerializeField]
-    private List<GameObject> _colorVariants = new List<GameObject>();
-
     [Header("Present parameters")]
     [SerializeField]
     private float _projectileSpeed = 1f;
@@ -38,16 +35,6 @@ public class ExplosivePresent : MonoBehaviour, IPickerGhost
 
     [SerializeField]
     private AnimatorHandler _anim;
-
-    private void Awake()
-    {
-        foreach(GameObject variant in _colorVariants)
-        {
-            variant.SetActive(false);
-        }
-        int randomVariant = Random.Range(0, _colorVariants.Count);
-        _colorVariants[randomVariant].SetActive(true);
-    }
 
     private void Update()
     {

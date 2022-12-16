@@ -39,12 +39,6 @@ public class BaseNorthPole : MonoBehaviour
 		{
             _health.value = _damageable.GetHealth;
         }
-
-		if (_damageable.GetHealth <= 0)
-		{
-			// Insert Code for defeat screen
-			Debug.LogWarning("Insert Code for defeat screen");
-		}
 	}
 
 	private void OnNorthPoleBombed(Damageable caller, int currentHealth, int damageTaken)

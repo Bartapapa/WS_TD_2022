@@ -218,7 +218,7 @@ namespace GSGD1
             _enemiesKilled += 1;
             _livingEntities.Remove(caller);
             caller.CallerDied -= OnEntityDied;
-
+			RemoveNullItemsFromList();
             if (_enemiesKilled == _numberOfEnemiesPerWave[_currentWaveSetIndex])
             {
                 WaveStatusChanged?.Invoke(this, SpawnerStatus.Inactive, 0);
@@ -243,6 +243,15 @@ namespace GSGD1
 		{
 			_currentWaveRunning += 1;
 		}
-
+        public void RemoveNullItemsFromList()
+        {
+            for (var i = _livingEntities.Count - 1; i > -1; i--)
+            {
+                if (_livingEntities[i] == null)
+                {
+                    _livingEntities.RemoveAt(i);
+                }
+            }
+        }
     }
 }

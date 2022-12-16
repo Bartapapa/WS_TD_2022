@@ -134,8 +134,7 @@ MonoBehaviour:
     type: 3}
   _explosionRadius: 7
   _explosionDamage: 50
-  _colorVariants:
-  - {fileID: 0}
+  _colorVariants: []
   _projectileSpeed: 15
   _curve:
     serializedVersion: 2
